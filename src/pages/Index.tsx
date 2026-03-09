@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { blogPosts } from "@/data/blogPosts";
 
 const serviceCards = [
   {
