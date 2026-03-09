@@ -14,6 +14,7 @@ import Insights from "./pages/Insights";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
