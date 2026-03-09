@@ -1,53 +1,5 @@
-const blogPosts = [
-  {
-    img: "/images/blog-preventive-india.png",
-    date: "February 24, 2026",
-    title: "How Diagnostic Centers Support Preventive Healthcare in Modern India",
-    desc: "Discover how diagnostic centers support preventive healthcare in modern India through early detection, accurate testing and reliable health screening services.",
-  },
-  {
-    img: "/images/blog-signs-checkup.png",
-    date: "February 19, 2026",
-    title: "Signs You Should Not Ignore and When to Go for a Health Checkup",
-    desc: "Ignoring early health signs can lead to serious issues. Learn when to go for a health checkup and why regular screening is essential.",
-  },
-  {
-    img: "/images/blog-imaging-tests.png",
-    date: "February 16, 2026",
-    title: "When Do Doctors Recommend Imaging Tests and Why?",
-    desc: "Learn when doctors recommend imaging tests, the difference between X-ray and ultrasound, and how medical imaging helps accurate diagnosis.",
-  },
-  {
-    img: "/images/blog-test-accuracy.png",
-    date: "February 10, 2026",
-    title: "How Diagnostic Test Accuracy Impacts Long-Term Health Outcomes",
-    desc: "Accurate diagnostic tests support early detection, better treatment decisions, and improved long-term health outcomes. Learn why lab accuracy matters.",
-  },
-  {
-    img: "/images/blog-home-collection.jpg",
-    date: "January 21, 2026",
-    title: "Why Home Collection is the Future of Healthcare",
-    desc: "Skip the Gurugram traffic and waiting rooms. Get professional blood collection at your doorstep. Safe, hygienic, and convenient testing by Aarvak Diagnostics.",
-  },
-  {
-    img: "/images/blog-liver-kidney.jpg",
-    date: "January 20, 2026",
-    title: "Why Your Liver and Kidneys Need a \"Service\" More Than Your Car Does",
-    desc: "Your organs don't complain until it's late. Check your LFT & KFT with our 78-test Mini Panel. Easy home collection in Gurugram by Aarvak Diagnostics.",
-  },
-  {
-    img: "/images/blog-hba1c.jpg",
-    date: "January 20, 2026",
-    title: "Why HbA1c is the Real Truth About Your Blood Sugar",
-    desc: "One sugar test is just a snapshot. Get the \"full movie\" with an HbA1c test. Track your 90-day average and catch pre-diabetes early with Aarvak Diagnostics.",
-  },
-  {
-    img: "/images/blog-corporate-health.jpg",
-    date: "January 20, 2026",
-    title: "The Corporate Athlete's Guide to Preventive Health",
-    desc: "Why an \"Annual Audit\" is Your Best Business Strategy. Preventive health checkups for corporate professionals.",
-  },
-];
+import { Link } from "react-router-dom";
+import { blogPosts } from "@/data/blogPosts";
 
 const Insights = () => {
   return (
@@ -80,23 +32,29 @@ const Insights = () => {
 
       {/* Blog Posts */}
       <section className="py-12 px-4">
-        <div className="max-w-5xl mx-auto space-y-8">
+        <div className="max-w-6xl mx-auto space-y-10">
           {blogPosts.map((post) => (
-            <div
-              key={post.title}
-              className="flex flex-col md:flex-row bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100"
+            <Link
+              key={post.slug}
+              to={`/insights/${post.slug}`}
+              className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition group"
             >
-              <div className="md:w-2/5 h-64 md:h-auto">
-                <img src={post.img} alt={post.title} className="w-full h-full object-cover" />
+              <div className="md:w-[400px] h-64 md:h-[280px] flex-shrink-0">
+                <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
               </div>
-              <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-center">
-                <span className="inline-block text-xs font-semibold text-white px-3 py-1 rounded-full mb-3 w-fit" style={{ backgroundColor: '#0891b2' }}>
+              <div className="flex-1 p-6 md:p-10 flex flex-col justify-center">
+                <span
+                  className="inline-block text-xs font-semibold text-white px-4 py-1.5 rounded-full mb-4 w-fit"
+                  style={{ backgroundColor: '#0891b2' }}
+                >
                   {post.date}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{post.desc}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-cyan-700 transition">
+                  {post.title}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed">{post.desc}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
