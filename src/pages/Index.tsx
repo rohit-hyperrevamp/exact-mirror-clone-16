@@ -139,7 +139,7 @@ const Index = () => {
   const bodyScrollRef = useRef<HTMLDivElement>(null);
 
   const maxTestSlide = Math.max(0, diagnosticTests.length - 3);
-  const maxPkgSlide = Math.max(0, healthPackages.length - 2);
+  const maxPkgSlide = Math.max(0, healthPackages.length - 3);
 
   // Auto-scroll for body system icons
   useEffect(() => {
