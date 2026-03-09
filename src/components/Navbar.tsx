@@ -71,13 +71,14 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:9810063340"
-            className="w-10 h-10 rounded-full border-2 border-green-600 flex items-center justify-center hover:bg-green-50 transition"
+            className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition"
           >
             <Phone className="w-4 h-4 text-green-700" />
           </a>
           <Link
             to="/contact-us#contact"
-            className="bg-green-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-green-700 transition"
+            className="text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition"
+            style={{ backgroundColor: '#4A7FC1' }}
           >
             Book Lab test
           </Link>
