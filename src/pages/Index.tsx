@@ -522,27 +522,31 @@ const Index = () => {
             <p className="mt-2 text-aarvak-gray-600">Simple health information you can trust.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { img: "/images/blog-4.jpg", date: "2026-01-21", title: "Why Home Collection is the Future of Healthcare", desc: "Skip traffic and waiting rooms. Get professional blood collection at home....", category: "Preventive Care" },
-              { img: "/images/blog-33.jpg", date: "2026-01-20", title: "Why Your Liver and Kidneys Need a 'Service' More Than Your Car Does", desc: "Your organs don't complain until it's late. Check your LFT...", category: "Organ Health" },
-              { img: "/images/blog-1.jpg", date: "2025-10-20", title: "The Corporate Athlete's Guide to Preventive Health", desc: "Early tests help detect health issues before symptoms appear....", category: "Health" },
-            ].map((blog) => (
-              <Link key={blog.title} to="/insights" className="group">
+            {blogPosts.slice(0, 3).map((blog) => (
+              <Link key={blog.slug} to={`/insights/${blog.slug}`} className="group">
                 <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition">
-                  <img src={blog.img} alt={blog.title} className="w-full h-48 object-cover" />
+                  <img src={blog.img} alt={blog.title} className="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
                   <div className="p-4">
-                    <p className="text-xs text-aarvak-gray-600 mb-2">{blog.date}</p>
+                    <span className="inline-block text-xs font-semibold text-white px-3 py-1 rounded-full mb-2" style={{ backgroundColor: '#0891b2' }}>
+                      {blog.date}
+                    </span>
                     <h3 className="font-semibold text-aarvak-gray-900 mb-2 group-hover:text-aarvak-blue transition line-clamp-2">
                       {blog.title}
                     </h3>
                     <p className="text-sm text-aarvak-gray-600 line-clamp-2">{blog.desc}</p>
-                    <p className="text-xs text-aarvak-gray-600 mt-3">
-                      By Aarvak Diagnostics · Category: {blog.category}
-                    </p>
                   </div>
                 </div>
               </Link>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/insights"
+              className="inline-block px-8 py-3 rounded-full font-semibold text-white transition hover:opacity-90"
+              style={{ backgroundColor: '#001260' }}
+            >
+              View All
+            </Link>
           </div>
         </div>
       </section>
