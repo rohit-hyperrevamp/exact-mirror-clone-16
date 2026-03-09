@@ -88,3 +88,11 @@
     background: linear-gradient(to bottom, hsl(var(--aarvak-blue)), hsl(var(--aarvak-blue-dark)));
   }
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
