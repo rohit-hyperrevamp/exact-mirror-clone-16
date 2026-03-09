@@ -1,34 +1,23 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Instagram, Facebook, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-aarvak-gray-50 border-t">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div>
-            <h3 className="text-xl font-bold italic text-aarvak-navy" style={{ fontFamily: "Georgia, serif" }}>
-              Aarvak
-            </h3>
-            <p className="text-xs text-aarvak-gray-600 mb-4">Diagnostic Centre</p>
-            <p className="text-sm text-aarvak-gray-600 leading-relaxed">
-              Trusted diagnostic center offering blood tests, imaging, and preventive health services in Gurgaon.
-            </p>
-          </div>
-
+    <footer className="bg-white border-t">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-aarvak-gray-900 mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-gray-900 mb-5">Quick Links</h4>
+            <ul className="space-y-3">
               {[
-                { label: "About Us", href: "/about-us" },
                 { label: "Corporate", href: "/corporate" },
-                { label: "Insights", href: "/insights" },
-                { label: "Contact Us", href: "/contact-us" },
+                { label: "Departments", href: "#" },
+                { label: "About Us", href: "/about-us" },
+                { label: "Contact", href: "/contact-us" },
               ].map((link) => (
                 <li key={link.label}>
-                  <Link to={link.href} className="text-sm text-aarvak-gray-600 hover:text-aarvak-blue transition">
+                  <Link to={link.href} className="text-sm text-gray-600 hover:text-gray-900 transition">
                     {link.label}
                   </Link>
                 </li>
@@ -36,42 +25,64 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Brand */}
           <div>
-            <h4 className="font-semibold text-aarvak-gray-900 mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-aarvak-gray-600">
-              <li>Blood Tests</li>
-              <li>Health Packages</li>
-              <li>Home Collection</li>
-              <li>X-Ray & Imaging</li>
-              <li>Corporate Health</li>
+            <h4 className="font-bold text-gray-900 mb-5">Brand</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/insights" className="text-sm text-gray-600 hover:text-gray-900 transition">
+                  Insights
+                </Link>
+              </li>
+              <li>
+                <span className="text-sm text-gray-600">Privacy Policy</span>
+              </li>
+              <li>
+                <span className="text-sm text-gray-600">Terms of Use</span>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-aarvak-gray-900 mb-4">Contact</h4>
-            <div className="space-y-3 text-sm text-aarvak-gray-600">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Shop No 23, Ground Floor, Block B, JMD Suburbio-2, Sector 67, Sohna Road, Gurgaon</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <a href="tel:9810063340" className="hover:text-aarvak-blue">+91 9810063340</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <a href="mailto:marketing@aarvakdiagnostics.com" className="hover:text-aarvak-blue">
+            <h4 className="font-bold text-gray-900 mb-5">Contact</h4>
+            <div className="space-y-3 text-sm text-gray-600">
+              <p>
+                <span className="font-bold text-gray-900">Email : </span>
+                <a href="mailto:marketing@aarvakdiagnostics.com" className="hover:text-gray-900">
                   marketing@aarvakdiagnostics.com
                 </a>
-              </div>
+              </p>
+              <p>
+                <span className="font-bold text-gray-900">Phone : </span>
+                <a href="tel:9810063340" className="hover:text-gray-900">+91 9810063340</a>
+              </p>
+              <p>
+                <span className="font-bold text-gray-900">Location : </span>
+                Shop No 23, Ground Floor, Block B, JMD Suburbio-2, Sector 67, Sohna Road, Gurgaon
+              </p>
+            </div>
+          </div>
+
+          {/* Follow */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-5">Follow</h4>
+            <div className="flex gap-4">
+              <a href="https://www.instagram.com/aarvakdiagnostics" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 transition">
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a href="https://www.facebook.com/AarvakDiagnostics" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 transition">
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a href="https://wa.me/919810063340" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 transition">
+                <MessageCircle className="w-6 h-6" />
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t mt-8 pt-6 text-center text-sm text-aarvak-gray-600">
-          © {new Date().getFullYear()} Aarvak Diagnostics. All rights reserved.
+        <div className="border-t mt-10 pt-6 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} Aarvak Diagnostics. Designed and Developed by Hyperrevamp
         </div>
       </div>
     </footer>

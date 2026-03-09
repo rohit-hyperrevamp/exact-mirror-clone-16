@@ -610,6 +610,31 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Newsletter / Health Tips */}
+      <section className="relative w-full h-[500px] overflow-hidden">
+        <img
+          src="/images/professional.png"
+          alt="Lab"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex items-center justify-center h-full px-4">
+          <div className="w-full max-w-2xl rounded-2xl p-10 text-white" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.2)' }}>
+            <h2 className="text-2xl sm:text-3xl font-bold italic mb-8">
+              Health Tips, Straight to Your Inbox
+            </h2>
+            <div className="flex items-center border-b border-white/50 pb-2">
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="bg-transparent flex-1 text-white placeholder-white/70 outline-none text-lg"
+              />
+              <button className="text-white text-2xl ml-4 hover:opacity-80 transition">›</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
