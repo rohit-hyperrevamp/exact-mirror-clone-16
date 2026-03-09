@@ -12,6 +12,8 @@ import ContactUs from "./pages/ContactUs";
 import Corporate from "./pages/Corporate";
 import Insights from "./pages/Insights";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 const queryClient = new QueryClient();
 
