@@ -28,21 +28,8 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="flex items-center">
-            <svg width="40" height="40" viewBox="0 0 40 40" className="mr-2">
-              <circle cx="20" cy="20" r="18" fill="none" stroke="#888" strokeWidth="1.5"/>
-              <circle cx="20" cy="20" r="14" fill="none" stroke="#0172B6" strokeWidth="1"/>
-              <path d="M12 20 Q20 8 28 20 Q20 32 12 20Z" fill="#2E7D32" opacity="0.6"/>
-              <path d="M16 20 Q20 12 24 20 Q20 28 16 20Z" fill="#FFC107" opacity="0.7"/>
-              <circle cx="20" cy="12" r="3" fill="#1565C0"/>
-              <path d="M18 10 L20 6 L22 10" fill="#1565C0"/>
-            </svg>
-            <div>
-              <span className="text-2xl font-bold italic text-aarvak-navy" style={{ fontFamily: "Georgia, serif" }}>
-                Aarvak
-              </span>
-              <span className="block text-[10px] tracking-wide text-aarvak-gray-600 -mt-1">
-                Diagnostic Centre
-              </span>
+            <img src="/images/aarvak-logo.webp" alt="Aarvak Diagnostic Centre" className="h-12 md:h-14" />
+            <div className="hidden">
             </div>
           </div>
         </Link>
