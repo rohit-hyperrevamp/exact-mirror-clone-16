@@ -399,42 +399,42 @@ const Index = () => {
               {healthPackages.map((pkg) => (
                 <div key={pkg.name} className="w-full sm:w-1/2 lg:w-1/3 px-2 flex-shrink-0">
                   <div className="h-full rounded-2xl text-white shadow-xl relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0A1551 0%, #1565C0 100%)' }}>
-                    <div className="p-6">
+                    <div className="p-5">
                       {/* Header */}
                       <div className="flex items-start justify-between">
-                        <div className="flex items-start gap-3">
-                          <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-                            <img alt="" src="/images/health-care.png" className="w-7 h-7" />
+                        <div className="flex items-start gap-2">
+                          <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 border border-white/30">
+                            <img alt="" src="/images/health-care.png" className="w-5 h-5" />
                           </div>
                           <div>
-                            <h3 className="font-bold text-lg">{pkg.name}</h3>
-                            <p className="text-sm opacity-70 mt-0.5">{pkg.desc}</p>
+                            <h3 className="font-bold text-sm leading-tight">{pkg.name}</h3>
+                            <p className="text-xs opacity-70 mt-0.5">{pkg.desc}</p>
                           </div>
                         </div>
-                        <div className="text-right flex-shrink-0">
-                          <div className="flex items-center gap-2">
-                            <span className="line-through text-sm opacity-60">{pkg.originalPrice}</span>
-                            <span className="text-2xl font-bold">{pkg.price}</span>
+                        <div className="text-right flex-shrink-0 ml-2">
+                          <div className="flex items-center gap-1">
+                            <span className="line-through text-xs opacity-60">{pkg.originalPrice}</span>
+                            <span className="text-xl font-bold">{pkg.price}</span>
                           </div>
-                          <span className="inline-block bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-md mt-1">
+                          <span className="inline-block bg-yellow-400 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded mt-1">
                             {pkg.discount}
                           </span>
                         </div>
                       </div>
 
                       {/* Report time */}
-                      <p className="mt-4 text-sm">
+                      <p className="mt-3 text-xs">
                         Report Time: <span className="font-bold">6–8 Hours</span>
                       </p>
 
                       {/* Includes */}
-                      <span className="inline-block bg-yellow-400 text-gray-900 text-xs font-bold px-4 py-1.5 rounded-full mt-4 mb-4">
+                      <span className="inline-block bg-yellow-400 text-gray-900 text-[10px] font-bold px-3 py-1 rounded-full mt-3 mb-3">
                         Includes
                       </span>
-                      <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
                         {pkg.tests.map((t) => (
-                          <div key={t} className="flex items-start gap-2 text-sm">
-                            <span className="mt-1.5 w-2 h-2 bg-white rounded-full flex-shrink-0" />
+                          <div key={t} className="flex items-start gap-1.5 text-xs">
+                            <span className="mt-1 w-1.5 h-1.5 bg-white rounded-full flex-shrink-0" />
                             <span>{t}</span>
                           </div>
                         ))}
@@ -443,7 +443,7 @@ const Index = () => {
 
                     {/* Book Now button */}
                     <Link to="/contact-us#contact" className="block">
-                      <div className="bg-white text-gray-900 font-bold text-center py-4 text-lg hover:bg-gray-100 transition cursor-pointer rounded-b-2xl">
+                      <div className="bg-white text-gray-900 font-bold text-center py-3 text-base hover:bg-gray-100 transition cursor-pointer rounded-b-2xl">
                         Book Now
                       </div>
                     </Link>
