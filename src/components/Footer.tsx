@@ -34,10 +34,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <span className="text-sm text-gray-600">Privacy Policy</span>
+                <Link to="/privacy-policy" className="text-sm text-gray-600 hover:text-gray-900 transition">Privacy Policy</Link>
               </li>
               <li>
-                <span className="text-sm text-gray-600">Terms of Use</span>
+                <Link to="/terms-of-use" className="text-sm text-gray-600 hover:text-gray-900 transition">Terms of Use</Link>
               </li>
             </ul>
           </div>
