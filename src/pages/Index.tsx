@@ -390,15 +390,15 @@ const Index = () => {
             Preventive health checkups designed to help you stay informed and proactive.
           </p>
         </div>
-        <div className="max-w-7xl mx-auto px-2">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${pkgSlide * 50}%)` }}
+              style={{ transform: `translateX(-${pkgSlide * (100 / 3)}%)` }}
             >
               {healthPackages.map((pkg) => (
-                <div key={pkg.name} className="w-full sm:w-1/2 px-3 flex-shrink-0">
-                  <div className="h-full rounded-2xl text-white shadow-xl relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A1551 0%, #1565C0 100%)' }}>
+                <div key={pkg.name} className="w-full sm:w-1/2 lg:w-1/3 px-2 flex-shrink-0">
+                  <div className="h-full rounded-2xl text-white shadow-xl relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0A1551 0%, #1565C0 100%)' }}>
                     <div className="p-6">
                       {/* Header */}
                       <div className="flex items-start justify-between">
