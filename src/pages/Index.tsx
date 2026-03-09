@@ -165,11 +165,13 @@ const Index = () => {
             src="/images/aarvakbanner.jpeg"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+          <div className="absolute" style={{ bottom: '8.5rem', left: '5.5rem' }}>
             <Link
               to="/contact-us#contact"
-              className="inline-block text-white font-semibold tracking-wider uppercase px-14 py-5 text-lg rounded-full shadow-xl transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: '#0A1551' }}
+              className="inline-block text-white font-semibold tracking-wider uppercase px-12 py-4 text-lg rounded-full shadow-xl transition-all duration-300"
+              style={{ backgroundColor: '#001260' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#243178')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#001260')}
             >
               Book Your Health Checkup
             </Link>
@@ -614,13 +616,13 @@ const Index = () => {
       {/* Newsletter / Health Tips */}
       <section className="relative w-full h-[500px] overflow-hidden">
         <img
-          src="/images/professional.png"
+          src="/images/ServiceslLeft.png"
           alt="Lab"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex items-center justify-center h-full px-4">
-          <div className="w-full max-w-2xl rounded-2xl p-10 text-white" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.2)' }}>
+          <div className="w-full max-w-2xl rounded-2xl p-10 text-white" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.2)' }}>
             <h2 className="text-2xl sm:text-3xl font-bold italic mb-8">
               Health Tips, Straight to Your Inbox
             </h2>
