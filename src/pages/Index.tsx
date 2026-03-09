@@ -166,10 +166,11 @@ const Index = () => {
             src="/images/mobileaarvakbanner.jpeg"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[80%]">
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
             <Link
               to="/contact-us#contact"
-              className="block text-center bg-white text-gray-800 font-semibold tracking-wider uppercase py-3 text-base rounded-full shadow-xl transition-all duration-300 border border-gray-200"
+              className="block text-center text-white font-semibold tracking-wider uppercase px-10 py-4 text-base rounded-full shadow-xl transition-all duration-300 hover:opacity-90"
+              style={{ backgroundColor: '#0A1551' }}
             >
               Book Your Health Checkup
             </Link>
