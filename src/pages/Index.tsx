@@ -150,10 +150,10 @@ const Index = () => {
             src="/images/aarvakbanner.jpeg"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute bottom-34 left-22">
+          <div className="absolute bottom-16 left-16">
             <Link
               to="/contact-us#contact"
-              className="inline-block bg-aarvak-navy hover:opacity-90 text-primary-foreground font-semibold tracking-wider uppercase px-12 py-4 text-lg rounded-full shadow-xl transition-all duration-300"
+              className="inline-block bg-white hover:bg-gray-50 text-gray-800 font-semibold tracking-wider uppercase px-10 py-4 text-base rounded-full shadow-xl transition-all duration-300 border border-gray-200"
             >
               Book Your Health Checkup
             </Link>
@@ -165,10 +165,10 @@ const Index = () => {
             src="/images/mobileaarvakbanner.jpeg"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute bottom-32 left-1/2 -translate-x-1/2 w-[70%]">
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[80%]">
             <Link
               to="/contact-us#contact"
-              className="block text-center bg-aarvak-navy text-primary-foreground font-semibold tracking-wider uppercase py-3 text-base rounded-full shadow-xl transition-all duration-300"
+              className="block text-center bg-white text-gray-800 font-semibold tracking-wider uppercase py-3 text-base rounded-full shadow-xl transition-all duration-300 border border-gray-200"
             >
               Book Your Health Checkup
             </Link>
