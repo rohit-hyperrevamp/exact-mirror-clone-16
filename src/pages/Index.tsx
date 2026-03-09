@@ -165,11 +165,13 @@ const Index = () => {
             src="/images/aarvakbanner.jpeg"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+          <div className="absolute" style={{ bottom: '8.5rem', left: '5.5rem' }}>
             <Link
               to="/contact-us#contact"
-              className="inline-block text-white font-semibold tracking-wider uppercase px-14 py-5 text-lg rounded-full shadow-xl transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: '#0A1551' }}
+              className="inline-block text-white font-semibold tracking-wider uppercase px-12 py-4 text-lg rounded-full shadow-xl transition-all duration-300"
+              style={{ backgroundColor: '#001260' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#243178')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#001260')}
             >
               Book Your Health Checkup
             </Link>
