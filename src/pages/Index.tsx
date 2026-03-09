@@ -136,9 +136,24 @@ const Index = () => {
   const [testSlide, setTestSlide] = useState(0);
   const [pkgSlide, setPkgSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const bodyScrollRef = useRef<HTMLDivElement>(null);
 
   const maxTestSlide = Math.max(0, diagnosticTests.length - 3);
   const maxPkgSlide = Math.max(0, healthPackages.length - 3);
+
+  // Auto-scroll for body system icons
+  useEffect(() => {
+    const container = bodyScrollRef.current;
+    if (!container) return;
+    let scrollDirection = 1;
+    const interval = setInterval(() => {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= maxScroll) scrollDirection = -1;
+      if (container.scrollLeft <= 0) scrollDirection = 1;
+      container.scrollBy({ left: scrollDirection * 2, behavior: 'smooth' });
+    }, 30);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="bg-background">
