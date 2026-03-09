@@ -342,7 +342,7 @@ const Index = () => {
               </Link>
             </div>
             <div className="lg:w-2/3 w-full overflow-hidden">
-              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4">
+              <div ref={bodyScrollRef} className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 scrollbar-hide">
                 {bodySystemIcons.map((item) => (
                   <div
                     key={item.name}
