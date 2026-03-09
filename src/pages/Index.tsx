@@ -579,29 +579,29 @@ const Index = () => {
       </section>
 
       {/* FAQs */}
-      <section className="bg-background py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-aarvak-gray-900">FAQ's</h2>
-            <p className="mt-2 text-aarvak-gray-600">Everything You Need To Know</p>
+      <section className="bg-white py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">FAQ's</h2>
+            <p className="mt-2 text-gray-600">Everything You Need To Know</p>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className="border rounded-xl overflow-hidden"
+                className="bg-gray-100 rounded-2xl overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full text-left px-6 py-4 flex items-center justify-between text-sm font-medium text-aarvak-gray-900"
+                  className="w-full text-left px-8 py-5 flex items-center justify-between text-base font-medium text-gray-900"
                 >
                   {faq.q}
-                  <ChevronRight
-                    className={`w-4 h-4 transition-transform ${openFaq === i ? "rotate-90" : ""}`}
-                  />
+                  <span className="text-2xl font-light text-gray-500">
+                    {openFaq === i ? "−" : "+"}
+                  </span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-4 text-sm text-aarvak-gray-600 leading-relaxed">
+                  <div className="px-8 pb-5 text-sm text-gray-600 leading-relaxed">
                     {faq.a}
                   </div>
                 )}
