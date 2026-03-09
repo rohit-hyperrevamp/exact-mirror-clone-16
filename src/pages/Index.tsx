@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
@@ -136,9 +136,24 @@ const Index = () => {
   const [testSlide, setTestSlide] = useState(0);
   const [pkgSlide, setPkgSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const bodyScrollRef = useRef<HTMLDivElement>(null);
 
   const maxTestSlide = Math.max(0, diagnosticTests.length - 3);
   const maxPkgSlide = Math.max(0, healthPackages.length - 3);
+
+  // Auto-scroll for body system icons
+  useEffect(() => {
+    const container = bodyScrollRef.current;
+    if (!container) return;
+    let scrollDirection = 1;
+    const interval = setInterval(() => {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= maxScroll) scrollDirection = -1;
+      if (container.scrollLeft <= 0) scrollDirection = 1;
+      container.scrollBy({ left: scrollDirection * 2, behavior: 'smooth' });
+    }, 30);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="bg-background">
@@ -327,7 +342,7 @@ const Index = () => {
               </Link>
             </div>
             <div className="lg:w-2/3 w-full overflow-hidden">
-              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4">
+              <div ref={bodyScrollRef} className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 scrollbar-hide">
                 {bodySystemIcons.map((item) => (
                   <div
                     key={item.name}
