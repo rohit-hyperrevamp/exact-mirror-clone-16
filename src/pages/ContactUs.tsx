@@ -11,10 +11,18 @@ const ContactUs = () => {
     message: "",
   });
 
+  const [subscribeEmail, setSubscribeEmail] = useState("");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Name: ${form.name}%0AEmail: ${form.email}%0APhone: ${form.phone}%0ADOB: ${form.dob}%0ASubject: ${form.subject}%0AMessage: ${form.message}`;
     window.open(`https://wa.me/919810063340?text=${msg}`, "_blank");
+  };
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    window.open(`https://wa.me/919810063340?text=Subscribe: ${subscribeEmail}`, "_blank");
+    setSubscribeEmail("");
   };
 
   return (
@@ -150,6 +158,35 @@ const ContactUs = () => {
               </form>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Subscribe Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Health Tips, Straight to Your Inbox
+          </h2>
+          <p className="text-gray-500 mb-8 text-sm max-w-lg mx-auto">
+            Subscribe to our newsletter and stay updated with the latest health tips, diagnostic insights, and exclusive offers from Aarvak Diagnostics.
+          </p>
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:border-blue-500"
+              value={subscribeEmail}
+              onChange={(e) => setSubscribeEmail(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              className="text-white font-semibold px-8 py-3 rounded-lg text-sm transition hover:opacity-90"
+              style={{ backgroundColor: '#0891b2' }}
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </section>
     </div>
