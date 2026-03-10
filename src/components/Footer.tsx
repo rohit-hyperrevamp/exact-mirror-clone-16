@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t mt-10 pt-6 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Aarvak Diagnostics. Designed and Developed by <a href="https://www.hyperrevamp.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">HyperRevamp</a>
+          © {new Date().getFullYear()} Aarvak Diagnostics. Designed and Developed by <a href="https://www.hyperrevamp.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors underline">HyperRevamp</a>
         </div>
       </div>
     </footer>
