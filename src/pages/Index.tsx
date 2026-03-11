@@ -587,7 +587,7 @@ const Index = () => {
               style={{ borderRadius: '20px', minHeight: '420px' }}
             >
               <img
-                src="/images/cop-first.jpeg"
+                src="/images/care-trust-banner.png"
                 alt="Care You Can Trust"
                 className="w-full h-full object-cover"
                 style={{ minHeight: '420px' }}
