@@ -12,6 +12,7 @@ import ContactUs from "./pages/ContactUs";
 import Corporate from "./pages/Corporate";
 import Insights from "./pages/Insights";
 import NotFound from "./pages/NotFound";
+import Pathology from "./pages/Pathology";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import BlogPost from "./pages/BlogPost";
