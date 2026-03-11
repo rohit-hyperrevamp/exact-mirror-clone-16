@@ -9,7 +9,8 @@ const corsHeaders = {
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const RECIPIENT_EMAIL = "marketing@aarvakdiagnostics.com";
-const DEFAULT_FROM = "Aarvak Diagnostics <noreply@aarvakdiagnostics.com>";
+// Use Resend's test sender until aarvakdiagnostics.com is verified in Resend dashboard
+const DEFAULT_FROM = "Aarvak Diagnostics <onboarding@resend.dev>";
 
 const jsonResponse = (status: number, body: Record<string, unknown>) =>
   new Response(JSON.stringify(body), {
@@ -43,12 +44,14 @@ serve(async (req) => {
     const resendFrom = Deno.env.get("RESEND_FROM_EMAIL") || DEFAULT_FROM;
 
     const payload = await req.json();
+    console.log("Received payload:", JSON.stringify(payload));
     const { type, data } = payload as {
       type?: "contact" | "subscribe";
       data?: Record<string, unknown>;
     };
 
     if (!type || !data) {
+      console.error("Invalid payload: missing type or data");
       return jsonResponse(400, { success: false, error: "Invalid payload" });
     }
 
@@ -99,6 +102,7 @@ serve(async (req) => {
       return jsonResponse(400, { success: false, error: "Invalid form type" });
     }
 
+    console.log("Sending email via Resend:", { from: resendFrom, to: RECIPIENT_EMAIL, subject });
     const resendResponse = await fetch(RESEND_API_URL, {
       method: "POST",
       headers: {
@@ -142,6 +146,7 @@ serve(async (req) => {
   } catch (error: unknown) {
     console.error("Error sending email:", error);
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    console.error("Returning error response:", errorMessage);
     return jsonResponse(500, { success: false, error: errorMessage });
   }
 });
