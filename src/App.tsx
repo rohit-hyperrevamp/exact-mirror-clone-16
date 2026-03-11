@@ -13,6 +13,8 @@ import Corporate from "./pages/Corporate";
 import Insights from "./pages/Insights";
 import NotFound from "./pages/NotFound";
 import Pathology from "./pages/Pathology";
+import Radiology from "./pages/Radiology";
+import HealthCheckups from "./pages/HealthCheckups";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import BlogPost from "./pages/BlogPost";
