@@ -158,6 +158,9 @@ const Index = () => {
   const [heroSlide, setHeroSlide] = useState(0);
   const bodyScrollRef = useRef<HTMLDivElement>(null);
 
+  const maxTestSlide = Math.max(0, diagnosticTests.length - 3);
+  const maxPkgSlide = Math.max(0, healthPackages.length - 3);
+
   const nextHeroSlide = useCallback(() => {
     setHeroSlide((prev) => (prev + 1) % heroSlides.length);
   }, []);
