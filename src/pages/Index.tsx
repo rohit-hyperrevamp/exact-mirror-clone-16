@@ -652,9 +652,9 @@ const Index = () => {
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{ gap: '28px' }}>
             {[
-              { title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results.", Icon: ShieldCheck },
-              { title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step.", Icon: Heart },
-              { title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results.", Icon: UserCheck },
+              { title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results.", img: "/images/testing.png" },
+              { title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step.", img: "/images/patient.png" },
+              { title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results.", img: "/images/professional.png" },
             ].map((item) => (
               <div
                 key={item.title}
@@ -675,7 +675,7 @@ const Index = () => {
                     marginBottom: '20px',
                   }}
                 >
-                  <item.Icon className="text-aarvak-green" style={{ width: '26px', height: '26px' }} />
+                  <img src={item.img} alt={item.title} style={{ width: '28px', height: '28px' }} />
                 </div>
                 <h3 className="font-bold text-aarvak-gray-900" style={{ fontSize: '17px', marginBottom: '8px' }}>
                   {item.title}
