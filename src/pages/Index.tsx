@@ -137,51 +137,46 @@ const Index = () => {
   const [testSlide, setTestSlide] = useState(0);
   const [pkgSlide, setPkgSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [heroSlide, setHeroSlide] = useState(0);
   const bodyScrollRef = useRef<HTMLDivElement>(null);
 
   const maxTestSlide = Math.max(0, diagnosticTests.length - 3);
   const maxPkgSlide = Math.max(0, healthPackages.length - 3);
 
-  const nextHeroSlide = useCallback(() => {
-    setHeroSlide((prev) => (prev + 1) % heroSlides.length);
-  }, []);
-
-  const prevHeroSlide = useCallback(() => {
-    setHeroSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  }, []);
-
+  // Auto-scroll for body system icons
   useEffect(() => {
-    const timer = setInterval(nextHeroSlide, 5000);
-    return () => clearInterval(timer);
-  }, [nextHeroSlide]);
+    const container = bodyScrollRef.current;
+    if (!container) return;
+    let scrollDirection = 1;
+    const interval = setInterval(() => {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= maxScroll) scrollDirection = -1;
+      if (container.scrollLeft <= 0) scrollDirection = 1;
+      container.scrollBy({ left: scrollDirection * 2, behavior: 'smooth' });
+    }, 30);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="bg-background">
       {/* Hero Banner */}
-      <section className="relative mx-2 md:mx-4 rounded-none md:rounded-[14px] overflow-hidden h-[500px] md:h-[580px] lg:h-[620px]">
-        {heroSlides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              index === heroSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            <img
-              src={slide.image}
-              alt={slide.heading}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
-        ))}
+      <section className="relative mx-2 md:mx-4 rounded-none md:rounded-[14px] overflow-hidden h-[420px] md:h-[540px] lg:h-[600px]">
+        <img
+          src="/images/arvkbg.png"
+          alt="Aarvak Diagnostics Laboratory"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-black/30" />
 
         {/* Hero Content */}
         <div className="relative z-20 flex flex-col md:flex-row items-center justify-center h-full px-6 md:px-16 lg:px-24">
           {/* Left: Title */}
           <div className="w-full md:w-auto text-center md:text-right md:pr-8">
-            <p className="text-primary-foreground text-2xl md:text-4xl lg:text-5xl font-bold leading-tight whitespace-pre-line">
-              Aarvak{"\n"}Diagnostics
+            <p className="text-primary-foreground text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              Aarvak
+            </p>
+            <p className="text-primary-foreground text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              Diagnostics
             </p>
           </div>
 
@@ -190,11 +185,11 @@ const Index = () => {
 
           {/* Right: Heading + CTA */}
           <div className="w-full md:w-auto text-center md:text-left mt-4 md:mt-0 max-w-md">
-            <h1 className="text-primary-foreground text-2xl md:text-3xl lg:text-[42px] font-bold leading-tight whitespace-pre-line">
-              {heroSlides[heroSlide].heading}
+            <h1 className="text-primary-foreground text-2xl md:text-3xl lg:text-[42px] font-bold leading-tight">
+              Diagnostic Care You<br />Can Trust
             </h1>
             <p className="text-primary-foreground/90 text-sm md:text-base mt-3">
-              {heroSlides[heroSlide].description}
+              Reliable tests and imaging, with care you can trust.
             </p>
             <div className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
               <Link
@@ -229,33 +224,6 @@ const Index = () => {
               <p className="text-foreground text-xs md:text-sm mt-1">Accuracy Rate</p>
             </div>
           </div>
-        </div>
-
-        {/* Carousel Controls - Bottom Right */}
-        <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 flex items-center gap-3">
-          <button
-            onClick={prevHeroSlide}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary-foreground/60 text-primary-foreground flex items-center justify-center hover:bg-primary-foreground/20 transition"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <div className="flex gap-2">
-            {heroSlides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setHeroSlide(i)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  i === heroSlide ? "bg-aarvak-blue" : "bg-primary-foreground/50"
-                }`}
-              />
-            ))}
-          </div>
-          <button
-            onClick={nextHeroSlide}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary-foreground/60 text-primary-foreground flex items-center justify-center hover:bg-primary-foreground/20 transition"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
         </div>
       </section>
 
