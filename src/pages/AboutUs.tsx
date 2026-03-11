@@ -7,7 +7,7 @@ const AboutUs = () => {
       <section className="relative w-full overflow-hidden px-2 md:px-3">
         <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: '420px' }}>
           <img
-            src="/images/aarvakbanner.jpeg"
+            src="/images/about-banner.png"
             alt="About Aarvak"
             className="absolute inset-0 w-full h-full object-cover"
           />
