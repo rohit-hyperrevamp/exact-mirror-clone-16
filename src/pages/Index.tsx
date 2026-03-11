@@ -626,9 +626,21 @@ const Index = () => {
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results.", icon: "✓" },
-              { title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step.", icon: "👤" },
-              { title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results.", icon: "👨‍⚕️" },
+              {
+                title: "Accurate & Reliable Testing",
+                desc: "Advanced equipment and quality-controlled processes for dependable results.",
+                iconPath: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+              },
+              {
+                title: "Patient-First Approach",
+                desc: "Comfortable testing experience with clear communication at every step.",
+                iconPath: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
+              },
+              {
+                title: "Experienced Professionals",
+                desc: "Advanced equipment and quality-controlled processes for dependable results.",
+                iconPath: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
+              },
             ].map((item) => (
               <div
                 key={item.title}
@@ -647,10 +659,11 @@ const Index = () => {
                     borderRadius: '50%',
                     backgroundColor: 'hsl(145, 60%, 90%)',
                     marginBottom: '18px',
-                    fontSize: '24px',
                   }}
                 >
-                  {item.icon}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="hsl(145, 60%, 35%)" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d={item.iconPath} />
+                  </svg>
                 </div>
                 <h3 className="font-bold text-aarvak-gray-900 mb-2" style={{ fontSize: '17px' }}>
                   {item.title}
