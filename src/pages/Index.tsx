@@ -580,25 +580,29 @@ const Index = () => {
           </div>
 
           {/* Image Banner with overlapping card */}
-          <div className="relative mb-32 md:mb-40">
+          <div className="relative" style={{ marginBottom: '100px' }}>
+            {/* Full image - taller to allow card overlap */}
             <div
               className="w-full overflow-hidden"
-              style={{ borderRadius: '20px', height: '400px' }}
+              style={{ borderRadius: '20px', minHeight: '420px' }}
             >
               <img
                 src="/images/cop-first.jpeg"
                 alt="Care You Can Trust"
                 className="w-full h-full object-cover"
+                style={{ minHeight: '420px' }}
               />
             </div>
 
-            {/* Overlapping White Card */}
+            {/* Overlapping White Card - bottom left, partially outside image */}
             <div
-              className="absolute left-4 sm:left-8 md:left-10"
+              className="absolute left-0 sm:left-0 md:left-0"
               style={{
-                bottom: '-80px',
-                maxWidth: '720px',
-                width: 'calc(100% - 32px)',
+                bottom: '-90px',
+                left: '0px',
+                maxWidth: '680px',
+                width: 'calc(55%)',
+                zIndex: 10,
               }}
             >
               <div
@@ -606,16 +610,16 @@ const Index = () => {
                 style={{
                   borderRadius: '20px',
                   boxShadow: '0 8px 30px rgba(0,0,0,0.10)',
-                  padding: '28px 32px',
+                  padding: '32px 36px',
                 }}
               >
-                <p className="text-sm sm:text-base text-aarvak-gray-600 leading-relaxed">
+                <p className="text-aarvak-gray-600 leading-relaxed" style={{ fontSize: '15px' }}>
                   Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
                   className="inline-block mt-5 bg-aarvak-blue text-primary-foreground px-6 py-2.5 font-semibold text-sm hover:bg-aarvak-blue-hover transition-colors"
-                  style={{ borderRadius: '8px' }}
+                  style={{ borderRadius: '24px' }}
                 >
                   Learn More About Us
                 </Link>
