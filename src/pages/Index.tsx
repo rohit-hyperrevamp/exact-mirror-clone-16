@@ -695,12 +695,12 @@ const Index = () => {
             <p className="mt-2 text-aarvak-gray-600" style={{ fontSize: '16px' }}>Simple health information you can trust.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" style={{ alignItems: 'stretch' }}>
             {/* Featured (first) blog - large card */}
             {blogPosts.slice(0, 1).map((blog) => (
-              <Link key={blog.slug} to={`/insights/${blog.slug}`} className="group">
-                <div className="bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition h-full">
-                  <img src={blog.img} alt={blog.title} className="w-full object-cover group-hover:scale-[1.02] transition duration-300" style={{ height: '340px' }} />
+              <Link key={blog.slug} to={`/insights/${blog.slug}`} className="group flex">
+                <div className="bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col w-full">
+                  <img src={blog.img} alt={blog.title} className="w-full object-cover group-hover:scale-[1.02] transition duration-300 flex-1" style={{ minHeight: '300px' }} />
                   <div style={{ padding: '20px 24px' }}>
                     <span className="inline-block text-xs font-medium text-aarvak-gray-900 px-3 py-1 rounded-full mb-3" style={{ border: '1px solid hsl(var(--border))' }}>
                       {blog.dateSort}
@@ -717,13 +717,13 @@ const Index = () => {
               </Link>
             ))}
 
-            {/* Right column - 2 stacked horizontal cards */}
+            {/* Right column - 2 stacked horizontal cards, equal height to left */}
             <div className="flex flex-col gap-8">
               {blogPosts.slice(1, 3).map((blog) => (
-                <Link key={blog.slug} to={`/insights/${blog.slug}`} className="group">
-                  <div className="bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col sm:flex-row">
-                    <img src={blog.img} alt={blog.title} className="w-full sm:w-[220px] h-[180px] object-cover flex-shrink-0 group-hover:scale-[1.02] transition duration-300" style={{ borderRadius: '16px 0 0 16px' }} />
-                    <div className="flex flex-col justify-center" style={{ padding: '16px 20px' }}>
+                <Link key={blog.slug} to={`/insights/${blog.slug}`} className="group flex flex-1">
+                  <div className="bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col sm:flex-row w-full">
+                    <img src={blog.img} alt={blog.title} className="w-full sm:w-[200px] h-[180px] sm:h-auto object-cover flex-shrink-0 group-hover:scale-[1.02] transition duration-300" style={{ borderRadius: '16px 0 0 16px' }} />
+                    <div className="flex flex-col justify-center flex-1" style={{ padding: '16px 20px' }}>
                       <span className="inline-block text-xs font-medium text-aarvak-gray-900 px-3 py-1 rounded-full mb-2 self-start" style={{ border: '1px solid hsl(var(--border))' }}>
                         {blog.dateSort}
                       </span>
