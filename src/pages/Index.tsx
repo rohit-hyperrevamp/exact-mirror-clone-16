@@ -823,41 +823,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Newsletter / Health Tips */}
-      <section className="relative w-full overflow-hidden" style={{ height: '420px' }}>
-        <img
-          src="/images/healthcta.png"
-          alt="Lab"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 flex items-center justify-center h-full px-4">
-          <div
-            className="w-full max-w-2xl text-primary-foreground"
-            style={{
-              background: 'rgba(255,255,255,0.12)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.18)',
-              borderRadius: '20px',
-              padding: '48px 52px',
-            }}
-          >
-            <h2 className="font-bold italic" style={{ fontSize: '28px', marginBottom: '36px' }}>
-              Health Tips, Straight to Your Inbox
-            </h2>
-            <div className="flex items-center" style={{ borderBottom: '1px solid rgba(255,255,255,0.4)', paddingBottom: '8px' }}>
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="bg-transparent flex-1 text-primary-foreground outline-none"
-                style={{ fontSize: '16px', color: 'white' }}
-              />
-              <button className="text-primary-foreground hover:opacity-80 transition" style={{ fontSize: '28px', marginLeft: '16px' }}>›</button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <NewsletterSection />
     </div>
   );
 };
