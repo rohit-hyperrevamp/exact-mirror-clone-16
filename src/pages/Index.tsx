@@ -580,10 +580,10 @@ const Index = () => {
           </div>
 
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ marginBottom: '120px' }}>
+          <div className="relative" style={{ marginBottom: '180px' }}>
             <div
               className="w-full overflow-hidden"
-              style={{ borderRadius: '14px', height: '480px' }}
+              style={{ borderRadius: '20px', height: '420px' }}
             >
               <img
                 src="/images/care-banner.png"
@@ -594,28 +594,28 @@ const Index = () => {
 
             {/* Overlapping White Card */}
             <div
-              className="absolute left-0 sm:left-0"
+              className="absolute left-0 sm:left-4 md:left-6"
               style={{
-                bottom: '-100px',
-                maxWidth: '54%',
-                width: '100%',
+                bottom: '-140px',
+                maxWidth: '780px',
+                width: 'calc(100% - 16px)',
               }}
             >
               <div
                 className="bg-background"
                 style={{
-                  borderRadius: '0 20px 0 14px',
+                  borderRadius: '20px',
                   boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
-                  padding: '36px 40px',
+                  padding: '32px 36px',
                 }}
               >
-                <p className="text-sm sm:text-base text-foreground leading-relaxed" style={{ fontWeight: 400 }}>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
                   className="inline-block mt-5 bg-secondary text-secondary-foreground px-6 py-2.5 font-semibold text-sm hover:opacity-90 transition-colors"
-                  style={{ borderRadius: '20px' }}
+                  style={{ borderRadius: '8px' }}
                 >
                   Learn More About Us
                 </Link>
