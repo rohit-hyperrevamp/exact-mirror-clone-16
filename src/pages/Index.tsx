@@ -834,7 +834,7 @@ const Index = () => {
       {/* Newsletter / Health Tips */}
       <section className="relative w-full overflow-hidden" style={{ height: '420px' }}>
         <img
-          src="/images/ServiceslLeft.png"
+          src="/images/healthcta.png"
           alt="Lab"
           className="absolute inset-0 w-full h-full object-cover"
         />
