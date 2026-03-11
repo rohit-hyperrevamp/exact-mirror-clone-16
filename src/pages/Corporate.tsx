@@ -177,31 +177,32 @@ const Corporate = () => {
       </section>
 
       {/* Certified Peace of Mind */}
-      <section className="py-20 px-4 md:px-8 bg-muted">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-[38px] font-bold text-foreground mb-4">Certified Peace of Mind</h2>
-          <p className="text-muted-foreground leading-relaxed text-[15px]">
-            Trust is earned, not given. <strong className="text-foreground">Government Haryana Clinical Establishments</strong> registration ensures we adhere to the highest ethical practices and safety standards in the industry. Your team's health is our top priority.
+      <section className="py-16 px-4 md:px-8 bg-muted">
+        <div className="max-w-4xl mx-auto rounded-2xl px-10 py-12 text-center text-white" style={{ backgroundColor: '#0172B6' }}>
+          <h2 className="text-2xl md:text-3xl font-bold mb-5">Certified Peace of Mind</h2>
+          <p className="leading-relaxed text-[15px] text-white/90">
+            Trust is earned, not given. <strong className="text-white">Government Haryana Clinical Establishments</strong>registration ensures we adhere to the highest ethical practices and safety standards in the industry. Your team's health is our top priority.
           </p>
         </div>
       </section>
 
       {/* Contact */}
-      <section className="py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-[38px] font-bold text-foreground mb-6">Contact Us</h2>
-          <div className="text-muted-foreground space-y-2 text-[15px]">
-            <p><strong className="text-foreground">Phone:</strong> <a href="tel:+919810063340" className="hover:text-secondary transition">+91 9810063340</a> | <a href="tel:+919311245957" className="hover:text-secondary transition">+91 9311245957</a></p>
-            <p><strong className="text-foreground">Email:</strong> <a href="mailto:aarvakdiagnostic@gmail.com" className="hover:text-secondary transition">aarvakdiagnostic@gmail.com</a></p>
-            <p><strong className="text-foreground">Visit Us:</strong> 1310, Behind SBI Bank, Badshahpur, Sohna Road, Sector - 66, Gurugram</p>
+      <section className="py-16 px-4 md:px-8 bg-muted">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Contact Us</h2>
+          <div className="space-y-4 text-[15px]">
+            <p><strong className="text-foreground">Phone:</strong>{" "}
+              <a href="tel:+919810063340" className="text-secondary hover:underline">+91 9810063340</a>
+              {" | "}
+              <a href="tel:+919311245957" className="text-secondary hover:underline">+91 9311245957</a>
+            </p>
+            <p><strong className="text-foreground">Email:</strong>{" "}
+              <a href="mailto:aarvakdiagnostic@gmail.com" className="text-secondary hover:underline">aarvakdiagnostic@gmail.com</a>
+            </p>
+            <p><strong className="text-foreground">Visit Us:</strong> 1310, Behind SBI Bank, Badshahpur, Sohna Road, Sector – 66, Gurugram</p>
           </div>
-          <Link
-            to="/contact-us#contact"
-            className="inline-block mt-6 text-white font-semibold px-8 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
-          >
-            Get a Free Consultation
-          </Link>
-          <p className="mt-3 text-sm text-muted-foreground">Reach out today to discuss your corporate health solutions.</p>
+          <p className="mt-8 font-bold text-foreground text-lg">Get a Free Consultation</p>
+          <p className="mt-2 text-sm text-muted-foreground">Reach out today to discuss your corporate health solutions.</p>
         </div>
       </section>
 
