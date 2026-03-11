@@ -35,7 +35,7 @@ const Navbar = () => {
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.label} className="relative group">
-                <button className="flex items-center gap-1 text-[15px] font-medium text-gray-700 hover:text-green-700 transition py-5">
+                <button className="flex items-center gap-1 text-[15px] font-medium text-aarvak-blue hover:text-aarvak-blue-dark transition py-5">
                   {link.label}
                   <ChevronDown className="w-4 h-4" />
                 </button>
