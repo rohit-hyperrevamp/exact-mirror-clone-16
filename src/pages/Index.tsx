@@ -596,7 +596,7 @@ const Index = () => {
             <div
               className="absolute left-4 sm:left-8 md:left-10"
               style={{
-                bottom: '-80px',
+                bottom: '-100px',
                 maxWidth: '720px',
                 width: 'calc(100% - 32px)',
               }}
@@ -606,7 +606,7 @@ const Index = () => {
                 style={{
                   borderRadius: '20px',
                   boxShadow: '0 8px 30px rgba(0,0,0,0.10)',
-                  padding: '28px 32px',
+                  padding: '32px 36px',
                 }}
               >
                 <p className="text-sm sm:text-base text-aarvak-gray-600 leading-relaxed">
