@@ -691,35 +691,54 @@ const Index = () => {
       <section className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-aarvak-gray-900">Health Insights</h2>
-            <p className="mt-2 text-aarvak-gray-600">Simple health information you can trust.</p>
+            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '36px' }}>Health Insights</h2>
+            <p className="mt-2 text-aarvak-gray-600" style={{ fontSize: '16px' }}>Simple health information you can trust.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {blogPosts.slice(0, 3).map((blog) => (
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Featured (first) blog - large card */}
+            {blogPosts.slice(0, 1).map((blog) => (
               <Link key={blog.slug} to={`/insights/${blog.slug}`} className="group">
-                <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition">
-                  <img src={blog.img} alt={blog.title} className="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-                  <div className="p-4">
-                    <span className="inline-block text-xs font-semibold text-white px-3 py-1 rounded-full mb-2" style={{ backgroundColor: '#0891b2' }}>
-                      {blog.date}
+                <div className="bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition h-full">
+                  <img src={blog.img} alt={blog.title} className="w-full object-cover group-hover:scale-[1.02] transition duration-300" style={{ height: '340px' }} />
+                  <div style={{ padding: '20px 24px' }}>
+                    <span className="inline-block text-xs font-medium text-aarvak-gray-900 px-3 py-1 rounded-full mb-3" style={{ border: '1px solid hsl(var(--border))' }}>
+                      {blog.dateSort}
                     </span>
-                    <h3 className="font-semibold text-aarvak-gray-900 mb-2 group-hover:text-aarvak-blue transition line-clamp-2">
+                    <h3 className="font-bold text-aarvak-gray-900 group-hover:text-aarvak-blue transition" style={{ fontSize: '20px', marginBottom: '8px' }}>
                       {blog.title}
                     </h3>
-                    <p className="text-sm text-aarvak-gray-600 line-clamp-2">{blog.desc}</p>
+                    <p className="text-aarvak-gray-600 line-clamp-2" style={{ fontSize: '14px', lineHeight: '1.6' }}>{blog.desc}</p>
+                    <p className="text-aarvak-gray-600 mt-3" style={{ fontSize: '13px' }}>
+                      By {blog.author} &nbsp;Category: {blog.category} &nbsp;{blog.readTime} read
+                    </p>
                   </div>
                 </div>
               </Link>
             ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              to="/insights"
-              className="inline-block px-8 py-3 rounded-full font-semibold text-white transition hover:opacity-90"
-              style={{ backgroundColor: '#001260' }}
-            >
-              View All
-            </Link>
+
+            {/* Right column - 2 stacked horizontal cards */}
+            <div className="flex flex-col gap-8">
+              {blogPosts.slice(1, 3).map((blog) => (
+                <Link key={blog.slug} to={`/insights/${blog.slug}`} className="group">
+                  <div className="bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col sm:flex-row">
+                    <img src={blog.img} alt={blog.title} className="w-full sm:w-[220px] h-[180px] object-cover flex-shrink-0 group-hover:scale-[1.02] transition duration-300" style={{ borderRadius: '16px 0 0 16px' }} />
+                    <div className="flex flex-col justify-center" style={{ padding: '16px 20px' }}>
+                      <span className="inline-block text-xs font-medium text-aarvak-gray-900 px-3 py-1 rounded-full mb-2 self-start" style={{ border: '1px solid hsl(var(--border))' }}>
+                        {blog.dateSort}
+                      </span>
+                      <h3 className="font-bold text-aarvak-gray-900 group-hover:text-aarvak-blue transition line-clamp-2" style={{ fontSize: '16px', marginBottom: '6px' }}>
+                        {blog.title}
+                      </h3>
+                      <p className="text-aarvak-gray-600 line-clamp-2" style={{ fontSize: '13px', lineHeight: '1.6' }}>{blog.desc}</p>
+                      <p className="text-aarvak-gray-600 mt-2" style={{ fontSize: '12px' }}>
+                        By {blog.author} &nbsp;Category: {blog.category} &nbsp;{blog.readTime} read
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
