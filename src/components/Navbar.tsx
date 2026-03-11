@@ -10,8 +10,8 @@ const navLinks = [
     href: "#",
     children: [
       { label: "Pathology", href: "/pathology", image: "/images/dept-pathology.jpg" },
-      { label: "Radiology", href: "/contact-us#contact", image: "/images/dept-radiology.jpg" },
-      { label: "Health Checkups", href: "/contact-us#contact", image: "/images/dept-health-checkups.jpg" },
+      { label: "Radiology", href: "/radiology", image: "/images/dept-radiology.jpg" },
+      { label: "Health Checkups", href: "/health-checkups", image: "/images/dept-health-checkups.jpg" },
     ],
   },
   { label: "Insights", href: "/insights" },
