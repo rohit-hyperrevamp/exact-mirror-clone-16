@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { submitContactForm, submitSubscribeForm } from "@/lib/submitForm";
+import NewsletterSection from "@/components/NewsletterSection";
 
 const ContactUs = () => {
   const [form, setForm] = useState({
@@ -206,6 +207,8 @@ const ContactUs = () => {
           </form>
         </div>
       </section>
+
+      <NewsletterSection />
     </div>
   );
 };

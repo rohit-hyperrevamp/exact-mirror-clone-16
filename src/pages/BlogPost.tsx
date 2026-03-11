@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
+import NewsletterSection from "@/components/NewsletterSection";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -102,6 +103,8 @@ const BlogPost = () => {
           {renderContent(post.content)}
         </div>
       </section>
+
+      <NewsletterSection />
     </div>
   );
 };
