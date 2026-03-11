@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Zap, Wind } from "lucide-react";
+import NewsletterSection from "@/components/NewsletterSection";
 
 const taglineItems = [
   { bold: "Modern", sub: "Imaging Equipment" },
