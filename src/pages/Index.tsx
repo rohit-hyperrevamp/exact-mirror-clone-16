@@ -722,7 +722,7 @@ const Index = () => {
               {blogPosts.slice(1, 3).map((blog) => (
                 <Link key={blog.slug} to={`/insights/${blog.slug}`} className="group flex flex-1">
                   <div className="bg-background rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col sm:flex-row w-full">
-                    <img src={blog.img} alt={blog.title} className="w-full sm:w-[200px] h-[180px] sm:h-auto object-cover flex-shrink-0 group-hover:scale-[1.02] transition duration-300" style={{ borderRadius: '16px 0 0 16px' }} />
+                    <img src={blog.img} alt={blog.title} className="w-full sm:w-[240px] h-[180px] sm:h-auto object-cover flex-shrink-0 group-hover:scale-[1.02] transition duration-300" style={{ borderRadius: '16px 0 0 16px' }} />
                     <div className="flex flex-col justify-center flex-1" style={{ padding: '16px 20px' }}>
                       <span className="inline-block text-xs font-medium text-aarvak-gray-900 px-3 py-1 rounded-full mb-2 self-start" style={{ border: '1px solid hsl(var(--border))' }}>
                         {blog.dateSort}
