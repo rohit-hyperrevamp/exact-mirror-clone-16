@@ -636,7 +636,7 @@ const Index = () => {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-background text-center"
+                className="bg-background flex flex-col items-center text-center"
                 style={{
                   borderRadius: '16px',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.07)',
