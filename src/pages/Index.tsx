@@ -447,11 +447,11 @@ const Index = () => {
                           <div
                             className="flex items-center justify-center flex-shrink-0"
                             style={{
-                              width: '44px',
-                              height: '44px',
+                              width: '48px',
+                              height: '48px',
                               borderRadius: '50%',
-                              backgroundColor: 'rgba(255,255,255,0.2)',
-                              border: '1px solid rgba(255,255,255,0.3)',
+                              backgroundColor: '#FFFFFF',
+                              padding: '10px',
                             }}
                           >
                             <img alt="" src="/images/health-care.png" className="w-5 h-5" />
