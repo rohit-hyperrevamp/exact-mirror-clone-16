@@ -593,11 +593,11 @@ const Index = () => {
               />
             </div>
 
-            {/* Overlapping White Card - anchored bottom-left, extending below image */}
+            {/* Overlapping White Card */}
             <div
               className="absolute hidden md:block"
               style={{
-                bottom: '-100px',
+                bottom: '-90px',
                 left: '0px',
                 width: '54%',
                 maxWidth: '660px',
@@ -607,7 +607,7 @@ const Index = () => {
               <div
                 className="bg-background"
                 style={{
-                  borderRadius: '0 20px 20px 0',
+                  borderRadius: '20px',
                   boxShadow: '0 8px 36px rgba(0,0,0,0.08)',
                   padding: '32px 36px',
                 }}
