@@ -9,8 +9,9 @@ const navLinks = [
     label: "Departments",
     href: "#",
     children: [
-      { label: "Pathology", href: "/contact-us#contact" },
-      { label: "Radiology", href: "/contact-us#contact" },
+      { label: "Pathology", href: "/contact-us#contact", image: "/images/dept-pathology.jpg" },
+      { label: "Radiology", href: "/contact-us#contact", image: "/images/dept-radiology.jpg" },
+      { label: "Health Checkups", href: "/contact-us#contact", image: "/images/dept-health-checkups.jpg" },
     ],
   },
   { label: "Insights", href: "/insights" },
@@ -35,18 +36,27 @@ const Navbar = () => {
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.label} className="relative group">
-                <button className="flex items-center gap-1 text-[15px] font-medium text-gray-700 hover:text-green-700 transition py-5">
+                <button className="flex items-center gap-1 text-[15px] font-medium text-aarvak-blue hover:text-aarvak-blue transition py-5">
                   {link.label}
                   <ChevronDown className="w-4 h-4" />
                 </button>
-                <div className="absolute top-full left-0 mt-0 bg-white rounded-lg shadow-lg border py-2 min-w-[180px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 bg-background rounded-2xl shadow-xl border border-border p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 flex gap-4" style={{ width: '580px' }}>
                   {link.children.map((child) => (
                     <Link
                       key={child.label}
                       to={child.href}
-                      className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-green-700"
+                      className="relative block rounded-xl overflow-hidden flex-1 group/card"
+                      style={{ height: '180px' }}
                     >
-                      {child.label}
+                      <img
+                        src={child.image}
+                        alt={child.label}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <span className="absolute bottom-3 left-4 text-sm font-semibold text-white">
+                        {child.label}
+                      </span>
                     </Link>
                   ))}
                 </div>
