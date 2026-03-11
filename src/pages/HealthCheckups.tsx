@@ -137,38 +137,45 @@ const HealthCheckups = () => {
       <section className="py-20 px-4 md:px-8 bg-muted">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-[42px] font-bold text-foreground text-center mb-12">Featured Health Packages</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {packages.map((pkg, i) => (
-              <div key={i} className="bg-background rounded-2xl p-8 shadow-sm relative overflow-hidden">
+              <div
+                key={i}
+                className={`rounded-2xl p-7 relative overflow-hidden text-white ${i === 2 ? 'md:col-span-2' : ''}`}
+                style={{ background: 'linear-gradient(135deg, #1b75a6, #0c3f5d)' }}
+              >
+                {pkg.badge && (
+                  <div className="absolute top-4 right-4 bg-white text-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                    % {pkg.badge}
+                  </div>
+                )}
                 <div className="flex items-center gap-3 mb-6">
-                  <img src="/icons/heart-package.png" alt="" className="w-10 h-10" />
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                    <img src="/icons/heart-package.png" alt="" className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold">{pkg.name}</h3>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-5">{pkg.name}</h3>
-                <ul className="space-y-3 mb-8">
+                <div className={`grid gap-x-8 gap-y-4 mb-8 ${i === 2 ? 'grid-cols-2 md:grid-cols-5' : 'grid-cols-2 md:grid-cols-3'}`}>
                   {pkg.items.map((item, j) => (
-                    <li key={j} className="flex items-center gap-3 text-sm text-muted-foreground">
-                      <img src="/icons/check.png" alt="" className="w-4 h-4 flex-shrink-0" />
+                    <div key={j} className="flex items-center gap-2 text-sm">
+                      <img src="/icons/check.png" alt="" className="w-5 h-5 flex-shrink-0" />
                       {item}
-                    </li>
+                    </div>
                   ))}
-                </ul>
-                <div className="border-t border-border pt-5">
-                  <div className="flex items-baseline gap-1 mb-4">
-                    <span className="text-xs text-muted-foreground">Price</span>
-                    <span className="text-2xl font-bold text-foreground">₹ {pkg.price}</span>
+                </div>
+                <div className="flex items-center justify-between mt-auto">
+                  <div className="inline-flex items-center gap-2 border border-white/40 rounded-lg px-4 py-2">
+                    <span className="text-sm font-medium">Price</span>
+                    <span className="text-2xl font-bold">₹ {pkg.price}</span>
                   </div>
                   <Link
                     to="/contact-us#contact"
-                    className="inline-block w-full text-center bg-secondary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-secondary/90 transition"
+                    className="inline-block px-6 py-2.5 rounded-lg font-semibold text-sm text-foreground"
+                    style={{ backgroundColor: '#f5b800' }}
                   >
                     Book Now
                   </Link>
                 </div>
-                {pkg.badge && (
-                  <div className="absolute top-4 right-4 bg-secondary/10 text-secondary text-xs font-semibold px-3 py-1 rounded-full">
-                    % {pkg.badge}
-                  </div>
-                )}
               </div>
             ))}
           </div>
