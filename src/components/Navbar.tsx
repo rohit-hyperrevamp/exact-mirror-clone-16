@@ -9,7 +9,7 @@ const navLinks = [
     label: "Departments",
     href: "#",
     children: [
-      { label: "Pathology", href: "/contact-us#contact", image: "/images/dept-pathology.jpg" },
+      { label: "Pathology", href: "/pathology", image: "/images/dept-pathology.jpg" },
       { label: "Radiology", href: "/contact-us#contact", image: "/images/dept-radiology.jpg" },
       { label: "Health Checkups", href: "/contact-us#contact", image: "/images/dept-health-checkups.jpg" },
     ],
