@@ -567,35 +567,95 @@ const Index = () => {
       </section>
 
       {/* Care You Can Trust */}
-      <section className="bg-aarvak-gray-50 py-16">
+      <section className="bg-background py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-aarvak-gray-900">
+          {/* Section Header */}
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-[42px] font-bold text-aarvak-gray-900">
               Care You Can Trust
             </h2>
-            <p className="mt-3 text-base text-aarvak-gray-600 max-w-2xl mx-auto">
+            <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '18px' }}>
               Reliable diagnostics focused on accuracy, safety, and patient comfort.
             </p>
-            <p className="mt-4 text-sm text-aarvak-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
-            </p>
-            <Link
-              to="/about-us"
-              className="inline-block mt-6 text-aarvak-blue font-semibold hover:underline"
-            >
-              Learn More About Us →
-            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          {/* Image Banner with overlapping card */}
+          <div className="relative mb-32 md:mb-40">
+            <div
+              className="w-full overflow-hidden"
+              style={{ borderRadius: '20px', height: '400px' }}
+            >
+              <img
+                src="/images/cop-first.jpeg"
+                alt="Care You Can Trust"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Overlapping White Card */}
+            <div
+              className="absolute left-4 sm:left-8 md:left-10"
+              style={{
+                bottom: '-80px',
+                maxWidth: '720px',
+                width: 'calc(100% - 32px)',
+              }}
+            >
+              <div
+                className="bg-background"
+                style={{
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 30px rgba(0,0,0,0.10)',
+                  padding: '28px 32px',
+                }}
+              >
+                <p className="text-sm sm:text-base text-aarvak-gray-600 leading-relaxed">
+                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
+                </p>
+                <Link
+                  to="/about-us"
+                  className="inline-block mt-5 bg-aarvak-blue text-primary-foreground px-6 py-2.5 font-semibold text-sm hover:bg-aarvak-blue-hover transition-colors"
+                  style={{ borderRadius: '8px' }}
+                >
+                  Learn More About Us
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { img: "/images/testing.png", title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results." },
-              { img: "/images/patient.png", title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step." },
-              { img: "/images/professional.png", title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results." },
+              { title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results.", icon: "✓" },
+              { title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step.", icon: "👤" },
+              { title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results.", icon: "👨‍⚕️" },
             ].map((item) => (
-              <div key={item.title} className="text-center">
-                <img src={item.img} alt={item.title} className="w-16 h-16 mx-auto mb-4" />
-                <h3 className="font-semibold text-aarvak-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-aarvak-gray-600">{item.desc}</p>
+              <div
+                key={item.title}
+                className="bg-background text-center"
+                style={{
+                  borderRadius: '16px',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.07)',
+                  padding: '32px 24px',
+                }}
+              >
+                <div
+                  className="mx-auto flex items-center justify-center"
+                  style={{
+                    width: '56px',
+                    height: '56px',
+                    borderRadius: '50%',
+                    backgroundColor: 'hsl(145, 60%, 90%)',
+                    marginBottom: '18px',
+                    fontSize: '24px',
+                  }}
+                >
+                  {item.icon}
+                </div>
+                <h3 className="font-bold text-aarvak-gray-900 mb-2" style={{ fontSize: '17px' }}>
+                  {item.title}
+                </h3>
+                <p className="text-sm text-aarvak-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
