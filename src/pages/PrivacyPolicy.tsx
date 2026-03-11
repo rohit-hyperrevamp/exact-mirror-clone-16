@@ -1,3 +1,5 @@
+import NewsletterSection from "@/components/NewsletterSection";
+
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-white">
