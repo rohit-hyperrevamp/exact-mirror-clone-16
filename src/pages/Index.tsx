@@ -569,15 +569,6 @@ const Index = () => {
       {/* Care You Can Trust */}
       <section className="bg-background" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Section Header */}
-          <div className="text-center" style={{ marginBottom: '40px' }}>
-            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '40px' }}>
-              Care You Can Trust
-            </h2>
-            <p className="text-aarvak-gray-600" style={{ fontSize: '17px', marginTop: '12px' }}>
-              Reliable diagnostics focused on accuracy, safety, and patient comfort.
-            </p>
-          </div>
 
           {/* Image Banner with overlapping card */}
           <div className="relative" style={{ marginBottom: '140px' }}>
