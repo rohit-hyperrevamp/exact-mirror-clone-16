@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CheckCircle } from "lucide-react";
+import NewsletterSection from "@/components/NewsletterSection";
 
 const taglineItems = [
   { bold: "Tailored", sub: "For All Ages" },
