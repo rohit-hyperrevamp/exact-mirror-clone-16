@@ -12,6 +12,7 @@ import ContactUs from "./pages/ContactUs";
 import Corporate from "./pages/Corporate";
 import Insights from "./pages/Insights";
 import NotFound from "./pages/NotFound";
+import Pathology from "./pages/Pathology";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import BlogPost from "./pages/BlogPost";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/corporate" element={<Corporate />} />
+          <Route path="/pathology" element={<Pathology />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/:slug" element={<BlogPost />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
