@@ -415,12 +415,12 @@ const Index = () => {
       </section>
 
       {/* Health Checkup Packages */}
-      <section className="bg-background py-16">
-        <div className="text-center pb-8 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-aarvak-gray-900">
+      <section className="py-20" style={{ backgroundColor: '#f5f5f5' }}>
+        <div className="text-center pb-12 px-4">
+          <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '42px' }}>
             Health Checkup Packages
           </h2>
-          <p className="mt-3 text-lg sm:text-base text-aarvak-gray-600">
+          <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '18px' }}>
             Preventive health checkups designed to help you stay informed and proactive.
           </p>
         </div>
@@ -428,47 +428,93 @@ const Index = () => {
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${pkgSlide * (100 / 3)}%)` }}
+              style={{ transform: `translateX(-${pkgSlide * (100 / 3)}%)`, gap: '32px' }}
             >
               {healthPackages.map((pkg) => (
-                <div key={pkg.name} className="w-full sm:w-1/2 lg:w-1/3 px-2 flex-shrink-0">
-                  <div className="h-full rounded-2xl text-white shadow-xl relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0A1551 0%, #1565C0 100%)' }}>
-                    <div className="p-5">
+                <div key={pkg.name} className="flex-shrink-0" style={{ width: 'calc(33.333% - 22px)' }}>
+                  <div
+                    className="h-full flex flex-col text-white overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(180deg, #1b75a6 0%, #0c3f5d 100%)',
+                      borderRadius: '20px',
+                      boxShadow: '0 8px 30px rgba(0,0,0,0.18)',
+                    }}
+                  >
+                    <div style={{ padding: '28px', paddingBottom: '20px' }} className="flex-1">
                       {/* Header */}
                       <div className="flex items-start justify-between">
-                        <div className="flex items-start gap-2">
-                          <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <div className="flex items-start gap-3">
+                          <div
+                            className="flex items-center justify-center flex-shrink-0"
+                            style={{
+                              width: '44px',
+                              height: '44px',
+                              borderRadius: '50%',
+                              backgroundColor: 'rgba(255,255,255,0.2)',
+                              border: '1px solid rgba(255,255,255,0.3)',
+                            }}
+                          >
                             <img alt="" src="/images/health-care.png" className="w-5 h-5" />
                           </div>
                           <div>
-                            <h3 className="font-bold text-sm leading-tight">{pkg.name}</h3>
-                            <p className="text-xs opacity-70 mt-0.5">{pkg.desc}</p>
+                            <h3 className="font-bold leading-tight" style={{ fontSize: '16px' }}>{pkg.name}</h3>
+                            <p className="mt-1" style={{ fontSize: '13px', opacity: 0.7 }}>{pkg.desc}</p>
                           </div>
                         </div>
-                        <div className="text-right flex-shrink-0 ml-2">
-                          <div className="flex items-center gap-1">
-                            <span className="line-through text-xs opacity-60">{pkg.originalPrice}</span>
-                            <span className="text-xl font-bold">{pkg.price}</span>
+                        <div className="text-right flex-shrink-0 ml-3">
+                          <div className="flex items-center gap-2">
+                            <span className="line-through" style={{ fontSize: '14px', opacity: 0.6 }}>{pkg.originalPrice}</span>
+                            <span className="font-bold" style={{ fontSize: '26px' }}>{pkg.price}</span>
                           </div>
-                          <span className="inline-block bg-yellow-400 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded mt-1">
+                          <span
+                            className="inline-block font-bold"
+                            style={{
+                              backgroundColor: '#FFC107',
+                              color: '#1a1a1a',
+                              fontSize: '11px',
+                              padding: '2px 10px',
+                              borderRadius: '4px',
+                              marginTop: '4px',
+                            }}
+                          >
                             {pkg.discount}
                           </span>
                         </div>
                       </div>
 
                       {/* Report time */}
-                      <p className="mt-3 text-xs">
+                      <p style={{ marginTop: '16px', fontSize: '13px' }}>
                         Report Time: <span className="font-bold">6–8 Hours</span>
                       </p>
 
                       {/* Includes */}
-                      <span className="inline-block bg-yellow-400 text-gray-900 text-[10px] font-bold px-3 py-1 rounded-full mt-3 mb-3">
+                      <span
+                        className="inline-block font-bold"
+                        style={{
+                          backgroundColor: '#FFC107',
+                          color: '#1a1a1a',
+                          fontSize: '11px',
+                          padding: '4px 14px',
+                          borderRadius: '20px',
+                          marginTop: '14px',
+                          marginBottom: '14px',
+                        }}
+                      >
                         Includes
                       </span>
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+                      <div className="grid grid-cols-2" style={{ gap: '10px 24px' }}>
                         {pkg.tests.map((t) => (
-                          <div key={t} className="flex items-start gap-1.5 text-xs">
-                            <span className="mt-1 w-1.5 h-1.5 bg-white rounded-full flex-shrink-0" />
+                          <div key={t} className="flex items-start gap-2" style={{ fontSize: '13px' }}>
+                            <span
+                              className="flex-shrink-0"
+                              style={{
+                                marginTop: '6px',
+                                width: '6px',
+                                height: '6px',
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                              }}
+                            />
                             <span>{t}</span>
                           </div>
                         ))}
@@ -476,17 +522,28 @@ const Index = () => {
                     </div>
 
                     {/* Book Now button */}
-                    <Link to="/contact-us#contact" className="block">
-                      <div className="bg-white text-gray-900 font-bold text-center py-3 text-base hover:bg-gray-100 transition cursor-pointer rounded-b-2xl">
-                        Book Now
-                      </div>
-                    </Link>
+                    <div style={{ padding: '0 28px 28px' }}>
+                      <Link to="/contact-us#contact" className="block">
+                        <div
+                          className="font-bold text-center transition hover:opacity-90"
+                          style={{
+                            backgroundColor: '#e8e8e8',
+                            color: '#1a1a1a',
+                            borderRadius: '14px',
+                            padding: '14px',
+                            fontSize: '16px',
+                          }}
+                        >
+                          Book Now
+                        </div>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="flex justify-center items-center gap-6 mt-10">
+          <div className="flex justify-center items-center gap-6 mt-12">
             <button
               onClick={() => setPkgSlide(Math.max(0, pkgSlide - 1))}
               className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center text-2xl shadow"
