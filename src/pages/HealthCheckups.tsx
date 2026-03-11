@@ -1,0 +1,217 @@
+import { Link } from "react-router-dom";
+import { CheckCircle } from "lucide-react";
+
+const taglineItems = [
+  { bold: "Tailored", sub: "For All Ages" },
+  { bold: "Expert", sub: "Medical Team" },
+  { bold: "Quick &", sub: "Easy Booking" },
+];
+
+const packages = [
+  {
+    name: "ADC Basic Swasthya Panel",
+    items: [
+      "Complete Blood Count",
+      "Urine Routine",
+      "Lipid Profile",
+      "Blood Sugar (Fasting)",
+      "HbA1c",
+    ],
+    price: "1000",
+    badge: "Value for money",
+  },
+  {
+    name: "ADC Mini Swasthya Panel",
+    items: [
+      "Complete Blood Count",
+      "Lipid Profile",
+      "Urine Routine & ESR",
+      "HbA1c + Fasting Blood Sugar",
+      "(LFT + KFT)",
+      "Thyroid Function Test (TFT)",
+      "(Sodium + Potassium)",
+    ],
+    price: "2000",
+    badge: null,
+  },
+  {
+    name: "ADC Mini Swasthya Panel",
+    items: [
+      "Complete Blood Count",
+      "Urine Routine & ESR",
+      "HbA1c + Fasting Sugar",
+      "Vitamin B12 + Vitamin D",
+      "(LFT + KFT)",
+      "(Sodium + Potassium + Calcium)",
+      "Thyroid Function Test (TFT)",
+      "Iron Studies",
+      "Lipid Profile",
+    ],
+    price: "3000",
+    badge: null,
+  },
+];
+
+const HealthCheckups = () => {
+  return (
+    <div className="bg-background">
+      {/* Hero Banner */}
+      <section className="relative w-full overflow-hidden px-2 md:px-3">
+        <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: '420px' }}>
+          <img
+            src="/images/arvkbg.png"
+            alt="Health Checkups"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="relative z-10 flex items-center justify-center h-full px-4">
+            <div className="flex items-center gap-6">
+              <div className="text-right text-white">
+                <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">About</p>
+                <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Health Packages</h1>
+              </div>
+              <div className="w-px bg-white/40" style={{ height: '100px' }} />
+              <div className="text-white">
+                <h2 className="text-2xl md:text-[32px] font-bold leading-tight">Trusted Health Checkups</h2>
+                <p className="mt-3 text-[15px] opacity-80 max-w-md">Structured health packages to help you stay ahead of illness and monitor your wellness.</p>
+                <Link
+                  to="/contact-us#contact"
+                  className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
+                >
+                  Book a Checkup
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tagline overlay */}
+      <section className="relative z-20">
+        <div className="bg-background rounded-tr-[40px] -mt-16 relative pt-10 pb-8 px-6 md:px-12" style={{ maxWidth: '52%' }}>
+          <div className="flex items-center gap-6">
+            {taglineItems.map((item, i) => (
+              <div key={i} className="flex items-center gap-6">
+                <div className="text-center">
+                  <p className="text-lg md:text-xl font-bold text-secondary">{item.bold}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground font-medium">{item.sub}</p>
+                </div>
+                {i < taglineItems.length - 1 && (
+                  <div className="w-px h-10 bg-border" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Health Assessment */}
+      <section className="py-20 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
+          <div className="lg:w-5/12">
+            <img
+              src="/images/healthside.png"
+              alt="Health Assessment"
+              className="w-full rounded-2xl object-cover"
+              style={{ height: '450px' }}
+            />
+          </div>
+          <div className="lg:w-7/12 pt-4">
+            <h2 className="text-3xl md:text-[38px] font-bold text-foreground leading-tight mb-6">
+              Comprehensive Health<br />Assessment Packages
+            </h2>
+            <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
+              At Aarvak Diagnostics, we understand the importance of corporate health checkups.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
+              We provide comprehensive testing and diagnostic services to ensure that your organization is running in top condition.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-[15px]">
+              Our health checkups are tailored to meet the needs of your business and help you identify any potential issues before they become a problem.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Health Packages */}
+      <section className="py-20 px-4 md:px-8 bg-muted">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-[42px] font-bold text-foreground text-center mb-12">Featured Health Packages</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {packages.map((pkg, i) => (
+              <div key={i} className="bg-background rounded-2xl p-8 shadow-sm relative overflow-hidden">
+                <div className="flex items-center gap-3 mb-6">
+                  <img src="/icons/heart-package.png" alt="" className="w-10 h-10" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-5">{pkg.name}</h3>
+                <ul className="space-y-3 mb-8">
+                  {pkg.items.map((item, j) => (
+                    <li key={j} className="flex items-center gap-3 text-sm text-muted-foreground">
+                      <img src="/icons/check.png" alt="" className="w-4 h-4 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="border-t border-border pt-5">
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <span className="text-xs text-muted-foreground">Price</span>
+                    <span className="text-2xl font-bold text-foreground">₹ {pkg.price}</span>
+                  </div>
+                  <Link
+                    to="/contact-us#contact"
+                    className="inline-block w-full text-center bg-secondary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-secondary/90 transition"
+                  >
+                    Book Now
+                  </Link>
+                </div>
+                {pkg.badge && (
+                  <div className="absolute top-4 right-4 bg-secondary/10 text-secondary text-xs font-semibold px-3 py-1 rounded-full">
+                    % {pkg.badge}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="relative w-full overflow-hidden" style={{ height: '420px' }}>
+        <img
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/images/healthcta.png"
+          alt="Health Tips Background"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex items-center justify-center h-full px-4">
+          <div
+            style={{
+              background: 'rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255,255,255,0.18)',
+              borderRadius: '20px',
+              padding: '48px 52px',
+              maxWidth: '480px',
+              width: '100%',
+            }}
+          >
+            <h2 className="text-white font-bold" style={{ fontSize: '28px', marginBottom: '36px', fontFamily: 'Georgia, serif' }}>
+              Health Tips, Straight to Your Inbox
+            </h2>
+            <div className="flex items-center" style={{ borderBottom: '1px solid rgba(255,255,255,0.4)', paddingBottom: '8px' }}>
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="bg-transparent flex-1 outline-none text-white placeholder:text-white/60 text-sm"
+              />
+              <button className="text-white font-light" style={{ fontSize: '28px', lineHeight: 1 }}>›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HealthCheckups;
