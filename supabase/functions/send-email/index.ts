@@ -9,7 +9,8 @@ const corsHeaders = {
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const RECIPIENT_EMAIL = "marketing@aarvakdiagnostics.com";
-const DEFAULT_FROM = "Aarvak Diagnostics <noreply@aarvakdiagnostics.com>";
+// Use Resend's test sender until aarvakdiagnostics.com is verified in Resend dashboard
+const DEFAULT_FROM = "Aarvak Diagnostics <onboarding@resend.dev>";
 
 const jsonResponse = (status: number, body: Record<string, unknown>) =>
   new Response(JSON.stringify(body), {
