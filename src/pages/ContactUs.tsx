@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { submitContactForm, submitSubscribeForm } from "@/lib/submitForm";
 
 const ContactUs = () => {
   const [form, setForm] = useState({
@@ -10,19 +11,26 @@ const ContactUs = () => {
     subject: "",
     message: "",
   });
-
+  const [loading, setLoading] = useState(false);
   const [subscribeEmail, setSubscribeEmail] = useState("");
+  const [subLoading, setSubLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Name: ${form.name}%0AEmail: ${form.email}%0APhone: ${form.phone}%0ADOB: ${form.dob}%0ASubject: ${form.subject}%0AMessage: ${form.message}`;
-    window.open(`https://wa.me/919810063340?text=${msg}`, "_blank");
+    setLoading(true);
+    const success = await submitContactForm(form);
+    if (success) {
+      setForm({ name: "", email: "", phone: "", dob: "", subject: "", message: "" });
+    }
+    setLoading(false);
   };
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    window.open(`https://wa.me/919810063340?text=Subscribe: ${subscribeEmail}`, "_blank");
-    setSubscribeEmail("");
+    setSubLoading(true);
+    const success = await submitSubscribeForm(subscribeEmail);
+    if (success) setSubscribeEmail("");
+    setSubLoading(false);
   };
 
   return (
@@ -68,7 +76,6 @@ const ContactUs = () => {
       <section className="py-16 px-4" id="contact">
         <div className="max-w-5xl mx-auto">
           <div className="rounded-3xl overflow-hidden flex flex-col lg:flex-row relative">
-            {/* Background image */}
             <img
               src="/images/contactbg.png"
               alt=""
@@ -159,9 +166,10 @@ const ContactUs = () => {
                   />
                   <button
                     type="submit"
-                    className="w-full bg-secondary text-primary-foreground font-semibold py-3 rounded-lg text-sm transition hover:opacity-90"
+                    disabled={loading}
+                    className="w-full bg-secondary text-primary-foreground font-semibold py-3 rounded-lg text-sm transition hover:opacity-90 disabled:opacity-50"
                   >
-                    Send
+                    {loading ? "Sending..." : "Send"}
                   </button>
                 </form>
               </div>
@@ -190,9 +198,10 @@ const ContactUs = () => {
             />
             <button
               type="submit"
-              className="bg-secondary text-primary-foreground font-semibold px-8 py-3 rounded-lg text-sm transition hover:opacity-90"
+              disabled={subLoading}
+              className="bg-secondary text-primary-foreground font-semibold px-8 py-3 rounded-lg text-sm transition hover:opacity-90 disabled:opacity-50"
             >
-              Subscribe
+              {subLoading ? "Subscribing..." : "Subscribe"}
             </button>
           </form>
         </div>
