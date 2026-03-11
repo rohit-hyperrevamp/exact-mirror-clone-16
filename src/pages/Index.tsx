@@ -1,7 +1,25 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+
+const heroSlides = [
+  {
+    image: "/images/aarvakbanner.jpeg",
+    heading: "Diagnostic Care You\nCan Trust",
+    description: "Reliable tests and imaging, with care you can trust.",
+  },
+  {
+    image: "/images/mobileaarvakbanner.jpeg",
+    heading: "Your Health,\nOur Priority",
+    description: "Comprehensive diagnostics with accuracy you can rely on.",
+  },
+  {
+    image: "/images/radiology.png",
+    heading: "Advanced Imaging\n& Radiology",
+    description: "State-of-the-art imaging services for precise diagnosis.",
+  },
+];
 
 const serviceCards = [
   {
