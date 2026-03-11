@@ -567,59 +567,80 @@ const Index = () => {
       </section>
 
       {/* Care You Can Trust */}
-      <section className="bg-background py-20">
+      <section className="bg-background" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Section Header */}
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-[42px] font-bold text-aarvak-gray-900">
+          <div className="text-center" style={{ marginBottom: '40px' }}>
+            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '40px' }}>
               Care You Can Trust
             </h2>
-            <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '18px' }}>
+            <p className="text-aarvak-gray-600" style={{ fontSize: '17px', marginTop: '12px' }}>
               Reliable diagnostics focused on accuracy, safety, and patient comfort.
             </p>
           </div>
 
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ marginBottom: '100px' }}>
-            {/* Full image - taller to allow card overlap */}
+          <div className="relative" style={{ marginBottom: '120px' }}>
             <div
-              className="w-full overflow-hidden"
-              style={{ borderRadius: '20px', minHeight: '420px' }}
+              className="w-full overflow-hidden relative"
+              style={{ borderRadius: '20px', height: '420px' }}
             >
               <img
                 src="/images/cop-first.jpeg"
                 alt="Care You Can Trust"
                 className="w-full h-full object-cover"
-                style={{ minHeight: '420px' }}
               />
             </div>
 
-            {/* Overlapping White Card - bottom left, partially outside image */}
+            {/* Overlapping White Card */}
             <div
-              className="absolute left-0 sm:left-0 md:left-0"
+              className="absolute hidden md:block"
               style={{
-                bottom: '-90px',
+                bottom: '-80px',
                 left: '0px',
-                maxWidth: '680px',
-                width: 'calc(55%)',
+                width: '52%',
+                maxWidth: '640px',
                 zIndex: 10,
               }}
             >
               <div
                 className="bg-background"
                 style={{
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 30px rgba(0,0,0,0.10)',
-                  padding: '32px 36px',
+                  borderRadius: '0 20px 20px 0',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
+                  padding: '30px 34px',
                 }}
               >
-                <p className="text-aarvak-gray-600 leading-relaxed" style={{ fontSize: '15px' }}>
-                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
+                <p className="text-aarvak-gray-600 leading-relaxed" style={{ fontSize: '14.5px', lineHeight: '1.75' }}>
+                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results while keeping patient comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
-                  className="inline-block mt-5 bg-aarvak-blue text-primary-foreground px-6 py-2.5 font-semibold text-sm hover:bg-aarvak-blue-hover transition-colors"
-                  style={{ borderRadius: '24px' }}
+                  className="inline-block bg-aarvak-blue text-primary-foreground font-semibold text-sm hover:bg-aarvak-blue-hover transition-colors"
+                  style={{ borderRadius: '24px', padding: '10px 24px', marginTop: '18px' }}
+                >
+                  Learn More About Us
+                </Link>
+              </div>
+            </div>
+
+            {/* Mobile card (non-overlapping) */}
+            <div className="md:hidden mt-6">
+              <div
+                className="bg-background"
+                style={{
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
+                  padding: '24px',
+                }}
+              >
+                <p className="text-aarvak-gray-600 leading-relaxed text-sm">
+                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results while keeping patient comfort at the center of everything we do.
+                </p>
+                <Link
+                  to="/about-us"
+                  className="inline-block bg-aarvak-blue text-primary-foreground font-semibold text-sm hover:bg-aarvak-blue-hover transition-colors mt-4"
+                  style={{ borderRadius: '24px', padding: '10px 24px' }}
                 >
                   Learn More About Us
                 </Link>
@@ -628,38 +649,37 @@ const Index = () => {
           </div>
 
           {/* Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{ gap: '28px' }}>
             {[
-              { title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results.", icon: "✓" },
-              { title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step.", icon: "👤" },
-              { title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results.", icon: "👨‍⚕️" },
+              { title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results.", Icon: ShieldCheck },
+              { title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step.", Icon: Heart },
+              { title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results.", Icon: UserCheck },
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-background text-center"
+                className="bg-background flex flex-col items-center text-center"
                 style={{
                   borderRadius: '16px',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.07)',
-                  padding: '32px 24px',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
+                  padding: '36px 28px',
                 }}
               >
                 <div
-                  className="mx-auto flex items-center justify-center"
+                  className="flex items-center justify-center"
                   style={{
                     width: '56px',
                     height: '56px',
                     borderRadius: '50%',
                     backgroundColor: 'hsl(145, 60%, 90%)',
-                    marginBottom: '18px',
-                    fontSize: '24px',
+                    marginBottom: '20px',
                   }}
                 >
-                  {item.icon}
+                  <item.Icon className="text-aarvak-green" style={{ width: '26px', height: '26px' }} />
                 </div>
-                <h3 className="font-bold text-aarvak-gray-900 mb-2" style={{ fontSize: '17px' }}>
+                <h3 className="font-bold text-aarvak-gray-900" style={{ fontSize: '17px', marginBottom: '8px' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm text-aarvak-gray-600 leading-relaxed">{item.desc}</p>
+                <p className="text-aarvak-gray-600 leading-relaxed" style={{ fontSize: '14px' }}>{item.desc}</p>
               </div>
             ))}
           </div>
