@@ -744,35 +744,56 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-aarvak-gray-50 py-16">
+      <section className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-aarvak-gray-900">What Our Patients Say</h2>
-            <p className="mt-2 text-aarvak-gray-600">Real experiences from people who trust Aarvak Diagnostics.</p>
+            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '36px' }}>What Our Patients Say</h2>
+            <p className="mt-2 text-aarvak-gray-600" style={{ fontSize: '16px' }}>Real experiences from people who trust Aarvak Diagnostics.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="bg-background rounded-2xl p-6 shadow-md">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-aarvak-blue flex items-center justify-center text-primary-foreground font-bold">
+            {testimonials.slice(0, 3).map((t) => (
+              <div
+                key={t.name}
+                className="text-primary-foreground"
+                style={{
+                  background: 'linear-gradient(135deg, hsl(var(--aarvak-blue)) 0%, hsl(var(--aarvak-blue-dark)) 100%)',
+                  borderRadius: '16px',
+                  padding: '28px',
+                }}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground font-bold text-sm">
                     {t.initials}
                   </div>
                   <div>
-                    <p className="font-semibold text-aarvak-gray-900">{t.name}</p>
+                    <p className="font-bold text-primary-foreground">{t.name}</p>
                     <div className="flex gap-0.5">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}
-                          className={`w-4 h-4 ${i < t.stars ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+                          className={`w-4 h-4 ${i < t.stars ? "text-yellow-400 fill-yellow-400" : "text-primary-foreground/30"}`}
                         />
                       ))}
                     </div>
                   </div>
                 </div>
-                <p className="font-semibold text-aarvak-gray-900 mb-1">"{t.quote}"</p>
-                <p className="text-sm text-aarvak-gray-600">{t.detail}</p>
+                <p className="font-bold text-primary-foreground mb-2" style={{ fontSize: '16px' }}>"{t.quote}"</p>
+                <p className="text-primary-foreground/80" style={{ fontSize: '14px', lineHeight: '1.6' }}>{t.detail}</p>
               </div>
             ))}
+          </div>
+          {/* Carousel controls */}
+          <div className="flex justify-center items-center gap-6 mt-10">
+            <button className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center shadow">
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <div className="flex gap-2">
+              <div className="w-8 h-2 bg-aarvak-blue rounded-full" />
+              <div className="w-8 h-2 rounded-full" style={{ backgroundColor: 'hsl(var(--border))' }} />
+            </div>
+            <button className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center shadow">
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </section>
