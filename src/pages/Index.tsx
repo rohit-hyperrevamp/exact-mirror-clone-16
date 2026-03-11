@@ -580,15 +580,15 @@ const Index = () => {
           </div>
 
           {/* Image Banner with overlapping card */}
-          <div className="relative mb-32 md:mb-40">
+          <div className="relative mb-36 md:mb-44">
             <div
               className="w-full overflow-hidden"
-              style={{ borderRadius: '20px', height: '400px' }}
+              style={{ borderRadius: '20px', height: '420px' }}
             >
               <img
                 src="/images/cop-first.jpeg"
-                alt="Care You Can Trust"
-                className="w-full h-full object-cover"
+                alt="Care You Can Trust - Diagnostics Lab"
+                className="w-full h-full object-cover object-right"
               />
             </div>
 
