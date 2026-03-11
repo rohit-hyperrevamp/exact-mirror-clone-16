@@ -832,25 +832,36 @@ const Index = () => {
       </section>
 
       {/* Newsletter / Health Tips */}
-      <section className="relative w-full h-[500px] overflow-hidden">
+      <section className="relative w-full overflow-hidden" style={{ height: '420px' }}>
         <img
           src="/images/ServiceslLeft.png"
           alt="Lab"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex items-center justify-center h-full px-4">
-          <div className="w-full max-w-2xl rounded-2xl p-10 text-white" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.2)' }}>
-            <h2 className="text-2xl sm:text-3xl font-bold italic mb-8">
+          <div
+            className="w-full max-w-2xl text-primary-foreground"
+            style={{
+              background: 'rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255,255,255,0.18)',
+              borderRadius: '20px',
+              padding: '48px 52px',
+            }}
+          >
+            <h2 className="font-bold italic" style={{ fontSize: '28px', marginBottom: '36px' }}>
               Health Tips, Straight to Your Inbox
             </h2>
-            <div className="flex items-center border-b border-white/50 pb-2">
+            <div className="flex items-center" style={{ borderBottom: '1px solid rgba(255,255,255,0.4)', paddingBottom: '8px' }}>
               <input
                 type="email"
                 placeholder="Your Email"
-                className="bg-transparent flex-1 text-white placeholder-white/70 outline-none text-lg"
+                className="bg-transparent flex-1 text-primary-foreground outline-none"
+                style={{ fontSize: '16px', color: 'white' }}
               />
-              <button className="text-white text-2xl ml-4 hover:opacity-80 transition">›</button>
+              <button className="text-primary-foreground hover:opacity-80 transition" style={{ fontSize: '28px', marginLeft: '16px' }}>›</button>
             </div>
           </div>
         </div>
