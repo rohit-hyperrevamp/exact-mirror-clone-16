@@ -7,7 +7,7 @@ const SocialSidebar = () => {
         href="https://www.facebook.com/AarvakDiagnostics"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-14 flex items-center justify-center hover:bg-white/10 transition"
+        className="w-12 h-11 flex items-center justify-center hover:bg-white/10 transition"
       >
         <Facebook className="w-5 h-5 text-white" />
       </a>
