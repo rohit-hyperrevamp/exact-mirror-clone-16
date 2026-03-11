@@ -93,31 +93,38 @@ const AboutUs = () => {
           <h2 className="text-3xl md:text-[38px] font-bold text-foreground">The People Behind Aarvak</h2>
           <p className="mt-3 text-muted-foreground">Guided By Experience. Driven By Care.</p>
         </div>
-        <div className="max-w-7xl mx-auto space-y-20">
+        <div className="max-w-6xl mx-auto space-y-16">
           {/* Ravinder */}
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <div className="lg:w-1/2">
-              <h3 className="text-2xl font-bold text-foreground">Ravinder Yadav</h3>
-              <p className="text-sm text-muted-foreground mb-5">Director, Aarvak Diagnostics</p>
-              <p className="text-muted-foreground leading-relaxed text-[15px]">
-                Operational Excellence & Growth Leader Ravinder Is The Driving Force Behind Aarvak's Seamless 24/7 Operations. With A Deep Understanding Of The Healthcare Landscape And A Focus On Patient-Centric Growth, He Ensures That Our "Neighborhood Lab" Promise Is Met With World-Class Efficiency. Ravinder's Mission Is Simple: Making High-End Diagnostics Accessible, Ethical, And Stress-Free For Every Family In Gurgaon.
+          <div className="rounded-2xl overflow-hidden flex flex-col lg:flex-row" style={{ background: 'linear-gradient(135deg, hsl(204, 100%, 16%), hsl(201, 97%, 36%))' }}>
+            <div className="lg:w-3/5 p-8 md:p-12 text-white flex flex-col justify-center">
+              <h3 className="text-2xl md:text-3xl font-bold">Ravinder Yadav</h3>
+              <p className="text-sm font-semibold mt-1 opacity-90">Director, Aarvak Diagnostics</p>
+              <a href="#" className="mt-4 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white/20 hover:bg-white/30 transition">
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
+              <p className="mt-6 text-white/80 leading-relaxed text-[15px]">
+                <strong className="text-white">Operational Excellence & Growth Leader</strong> Ravinder Is The Driving Force Behind Aarvak's Seamless 24/7 Operations. With A Deep Understanding Of The Healthcare Landscape And A Focus On Patient-Centric Growth, He Ensures That Our "Neighborhood Lab" Promise Is Met With World-Class Efficiency. Ravinder's Mission Is Simple: Making High-End Diagnostics Accessible, Ethical, And Stress-Free For Every Family In Gurgaon.
               </p>
             </div>
-            <div className="lg:w-1/2">
-              <img src="/images/ravinder-11.jpeg" alt="Ravinder Yadav" className="w-full max-w-md rounded-2xl mx-auto object-cover" style={{ height: '350px' }} />
+            <div className="lg:w-2/5 flex items-end justify-end p-6">
+              <img src="/images/ravinder-11.jpeg" alt="Ravinder Yadav" className="rounded-xl object-cover bg-white" style={{ width: '320px', height: '360px' }} />
             </div>
           </div>
+
           {/* Raj */}
-          <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
-            <div className="lg:w-1/2">
-              <h3 className="text-2xl font-bold text-foreground">Raj Sehgal</h3>
-              <p className="text-sm text-muted-foreground mb-5">Business Advisor, Aarvak Diagnostics</p>
-              <p className="text-muted-foreground leading-relaxed text-[15px]">
-                Alumnus, IIM Ahmedabad | Former VP, Dr. Lal PathLabs With over 30 years of experience across 25+ countries, Raj is a global heavyweight in the diagnostic industry. Having led international business for India's largest lab chains, he founded Aarvak to bring that same "big lab" clinical precision to a local, human level. For Raj, diagnostics isn't about volume—it's about the integrity of every single report.
+          <div className="rounded-2xl overflow-hidden flex flex-col lg:flex-row-reverse" style={{ background: 'linear-gradient(135deg, hsl(204, 100%, 16%), hsl(201, 97%, 36%))' }}>
+            <div className="lg:w-3/5 p-8 md:p-12 text-white flex flex-col justify-center">
+              <h3 className="text-2xl md:text-3xl font-bold">Raj Sehgal</h3>
+              <p className="text-sm font-semibold mt-1 opacity-90">Business Advisor, Aarvak Diagnostics</p>
+              <a href="#" className="mt-4 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white/20 hover:bg-white/30 transition">
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
+              <p className="mt-6 text-white/80 leading-relaxed text-[15px]">
+                <strong className="text-white">Alumnus, IIM Ahmedabad | Former VP, Dr. Lal PathLabs</strong> With over 30 years of experience across 25+ countries, Raj is a global heavyweight in the diagnostic industry. Having led international business for India's largest lab chains, he founded Aarvak to bring that same "big lab" clinical precision to a local, human level. For Raj, diagnostics isn't about volume—it's about the integrity of every single report.
               </p>
             </div>
-            <div className="lg:w-1/2">
-              <img src="/images/raj-12.jpeg" alt="Raj Sehgal" className="w-full max-w-md rounded-2xl mx-auto object-cover" style={{ height: '350px' }} />
+            <div className="lg:w-2/5 flex items-end justify-start p-6">
+              <img src="/images/raj-12.jpeg" alt="Raj Sehgal" className="rounded-xl object-cover bg-white" style={{ width: '320px', height: '360px' }} />
             </div>
           </div>
         </div>
