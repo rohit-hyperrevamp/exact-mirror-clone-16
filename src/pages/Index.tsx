@@ -571,19 +571,19 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Section Header */}
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-[42px] font-bold text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-[42px] font-bold text-aarvak-gray-900">
               Care You Can Trust
             </h2>
-            <p className="mt-3 text-muted-foreground" style={{ fontSize: '18px' }}>
+            <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '18px' }}>
               Reliable diagnostics focused on accuracy, safety, and patient comfort.
             </p>
           </div>
 
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ marginBottom: '180px' }}>
+          <div className="relative mb-32 md:mb-40">
             <div
               className="w-full overflow-hidden"
-              style={{ borderRadius: '20px', height: '420px' }}
+              style={{ borderRadius: '20px', height: '400px' }}
             >
               <img
                 src="/images/care-banner.png"
@@ -594,27 +594,27 @@ const Index = () => {
 
             {/* Overlapping White Card */}
             <div
-              className="absolute left-0 sm:left-4 md:left-6"
+              className="absolute left-4 sm:left-8 md:left-10"
               style={{
-                bottom: '-140px',
-                maxWidth: '780px',
-                width: 'calc(100% - 16px)',
+                bottom: '-80px',
+                maxWidth: '720px',
+                width: 'calc(100% - 32px)',
               }}
             >
               <div
                 className="bg-background"
                 style={{
                   borderRadius: '20px',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
-                  padding: '32px 36px',
+                  boxShadow: '0 8px 30px rgba(0,0,0,0.10)',
+                  padding: '28px 32px',
                 }}
               >
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-aarvak-gray-600 leading-relaxed">
                   Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
-                  className="inline-block mt-5 bg-secondary text-secondary-foreground px-6 py-2.5 font-semibold text-sm hover:opacity-90 transition-colors"
+                  className="inline-block mt-5 bg-aarvak-blue text-primary-foreground px-6 py-2.5 font-semibold text-sm hover:bg-aarvak-blue-hover transition-colors"
                   style={{ borderRadius: '8px' }}
                 >
                   Learn More About Us
@@ -626,27 +626,9 @@ const Index = () => {
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                title: "Accurate & Reliable Testing",
-                desc: "Advanced equipment and quality-controlled processes for dependable results.",
-                icon: (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--aarvak-green))" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                ),
-              },
-              {
-                title: "Patient-First Approach",
-                desc: "Comfortable testing experience with clear communication at every step.",
-                icon: (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--aarvak-green))" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                ),
-              },
-              {
-                title: "Experienced Professionals",
-                desc: "Advanced equipment and quality-controlled processes for dependable results.",
-                icon: (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--aarvak-green))" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                ),
-              },
+              { title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results.", icon: "✓" },
+              { title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step.", icon: "👤" },
+              { title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results.", icon: "👨‍⚕️" },
             ].map((item) => (
               <div
                 key={item.title}
@@ -665,14 +647,15 @@ const Index = () => {
                     borderRadius: '50%',
                     backgroundColor: 'hsl(145, 60%, 90%)',
                     marginBottom: '18px',
+                    fontSize: '24px',
                   }}
                 >
                   {item.icon}
                 </div>
-                <h3 className="font-bold text-foreground mb-2" style={{ fontSize: '17px' }}>
+                <h3 className="font-bold text-aarvak-gray-900 mb-2" style={{ fontSize: '17px' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-aarvak-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
