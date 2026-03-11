@@ -138,6 +138,8 @@ const TermsOfUse = () => {
           <p><a href="mailto:marketing@aarvakdiagnostics.com" className="text-blue-600 hover:underline">marketing@aarvakdiagnostics.com</a></p>
         </div>
       </div>
+
+      <NewsletterSection />
     </div>
   );
 };

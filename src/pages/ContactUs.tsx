@@ -207,6 +207,8 @@ const ContactUs = () => {
           </form>
         </div>
       </section>
+
+      <NewsletterSection />
     </div>
   );
 };

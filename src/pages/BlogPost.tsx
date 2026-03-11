@@ -103,6 +103,8 @@ const BlogPost = () => {
           {renderContent(post.content)}
         </div>
       </section>
+
+      <NewsletterSection />
     </div>
   );
 };

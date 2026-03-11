@@ -130,6 +130,8 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      <NewsletterSection />
     </div>
   );
 };
