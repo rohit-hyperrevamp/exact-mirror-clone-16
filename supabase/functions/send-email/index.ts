@@ -146,6 +146,7 @@ serve(async (req) => {
   } catch (error: unknown) {
     console.error("Error sending email:", error);
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    console.error("Returning error response:", errorMessage);
     return jsonResponse(500, { success: false, error: errorMessage });
   }
 });

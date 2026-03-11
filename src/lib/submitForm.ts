@@ -34,11 +34,22 @@ function getErrorMessage(error: unknown) {
 
 async function invokeSendEmail(payload: EmailPayload, successMessage: string) {
   try {
-    const { error } = await supabase.functions.invoke("send-email", {
+    const { data, error } = await supabase.functions.invoke("send-email", {
       body: payload,
     });
 
-    if (error) throw error;
+    if (error) {
+      // Try to extract the actual error message from the response
+      console.error("Edge function error:", error);
+      const msg = typeof error === "object" && error !== null && "message" in error
+        ? (error as { message: string }).message
+        : String(error);
+      throw new Error(msg);
+    }
+
+    if (data && data.success === false) {
+      throw new Error(data.error || "Email delivery failed");
+    }
 
     toast.success(successMessage);
     return true;
