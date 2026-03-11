@@ -102,6 +102,7 @@ serve(async (req) => {
       return jsonResponse(400, { success: false, error: "Invalid form type" });
     }
 
+    console.log("Sending email via Resend:", { from: resendFrom, to: RECIPIENT_EMAIL, subject });
     const resendResponse = await fetch(RESEND_API_URL, {
       method: "POST",
       headers: {
