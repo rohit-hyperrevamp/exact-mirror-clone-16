@@ -52,7 +52,7 @@ serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Aarvak Diagnostics <onboarding@resend.dev>",
+        from: "Aarvak Diagnostics <noreply@aarvakdiagnostics.com>",
         to: ["marketing@aarvakdiagnostics.com"],
         subject,
         html,
