@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 
 const AboutUs = () => {
   return (
