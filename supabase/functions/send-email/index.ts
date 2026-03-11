@@ -44,12 +44,14 @@ serve(async (req) => {
     const resendFrom = Deno.env.get("RESEND_FROM_EMAIL") || DEFAULT_FROM;
 
     const payload = await req.json();
+    console.log("Received payload:", JSON.stringify(payload));
     const { type, data } = payload as {
       type?: "contact" | "subscribe";
       data?: Record<string, unknown>;
     };
 
     if (!type || !data) {
+      console.error("Invalid payload: missing type or data");
       return jsonResponse(400, { success: false, error: "Invalid payload" });
     }
 
