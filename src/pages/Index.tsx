@@ -580,26 +580,27 @@ const Index = () => {
           </div>
 
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ marginBottom: '120px' }}>
+          <div className="relative" style={{ marginBottom: '140px' }}>
+            {/* Banner Image */}
             <div
-              className="w-full overflow-hidden relative"
-              style={{ borderRadius: '20px', height: '420px' }}
+              className="w-full overflow-hidden"
+              style={{ borderRadius: '20px', height: '440px' }}
             >
               <img
-                src="/images/cop-first.jpeg"
+                src="/images/care-trust-banner.png"
                 alt="Care You Can Trust"
                 className="w-full h-full object-cover"
               />
             </div>
 
-            {/* Overlapping White Card */}
+            {/* Overlapping White Card - anchored bottom-left, extending below image */}
             <div
               className="absolute hidden md:block"
               style={{
-                bottom: '-80px',
+                bottom: '-100px',
                 left: '0px',
-                width: '52%',
-                maxWidth: '640px',
+                width: '54%',
+                maxWidth: '660px',
                 zIndex: 10,
               }}
             >
@@ -607,17 +608,17 @@ const Index = () => {
                 className="bg-background"
                 style={{
                   borderRadius: '0 20px 20px 0',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
-                  padding: '30px 34px',
+                  boxShadow: '0 8px 36px rgba(0,0,0,0.08)',
+                  padding: '32px 36px',
                 }}
               >
-                <p className="text-aarvak-gray-600 leading-relaxed" style={{ fontSize: '14.5px', lineHeight: '1.75' }}>
-                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results while keeping patient comfort at the center of everything we do.
+                <p className="text-aarvak-gray-600" style={{ fontSize: '15px', lineHeight: '1.8' }}>
+                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
                   className="inline-block bg-aarvak-blue text-primary-foreground font-semibold text-sm hover:bg-aarvak-blue-hover transition-colors"
-                  style={{ borderRadius: '24px', padding: '10px 24px', marginTop: '18px' }}
+                  style={{ borderRadius: '24px', padding: '10px 26px', marginTop: '20px' }}
                 >
                   Learn More About Us
                 </Link>
@@ -630,12 +631,12 @@ const Index = () => {
                 className="bg-background"
                 style={{
                   borderRadius: '20px',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
                   padding: '24px',
                 }}
               >
                 <p className="text-aarvak-gray-600 leading-relaxed text-sm">
-                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results while keeping patient comfort at the center of everything we do.
+                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
