@@ -1,7 +1,25 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+
+const heroSlides = [
+  {
+    image: "/images/aarvakbanner.jpeg",
+    heading: "Diagnostic Care You\nCan Trust",
+    description: "Reliable tests and imaging, with care you can trust.",
+  },
+  {
+    image: "/images/mobileaarvakbanner.jpeg",
+    heading: "Your Health,\nOur Priority",
+    description: "Comprehensive diagnostics with accuracy you can rely on.",
+  },
+  {
+    image: "/images/radiology.png",
+    heading: "Advanced Imaging\n& Radiology",
+    description: "State-of-the-art imaging services for precise diagnosis.",
+  },
+];
 
 const serviceCards = [
   {
@@ -137,62 +155,125 @@ const Index = () => {
   const [testSlide, setTestSlide] = useState(0);
   const [pkgSlide, setPkgSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [heroSlide, setHeroSlide] = useState(0);
   const bodyScrollRef = useRef<HTMLDivElement>(null);
 
   const maxTestSlide = Math.max(0, diagnosticTests.length - 3);
   const maxPkgSlide = Math.max(0, healthPackages.length - 3);
 
-  // Auto-scroll for body system icons
-  useEffect(() => {
-    const container = bodyScrollRef.current;
-    if (!container) return;
-    let scrollDirection = 1;
-    const interval = setInterval(() => {
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      if (container.scrollLeft >= maxScroll) scrollDirection = -1;
-      if (container.scrollLeft <= 0) scrollDirection = 1;
-      container.scrollBy({ left: scrollDirection * 2, behavior: 'smooth' });
-    }, 30);
-    return () => clearInterval(interval);
+  const nextHeroSlide = useCallback(() => {
+    setHeroSlide((prev) => (prev + 1) % heroSlides.length);
   }, []);
+
+  const prevHeroSlide = useCallback(() => {
+    setHeroSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(nextHeroSlide, 5000);
+    return () => clearInterval(timer);
+  }, [nextHeroSlide]);
 
   return (
     <div className="bg-background">
       {/* Hero Banner */}
-      <section className="w-full relative">
-        <div className="hidden lg:block relative w-full h-[700px]">
-          <img
-            alt="Desktop Banner"
-            src="/images/aarvakbanner.jpeg"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute" style={{ bottom: '8.5rem', left: '5.5rem' }}>
-            <Link
-              to="/contact-us#contact"
-              className="inline-block text-white font-semibold tracking-wider uppercase px-12 py-4 text-lg rounded-full shadow-xl transition-all duration-300"
-              style={{ backgroundColor: '#001260' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#243178')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#001260')}
-            >
-              Book Your Health Checkup
-            </Link>
+      <section className="relative mx-2 md:mx-4 rounded-none md:rounded-[14px] overflow-hidden h-[500px] md:h-[580px] lg:h-[620px]">
+        {heroSlides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              index === heroSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <img
+              src={slide.image}
+              alt={slide.heading}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        ))}
+
+        {/* Hero Content */}
+        <div className="relative z-20 flex flex-col md:flex-row items-center justify-center h-full px-6 md:px-16 lg:px-24">
+          {/* Left: Title */}
+          <div className="w-full md:w-auto text-center md:text-right md:pr-8">
+            <p className="text-primary-foreground text-2xl md:text-4xl lg:text-5xl font-bold leading-tight whitespace-pre-line">
+              Aarvak{"\n"}Diagnostics
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden md:block w-[2px] h-[180px] lg:h-[220px] bg-primary-foreground/60 mx-6 lg:mx-10" />
+
+          {/* Right: Heading + CTA */}
+          <div className="w-full md:w-auto text-center md:text-left mt-4 md:mt-0 max-w-md">
+            <h1 className="text-primary-foreground text-2xl md:text-3xl lg:text-[42px] font-bold leading-tight whitespace-pre-line">
+              {heroSlides[heroSlide].heading}
+            </h1>
+            <p className="text-primary-foreground/90 text-sm md:text-base mt-3">
+              {heroSlides[heroSlide].description}
+            </p>
+            <div className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
+              <Link
+                to="/contact-us#contact"
+                className="bg-aarvak-blue text-primary-foreground px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-aarvak-blue-hover transition-colors"
+              >
+                Book a Test
+              </Link>
+              <Link
+                to="/#package"
+                className="bg-primary-foreground text-foreground px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-primary-foreground/90 transition-colors"
+              >
+                Explore Packages
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="block lg:hidden relative w-full h-[600px]">
-          <img
-            alt="Mobile Banner"
-            src="/images/mobileaarvakbanner.jpeg"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-            <Link
-              to="/contact-us#contact"
-              className="block text-center text-white font-semibold tracking-wider uppercase px-10 py-4 text-base rounded-full shadow-xl transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: '#0A1551' }}
-            >
-              Book Your Health Checkup
-            </Link>
+
+        {/* Stats Overlay - Bottom Left */}
+        <div className="absolute bottom-0 left-0 z-20 bg-primary-foreground rounded-tr-3xl px-6 md:px-10 py-5 md:py-6">
+          <div className="flex gap-6 md:gap-10">
+            <div className="text-center">
+              <p className="text-aarvak-green text-2xl md:text-4xl font-bold">10+</p>
+              <p className="text-foreground text-xs md:text-sm mt-1">Years of Experience</p>
+            </div>
+            <div className="text-center">
+              <p className="text-aarvak-green text-2xl md:text-4xl font-bold">50k+</p>
+              <p className="text-foreground text-xs md:text-sm mt-1">Tests Conducted</p>
+            </div>
+            <div className="text-center">
+              <p className="text-aarvak-green text-2xl md:text-4xl font-bold">99%</p>
+              <p className="text-foreground text-xs md:text-sm mt-1">Accuracy Rate</p>
+            </div>
           </div>
+        </div>
+
+        {/* Carousel Controls - Bottom Right */}
+        <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 flex items-center gap-3">
+          <button
+            onClick={prevHeroSlide}
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary-foreground/60 text-primary-foreground flex items-center justify-center hover:bg-primary-foreground/20 transition"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <div className="flex gap-2">
+            {heroSlides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setHeroSlide(i)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  i === heroSlide ? "bg-aarvak-blue" : "bg-primary-foreground/50"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={nextHeroSlide}
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary-foreground/60 text-primary-foreground flex items-center justify-center hover:bg-primary-foreground/20 transition"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </section>
 
