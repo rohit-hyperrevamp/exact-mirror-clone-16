@@ -412,6 +412,7 @@ Regular screening allows you to catch these changes in the **"yellow zone."** Of
 We know that visiting a lab can feel like a chore. That's why **Aarvak Diagnostics** brings the expertise to you. Our professional home collection service ensures that checking your vital organs is as easy as checking your email.
 
 **Don't let your silent heroes struggle in silence.** Give your body the "service" it deserves. Book your ADC Mini Swasthya Panel today and ensure your internal filtration system is ready for the long road ahead.`,
+    tags: ["Liver Health", "Kidney Health", "LFT", "KFT", "Organ Health"],
   },
   {
     slug: "hba1c-test-blood-sugar-3-month-average",
