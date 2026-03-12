@@ -589,19 +589,19 @@ const Index = () => {
             <div
               className="absolute hidden md:block"
               style={{
-                bottom: '-90px',
+                bottom: '-60px',
                 left: '0px',
-                width: '54%',
-                maxWidth: '660px',
+                width: '42%',
+                maxWidth: '520px',
                 zIndex: 10,
               }}
             >
               <div
                 className="bg-background"
                 style={{
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 36px rgba(0,0,0,0.08)',
-                  padding: '32px 36px',
+                  borderRadius: '0 20px 0 20px',
+                  boxShadow: '0 8px 30px rgba(0,0,0,0.07)',
+                  padding: '28px 32px',
                 }}
               >
                 <p className="text-aarvak-gray-600" style={{ fontSize: '15px', lineHeight: '1.8' }}>
