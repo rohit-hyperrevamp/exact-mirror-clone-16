@@ -641,41 +641,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{ gap: '28px' }}>
-            {[
-              { title: "Accurate & Reliable Testing", desc: "Advanced equipment and quality-controlled processes for dependable results.", img: "/images/testing.png" },
-              { title: "Patient-First Approach", desc: "Comfortable testing experience with clear communication at every step.", img: "/images/patient.png" },
-              { title: "Experienced Professionals", desc: "Advanced equipment and quality-controlled processes for dependable results.", img: "/images/professional.png" },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-background flex flex-col items-center text-center"
-                style={{
-                  borderRadius: '16px',
-                  boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
-                  padding: '36px 28px',
-                }}
-              >
-                <div
-                  className="flex items-center justify-center"
-                  style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '50%',
-                    backgroundColor: 'hsl(145, 60%, 90%)',
-                    marginBottom: '20px',
-                  }}
-                >
-                  <img src={item.img} alt={item.title} style={{ width: '28px', height: '28px' }} />
-                </div>
-                <h3 className="font-bold text-aarvak-gray-900" style={{ fontSize: '17px', marginBottom: '8px' }}>
-                  {item.title}
-                </h3>
-                <p className="text-aarvak-gray-600 leading-relaxed" style={{ fontSize: '14px' }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
