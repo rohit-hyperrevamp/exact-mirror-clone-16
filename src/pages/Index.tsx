@@ -572,7 +572,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ marginBottom: '140px' }}>
+          <div className="relative" style={{ marginBottom: '100px' }}>
             {/* Banner Image */}
             <div
               className="w-full overflow-hidden"
