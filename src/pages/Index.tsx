@@ -572,7 +572,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ marginBottom: '140px' }}>
+          <div className="relative" style={{ marginBottom: '100px' }}>
             {/* Banner Image */}
             <div
               className="w-full overflow-hidden"
@@ -589,19 +589,19 @@ const Index = () => {
             <div
               className="absolute hidden md:block"
               style={{
-                bottom: '-90px',
+                bottom: '-60px',
                 left: '0px',
-                width: '54%',
-                maxWidth: '660px',
+                width: '42%',
+                maxWidth: '520px',
                 zIndex: 10,
               }}
             >
               <div
                 className="bg-background"
                 style={{
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 36px rgba(0,0,0,0.08)',
-                  padding: '32px 36px',
+                  borderRadius: '0 20px 0 20px',
+                  boxShadow: '0 8px 30px rgba(0,0,0,0.07)',
+                  padding: '28px 32px',
                 }}
               >
                 <p className="text-aarvak-gray-600" style={{ fontSize: '15px', lineHeight: '1.8' }}>
