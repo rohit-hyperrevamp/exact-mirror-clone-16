@@ -236,6 +236,7 @@ At Aarvak Diagnostics, imaging is done with patient safety and diagnostic precis
 Imaging tests are meant to bring clarity, not confusion. Whether it's an X-ray or an ultrasound, the right scan at the right time helps doctors make confident decisions about your care.
 
 **Schedule your imaging test at Aarvak Diagnostics** for safe, accurate, and professionally interpreted results. Our advanced imaging services focus on patient safety and diagnostic precision.`,
+    tags: ["Imaging Tests", "X-Ray", "Ultrasound", "Diagnostic Imaging", "Radiology"],
   },
   {
     slug: "diagnostic-test-accuracy-long-term-health-outcomes",
