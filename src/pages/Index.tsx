@@ -572,36 +572,31 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ marginBottom: '140px' }}>
+          <div className="relative overflow-hidden" style={{ borderRadius: '20px' }}>
             {/* Banner Image */}
-            <div
-              className="w-full overflow-hidden"
-              style={{ borderRadius: '20px', height: '440px' }}
-            >
-              <img
-                src="/images/care-trust-banner.png"
-                alt="Care You Can Trust"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src="/images/care-trust-banner.png"
+              alt="Care You Can Trust"
+              className="w-full object-cover"
+              style={{ height: '440px' }}
+            />
 
-            {/* Overlapping White Card */}
+            {/* Overlapping White Card - bottom left */}
             <div
               className="absolute hidden md:block"
               style={{
-                bottom: '-90px',
-                left: '0px',
-                width: '54%',
-                maxWidth: '660px',
+                bottom: '40px',
+                left: '40px',
+                maxWidth: '500px',
                 zIndex: 10,
               }}
             >
               <div
                 className="bg-background"
                 style={{
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 36px rgba(0,0,0,0.08)',
-                  padding: '32px 36px',
+                  borderRadius: '18px',
+                  boxShadow: '0 8px 36px rgba(0,0,0,0.10)',
+                  padding: '30px',
                 }}
               >
                 <p className="text-aarvak-gray-600" style={{ fontSize: '15px', lineHeight: '1.8' }}>
