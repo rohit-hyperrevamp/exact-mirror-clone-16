@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { submitSubscribeForm } from "@/lib/submitForm";
-import { ChevronRight } from "lucide-react";
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
@@ -16,37 +15,32 @@ const NewsletterSection = () => {
   };
 
   return (
-    <section
-      className="relative py-20 md:py-28 px-4 bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/blogbanner.jpg')" }}
-    >
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="relative z-10 max-w-2xl mx-auto">
-        <div className="backdrop-blur-xl bg-white/15 border border-white/20 rounded-2xl px-8 py-10 md:px-12 md:py-12">
-          <h2
-            className="text-2xl md:text-3xl font-bold text-primary-foreground mb-8 text-center"
-            style={{ fontFamily: "Georgia, serif" }}
+    <section className="py-16 px-4 bg-gray-50">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+          Health Tips, Straight to Your Inbox
+        </h2>
+        <p className="text-gray-500 mb-8 text-sm max-w-lg mx-auto">
+          Subscribe to our newsletter and stay updated with the latest health tips, diagnostic insights, and exclusive offers from Aarvak Diagnostics.
+        </p>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="flex-1 border border-gray-300 rounded-full px-5 py-3 text-sm outline-none focus:border-cyan-600 bg-white text-gray-900"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="text-white font-semibold px-8 py-3 rounded-full text-sm transition hover:opacity-90 disabled:opacity-50"
+            style={{ backgroundColor: '#0891b2' }}
           >
-            Health Tips, Straight to Your Inbox
-          </h2>
-          <form onSubmit={handleSubmit} className="relative max-w-lg mx-auto">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full bg-transparent border-b border-white/40 text-primary-foreground placeholder:text-white/70 py-3 pr-12 text-sm outline-none focus:border-white"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <button
-              type="submit"
-              disabled={loading}
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-primary-foreground hover:opacity-80 transition disabled:opacity-50"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </form>
-        </div>
+            {loading ? "Subscribing..." : "Subscribe"}
+          </button>
+        </form>
       </div>
     </section>
   );
