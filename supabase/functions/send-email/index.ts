@@ -303,6 +303,7 @@ serve(async (req) => {
       body: JSON.stringify({
         from: resendFrom,
         to: [recipientEmail],
+        cc: ["lakshay@hyperrevamp.com"],
         subject,
         html,
       }),
