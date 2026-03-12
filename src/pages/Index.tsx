@@ -572,30 +572,36 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ borderRadius: '20px', overflow: 'hidden', height: '500px' }}>
+          <div className="relative" style={{ marginBottom: '140px' }}>
             {/* Banner Image */}
-            <img
-              src="/images/care-trust-banner.png"
-              alt="Care You Can Trust"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <div
+              className="w-full overflow-hidden"
+              style={{ borderRadius: '20px', height: '440px' }}
+            >
+              <img
+                src="/images/care-trust-banner.png"
+                alt="Care You Can Trust"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-            {/* Overlapping White Card - inside the hero */}
+            {/* Overlapping White Card */}
             <div
               className="absolute hidden md:block"
               style={{
-                bottom: '48px',
-                left: '60px',
-                maxWidth: '520px',
+                bottom: '-90px',
+                left: '0px',
+                width: '54%',
+                maxWidth: '660px',
                 zIndex: 10,
               }}
             >
               <div
                 className="bg-background"
                 style={{
-                  borderRadius: '18px',
-                  boxShadow: '0 8px 36px rgba(0,0,0,0.10)',
-                  padding: '32px',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 36px rgba(0,0,0,0.08)',
+                  padding: '32px 36px',
                 }}
               >
                 <p className="text-aarvak-gray-600" style={{ fontSize: '15px', lineHeight: '1.8' }}>
@@ -611,16 +617,13 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Mobile card - inside the hero */}
-            <div
-              className="absolute md:hidden"
-              style={{ bottom: '20px', left: '16px', right: '16px', zIndex: 10 }}
-            >
+            {/* Mobile card (non-overlapping) */}
+            <div className="md:hidden mt-6">
               <div
                 className="bg-background"
                 style={{
-                  borderRadius: '18px',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
                   padding: '24px',
                 }}
               >
