@@ -179,35 +179,6 @@ const ContactUs = () => {
         </div>
       </section>
 
-      {/* Subscribe Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Health Tips, Straight to Your Inbox
-          </h2>
-          <p className="text-muted-foreground mb-8 text-sm max-w-lg mx-auto">
-            Subscribe to our newsletter and stay updated with the latest health tips, diagnostic insights, and exclusive offers from Aarvak Diagnostics.
-          </p>
-          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 border border-input rounded-lg px-4 py-3 text-sm outline-none focus:border-secondary bg-background text-foreground"
-              value={subscribeEmail}
-              onChange={(e) => setSubscribeEmail(e.target.value)}
-              required
-            />
-            <button
-              type="submit"
-              disabled={subLoading}
-              className="bg-secondary text-primary-foreground font-semibold px-8 py-3 rounded-lg text-sm transition hover:opacity-90 disabled:opacity-50"
-            >
-              {subLoading ? "Subscribing..." : "Subscribe"}
-            </button>
-          </form>
-        </div>
-      </section>
-
       <NewsletterSection />
     </div>
   );

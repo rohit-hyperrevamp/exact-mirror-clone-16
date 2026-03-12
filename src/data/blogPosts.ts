@@ -9,6 +9,7 @@ export interface BlogPost {
   readTime: string;
   category: string;
   content: string;
+  tags: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -75,6 +76,7 @@ With increasing stress, sedentary lifestyles, and rising chronic diseases, preve
 Diagnostic centers play a vital role in keeping communities healthy — not just by providing reports, but by supporting early detection and informed care.
 
 **Choose Aarvak Diagnostics as your trusted healthcare partner** for accurate testing, preventive screening, and reliable insights that help you stay ahead of health issues.`,
+    tags: ["Preventive Healthcare", "Diagnostic Centers", "Health Screening", "Early Detection", "Medical Testing"],
   },
   {
     slug: "signs-you-should-not-ignore-health-checkup",
@@ -146,6 +148,7 @@ Routine medical tests are not about fear, they're about awareness.
 Your body gives signals long before serious problems develop. Regular health checkups help catch issues early when they're easiest to manage.
 
 **Book a preventive health checkup at Aarvak Diagnostics** and take a proactive step toward long-term wellness. Early testing today can prevent major health concerns tomorrow.`,
+    tags: ["Health Checkup", "Preventive Healthcare", "Regular Screening", "Early Detection", "Wellness"],
   },
   {
     slug: "when-do-doctors-recommend-imaging-tests",
@@ -233,6 +236,7 @@ At Aarvak Diagnostics, imaging is done with patient safety and diagnostic precis
 Imaging tests are meant to bring clarity, not confusion. Whether it's an X-ray or an ultrasound, the right scan at the right time helps doctors make confident decisions about your care.
 
 **Schedule your imaging test at Aarvak Diagnostics** for safe, accurate, and professionally interpreted results. Our advanced imaging services focus on patient safety and diagnostic precision.`,
+    tags: ["Imaging Tests", "X-Ray", "Ultrasound", "Diagnostic Imaging", "Radiology"],
   },
   {
     slug: "diagnostic-test-accuracy-long-term-health-outcomes",
@@ -307,6 +311,7 @@ On the other hand, accurate diagnostics save time, money, and peace of mind.
 When it comes to medical decisions, even small inaccuracies can lead to big consequences. Choosing a diagnostic center that prioritizes precision can make all the difference in your long-term health.
 
 **Book your lab tests with Aarvak Diagnostics today** and experience reliable medical testing backed by advanced technology, strict quality controls, and expert pathology support. Because your health decisions should be based on facts, not guesswork.`,
+    tags: ["Lab Accuracy", "Diagnostic Tests", "Pathology", "Medical Testing", "Health Outcomes"],
   },
   {
     slug: "blood-test-at-home-home-collection-gurugram",
@@ -358,6 +363,7 @@ From the moment you book your test via our website or WhatsApp to the moment you
 **Stop making excuses and start making progress.** Your health is your greatest wealth, and now, protecting it is as easy as ordering your favorite meal.
 
 **Book your Home Collection with Aarvak Diagnostics** today. Because your health deserves the best, and you deserve the convenience.`,
+    tags: ["Home Collection", "Blood Test", "Gurugram", "Convenience", "Health Checkup"],
   },
   {
     slug: "liver-kidney-health-lft-kft-tests",
@@ -406,6 +412,7 @@ Regular screening allows you to catch these changes in the **"yellow zone."** Of
 We know that visiting a lab can feel like a chore. That's why **Aarvak Diagnostics** brings the expertise to you. Our professional home collection service ensures that checking your vital organs is as easy as checking your email.
 
 **Don't let your silent heroes struggle in silence.** Give your body the "service" it deserves. Book your ADC Mini Swasthya Panel today and ensure your internal filtration system is ready for the long road ahead.`,
+    tags: ["Liver Health", "Kidney Health", "LFT", "KFT", "Organ Health"],
   },
   {
     slug: "hba1c-test-blood-sugar-3-month-average",
@@ -451,6 +458,7 @@ At **Aarvak Diagnostics**, we include the HbA1c test in our **ADC Basic Swasthya
 Whether you have a family history of diabetes or simply want to ensure your "hustle" isn't harming your health, our reports give you a clear, easy-to-understand breakdown of your 3-month average.
 
 **Don't settle for a snapshot when you can see the whole picture.** Book your HbA1c test as part of our Swasthya Panels today. With our **Home Collection service**, we make it easier than ever to keep your health on track while you focus on your goals.`,
+    tags: ["HbA1c", "Blood Sugar", "Diabetes", "Pre-Diabetes", "Preventive Health"],
   },
   {
     slug: "corporate-health-audit-preventive-checkup-executives",
@@ -492,5 +500,6 @@ By catching imbalances early, whether it's a rising HbA1c level or a slight dip 
 We know you're busy. That's why we've removed the friction from healthcare. With **Aarvak Diagnostics**, you don't have to fight traffic or sit in a sterile waiting room. Our professional phlebotomists come to your home, follow international hygiene standards, and ensure the process is as seamless as ordering your morning coffee.
 
 **Don't leave your success to chance.** You wouldn't run a business without a quarterly financial report; don't run your life without a health report. Invest in the ADC Swasthya Panel today and ensure you're firing on all cylinders for years to come.`,
+    tags: ["Corporate Health", "Executive Checkup", "Preventive Health", "Wellness", "Health Audit"],
   },
 ];
