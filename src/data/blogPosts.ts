@@ -458,6 +458,7 @@ At **Aarvak Diagnostics**, we include the HbA1c test in our **ADC Basic Swasthya
 Whether you have a family history of diabetes or simply want to ensure your "hustle" isn't harming your health, our reports give you a clear, easy-to-understand breakdown of your 3-month average.
 
 **Don't settle for a snapshot when you can see the whole picture.** Book your HbA1c test as part of our Swasthya Panels today. With our **Home Collection service**, we make it easier than ever to keep your health on track while you focus on your goals.`,
+    tags: ["HbA1c", "Blood Sugar", "Diabetes", "Pre-Diabetes", "Preventive Health"],
   },
   {
     slug: "corporate-health-audit-preventive-checkup-executives",
