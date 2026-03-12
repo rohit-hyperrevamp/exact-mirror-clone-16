@@ -500,5 +500,6 @@ By catching imbalances early, whether it's a rising HbA1c level or a slight dip 
 We know you're busy. That's why we've removed the friction from healthcare. With **Aarvak Diagnostics**, you don't have to fight traffic or sit in a sterile waiting room. Our professional phlebotomists come to your home, follow international hygiene standards, and ensure the process is as seamless as ordering your morning coffee.
 
 **Don't leave your success to chance.** You wouldn't run a business without a quarterly financial report; don't run your life without a health report. Invest in the ADC Swasthya Panel today and ensure you're firing on all cylinders for years to come.`,
+    tags: ["Corporate Health", "Executive Checkup", "Preventive Health", "Wellness", "Health Audit"],
   },
 ];
