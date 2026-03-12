@@ -363,6 +363,7 @@ From the moment you book your test via our website or WhatsApp to the moment you
 **Stop making excuses and start making progress.** Your health is your greatest wealth, and now, protecting it is as easy as ordering your favorite meal.
 
 **Book your Home Collection with Aarvak Diagnostics** today. Because your health deserves the best, and you deserve the convenience.`,
+    tags: ["Home Collection", "Blood Test", "Gurugram", "Convenience", "Health Checkup"],
   },
   {
     slug: "liver-kidney-health-lft-kft-tests",
