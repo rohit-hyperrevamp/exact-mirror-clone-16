@@ -568,11 +568,21 @@ const Index = () => {
       </section>
 
       {/* Care You Can Trust */}
-      <section className="bg-background" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+      <section className="bg-background" style={{ paddingTop: '80px', paddingBottom: '20px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
+          {/* Section Title */}
+          <div className="text-center" style={{ marginBottom: '40px' }}>
+            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '42px' }}>
+              Care You Can Trust
+            </h2>
+            <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '17px', maxWidth: '560px', margin: '12px auto 0' }}>
+              Reliable diagnostics focused on accuracy, safety, and patient comfort.
+            </p>
+          </div>
+
           {/* Image Banner with overlapping card */}
-          <div className="relative" style={{ marginBottom: '60px' }}>
+          <div className="relative">
             {/* Banner Image */}
             <div
               className="w-full overflow-hidden"
@@ -639,6 +649,53 @@ const Index = () => {
                 </Link>
               </div>
             </div>
+          </div>
+
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ marginTop: '48px' }}>
+            {[
+              {
+                title: "Accurate & Reliable Testing",
+                text: "Advanced equipment and quality-controlled processes for dependable results.",
+              },
+              {
+                title: "Patient-First Approach",
+                text: "Comfortable testing experience with clear communication at every step.",
+              },
+              {
+                title: "Experienced Professionals",
+                text: "Advanced equipment and quality-controlled processes for dependable results.",
+              },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className="bg-background flex flex-col items-center text-center"
+                style={{
+                  borderRadius: '16px',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+                  padding: '32px 24px',
+                }}
+              >
+                <div
+                  className="flex items-center justify-center"
+                  style={{
+                    width: '56px',
+                    height: '56px',
+                    borderRadius: '50%',
+                    backgroundColor: 'hsl(145, 60%, 90%)',
+                    marginBottom: '20px',
+                  }}
+                >
+                  <img src="/icons/check.png" alt="" className="w-6 h-6" />
+                </div>
+                <h3 className="font-bold text-aarvak-gray-900" style={{ fontSize: '18px', marginBottom: '10px' }}>
+                  {card.title}
+                </h3>
+                <p className="text-aarvak-gray-600" style={{ fontSize: '14px', lineHeight: '1.7' }}>
+                  {card.text}
+                </p>
+              </div>
+            ))}
           </div>
 
         </div>
