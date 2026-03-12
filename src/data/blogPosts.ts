@@ -311,6 +311,7 @@ On the other hand, accurate diagnostics save time, money, and peace of mind.
 When it comes to medical decisions, even small inaccuracies can lead to big consequences. Choosing a diagnostic center that prioritizes precision can make all the difference in your long-term health.
 
 **Book your lab tests with Aarvak Diagnostics today** and experience reliable medical testing backed by advanced technology, strict quality controls, and expert pathology support. Because your health decisions should be based on facts, not guesswork.`,
+    tags: ["Lab Accuracy", "Diagnostic Tests", "Pathology", "Medical Testing", "Health Outcomes"],
   },
   {
     slug: "blood-test-at-home-home-collection-gurugram",
