@@ -14,6 +14,97 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "daily-wellness-habits-for-a-healthier-life",
+    img: "/images/blog-wellness-habits.jpg",
+    date: "March 12, 2026",
+    dateSort: "2026-03-12",
+    title: "7 Daily Wellness Habits That Can Transform Your Health",
+    desc: "Small daily habits can make a big difference in your long-term health. Discover 7 simple wellness practices backed by science that you can start today.",
+    author: "Aarvak Diagnostics",
+    readTime: "4 min",
+    category: "Health & Wellness",
+    content: `We often think that staying healthy requires dramatic lifestyle changes — expensive gym memberships, strict diets, or hours of meditation. But the truth is, **small, consistent habits have the greatest impact on long-term health**. It's not about perfection; it's about progress.
+
+Here are seven daily wellness habits that can quietly transform your health over time.
+
+## 1. Start Your Day with Water, Not Your Phone
+
+Before you reach for your phone, reach for a glass of water. After 7–8 hours of sleep, your body is naturally dehydrated. Drinking water first thing in the morning:
+- Kickstarts your metabolism
+- Flushes out toxins
+- Improves mental clarity
+- Supports digestion throughout the day
+
+A simple habit that costs nothing but pays dividends.
+
+## 2. Move for at Least 30 Minutes
+
+You don't need to run a marathon. A brisk walk, yoga session, or even dancing to your favorite music counts. Regular movement:
+- Strengthens the heart
+- Improves blood circulation
+- Reduces stress hormones
+- Boosts mood and energy levels
+
+The key is consistency, not intensity.
+
+## 3. Eat More Whole Foods
+
+Processed foods are convenient, but whole foods are nourishing. Try to fill your plate with:
+- Fresh vegetables and fruits
+- Whole grains like oats, millets, and brown rice
+- Lean proteins and legumes
+- Healthy fats from nuts, seeds, and olive oil
+
+Your body functions better when it receives real nutrition.
+
+## 4. Prioritize Sleep Like a Non-Negotiable
+
+Sleep is not a luxury — it's a biological necessity. Poor sleep is linked to:
+- Weight gain
+- Weakened immunity
+- Increased risk of chronic diseases
+- Poor concentration and mood swings
+
+Aim for 7–8 hours of quality sleep every night. A consistent sleep schedule helps your body repair and recharge.
+
+## 5. Schedule Regular Health Checkups
+
+Prevention is always better than cure. Many health conditions like diabetes, thyroid disorders, and vitamin deficiencies develop silently. **Regular diagnostic tests** help you:
+- Detect issues before symptoms appear
+- Monitor existing conditions
+- Make informed lifestyle adjustments
+- Avoid emergency medical situations
+
+At Aarvak Diagnostics, we recommend annual health screenings for all adults, more frequently if you have risk factors.
+
+## 6. Practice Mindful Breathing
+
+Stress is one of the biggest silent killers. Just 5–10 minutes of deep breathing or meditation daily can:
+- Lower blood pressure
+- Reduce anxiety
+- Improve focus
+- Support better sleep
+
+You don't need an app or a class — just a quiet corner and a few minutes of intentional breathing.
+
+## 7. Limit Screen Time Before Bed
+
+Blue light from screens disrupts your natural sleep cycle. Try to:
+- Put your phone away 30 minutes before bed
+- Read a book instead
+- Use night mode on devices
+- Create a calming bedtime routine
+
+Better sleep leads to better health — it's that simple.
+
+## Small Changes, Big Results
+
+You don't have to overhaul your entire life overnight. Start with one or two habits, build consistency, and add more over time. The compounding effect of small daily choices is powerful.
+
+**Take the first step today with Aarvak Diagnostics.** Book a preventive health checkup and understand where your health stands. Because the best time to invest in your wellness is now.`,
+    tags: ["Health & Wellness", "Daily Habits", "Preventive Healthcare", "Healthy Living", "Lifestyle"],
+  },
+  {
     slug: "how-diagnostic-centers-support-preventive-healthcare-india",
     img: "/images/blog-preventive-india.png",
     date: "February 24, 2026",
