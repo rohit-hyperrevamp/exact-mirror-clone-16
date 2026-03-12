@@ -148,6 +148,7 @@ Routine medical tests are not about fear, they're about awareness.
 Your body gives signals long before serious problems develop. Regular health checkups help catch issues early when they're easiest to manage.
 
 **Book a preventive health checkup at Aarvak Diagnostics** and take a proactive step toward long-term wellness. Early testing today can prevent major health concerns tomorrow.`,
+    tags: ["Health Checkup", "Preventive Healthcare", "Regular Screening", "Early Detection", "Wellness"],
   },
   {
     slug: "when-do-doctors-recommend-imaging-tests",
