@@ -9,6 +9,7 @@ export interface BlogPost {
   readTime: string;
   category: string;
   content: string;
+  tags: string[];
 }
 
 export const blogPosts: BlogPost[] = [
