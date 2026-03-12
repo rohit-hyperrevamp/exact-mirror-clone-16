@@ -76,6 +76,7 @@ With increasing stress, sedentary lifestyles, and rising chronic diseases, preve
 Diagnostic centers play a vital role in keeping communities healthy — not just by providing reports, but by supporting early detection and informed care.
 
 **Choose Aarvak Diagnostics as your trusted healthcare partner** for accurate testing, preventive screening, and reliable insights that help you stay ahead of health issues.`,
+    tags: ["Preventive Healthcare", "Diagnostic Centers", "Health Screening", "Early Detection", "Medical Testing"],
   },
   {
     slug: "signs-you-should-not-ignore-health-checkup",
