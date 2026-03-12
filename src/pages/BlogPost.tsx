@@ -17,7 +17,12 @@ const BlogPost = () => {
     );
   }
 
-  // Simple markdown-like renderer
+  const formatInline = (text: string) => {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/_(.+?)_/g, "<em>$1</em>");
+  };
+
   const renderContent = (content: string) => {
     const lines = content.split("\n");
     const elements: JSX.Element[] = [];
@@ -27,7 +32,7 @@ const BlogPost = () => {
     const flushList = () => {
       if (listItems.length > 0) {
         elements.push(
-          <ul key={`list-${i}`} className="list-disc pl-6 space-y-2 my-4">
+          <ul key={`list-${i}`} className="list-disc pl-6 space-y-2 my-4 text-gray-700">
             {listItems.map((item, idx) => (
               <li key={idx} dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
             ))}
@@ -37,21 +42,19 @@ const BlogPost = () => {
       }
     };
 
-    const formatInline = (text: string) => {
-      return text
-        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-        .replace(/_(.+?)_/g, "<em>$1</em>");
-    };
-
     while (i < lines.length) {
       const line = lines[i];
 
       if (line.startsWith("### ")) {
         flushList();
-        elements.push(<h3 key={i} className="text-xl font-bold text-gray-900 mt-8 mb-3" dangerouslySetInnerHTML={{ __html: formatInline(line.slice(4)) }} />);
+        elements.push(
+          <h3 key={i} className="text-xl font-bold text-gray-900 mt-8 mb-3" dangerouslySetInnerHTML={{ __html: formatInline(line.slice(4)) }} />
+        );
       } else if (line.startsWith("## ")) {
         flushList();
-        elements.push(<h2 key={i} className="text-2xl font-bold text-gray-900 mt-10 mb-4" dangerouslySetInnerHTML={{ __html: formatInline(line.slice(3)) }} />);
+        elements.push(
+          <h2 key={i} className="text-2xl font-bold text-gray-900 mt-10 mb-4" dangerouslySetInnerHTML={{ __html: formatInline(line.slice(3)) }} />
+        );
       } else if (line.startsWith("- ")) {
         listItems.push(line.slice(2));
       } else if (line.match(/^\d+\.\s/)) {
@@ -61,7 +64,9 @@ const BlogPost = () => {
         flushList();
       } else {
         flushList();
-        elements.push(<p key={i} className="text-gray-700 leading-relaxed my-3" dangerouslySetInnerHTML={{ __html: formatInline(line) }} />);
+        elements.push(
+          <p key={i} className="text-gray-700 leading-relaxed my-3" dangerouslySetInnerHTML={{ __html: formatInline(line) }} />
+        );
       }
       i++;
     }
@@ -71,9 +76,13 @@ const BlogPost = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Image */}
+      {/* Hero Image with metadata overlay */}
       <section className="relative w-full h-[350px] md:h-[480px] overflow-hidden">
-        <img src={post.img} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src={post.img}
+          alt={post.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex flex-wrap gap-x-16 gap-y-2 text-white">
             <div>
@@ -102,6 +111,23 @@ const BlogPost = () => {
         <div className="prose prose-gray max-w-none text-base">
           {renderContent(post.content)}
         </div>
+
+        {/* Tags */}
+        {post.tags && post.tags.length > 0 && (
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-bold text-gray-900 mb-4">Tags</h3>
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-block text-sm px-4 py-2 rounded-full border border-gray-300 text-gray-700 bg-gray-50 hover:bg-gray-100 transition"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       <NewsletterSection />
