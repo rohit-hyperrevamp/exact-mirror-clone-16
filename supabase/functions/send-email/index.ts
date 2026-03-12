@@ -10,7 +10,7 @@ const corsHeaders = {
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const DEFAULT_RECIPIENT_EMAIL = "marketing@aarvakdiagnostics.com";
-const DEFAULT_FROM = "Aarvak Diagnostics <onboarding@resend.dev>";
+const DEFAULT_FROM = "Aarvak Diagnostics <noreply@hyperrevamp.com>";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^\+?[0-9()\-\s]{7,20}$/;
