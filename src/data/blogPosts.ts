@@ -10,9 +10,145 @@ export interface BlogPost {
   category: string;
   content: string;
   tags: string[];
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "home-sample-collection-benefits-safety-how-it-works",
+    img: "/images/blog-home-sample-collection.png",
+    date: "March 19, 2026",
+    dateSort: "2026-03-19",
+    title: "Home Sample Collection: Benefits, Safety, and How It Works",
+    desc: "Learn how home sample collection works, its safety standards, and why it's the most convenient way to get your diagnostic tests done from the comfort of your home.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Diagnostic Services",
+    metaTitle: "Home Sample Collection – Benefits, Safety & Process",
+    metaDescription: "Discover the benefits and safety of home sample collection. Learn how Aarvak Diagnostics brings trusted lab testing to your doorstep across Gurugram.",
+    content: `Getting a blood test or health checkup no longer means standing in long queues at a diagnostic centre. With **home sample collection**, you can now get your lab tests done from the comfort of your own home — safely, conveniently, and with the same accuracy you'd expect from a trusted laboratory.
+
+Whether you're a working professional with a packed schedule, a senior citizen who finds it difficult to travel, or a parent managing a busy household, home collection services are designed to make healthcare accessible for everyone.
+
+## What Is Home Sample Collection?
+
+Home sample collection is a service offered by diagnostic centres where a trained phlebotomist visits your home at a scheduled time to collect blood, urine, or other samples for laboratory testing. The samples are then transported to the lab under strict safety protocols and processed using the same advanced equipment used for walk-in patients.
+
+It's the same quality of testing — just without the commute.
+
+## How Does the Home Collection Process Work?
+
+The process is simple and hassle-free:
+
+- **Book your test** online, by phone, or through the Aarvak Diagnostics website
+- **Choose your time slot** based on your convenience
+- A certified phlebotomist arrives at your doorstep at the scheduled time
+- Samples are collected following proper hygiene and safety standards
+- Samples are securely transported to the laboratory in temperature-controlled kits
+- Your reports are delivered digitally, often within hours
+
+At Aarvak Diagnostics, we ensure that every step — from booking to reporting — is smooth, transparent, and patient-friendly.
+
+## Benefits of Home Sample Collection
+
+### 1. Convenience You Can Count On
+
+No travel, no waiting rooms, no parking hassles. You can get tested while sitting on your couch. This is especially helpful for:
+
+- Elderly patients with mobility challenges
+- New mothers and pregnant women
+- Post-surgery or bedridden patients
+- People living in areas without nearby labs
+
+### 2. Time-Saving for Busy Lives
+
+In cities like Gurugram, time is a precious resource. Home collection lets you skip the commute and get back to your day faster. Many people book early morning slots so they can continue with work or daily routines without any disruption.
+
+### 3. Comfortable and Stress-Free
+
+Some people — especially children and the elderly — feel anxious about visiting a clinical setting. Being in a familiar environment reduces stress, which can also improve the accuracy of certain test results like blood pressure and blood sugar readings.
+
+### 4. Same Accuracy as In-Lab Testing
+
+A common concern is whether home-collected samples are as reliable as those collected in a lab. The answer is yes. At Aarvak Diagnostics, our phlebotomists are trained professionals who follow the same sample handling protocols used in our centres. Every sample is transported in a cold chain and processed on the same certified equipment.
+
+Your results are just as accurate — no compromises.
+
+### 5. Ideal for Routine and Preventive Health Checkups
+
+If you've been putting off your annual health checkup because of a busy schedule, home collection removes that excuse. You can book a complete health package and get all your samples collected at home without stepping out.
+
+Explore our [health checkup packages](/health-checkups) to find the right one for you.
+
+## Safety Standards in Home Sample Collection
+
+Safety is one of the most important aspects of any diagnostic service, and home collection is no exception.
+
+Here's what Aarvak Diagnostics ensures:
+
+- **Trained and certified phlebotomists** who follow standardised protocols
+- **Sterile, single-use equipment** for every collection
+- **Proper identification and labelling** of samples at the point of collection
+- **Temperature-controlled transport kits** to maintain sample integrity
+- **Adherence to NABL-equivalent quality standards** throughout the process
+
+We treat every home visit with the same level of professionalism and hygiene that you'd experience at our diagnostic centres.
+
+## Who Should Consider Home Sample Collection?
+
+While home collection is available for everyone, it is particularly beneficial for:
+
+- **Senior citizens** who may find it difficult to visit a centre regularly
+- **Patients with chronic conditions** like diabetes or heart disease who need frequent monitoring
+- **Corporate employees** who prefer early morning or late evening slots
+- **Families** who want everyone tested together without multiple trips
+
+If you're managing a health condition and need regular [pathology tests](/pathology), home collection ensures you never miss a scheduled test.
+
+## Common Tests Available for Home Collection
+
+You can book a wide range of tests for home collection, including:
+
+- Complete Blood Count (CBC)
+- Lipid Profile
+- Thyroid Function Tests
+- Liver and Kidney Function Tests
+- HbA1c and Blood Sugar (Fasting/PP)
+- Vitamin D, B12, and Iron Studies
+- Full Body Health Checkup Packages
+
+For imaging services like X-rays, you can visit our [radiology department](/radiology) at any Aarvak Diagnostics centre.
+
+## Tips for a Smooth Home Collection Experience
+
+To make the most of your home collection appointment:
+
+- Follow any fasting instructions provided for your tests
+- Keep your test requisition or booking confirmation handy
+- Ensure a well-lit, clean area for the phlebotomist to work
+- Stay hydrated (unless fasting is required) for easier blood draw
+- Ask questions if you have any concerns — our team is happy to help
+
+## Why Choose Aarvak Diagnostics for Home Collection?
+
+At Aarvak Diagnostics, home collection is not just a convenience — it's a commitment to making healthcare accessible, accurate, and patient-first. Here's what sets us apart:
+
+- Experienced phlebotomists with gentle, professional technique
+- Wide coverage across Gurugram and surrounding areas
+- Quick turnaround on reports with digital delivery
+- Affordable pricing with no hidden charges
+- Trusted by thousands of families and corporate partners
+
+We believe that quality healthcare should come to you — not the other way around.
+
+## Your Health, Your Doorstep
+
+Home sample collection is one of the simplest ways to prioritise your health without disrupting your routine. Whether it's a single blood test or a full health screening, you deserve the convenience of getting it done on your terms.
+
+**Book your home sample collection with Aarvak Diagnostics today.** [Contact us](/contact-us) or call to schedule your appointment — because your health shouldn't have to wait.`,
+    tags: ["Home Sample Collection", "Home Blood Test", "Diagnostic Services", "Pathology", "Preventive Healthcare", "Gurugram"],
+  },
   {
     slug: "daily-wellness-habits-for-a-healthier-life",
     img: "/images/blog-wellness-habits.jpg",
