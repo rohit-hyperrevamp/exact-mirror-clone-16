@@ -16,6 +16,112 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "what-happens-inside-diagnostic-lab-process-explained",
+    img: "/images/blog-diagnostic-lab.png",
+    date: "March 8, 2026",
+    dateSort: "2026-03-08",
+    title: "What Happens Inside a Diagnostic Lab? Step-by-Step Process Explained",
+    desc: "Ever wondered what goes on behind the scenes at a diagnostic lab? Here's a clear, step-by-step look at how your samples are collected, processed, and reported.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Diagnostics",
+    metaTitle: "Inside a Diagnostic Lab – Step-by-Step Process",
+    metaDescription: "Wondering what happens inside a diagnostic lab? Explore the step-by-step process from sample collection to report delivery at Aarvak Diagnostics, Gurugram.",
+    content: `When you visit a diagnostic centre or book a [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works), you probably get your reports within hours — but have you ever wondered what actually happens behind the scenes? Understanding the journey your sample takes inside a lab can help you feel more confident about your test results.
+
+At Aarvak Diagnostics, we follow strict protocols at every stage to ensure your reports are accurate, timely, and reliable. Let's walk you through the entire process.
+
+## Step 1: Sample Registration and Collection
+
+Your diagnostic journey begins the moment you arrive at the centre or when a trained phlebotomist visits your home. Here's what happens:
+
+- Your personal details and prescribed tests are registered in the system
+- A unique barcode is assigned to your sample for tracking
+- The phlebotomist collects your blood, urine, or other specimens using sterile, single-use equipment
+
+This step ensures zero mix-ups and complete traceability throughout the process. If you're exploring our [pathology services](/pathology), you'll find a wide range of tests available.
+
+## Step 2: Sample Transportation and Preservation
+
+Once collected, your sample needs to reach the testing area in the right condition. Proper handling matters because:
+
+- Blood samples are stored in temperature-controlled containers
+- Time-sensitive specimens are fast-tracked to the lab
+- Each sample is logged and checked against the barcode at every handoff point
+
+Whether collected at our centre or through home visits, every sample follows the same cold-chain and safety standards.
+
+## Step 3: Pre-Analytical Processing
+
+Before any testing begins, your sample goes through preparation:
+
+- Centrifugation separates serum or plasma from whole blood
+- Samples are divided into aliquots if multiple tests are ordered
+- Quality checks confirm that the sample is not clotted, haemolysed, or insufficient
+
+This stage is crucial — errors here can affect your entire report. Our team follows standard operating procedures to minimise any pre-analytical variables.
+
+## Step 4: The Testing Phase
+
+This is where the science happens. Depending on the type of test, your sample may go through:
+
+- **Biochemistry analysers** for sugar, cholesterol, liver, and kidney function tests
+- **Haematology analysers** for complete blood count (CBC) and related parameters
+- **Immunoassay systems** for thyroid profile, Vitamin D, and hormonal assessments
+- **Microbiology culture and sensitivity** for infection-related investigations
+
+Each instrument is calibrated daily and runs internal quality controls before processing patient samples. If you're due for a routine check, our [health checkup packages](/health-checkups) cover most of these tests.
+
+## Step 5: Quality Control and Validation
+
+Accuracy is non-negotiable. Before your report is released:
+
+- Internal quality controls (IQC) are run alongside your sample
+- Results are cross-checked against reference ranges
+- A qualified pathologist reviews abnormal or critical findings
+- External quality assurance programmes (EQAS) benchmark our performance against national standards
+
+This multi-layered validation is what makes your report trustworthy.
+
+## Step 6: Report Generation and Delivery
+
+Once validated, your results move to the final stage:
+
+- Reports are generated digitally with clear formatting
+- Abnormal values are flagged for your doctor's attention
+- You receive your report via WhatsApp, email, or through our centre
+- Hard copies are available on request
+
+Most routine reports are delivered within 4–6 hours, while specialised tests may take 24–48 hours.
+
+## Step 7: Post-Report Support
+
+At Aarvak Diagnostics, your journey doesn't end with the report. We offer:
+
+- Doctor consultations to help you understand your results
+- Guidance on follow-up tests if needed
+- A complete record of your previous reports for easy comparison
+
+We also provide [radiology and imaging services](/radiology) if your doctor recommends further investigation based on your lab findings.
+
+## Why Does This Process Matter to You?
+
+Understanding these steps helps you:
+
+- Trust the accuracy of your reports
+- Appreciate the importance of proper sample collection
+- Make informed decisions about where you get tested
+
+A well-managed lab process means fewer errors, faster results, and better healthcare outcomes for you and your family.
+
+## Final Thoughts
+
+Behind every diagnostic report is a carefully managed chain of steps — from the moment your sample is collected to the second your results are delivered. At Aarvak Diagnostics, we invest in technology, trained professionals, and strict quality measures to make sure every report you receive is one you can rely on.
+
+If you're looking for a diagnostic centre that values precision and care, [get in touch with us](/contact-us) or book your next test today.`,
+    tags: ["Diagnostic Lab", "Lab Process", "Pathology", "Sample Collection", "Health Checkup", "Aarvak Diagnostics"],
+  },
+  {
     slug: "home-sample-collection-benefits-safety-how-it-works",
     img: "/images/blog-home-sample-collection.png",
     date: "March 19, 2026",
