@@ -17,7 +17,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "what-happens-inside-diagnostic-lab-process-explained",
-    img: "/images/blog-diagnostic-lab.png",
+    img: "/images/blog-diagnostic-lab-process.png",
     date: "March 8, 2026",
     dateSort: "2026-03-08",
     title: "What Happens Inside a Diagnostic Lab? Step-by-Step Process Explained",
