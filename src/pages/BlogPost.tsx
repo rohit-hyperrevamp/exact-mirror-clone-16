@@ -1,10 +1,98 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { blogPosts } from "@/data/blogPosts";
 import NewsletterSection from "@/components/NewsletterSection";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === slug);
+
+  useEffect(() => {
+    if (!post) return;
+
+    const metaTitle = post.metaTitle || post.title;
+    const metaDesc = post.metaDescription || post.desc;
+    const canonicalUrl = `https://www.aarvakdiagnostics.com/insights/${post.slug}`;
+    const imageUrl = `https://www.aarvakdiagnostics.com${post.img}`;
+
+    // Title
+    document.title = metaTitle;
+
+    // Meta tags
+    const setMeta = (name: string, content: string, attr = "name") => {
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.content = content;
+    };
+
+    setMeta("description", metaDesc);
+    setMeta("robots", "index, follow");
+    setMeta("og:title", metaTitle, "property");
+    setMeta("og:description", metaDesc, "property");
+    setMeta("og:type", "article", "property");
+    setMeta("og:url", canonicalUrl, "property");
+    setMeta("og:image", imageUrl, "property");
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", metaTitle);
+    setMeta("twitter:description", metaDesc);
+    setMeta("twitter:image", imageUrl);
+
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+
+    // JSON-LD Blog Schema
+    const schemaId = "blog-post-schema";
+    let schemaEl = document.getElementById(schemaId);
+    if (!schemaEl) {
+      schemaEl = document.createElement("script");
+      schemaEl.id = schemaId;
+      schemaEl.setAttribute("type", "application/ld+json");
+      document.head.appendChild(schemaEl);
+    }
+    schemaEl.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": metaDesc,
+      "image": imageUrl,
+      "datePublished": post.dateSort,
+      "dateModified": post.dateSort,
+      "author": {
+        "@type": "Organization",
+        "name": post.author,
+        "url": "https://www.aarvakdiagnostics.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aarvak Diagnostics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.aarvakdiagnostics.com/images/aarvak-logo.webp"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": canonicalUrl
+      },
+      "keywords": post.tags.join(", ")
+    });
+
+    return () => {
+      document.title = "Aarvak Diagnostics – Trusted Diagnostic Centre in India";
+      const schema = document.getElementById(schemaId);
+      if (schema) schema.remove();
+    };
+  }, [post]);
 
   if (!post) {
     return (
@@ -18,9 +106,11 @@ const BlogPost = () => {
   }
 
   const formatInline = (text: string) => {
-    return text
-      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-      .replace(/_(.+?)_/g, "<em>$1</em>");
+    // Handle markdown links [text](/url) first
+    let result = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-cyan-700 underline hover:text-cyan-900 transition">$1</a>');
+    result = result.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    result = result.replace(/_(.+?)_/g, "<em>$1</em>");
+    return result;
   };
 
   const renderContent = (content: string) => {

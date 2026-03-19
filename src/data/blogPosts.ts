@@ -10,6 +10,8 @@ export interface BlogPost {
   category: string;
   content: string;
   tags: string[];
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export const blogPosts: BlogPost[] = [
