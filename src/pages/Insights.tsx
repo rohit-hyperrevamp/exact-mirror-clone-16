@@ -33,7 +33,7 @@ const Insights = () => {
       {/* Blog Posts */}
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto space-y-10">
-          {blogPosts.map((post) => (
+          {[...blogPosts].sort((a, b) => b.dateSort.localeCompare(a.dateSort)).map((post) => (
             <Link
               key={post.slug}
               to={`/insights/${post.slug}`}
