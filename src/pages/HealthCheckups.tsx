@@ -36,7 +36,7 @@ const packages = [
     badge: null,
   },
   {
-    name: "ADC Mini Swasthya Panel",
+    name: "ADC Advance Swasthya Panel",
     items: [
       "Complete Blood Count",
       "Urine Routine & ESR",
