@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
+import useSEO from "@/hooks/useSEO";
 
 const AboutUs = () => {
+  useSEO({
+    title: "About Aarvak Diagnostics – Our Mission & Team",
+    description: "Learn about Aarvak Diagnostics, our mission to deliver accurate diagnostics, and the experienced leadership team behind trusted healthcare in India.",
+    canonical: "/about-us",
+  });
   return (
     <div className="bg-background">
       {/* Hero Banner - full width with rounded corners and side padding */}

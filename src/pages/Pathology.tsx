@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FlaskConical, Microscope, Droplets, FileText, ShieldCheck, Dna, Home, UserCheck, Clock } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
+import useSEO from "@/hooks/useSEO";
 
 const labServices = [
   { icon: FlaskConical, label: "Biochemistry Tests" },
@@ -30,6 +31,11 @@ const homeCollectionItems = [
 ];
 
 const Pathology = () => {
+  useSEO({
+    title: "Pathology Lab Services – Aarvak Diagnostics India",
+    description: "Accurate pathology lab tests including blood tests, biochemistry, microbiology and molecular diagnostics. Home sample collection available across Gurugram.",
+    canonical: "/pathology",
+  });
   return (
     <div className="bg-background">
       {/* Hero Banner */}

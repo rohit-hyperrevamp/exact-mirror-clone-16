@@ -2,8 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { submitContactForm, submitSubscribeForm } from "@/lib/submitForm";
 import NewsletterSection from "@/components/NewsletterSection";
+import useSEO from "@/hooks/useSEO";
 
 const ContactUs = () => {
+  useSEO({
+    title: "Contact Aarvak Diagnostics – Book a Test Today",
+    description: "Get in touch with Aarvak Diagnostics for lab test bookings, health checkup queries, or home sample collection. We are here to help you stay healthy.",
+    canonical: "/contact-us",
+  });
   const [form, setForm] = useState({
     name: "",
     email: "",

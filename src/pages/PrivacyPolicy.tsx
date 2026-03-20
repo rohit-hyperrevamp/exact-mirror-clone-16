@@ -1,6 +1,12 @@
 import NewsletterSection from "@/components/NewsletterSection";
+import useSEO from "@/hooks/useSEO";
 
 const PrivacyPolicy = () => {
+  useSEO({
+    title: "Privacy Policy – Aarvak Diagnostics",
+    description: "Read the privacy policy of Aarvak Diagnostics to understand how we collect, use and protect your personal and health information.",
+    canonical: "/privacy-policy",
+  });
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">

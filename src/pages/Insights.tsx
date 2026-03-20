@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
+import useSEO from "@/hooks/useSEO";
 
 const Insights = () => {
+  useSEO({
+    title: "Health Insights & Blog – Aarvak Diagnostics",
+    description: "Read expert health articles, diagnostic tips and wellness guides from Aarvak Diagnostics. Stay informed about preventive healthcare and lab testing.",
+    canonical: "/insights",
+  });
   return (
     <div className="bg-white">
       {/* Hero Banner */}

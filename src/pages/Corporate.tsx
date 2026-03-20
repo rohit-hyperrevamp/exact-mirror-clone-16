@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
+import useSEO from "@/hooks/useSEO";
 
 const campImages = Array.from({ length: 12 }, (_, i) => `/images/camp${i + 1}.png`);
 
@@ -12,6 +13,11 @@ const taglineItems = [
 ];
 
 const Corporate = () => {
+  useSEO({
+    title: "Corporate Wellness Programs – Aarvak Diagnostics",
+    description: "Explore corporate health checkup packages and employee wellness programs by Aarvak Diagnostics. Tailored health camps and preventive care for organisations.",
+    canonical: "/corporate",
+  });
   const [campSlide, setCampSlide] = useState(0);
   const maxCampSlide = Math.max(0, campImages.length - 3);
 

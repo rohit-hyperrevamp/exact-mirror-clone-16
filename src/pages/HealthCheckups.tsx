@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { CheckCircle } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
+import useSEO from "@/hooks/useSEO";
 
 const taglineItems = [
   { bold: "Tailored", sub: "For All Ages" },
@@ -54,6 +55,11 @@ const packages = [
 ];
 
 const HealthCheckups = () => {
+  useSEO({
+    title: "Health Checkup Packages – Aarvak Diagnostics",
+    description: "Choose from preventive health checkup packages at Aarvak Diagnostics. Basic, comprehensive and advance panels tailored for every age group in Gurugram.",
+    canonical: "/health-checkups",
+  });
   return (
     <div className="bg-background">
       {/* Hero Banner */}

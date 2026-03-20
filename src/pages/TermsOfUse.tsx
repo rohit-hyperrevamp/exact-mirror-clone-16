@@ -1,6 +1,12 @@
 import NewsletterSection from "@/components/NewsletterSection";
+import useSEO from "@/hooks/useSEO";
 
 const TermsOfUse = () => {
+  useSEO({
+    title: "Terms of Use – Aarvak Diagnostics",
+    description: "Review the terms and conditions for using Aarvak Diagnostics website and services. Understand your rights and responsibilities as a user.",
+    canonical: "/terms-of-use",
+  });
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
