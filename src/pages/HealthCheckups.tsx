@@ -55,6 +55,11 @@ const packages = [
 ];
 
 const HealthCheckups = () => {
+  useSEO({
+    title: "Health Checkup Packages – Aarvak Diagnostics",
+    description: "Choose from preventive health checkup packages at Aarvak Diagnostics. Basic, comprehensive and advance panels tailored for every age group in Gurugram.",
+    canonical: "/health-checkups",
+  });
   return (
     <div className="bg-background">
       {/* Hero Banner */}

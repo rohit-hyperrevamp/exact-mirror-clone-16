@@ -31,6 +31,11 @@ const homeCollectionItems = [
 ];
 
 const Pathology = () => {
+  useSEO({
+    title: "Pathology Lab Services – Aarvak Diagnostics India",
+    description: "Accurate pathology lab tests including blood tests, biochemistry, microbiology and molecular diagnostics. Home sample collection available across Gurugram.",
+    canonical: "/pathology",
+  });
   return (
     <div className="bg-background">
       {/* Hero Banner */}

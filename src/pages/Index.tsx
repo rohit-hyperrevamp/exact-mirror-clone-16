@@ -136,6 +136,21 @@ const faqs = [
 ];
 
 const Index = () => {
+  useSEO({
+    title: "Aarvak Diagnostics – Trusted Diagnostic Centre in India",
+    description: "Aarvak Diagnostics offers pathology, radiology & health checkup services across India. Book lab tests, health packages & get accurate diagnostic reports.",
+    canonical: "/",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Aarvak Diagnostics",
+      "url": "https://www.aarvakdiagnostics.com",
+      "logo": "https://www.aarvakdiagnostics.com/images/aarvak-logo.webp",
+      "description": "Trusted diagnostic centre offering pathology, radiology and preventive health checkups across India.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Gurugram", "addressCountry": "IN" },
+      "sameAs": ["https://www.instagram.com/aarvakdiagnostics/", "https://www.facebook.com/aarvakdiagnostics/"]
+    },
+  });
   const [testSlide, setTestSlide] = useState(0);
   const [pkgSlide, setPkgSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);

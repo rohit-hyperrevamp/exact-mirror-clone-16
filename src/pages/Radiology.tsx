@@ -30,6 +30,11 @@ const services = [
 ];
 
 const Radiology = () => {
+  useSEO({
+    title: "Radiology & Imaging Services – Aarvak Diagnostics",
+    description: "Advanced radiology and diagnostic imaging including X-ray and PFT. Experienced radiologists and modern equipment at Aarvak Diagnostics, Gurugram.",
+    canonical: "/radiology",
+  });
   return (
     <div className="bg-background">
       {/* Hero Banner */}
