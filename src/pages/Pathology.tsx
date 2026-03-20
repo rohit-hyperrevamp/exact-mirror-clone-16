@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FlaskConical, Microscope, Droplets, FileText, ShieldCheck, Dna, Home, UserCheck, Clock } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
+import useSEO from "@/hooks/useSEO";
 
 const labServices = [
   { icon: FlaskConical, label: "Biochemistry Tests" },
