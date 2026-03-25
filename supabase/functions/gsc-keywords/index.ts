@@ -141,7 +141,7 @@ Deno.serve(async (req) => {
       );
     }
 
-    const siteUrl = 'sc-domain:aarvakdiagnostics.com';
+    const siteUrl = 'https://www.aarvakdiagnostics.com/';
     const accessToken = await getAccessToken(serviceAccount, ['https://www.googleapis.com/auth/webmasters.readonly']);
 
     if (mode === 'pages') {
