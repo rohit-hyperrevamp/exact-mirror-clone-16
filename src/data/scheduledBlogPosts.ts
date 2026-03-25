@@ -19,7 +19,7 @@ const img = (i: number) => existingImages[i % existingImages.length];
 export const scheduledBlogPosts: BlogPost[] = [
   {
     slug: "understanding-cbc-complete-blood-count-test",
-    img: img(0), date: "March 26, 2026", dateSort: "2026-03-26",
+    img: img(0), date: "March 25, 2026", dateSort: "2026-03-25",
     title: "Understanding CBC: What Your Complete Blood Count Reveals",
     desc: "Learn what a CBC test measures, why doctors prescribe it, and how to read your complete blood count results for better health awareness.",
     author: "Aarvak Diagnostics", readTime: "4 min", category: "Pathology",
@@ -55,7 +55,7 @@ Your report will show values alongside reference ranges. Don't panic over minor 
   },
   {
     slug: "thyroid-disorders-signs-symptoms-testing",
-    img: img(1), date: "March 27, 2026", dateSort: "2026-03-27",
+    img: img(1), date: "March 26, 2026", dateSort: "2026-03-26",
     title: "Thyroid Disorders: Signs, Symptoms, and Diagnostic Testing",
     desc: "Thyroid disorders affect millions in India. Learn about hypothyroidism, hyperthyroidism symptoms, and why regular thyroid testing matters.",
     author: "Aarvak Diagnostics", readTime: "5 min", category: "Endocrinology",
