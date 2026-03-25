@@ -19,7 +19,7 @@ const img = (i: number) => existingImages[i % existingImages.length];
 export const scheduledBlogPosts: BlogPost[] = [
   {
     slug: "understanding-cbc-complete-blood-count-test",
-    img: img(0), date: "March 26, 2026", dateSort: "2026-03-26",
+    img: img(0), date: "March 25, 2026", dateSort: "2026-03-25",
     title: "Understanding CBC: What Your Complete Blood Count Reveals",
     desc: "Learn what a CBC test measures, why doctors prescribe it, and how to read your complete blood count results for better health awareness.",
     author: "Aarvak Diagnostics", readTime: "4 min", category: "Pathology",
