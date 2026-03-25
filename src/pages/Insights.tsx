@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
+import { scheduledBlogPosts } from "@/data/scheduledBlogPosts";
 import useSEO from "@/hooks/useSEO";
 
 const Insights = () => {
@@ -8,6 +9,13 @@ const Insights = () => {
     description: "Read expert health articles, diagnostic tips and wellness guides from Aarvak Diagnostics. Stay informed about preventive healthcare and lab testing.",
     canonical: "/insights",
   });
+
+  // Combine all posts and filter by date (only show posts with dateSort <= today)
+  const today = new Date().toISOString().split("T")[0];
+  const allPosts = [...blogPosts, ...scheduledBlogPosts]
+    .filter((post) => post.dateSort <= today)
+    .sort((a, b) => b.dateSort.localeCompare(a.dateSort));
+
   return (
     <div className="bg-white">
       {/* Hero Banner */}
@@ -39,7 +47,7 @@ const Insights = () => {
       {/* Blog Posts */}
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto space-y-10">
-          {[...blogPosts].sort((a, b) => b.dateSort.localeCompare(a.dateSort)).map((post) => (
+          {allPosts.map((post) => (
             <Link
               key={post.slug}
               to={`/insights/${post.slug}`}

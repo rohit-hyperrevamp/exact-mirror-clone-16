@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SocialSidebar from "./components/SocialSidebar";
+import SocialProofNotification from "./components/SocialProofNotification";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
@@ -19,6 +20,10 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import BlogPost from "./pages/BlogPost";
 import HyperrevampReporting from "./pages/HyperrevampReporting";
+import GeoDiagnosticCentreGurugram from "./pages/GeoDiagnosticCentreGurugram";
+import GeoDiagnosticLabSohnaRoad from "./pages/GeoDiagnosticLabSohnaRoad";
+import AeoFaqDiagnosticTests from "./pages/AeoFaqDiagnosticTests";
+import AeoFaqHealthCheckups from "./pages/AeoFaqHealthCheckups";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +35,7 @@ const AppLayout = () => {
     <>
       {!isReportPage && <Navbar />}
       {!isReportPage && <SocialSidebar />}
+      {!isReportPage && <SocialProofNotification />}
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about-us" element={<AboutUs />} />
@@ -42,6 +48,10 @@ const AppLayout = () => {
         <Route path="/insights/:slug" element={<BlogPost />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
+        <Route path="/diagnostic-centre-gurugram" element={<GeoDiagnosticCentreGurugram />} />
+        <Route path="/diagnostic-lab-sohna-road-gurugram" element={<GeoDiagnosticLabSohnaRoad />} />
+        <Route path="/faq-diagnostic-tests" element={<AeoFaqDiagnosticTests />} />
+        <Route path="/faq-health-checkups" element={<AeoFaqHealthCheckups />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
