@@ -2,3 +2,6 @@ project_id = "fyzhjrkdwywtajglnfog"
 
 [functions.send-email]
 verify_jwt = false
+
+[functions.gsc-keywords]
+verify_jwt = false
