@@ -55,7 +55,7 @@ Your report will show values alongside reference ranges. Don't panic over minor 
   },
   {
     slug: "thyroid-disorders-signs-symptoms-testing",
-    img: img(1), date: "March 27, 2026", dateSort: "2026-03-27",
+    img: img(1), date: "March 26, 2026", dateSort: "2026-03-26",
     title: "Thyroid Disorders: Signs, Symptoms, and Diagnostic Testing",
     desc: "Thyroid disorders affect millions in India. Learn about hypothyroidism, hyperthyroidism symptoms, and why regular thyroid testing matters.",
     author: "Aarvak Diagnostics", readTime: "5 min", category: "Endocrinology",
