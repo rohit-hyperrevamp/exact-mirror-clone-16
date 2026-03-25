@@ -44,7 +44,30 @@ const useSEO = ({
     setMeta("og:type", ogType, "property");
     setMeta("og:url", fullCanonical, "property");
     setMeta("og:image", ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`, "property");
+    setMeta("og:locale", "en_IN", "property");
+    setMeta("og:site_name", "Aarvak Diagnostics", "property");
     setMeta("twitter:card", "summary_large_image");
+
+    // Social profile schema (sameAs for GMB/Facebook/Instagram)
+    const socialSchemaId = "social-profiles-schema";
+    let socialEl = document.getElementById(socialSchemaId);
+    if (!socialEl) {
+      socialEl = document.createElement("script");
+      socialEl.id = socialSchemaId;
+      socialEl.setAttribute("type", "application/ld+json");
+      document.head.appendChild(socialEl);
+    }
+    socialEl.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Aarvak Diagnostics",
+      "url": "https://www.aarvakdiagnostics.com",
+      "logo": "https://www.aarvakdiagnostics.com/images/aarvak-logo.webp",
+      "sameAs": [
+        "https://www.facebook.com/AarvakDiagnostics",
+        "https://www.instagram.com/aarvakdiagnostics/"
+      ]
+    });
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
     setMeta("twitter:image", ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`);

@@ -1,11 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { blogPosts } from "@/data/blogPosts";
+import { scheduledBlogPosts } from "@/data/scheduledBlogPosts";
 import NewsletterSection from "@/components/NewsletterSection";
+
+const allPosts = [...blogPosts, ...scheduledBlogPosts];
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = allPosts.find((p) => p.slug === slug);
 
   useEffect(() => {
     if (!post) return;
@@ -15,10 +18,8 @@ const BlogPost = () => {
     const canonicalUrl = `https://www.aarvakdiagnostics.com/insights/${post.slug}`;
     const imageUrl = `https://www.aarvakdiagnostics.com${post.img}`;
 
-    // Title
     document.title = metaTitle;
 
-    // Meta tags
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
       if (!el) {
@@ -41,7 +42,6 @@ const BlogPost = () => {
     setMeta("twitter:description", metaDesc);
     setMeta("twitter:image", imageUrl);
 
-    // Canonical
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
       canonical = document.createElement("link");
@@ -50,7 +50,6 @@ const BlogPost = () => {
     }
     canonical.href = canonicalUrl;
 
-    // JSON-LD Blog Schema
     const schemaId = "blog-post-schema";
     let schemaEl = document.getElementById(schemaId);
     if (!schemaEl) {
@@ -106,7 +105,6 @@ const BlogPost = () => {
   }
 
   const formatInline = (text: string) => {
-    // Handle markdown links [text](/url) first
     let result = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-cyan-700 underline hover:text-cyan-900 transition">$1</a>');
     result = result.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
     result = result.replace(/_(.+?)_/g, "<em>$1</em>");
@@ -166,60 +164,32 @@ const BlogPost = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Image with metadata overlay */}
       <section className="relative w-full h-[350px] md:h-[480px] overflow-hidden">
-        <img
-          src={post.img}
-          alt={post.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <img src={post.img} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex flex-wrap gap-x-16 gap-y-2 text-white">
-            <div>
-              <p className="text-xs opacity-70">Published Date</p>
-              <p className="text-sm font-semibold">{post.date.replace("February", "Feb").replace("January", "Jan")}</p>
-            </div>
-            <div>
-              <p className="text-xs opacity-70">Author</p>
-              <p className="text-sm font-semibold">{post.author}</p>
-            </div>
-            <div>
-              <p className="text-xs opacity-70">Read Time</p>
-              <p className="text-sm font-semibold">{post.readTime}</p>
-            </div>
-            <div>
-              <p className="text-xs opacity-70">Category</p>
-              <p className="text-sm font-semibold">{post.category}</p>
-            </div>
+            <div><p className="text-xs opacity-70">Published Date</p><p className="text-sm font-semibold">{post.date}</p></div>
+            <div><p className="text-xs opacity-70">Author</p><p className="text-sm font-semibold">{post.author}</p></div>
+            <div><p className="text-xs opacity-70">Read Time</p><p className="text-sm font-semibold">{post.readTime}</p></div>
+            <div><p className="text-xs opacity-70">Category</p><p className="text-sm font-semibold">{post.category}</p></div>
           </div>
         </div>
       </section>
 
-      {/* Content */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{post.title}</h1>
-        <div className="prose prose-gray max-w-none text-base">
-          {renderContent(post.content)}
-        </div>
-
-        {/* Tags */}
+        <div className="prose prose-gray max-w-none text-base">{renderContent(post.content)}</div>
         {post.tags && post.tags.length > 0 && (
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-bold text-gray-900 mb-4">Tags</h3>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-block text-sm px-4 py-2 rounded-full border border-gray-300 text-gray-700 bg-gray-50 hover:bg-gray-100 transition"
-                >
-                  {tag}
-                </span>
+                <span key={tag} className="inline-block text-sm px-4 py-2 rounded-full border border-gray-300 text-gray-700 bg-gray-50 hover:bg-gray-100 transition">{tag}</span>
               ))}
             </div>
           </div>
         )}
       </section>
-
       <NewsletterSection />
     </div>
   );
