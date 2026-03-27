@@ -96,8 +96,8 @@ const ContactUs = () => {
               <div className="space-y-6">
                 <div>
                   <h4 className="font-bold text-lg mb-2">Visit Us</h4>
-                  <p className="text-sm opacity-80">Shop No 23, Ground Floor, Block B, JMD Suburbio-2,</p>
-                  <p className="text-sm opacity-80">Sector 67, Sohna Road, Gurgaon</p>
+                   <p className="text-sm opacity-80">Shop No.23, Ground Floor, Office No.S06, 5th Floor,</p>
+                   <p className="text-sm opacity-80">Block-B, JMD Suburbio-2, Sector-67, Gurugram</p>
                 </div>
                 <hr className="border-white/20" />
                 <div>
