@@ -58,7 +58,7 @@ const Footer = () => {
               </p>
               <p>
                 <span className="font-bold text-gray-900">Location : </span>
-                Shop No 23, Ground Floor, Block B, JMD Suburbio-2, Sector 67, Sohna Road, Gurgaon
+                Shop No.23, Ground Floor, Office No.S06, 5th Floor, Block-B, JMD Suburbio-2, Sector-67, Gurugram
               </p>
             </div>
           </div>
