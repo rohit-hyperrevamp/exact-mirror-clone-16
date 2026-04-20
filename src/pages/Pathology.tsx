@@ -4,7 +4,7 @@ import NewsletterSection from "@/components/NewsletterSection";
 import useSEO from "@/hooks/useSEO";
 
 const labServices = [
-  { icon: FlaskConical, label: "Biochemistry Tests" },
+  { icon: FlaskConical, label: "Biochemistry Tests", href: "/departments/pathology/biochemistry-tests" },
   { icon: Microscope, label: "Microbiology" },
   { icon: Droplets, label: "Hematology" },
   { icon: FileText, label: "Histopathology" },
