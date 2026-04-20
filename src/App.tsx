@@ -24,6 +24,7 @@ import GeoDiagnosticCentreGurugram from "./pages/GeoDiagnosticCentreGurugram";
 import GeoDiagnosticLabSohnaRoad from "./pages/GeoDiagnosticLabSohnaRoad";
 import AeoFaqDiagnosticTests from "./pages/AeoFaqDiagnosticTests";
 import AeoFaqHealthCheckups from "./pages/AeoFaqHealthCheckups";
+import BiochemistryTests from "./pages/BiochemistryTests";
 
 const queryClient = new QueryClient();
 
