@@ -24,6 +24,7 @@ import GeoDiagnosticCentreGurugram from "./pages/GeoDiagnosticCentreGurugram";
 import GeoDiagnosticLabSohnaRoad from "./pages/GeoDiagnosticLabSohnaRoad";
 import AeoFaqDiagnosticTests from "./pages/AeoFaqDiagnosticTests";
 import AeoFaqHealthCheckups from "./pages/AeoFaqHealthCheckups";
+import BiochemistryTests from "./pages/BiochemistryTests";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const AppLayout = () => {
         <Route path="/diagnostic-lab-sohna-road-gurugram" element={<GeoDiagnosticLabSohnaRoad />} />
         <Route path="/faq-diagnostic-tests" element={<AeoFaqDiagnosticTests />} />
         <Route path="/faq-health-checkups" element={<AeoFaqHealthCheckups />} />
+        <Route path="/departments/pathology/biochemistry-tests" element={<BiochemistryTests />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

@@ -4,7 +4,7 @@ import NewsletterSection from "@/components/NewsletterSection";
 import useSEO from "@/hooks/useSEO";
 
 const labServices = [
-  { icon: FlaskConical, label: "Biochemistry Tests" },
+  { icon: FlaskConical, label: "Biochemistry Tests", href: "/departments/pathology/biochemistry-tests" },
   { icon: Microscope, label: "Microbiology" },
   { icon: Droplets, label: "Hematology" },
   { icon: FileText, label: "Histopathology" },
@@ -98,17 +98,26 @@ const Pathology = () => {
 
             <h3 className="text-xl font-bold text-foreground mb-5">Our Laboratory Services</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {labServices.map((service) => (
-                <div
-                  key={service.label}
-                  className="flex items-center gap-3 rounded-xl border border-border p-4 hover:shadow-md transition"
-                >
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'hsl(145, 60%, 90%)' }}>
-                    <service.icon className="w-5 h-5 text-secondary" />
+              {labServices.map((service) => {
+                const inner = (
+                  <>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'hsl(145, 60%, 90%)' }}>
+                      <service.icon className="w-5 h-5 text-secondary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground">{service.label}</span>
+                  </>
+                );
+                const className = "flex items-center gap-3 rounded-xl border border-border p-4 hover:shadow-md transition";
+                return service.href ? (
+                  <Link key={service.label} to={service.href} className={className}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <div key={service.label} className={className}>
+                    {inner}
                   </div>
-                  <span className="text-sm font-medium text-foreground">{service.label}</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
