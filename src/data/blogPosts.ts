@@ -16,6 +16,70 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "summer-health-tests-stay-fit-this-may",
+    img: "/images/blog-wellness-habits.jpg",
+    date: "May 1, 2026",
+    dateSort: "2026-05-01",
+    title: "Summer Health Tests: Stay Fit and Hydrated This May",
+    desc: "As temperatures rise, your body works harder. Discover the essential summer health tests that help you stay hydrated, energetic, and infection-free this May.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Summer Health Tests for May – Aarvak Diagnostics",
+    metaDescription: "Beat the heat this May with essential summer health tests. Learn which lab tests help detect dehydration, infections, and electrolyte imbalance at Aarvak Diagnostics, Gurugram.",
+    content: `May marks the beginning of peak summer in India, and with rising temperatures come a unique set of health challenges. From dehydration to heat-related infections, your body needs extra care during these months. Routine diagnostic testing can help you stay ahead of common summer health issues before they affect your daily life.
+
+At Aarvak Diagnostics, we recommend a few targeted tests this season to help you understand how your body is coping with the heat.
+
+## Why Summer Demands Special Attention
+
+The intense heat impacts your body in more ways than you might realise:
+
+- Excessive sweating leads to loss of water and essential salts
+- Higher risk of food and waterborne infections
+- Increased fatigue, headaches, and dizziness
+- Greater chance of urinary tract infections due to low fluid intake
+
+A timely [health checkup](/health-checkups) can identify imbalances early and help you take corrective action.
+
+## Top Summer Health Tests to Consider
+
+### 1. Electrolyte Panel
+
+Sweating depletes sodium, potassium, and chloride from your body. An electrolyte panel helps detect imbalances that cause muscle cramps, weakness, and irregular heartbeat.
+
+### 2. Complete Blood Count (CBC)
+
+A [CBC test](/insights/understanding-cbc-complete-blood-count-test) helps identify hidden infections, anaemia, and inflammation — all of which become more common during summer.
+
+### 3. Liver and Kidney Function Tests
+
+Dehydration places extra stress on your kidneys and liver. These tests assess how well these organs are filtering and processing fluids during high heat.
+
+### 4. Urine Routine Examination
+
+A simple urine test can detect early signs of dehydration, urinary tract infections, and kidney concerns — issues that spike sharply in May and June.
+
+### 5. Vitamin D and B12
+
+Despite all the sunshine, deficiencies in Vitamin D and B12 remain widespread. Low levels worsen fatigue and weakness during hot weather.
+
+## Simple Tips to Stay Healthy This May
+
+- Drink at least 2.5–3 litres of water daily
+- Avoid eating cut fruits or street food left in the open
+- Wear light, breathable clothing and avoid peak afternoon sun
+- Include curd, lemon water, coconut water, and seasonal fruits in your diet
+- Get tested if you experience persistent fatigue, dizziness, or stomach issues
+
+## When to Book a Test
+
+If you've been feeling unusually tired, dehydrated, or unwell this summer, don't wait. A small panel of tests can reveal a lot about your current health status. You can visit our centre or schedule a convenient [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) across Gurugram.
+
+Stay cool, stay hydrated, and let your health take centre stage this May. [Book your summer health tests](/contact-us#contact) with Aarvak Diagnostics today.`,
+    tags: ["Summer Health", "Hydration", "May Wellness", "Electrolytes", "Health Checkup"],
+  },
+  {
     slug: "what-happens-inside-diagnostic-lab-process-explained",
     img: "/images/blog-diagnostic-lab-process.png",
     date: "March 8, 2026",
