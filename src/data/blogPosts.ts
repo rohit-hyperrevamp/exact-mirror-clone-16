@@ -16,6 +16,88 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "summer-immunity-foods-and-tests-this-may",
+    img: "/images/blog-summer-immunity.jpg",
+    date: "May 2, 2026",
+    dateSort: "2026-05-02",
+    title: "Summer Immunity: Foods and Tests to Stay Strong This May",
+    desc: "Boost your immunity this summer with the right diet, hydration, and key diagnostic tests. Learn how Aarvak Diagnostics helps you stay healthy through the heat.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Summer Immunity Tests & Foods for May – Aarvak Diagnostics",
+    metaDescription: "Strengthen your immunity this May with seasonal foods and essential lab tests. Discover Vitamin D, CBC, and immunity tests at Aarvak Diagnostics, Gurugram.",
+    content: `Summer in India brings longer days, more outdoor activity, and unfortunately, a higher exposure to heat-related illnesses and infections. While we focus on staying cool, our immunity often takes a hit due to dehydration, poor sleep, and seasonal viruses. The good news? A balanced diet combined with timely diagnostic tests can keep your defences strong all season long.
+
+At Aarvak Diagnostics, we believe prevention starts with awareness. Here's how you can build summer-ready immunity this May.
+
+## Why Immunity Matters in Summer
+
+Many people believe winter is the only season for falling sick, but summer brings its own health risks:
+
+- Waterborne infections from contaminated drinks and food
+- Heat exhaustion that weakens the body's defences
+- Vitamin D imbalances from staying indoors to avoid the heat
+- Increased risk of viral fevers and stomach infections
+
+A simple [health checkup](/health-checkups) can reveal hidden deficiencies that may be lowering your immunity without you realising it.
+
+## Best Summer Foods to Boost Immunity
+
+### 1. Watermelon and Citrus Fruits
+
+Rich in water, vitamin C, and antioxidants, these fruits help fight oxidative stress and keep you hydrated.
+
+### 2. Curd and Buttermilk
+
+Probiotics support gut health, which is directly linked to a stronger immune response.
+
+### 3. Leafy Greens and Cucumber
+
+Loaded with vitamins, minerals, and water content to keep your body cool and nourished.
+
+### 4. Coconut Water
+
+A natural source of electrolytes that replenishes lost minerals and supports cellular function.
+
+## Key Tests to Check Your Immunity This May
+
+### 1. Vitamin D Test
+
+Indians often have low Vitamin D levels despite the sunshine. A deficiency can weaken bones and immune defences.
+
+### 2. Vitamin B12 Test
+
+Low B12 leads to fatigue and reduced immunity. A simple blood test can confirm your levels.
+
+### 3. Complete Blood Count (CBC)
+
+A [CBC test](/insights/understanding-cbc-complete-blood-count-test) reveals infections, inflammation, or anaemia early.
+
+### 4. Thyroid Profile
+
+Thyroid imbalances can affect metabolism and immunity, especially in adults.
+
+### 5. Liver Function Test
+
+Helps assess how well your body is processing the foods, fluids, and medications you consume in summer.
+
+## Daily Habits to Strengthen Immunity
+
+- Drink at least 3 litres of water every day
+- Get 7 to 8 hours of quality sleep
+- Avoid eating outside during peak afternoon heat
+- Include fresh seasonal produce in every meal
+- Take short morning walks for sunlight exposure
+
+## When to Visit a Diagnostic Centre
+
+If you experience persistent tiredness, frequent infections, or unexplained weight changes this summer, it's a good time to schedule a checkup. Early detection of deficiencies makes treatment simpler and faster.
+
+[Visit Aarvak Diagnostics](/contact-us) in Gurugram for accurate, affordable immunity testing this May. Our expert team and modern lab ensure precise results so you can enjoy a healthier, stronger summer.`,
+    tags: ["Summer Immunity", "Vitamin D", "Health Tests", "Wellness", "May Health Tips"],
+  },
+  {
     slug: "summer-health-tests-stay-fit-this-may",
     img: "/images/blog-summer-hydration.jpg",
     date: "May 1, 2026",
