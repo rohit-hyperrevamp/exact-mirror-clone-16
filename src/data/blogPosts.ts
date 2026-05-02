@@ -17,7 +17,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "summer-health-tests-stay-fit-this-may",
-    img: "/images/blog-wellness-habits.jpg",
+    img: "/images/blog-summer-hydration.jpg",
     date: "May 1, 2026",
     dateSort: "2026-05-01",
     title: "Summer Health Tests: Stay Fit and Hydrated This May",
