@@ -16,6 +16,452 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "liver-detox-myths-vs-lab-test-facts",
+    img: "/images/blog-liver-detox.jpg",
+    date: "May 14, 2026",
+    dateSort: "2026-05-14",
+    title: "Liver Detox Myths vs Lab Test Facts You Should Know",
+    desc: "Detox teas and cleanses are everywhere, but what does science say? Learn what your liver actually needs and which lab tests reveal its true health.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Liver Detox Myths vs Lab Facts – Aarvak Diagnostics",
+    metaDescription: "Forget detox fads. Learn how a Liver Function Test (LFT) at Aarvak Diagnostics, Gurugram reveals real liver health and what your liver actually needs.",
+    content: `Detox drinks, cleanse kits, and "liver flush" diets flood social media every summer. But your liver is a sophisticated organ that detoxes itself 24/7 — it doesn't need a juice to do its job. What it does need is monitoring.
+
+## Common Detox Myths
+
+- **Myth:** Detox teas clean your liver. **Fact:** No drink replaces liver enzymes.
+- **Myth:** A cleanse reverses years of damage. **Fact:** Only lifestyle changes do.
+- **Myth:** You'd "feel" liver problems. **Fact:** Most liver disease is silent until late.
+
+## What Your Liver Actually Needs
+
+- Adequate hydration
+- Limited alcohol and processed food
+- A balanced diet with fibre and antioxidants
+- Routine [Liver Function Tests (LFT)](/health-checkups)
+
+## Lab Tests That Reveal Liver Health
+
+A simple LFT measures ALT, AST, ALP, bilirubin, and proteins — the real markers of liver function. Pair it with a [CBC test](/insights/understanding-cbc-complete-blood-count-test) for a fuller picture.
+
+[Book a liver health test](/contact-us#contact) at Aarvak Diagnostics today.`,
+    tags: ["Liver Health", "Detox Myths", "LFT", "Wellness", "May Health Tips"],
+  },
+  {
+    slug: "vitamin-d-deficiency-summer-india",
+    img: "/images/blog-vitamin-d-summer.jpg",
+    date: "May 13, 2026",
+    dateSort: "2026-05-13",
+    title: "Vitamin D Deficiency in Summer: Why Indians Are Still Low",
+    desc: "India gets plenty of sunshine, yet most adults are Vitamin D deficient. Find out why and how a simple test can change your bone and immune health.",
+    author: "Aarvak Diagnostics",
+    readTime: "4 min",
+    category: "Wellness",
+    metaTitle: "Vitamin D Deficiency in Summer – Aarvak Diagnostics",
+    metaDescription: "Despite year-round sunshine, 70% of Indians are Vitamin D deficient. Learn why and book your Vitamin D test at Aarvak Diagnostics, Gurugram.",
+    content: `India is sun-rich, yet studies show nearly 70% of adults have low Vitamin D. Why? Indoor lifestyles, sunscreen, pollution, and skin pigmentation all reduce natural synthesis.
+
+## Signs You May Be Deficient
+
+- Persistent fatigue and body aches
+- Frequent infections
+- Hair fall and brittle nails
+- Mood swings and low energy
+
+## Why Summer Doesn't Guarantee Enough D
+
+Most office-goers spend 90% of daylight indoors. Even outdoor exposure between 10 AM and 3 PM is often blocked by sunscreen or full clothing.
+
+## The Test That Reveals the Truth
+
+A simple **25-Hydroxy Vitamin D blood test** gives you exact levels. Pair it with a [thyroid profile](/health-checkups) for a complete energy panel.
+
+[Book your Vitamin D test](/contact-us#contact) at Aarvak Diagnostics this May.`,
+    tags: ["Vitamin D", "Deficiency", "Summer Health", "Lab Tests", "Wellness"],
+  },
+  {
+    slug: "international-nurses-day-frontline-health",
+    img: "/images/blog-nurses-day.jpg",
+    date: "May 12, 2026",
+    dateSort: "2026-05-12",
+    title: "International Nurses Day: Health Tests for Frontline Heroes",
+    desc: "On International Nurses Day, we honour caregivers with a guide to the essential health tests that protect those who protect us.",
+    author: "Aarvak Diagnostics",
+    readTime: "4 min",
+    category: "Wellness",
+    metaTitle: "Nurses Day Health Tests – Aarvak Diagnostics",
+    metaDescription: "Honouring nurses this May 12. Discover essential health checkups for healthcare workers at Aarvak Diagnostics, Gurugram.",
+    content: `Every year on May 12, the world honours nurses on Florence Nightingale's birth anniversary. Long shifts, emotional load, and constant exposure make their own health a quiet priority.
+
+## Why Healthcare Workers Need Routine Testing
+
+- Higher exposure to infections
+- Disrupted sleep cycles affecting hormones
+- Standing for long hours impacting joints and circulation
+- Skipped meals leading to deficiencies
+
+## Recommended Tests for Caregivers
+
+- **Complete Blood Count (CBC)** to track infections and anaemia
+- **Vitamin D and B12** for energy and immunity
+- **Thyroid Profile** for fatigue and metabolism
+- **Hepatitis B & C screening**
+- **Lipid Profile** for long-shift cardiovascular wellness
+
+## Aarvak Salutes You
+
+At [Aarvak Diagnostics](/about-us), we offer specially curated health checkups for healthcare professionals. [Book a checkup](/contact-us#contact) and put your wellbeing first this Nurses Day.`,
+    tags: ["Nurses Day", "Healthcare Workers", "Health Checkup", "Wellness"],
+  },
+  {
+    slug: "diabetes-prevention-hba1c-young-adults",
+    img: "/images/blog-diabetes-prevent.jpg",
+    date: "May 11, 2026",
+    dateSort: "2026-05-11",
+    title: "Diabetes Prevention: Why Young Adults Need an HbA1c Test",
+    desc: "Type 2 diabetes is rising fast among Indians under 35. Learn how the HbA1c test detects early risk and how to reverse pre-diabetes naturally.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "HbA1c for Young Adults – Aarvak Diagnostics",
+    metaDescription: "Diabetes is hitting Indians younger than ever. Get your HbA1c test at Aarvak Diagnostics, Gurugram and catch pre-diabetes early.",
+    content: `India is now home to over 100 million people with diabetes — and increasingly, the new patients are in their 20s and 30s. Sedentary jobs, processed food, and chronic stress have shifted the risk curve dramatically.
+
+## Why HbA1c Beats a Single Sugar Test
+
+A fasting glucose test only shows that day. The **HbA1c test** reveals your average sugar over 3 months, catching pre-diabetes that fluctuates day to day.
+
+## Pre-Diabetes Is Reversible — If Caught Early
+
+- HbA1c 5.7%–6.4% = pre-diabetes
+- HbA1c ≥6.5% = diabetes
+
+Lifestyle changes at the pre-diabetic stage can fully reverse the trend.
+
+## Simple Steps That Work
+
+- 30 minutes of brisk walking daily
+- Cut refined sugar and white carbs
+- Add protein and fibre to every meal
+- Sleep 7–8 hours
+- Test annually after age 25
+
+[Book an HbA1c test](/contact-us#contact) at Aarvak Diagnostics this May.`,
+    tags: ["Diabetes", "HbA1c", "Pre-Diabetes", "Young Adults", "Prevention"],
+  },
+  {
+    slug: "mothers-day-women-wellness-panels",
+    img: "/images/blog-mothers-wellness.jpg",
+    date: "May 10, 2026",
+    dateSort: "2026-05-10",
+    title: "Mother's Day Gift Idea: A Women's Wellness Health Checkup",
+    desc: "This Mother's Day, gift her something that lasts longer than flowers — a complete women's wellness panel designed for every life stage.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Mother's Day Health Checkup – Aarvak Diagnostics",
+    metaDescription: "Gift your mother a complete women's wellness panel this Mother's Day at Aarvak Diagnostics, Gurugram. Hormones, bones, heart, and more.",
+    content: `Mothers spend decades looking after everyone else's health. This Mother's Day, give her something more meaningful than chocolates — a comprehensive women's health checkup.
+
+## Why Women's Health Needs Dedicated Testing
+
+- Hormonal shifts across life stages
+- Higher risk of thyroid and bone density issues after 40
+- Iron deficiency affects 1 in 2 Indian women
+- Often-missed early signs of heart disease
+
+## What a Women's Wellness Panel Covers
+
+- **Complete Blood Count (CBC)** and iron studies
+- **Thyroid profile (T3, T4, TSH)**
+- **Vitamin D and B12**
+- **Lipid profile** for heart health
+- **Liver and kidney function tests**
+- **Bone density screening** for women 40+
+
+## Make Testing Easy
+
+We offer convenient [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) so she doesn't even need to leave home. [Book her wellness package](/contact-us#contact) at Aarvak Diagnostics today.`,
+    tags: ["Mother's Day", "Women's Health", "Wellness Panel", "Health Checkup"],
+  },
+  {
+    slug: "heart-health-young-adults-cardiac-tests",
+    img: "/images/blog-young-heart.jpg",
+    date: "May 9, 2026",
+    dateSort: "2026-05-09",
+    title: "Heart Attacks Are Hitting Young Indians: Tests You Shouldn't Skip",
+    desc: "Cardiac events under 40 are rising sharply. Discover the lab tests every young adult should do to safeguard heart health.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Heart Tests for Young Adults – Aarvak Diagnostics",
+    metaDescription: "Heart attacks under 40 are rising in India. Get the cardiac tests every young adult should consider at Aarvak Diagnostics, Gurugram.",
+    content: `Cardiac events in Indians under 40 have climbed sharply over the past decade. Stress, poor sleep, processed food, and sedentary work have together created a generation at silent risk.
+
+## Why Young Hearts Are Vulnerable
+
+- Genetic predisposition (Indians develop heart disease 10 years earlier than Western populations)
+- Insulin resistance and abdominal obesity
+- High LDL cholesterol from young age
+- Vitamin B12 and Vitamin D deficiencies that affect heart muscle
+
+## Cardiac Tests You Shouldn't Skip After 25
+
+- **Lipid Profile** — total, LDL, HDL, triglycerides
+- **hs-CRP** for inflammation markers
+- **Lipoprotein(a)** — a hidden genetic risk factor
+- **HbA1c** for diabetes screening
+- **ECG and Echo** if symptoms or family history
+
+## Lifestyle Habits That Protect
+
+- 150 minutes of moderate exercise per week
+- Mediterranean-style diet
+- 7+ hours sleep
+- Annual screening from age 25
+
+[Book a young-heart panel](/contact-us#contact) at Aarvak Diagnostics today.`,
+    tags: ["Heart Health", "Young Adults", "Cardiac Tests", "Lipid Profile"],
+  },
+  {
+    slug: "world-thalassemia-day-blood-screening",
+    img: "/images/blog-thalassemia.jpg",
+    date: "May 8, 2026",
+    dateSort: "2026-05-08",
+    title: "World Thalassemia Day: Why Carrier Screening Matters",
+    desc: "Thalassemia is one of India's most common inherited blood disorders. Learn how a simple test can prevent passing it on to the next generation.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "World Thalassemia Day Screening – Aarvak Diagnostics",
+    metaDescription: "World Thalassemia Day: Get carrier screening and HPLC tests at Aarvak Diagnostics, Gurugram. Protect future generations.",
+    content: `India has one of the highest thalassemia carrier rates in the world — nearly 4% of the population. May 8 is observed as **World Thalassemia Day** to spread awareness about prevention through screening.
+
+## What Is Thalassemia?
+
+Thalassemia is a genetic disorder that affects haemoglobin production, leading to chronic anaemia. Severe forms require lifelong blood transfusions.
+
+## Why Pre-Marital and Pre-Conception Screening Matters
+
+If both partners are silent carriers, their child has a 25% chance of severe thalassemia. A simple test can prevent this entirely.
+
+## Tests for Thalassemia Detection
+
+- **Complete Blood Count (CBC)** — first screening tool
+- **Haemoglobin Electrophoresis / HPLC** — confirms carrier status
+- **Iron studies** — to rule out iron deficiency anaemia
+
+Learn more about our [hematology tests](/departments/pathology/hematology-tests).
+
+## Who Should Get Tested
+
+- Couples planning marriage
+- Couples planning pregnancy
+- Anyone with family history of anaemia
+
+[Book thalassemia screening](/contact-us#contact) at Aarvak Diagnostics this May.`,
+    tags: ["Thalassemia", "Blood Disorders", "Genetic Screening", "Hematology"],
+  },
+  {
+    slug: "world-asthma-day-allergy-tests",
+    img: "/images/blog-asthma-allergy.jpg",
+    date: "May 7, 2026",
+    dateSort: "2026-05-07",
+    title: "World Asthma Day: Allergy and Lung Tests You Should Know",
+    desc: "Pollen, pollution, and humidity peak in May. Discover allergy and pulmonary tests that help asthmatics breathe easier this season.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "World Asthma Day Tests – Aarvak Diagnostics",
+    metaDescription: "World Asthma Day: Discover allergy panels and lung function tests at Aarvak Diagnostics, Gurugram. Breathe easier this May.",
+    content: `World Asthma Day in early May is a timely reminder for the 35+ million Indians living with asthma. May's combination of summer pollen, pollution spikes, and humidity often triggers flare-ups.
+
+## Why Allergy Testing Matters
+
+Many asthmatics never identify their actual triggers. Without that knowledge, you're left avoiding everything — or nothing.
+
+## Tests That Help You Breathe Easier
+
+- **Allergy Panel (IgE specific)** — identifies pollen, dust, food, mould triggers
+- **Total IgE** — overall allergic activity
+- **Eosinophil count** in CBC — inflammation marker
+- **Sputum culture** — for chronic chest infections
+- **Vitamin D** — low levels worsen asthma
+
+## When to Get Tested
+
+- Frequent inhaler use
+- Persistent cough or wheezing
+- Sudden flare-ups in May or monsoon
+- Family history of allergies
+
+[Book an allergy and asthma panel](/contact-us#contact) at Aarvak Diagnostics today.`,
+    tags: ["Asthma", "Allergy Tests", "Lung Health", "World Asthma Day"],
+  },
+  {
+    slug: "gut-health-microbiome-testing-india",
+    img: "/images/blog-gut-health.jpg",
+    date: "May 6, 2026",
+    dateSort: "2026-05-06",
+    title: "Gut Health Trend: Why Microbiome Testing Is Going Mainstream",
+    desc: "From bloating to mood swings, your gut affects more than digestion. Explore what tests reveal about your gut and how to fix imbalances.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Gut Health & Microbiome Tests – Aarvak Diagnostics",
+    metaDescription: "Bloating, fatigue, low immunity? Your gut may be off. Discover gut health tests at Aarvak Diagnostics, Gurugram.",
+    content: `"Gut health" went from niche wellness chat to mainstream conversation. Research now links your microbiome to immunity, mood, weight, and even skin.
+
+## Signs Your Gut Needs Attention
+
+- Frequent bloating, gas, or constipation
+- Skin breakouts and eczema
+- Persistent fatigue and brain fog
+- Food intolerances appearing in adulthood
+- Frequent colds and infections
+
+## Tests That Reveal Gut Health
+
+- **Stool routine and culture** — infections, inflammation, parasites
+- **Lactose intolerance test**
+- **H. pylori antigen test** — for chronic acidity and ulcers
+- **Coeliac panel** — gluten sensitivity
+- **Vitamin B12 and Iron** — gut absorption markers
+
+## Daily Habits for a Happier Gut
+
+- Eat fermented foods (curd, kanji, idli)
+- Add prebiotic fibre (banana, garlic, oats)
+- Cut ultra-processed snacks
+- Sleep well and manage stress
+- Hydrate consistently
+
+[Book a gut-health panel](/contact-us#contact) at Aarvak Diagnostics this May.`,
+    tags: ["Gut Health", "Microbiome", "Digestion", "Wellness Trends"],
+  },
+  {
+    slug: "stress-cortisol-mental-health-tests",
+    img: "/images/blog-mental-stress.jpg",
+    date: "May 5, 2026",
+    dateSort: "2026-05-05",
+    title: "Stress and Cortisol: The Mental Health Tests Indians Should Try",
+    desc: "Chronic stress shows up in your blood long before it shows on your face. Learn which tests measure the biology of burnout.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Stress & Cortisol Tests – Aarvak Diagnostics",
+    metaDescription: "Burnout is biological. Measure cortisol, thyroid, and Vitamin D at Aarvak Diagnostics, Gurugram to take charge of mental wellness.",
+    content: `Mental Health Awareness Month is the perfect time to remember: stress is not just a feeling, it's a measurable biochemical state. The right tests reveal what your body is silently carrying.
+
+## How Stress Shows Up in Your Body
+
+- Disrupted sleep and morning fatigue
+- Weight changes around the abdomen
+- Hair fall and skin breakouts
+- Frequent colds and slower recovery
+- Irregular periods or low libido
+
+## Tests That Reveal the Biology of Stress
+
+- **Serum Cortisol** (morning sample) — primary stress hormone
+- **Thyroid Profile (TSH, T3, T4)** — thyroid mimics burnout
+- **Vitamin D and B12** — both crash under chronic stress
+- **HbA1c** — stress raises long-term blood sugar
+- **Lipid Profile** — cortisol elevates cholesterol
+
+## Lifestyle Resets That Actually Work
+
+- 7+ hours of consistent sleep
+- 10 minutes of daily breathwork
+- Reduce caffeine after noon
+- Strength training twice a week
+
+[Book a stress and hormone panel](/contact-us#contact) at Aarvak Diagnostics today.`,
+    tags: ["Mental Health", "Cortisol", "Stress Tests", "Burnout", "Wellness"],
+  },
+  {
+    slug: "pcos-awareness-key-tests-women",
+    img: "/images/blog-pcos-awareness.jpg",
+    date: "May 4, 2026",
+    dateSort: "2026-05-04",
+    title: "PCOS Awareness: Key Tests Every Indian Woman Should Know",
+    desc: "1 in 5 Indian women has PCOS — but most are undiagnosed. Learn the tests that confirm it and how early detection changes everything.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "PCOS Tests for Indian Women – Aarvak Diagnostics",
+    metaDescription: "1 in 5 Indian women has PCOS. Get the right hormonal panel at Aarvak Diagnostics, Gurugram and take control early.",
+    content: `Polycystic Ovary Syndrome affects roughly 20% of Indian women — yet a majority go years without a diagnosis. Early testing changes outcomes dramatically.
+
+## Common Symptoms to Watch
+
+- Irregular or missed periods
+- Sudden weight gain, especially abdominal
+- Acne, oily skin, and hair fall
+- Excess facial or body hair
+- Difficulty conceiving
+
+## The PCOS Test Panel
+
+- **LH and FSH** — to assess hormone ratio
+- **Testosterone (Total and Free)** — androgen excess
+- **Prolactin** — to rule out other causes
+- **Thyroid Profile** — overlap with PCOS symptoms
+- **Fasting Insulin and HbA1c** — insulin resistance
+- **Vitamin D** — often deficient in PCOS
+
+## Why Early Diagnosis Matters
+
+PCOS raises long-term risk of diabetes, heart disease, and infertility. Catching it early lets you intervene with lifestyle and medical care.
+
+[Book a PCOS panel](/contact-us#contact) at Aarvak Diagnostics this May.`,
+    tags: ["PCOS", "Women's Health", "Hormonal Tests", "Wellness"],
+  },
+  {
+    slug: "wearable-health-tech-vs-lab-tests",
+    img: "/images/blog-wearable-tech.jpg",
+    date: "May 3, 2026",
+    dateSort: "2026-05-03",
+    title: "Smartwatch vs Lab Test: Can Wearables Replace Your Blood Work?",
+    desc: "Smartwatches track everything from heart rate to SpO2. But can they replace a real lab test? Here's the honest answer.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Diagnostics",
+    metaTitle: "Wearables vs Lab Tests – Aarvak Diagnostics",
+    metaDescription: "Smartwatches are useful, but they don't replace lab tests. Learn the difference at Aarvak Diagnostics, Gurugram.",
+    content: `Smartwatches now boast ECG, SpO2, sleep tracking, even glucose trends. So do you still need a real diagnostic lab? The short answer: yes — and here's why.
+
+## What Wearables Are Genuinely Good At
+
+- Continuous heart rate monitoring
+- Step count and activity goals
+- Sleep stage estimation
+- Spotting unusual rhythms (atrial fibrillation)
+- Daily SpO2 trends
+
+## Where Wearables Fall Short
+
+- They estimate; labs measure
+- No insight into cholesterol, sugar, hormones, vitamins
+- Cannot diagnose infection, anaemia, or organ function
+- Sensors are easily affected by skin tone, fit, and movement
+
+## What Only a Lab Can Tell You
+
+- **HbA1c, Lipid Profile, Thyroid, Vitamin D, B12, CBC, LFT, KFT**
+- Detection of silent diseases like fatty liver or pre-diabetes
+- Confirmation of any wearable's "warning"
+
+## The Smart Approach
+
+Use your smartwatch for daily trends. Get an annual [full-body health checkup](/health-checkups) for the truth. Together, they're powerful.
+
+[Book a complete diagnostic panel](/contact-us#contact) at Aarvak Diagnostics today.`,
+    tags: ["Wearables", "Smartwatch", "Lab Tests", "Health Tech", "Diagnostics"],
+  },
+  {
     slug: "summer-immunity-foods-and-tests-this-may",
     img: "/images/blog-summer-immunity.jpg",
     date: "May 2, 2026",
