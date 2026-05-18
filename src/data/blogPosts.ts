@@ -16,6 +16,225 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "fasting-before-blood-tests-myths-debunked",
+    img: "/images/blog-fasting-myths.jpg",
+    date: "May 18, 2026",
+    dateSort: "2026-05-18",
+    title: "Fasting Before Blood Tests: Myths Every Patient Should Stop Believing",
+    desc: "Can you drink water? Will coffee ruin your results? We bust the most common fasting myths so your next blood test is stress-free and accurate.",
+    author: "Aarvak Diagnostics",
+    readTime: "4 min",
+    category: "Diagnostics",
+    metaTitle: "Fasting Before Blood Tests Myths Debunked – Aarvak Diagnostics",
+    metaDescription: "Stop believing fasting myths. Learn what you can and cannot do before a blood test at Aarvak Diagnostics, Gurugram for accurate results.",
+    content: `If you've ever been told to "come empty stomach" for a blood test, you've probably also heard a dozen conflicting rules from well-meaning relatives, colleagues, and the internet. Can you brush your teeth? Does black coffee count? What happens if you accidentally sip water? The confusion is real — and unnecessary.
+
+At Aarvak Diagnostics, we want your testing experience to be accurate, not stressful. Here's the honest truth about fasting before blood tests.
+
+## What Does "Fasting" Actually Mean?
+
+Fasting for a blood test generally means no food or beverages (except plain water) for 8 to 12 hours before your sample is collected. This is mainly required for:
+
+- Fasting blood sugar (FBS)
+- Lipid profile (cholesterol and triglycerides)
+- Certain hormone tests
+
+## Common Fasting Myths Busted
+
+- **Myth:** Even a sip of water breaks your fast. **Fact:** Plain water is completely fine and actually encouraged to stay hydrated.
+- **Myth:** Black coffee without sugar is okay. **Fact:** Coffee (even black) can alter triglyceride and blood sugar readings. Skip it.
+- **Myth:** Chewing gum is harmless. **Fact:** Sugary gum can spike insulin; even sugar-free versions may trigger digestive responses.
+- **Myth:** Brushing your teeth ruins results. **Fact:** Brushing is fine — just avoid swallowing toothpaste.
+- **Myth:** Fasting longer gives better results. **Fact:** Over-fasting can cause dehydration and skew results. Stick to 8–12 hours.
+
+## Tests That Do NOT Require Fasting
+
+Many patients unnecessarily skip breakfast for tests that don't need it:
+
+- Complete Blood Count (CBC)
+- Thyroid Profile (TSH, T3, T4)
+- Liver Function Test (LFT)
+- Kidney Function Test (KFT)
+- Vitamin D and B12
+- Urine Routine
+
+## The Smart Way to Fast
+
+- Schedule morning appointments so you sleep through most of the fasting window
+- Drink water normally — it keeps veins plump for easier blood draw
+- Avoid alcohol for 24 hours before testing
+- Take your regular medications unless your doctor says otherwise
+
+[Book your blood test](/contact-us#contact) at Aarvak Diagnostics with clear instructions and zero confusion.`,
+    tags: ["Fasting", "Blood Tests", "Diagnostics", "Lab Preparation", "Health Tips"],
+  },
+  {
+    slug: "thyroid-disorders-indians-tsh-test-hidden-epidemic",
+    img: "/images/blog-thyroid-india.jpg",
+    date: "May 17, 2026",
+    dateSort: "2026-05-17",
+    title: "Thyroid Disorders in Indians: Why the TSH Test Is More Important Than You Think",
+    desc: "1 in 10 Indians has a thyroid disorder — and most don't know it. Learn how a simple TSH test can uncover the hidden cause of fatigue, weight gain, and hair fall.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Thyroid Disorders in Indians & TSH Test – Aarvak Diagnostics",
+    metaDescription: "Thyroid disorders affect 1 in 10 Indians. Book a TSH and thyroid panel at Aarvak Diagnostics, Gurugram to detect hidden imbalances early.",
+    content: `India has a silent thyroid epidemic. Studies suggest that over 10% of the adult population has some form of thyroid dysfunction, and the majority are undiagnosed. The thyroid gland may be small, but its impact on your body is enormous — regulating metabolism, energy, mood, weight, and even heart rate.
+
+At Aarvak Diagnostics, we see patients every week who have struggled for years with vague symptoms that all trace back to one overlooked test: the TSH test.
+
+## Why Thyroid Disorders Are So Common in India
+
+- **Iodine deficiency** in certain regions
+- **Genetic predisposition** — Indians are more susceptible
+- **Autoimmune conditions** like Hashimoto's thyroiditis
+- **Stress and lifestyle changes** that disrupt hormone balance
+- **Women are 5–8x more likely** to develop thyroid issues, especially after pregnancy
+
+## Symptoms That Often Get Dismissed
+
+- Unexplained weight gain or loss
+- Persistent fatigue despite adequate sleep
+- Hair thinning or dry skin
+- Mood swings, anxiety, or depression
+- Irregular menstrual cycles
+- Feeling unusually cold or hot
+- Constipation or bloating
+
+These symptoms overlap with so many conditions that thyroid issues often go undetected for years.
+
+## The TSH Test: Your First Step to Answers
+
+The **Thyroid Stimulating Hormone (TSH)** test is the gold standard first screening. It tells your doctor whether your thyroid is underactive (hypothyroidism), overactive (hyperthyroidism), or functioning normally.
+
+For a complete picture, doctors often add:
+- **Free T3 and Free T4** — actual thyroid hormone levels
+- **Anti-TPO antibodies** — to detect autoimmune thyroiditis
+
+## When Should You Get Tested?
+
+- If you have any of the symptoms listed above
+- Women planning pregnancy or in their first trimester
+- Anyone with a family history of thyroid disease
+- Adults over 35 as part of routine screening
+- If you're struggling to lose weight despite diet and exercise
+
+[Book a thyroid panel](/contact-us#contact) at Aarvak Diagnostics this May and stop guessing about your health.`,
+    tags: ["Thyroid", "TSH Test", "Hormonal Health", "Indian Health", "Wellness"],
+  },
+  {
+    slug: "lipid-profile-cholesterol-every-indian-should-know",
+    img: "/images/blog-lipid-profile.jpg",
+    date: "May 16, 2026",
+    dateSort: "2026-05-16",
+    title: "Understanding Your Lipid Profile: What Every Indian Should Know About Cholesterol",
+    desc: "High cholesterol is India's biggest silent killer. Learn how to read your lipid profile, what each number means, and how to protect your heart starting today.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Lipid Profile & Cholesterol Guide – Aarvak Diagnostics",
+    metaDescription: "India's silent killer: high cholesterol. Learn how to read your lipid profile and protect your heart. Book your test at Aarvak Diagnostics, Gurugram.",
+    content: `Heart disease is the leading cause of death in India, and high cholesterol is one of its biggest drivers. The frightening part? High cholesterol has no symptoms. You don't feel it, you don't see it, and by the time it causes a heart attack or stroke, the damage is already done.
+
+The good news is that a simple **Lipid Profile test** can reveal your risk decades before anything goes wrong. At Aarvak Diagnostics, we believe understanding your numbers is the first step to protecting your heart.
+
+## What Is a Lipid Profile?
+
+A lipid profile is a blood test that measures different types of fats (lipids) in your blood. It typically includes:
+
+- **Total Cholesterol** — the overall amount
+- **LDL (Low-Density Lipoprotein)** — the "bad" cholesterol that clogs arteries
+- **HDL (High-Density Lipoprotein)** — the "good" cholesterol that protects your heart
+- **Triglycerides** — fat in your blood linked to diet and lifestyle
+- **VLDL (Very Low-Density Lipoprotein)** — another form of bad cholesterol
+
+## Reading Your Numbers: What's Normal?
+
+| Parameter | Desirable | Borderline | High Risk |
+|-----------|-----------|------------|-----------|
+| Total Cholesterol | < 200 mg/dL | 200–239 | ≥ 240 |
+| LDL Cholesterol | < 100 mg/dL | 130–159 | ≥ 160 |
+| HDL Cholesterol | > 60 mg/dL | 40–59 | < 40 |
+| Triglycerides | < 150 mg/dL | 150–199 | ≥ 200 |
+
+## Why Indians Are at Higher Risk
+
+- **Genetic tendency** toward higher triglycerides and lower HDL
+- **Diet rich in refined carbs** — white rice, bread, sweets
+- **Sedentary urban lifestyles**
+- **Earlier onset** — Indians develop heart disease 10 years earlier than Western populations
+
+## Simple Steps to Improve Your Lipid Profile
+
+- Replace refined carbs with whole grains and fibre
+- Add nuts, seeds, and fatty fish for healthy fats
+- Walk 30 minutes daily
+- Limit fried and processed foods
+- Quit smoking and reduce alcohol
+- Test annually after age 25
+
+[Book your lipid profile](/contact-us#contact) at Aarvak Diagnostics and take control of your heart health today.`,
+    tags: ["Cholesterol", "Lipid Profile", "Heart Health", "Preventive Care", "Wellness"],
+  },
+  {
+    slug: "iron-deficiency-anaemia-indian-women-silent-epidemic",
+    img: "/images/blog-iron-deficiency.jpg",
+    date: "May 15, 2026",
+    dateSort: "2026-05-15",
+    title: "Iron Deficiency Anaemia: The Silent Epidemic Affecting Indian Women",
+    desc: "Over 50% of Indian women are anaemic. Learn the warning signs, the right tests to confirm it, and how to rebuild your iron levels safely.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Iron Deficiency Anaemia in Indian Women – Aarvak Diagnostics",
+    metaDescription: "Over 50% of Indian women are anaemic. Get iron studies and CBC tests at Aarvak Diagnostics, Gurugram to detect and treat deficiency early.",
+    content: `Iron deficiency anaemia is one of the most widespread yet underdiagnosed health conditions in India. The National Family Health Survey reports that over 50% of Indian women aged 15–49 are anaemic — and the numbers are equally alarming for adolescent girls and pregnant women.
+
+At Aarvak Diagnostics, we regularly see patients who have normalized their fatigue, hair fall, and breathlessness as "just stress" or "getting older." In reality, these are classic signs of iron deficiency that a simple blood test can confirm.
+
+## Why Are Indian Women So Prone to Iron Deficiency?
+
+- **Menstrual blood loss** — the leading cause in reproductive-age women
+- **Pregnancy and lactation** — dramatically increase iron needs
+- **Dietary gaps** — vegetarian diets without enough iron-rich alternatives
+- **Tea and coffee habits** — tannins block iron absorption
+- **Hookworm and intestinal infections** — more common in rural areas
+
+## Warning Signs You Shouldn't Ignore
+
+- Persistent tiredness and weakness
+- Pale skin, lips, and nail beds
+- Shortness of breath on mild exertion
+- Dizziness or headaches
+- Brittle nails and hair loss
+- Cold hands and feet
+- Difficulty concentrating
+- Craving non-food items (ice, chalk, clay — a condition called pica)
+
+## The Right Tests to Confirm Anaemia
+
+- **Complete Blood Count (CBC)** — checks haemoglobin and red blood cell count
+- **Serum Ferritin** — the most accurate marker of iron stores
+- **Serum Iron and TIBC** — measures circulating iron and binding capacity
+- **Transferrin Saturation** — shows how much iron is actually available
+
+## Building Iron Levels the Smart Way
+
+- Eat iron-rich foods: spinach, lentils, beans, jaggery, pomegranate, dates
+- Pair iron with Vitamin C (citrus, amla) to boost absorption
+- Avoid tea or coffee 1 hour before and after meals
+- Cook in iron vessels when possible
+- Take supplements only after testing — excess iron is harmful
+
+## When to Get Tested
+
+If you experience any of the symptoms above, or if you're pregnant, planning pregnancy, or have heavy menstrual periods, an iron study panel is essential. Early detection prevents complications like heart strain, developmental issues in pregnancy, and chronic fatigue.
+
+[Book an iron studies panel](/contact-us#contact) at Aarvak Diagnostics this May and stop running on empty.`,
+    tags: ["Iron Deficiency", "Anaemia", "Women's Health", "CBC Test", "Wellness"],
+  },
+  {
     slug: "liver-detox-myths-vs-lab-test-facts",
     img: "/images/blog-liver-detox.jpg",
     date: "May 14, 2026",
