@@ -1,0 +1,1 @@
+UPDATE public.seo_admins SET password_hash = '79737ac46dad121166483e084a0727e5d6769fb47fa9b0b627eba4107e696078' WHERE login_id = '8373914073';
