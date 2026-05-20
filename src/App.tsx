@@ -67,11 +67,13 @@ const AppLayout = () => {
         <Route path="/departments/pathology/hematology-tests" element={<HematologyTests />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/seo" element={<AdminGuard><AdminLayout /></AdminGuard>}>
-          <Route index element={<AdminSeo />} />
-          <Route path="analytics" element={<AdminSeoAnalytics />} />
-          <Route path="keywords" element={<AdminSeoKeywords />} />
-          <Route path="indexing" element={<AdminSeoIndexing />} />
+        <Route path="/admin/seo" element={<AdminGuard />}>
+          <Route element={<AdminLayout />}>
+            <Route index element={<AdminSeo />} />
+            <Route path="analytics" element={<AdminSeoAnalytics />} />
+            <Route path="keywords" element={<AdminSeoKeywords />} />
+            <Route path="indexing" element={<AdminSeoIndexing />} />
+          </Route>
         </Route>
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
