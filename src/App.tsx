@@ -26,18 +26,27 @@ import AeoFaqDiagnosticTests from "./pages/AeoFaqDiagnosticTests";
 import AeoFaqHealthCheckups from "./pages/AeoFaqHealthCheckups";
 import BiochemistryTests from "./pages/BiochemistryTests";
 import HematologyTests from "./pages/HematologyTests";
+import AdminLogin from "./pages/AdminLogin";
+import AdminLayout from "./pages/admin/AdminLayout";
+import AdminSeo from "./pages/admin/AdminSeo";
+import AdminSeoAnalytics from "./pages/admin/AdminSeoAnalytics";
+import AdminSeoKeywords from "./pages/admin/AdminSeoKeywords";
+import AdminSeoIndexing from "./pages/admin/AdminSeoIndexing";
+import AdminGuard from "./components/AdminGuard";
 
 const queryClient = new QueryClient();
 
 const AppLayout = () => {
   const location = useLocation();
   const isReportPage = location.pathname === "/hyperrevamp-reporting";
+  const isAdmin = location.pathname.startsWith("/admin");
+  const hideChrome = isReportPage || isAdmin;
 
   return (
     <>
-      {!isReportPage && <Navbar />}
-      {!isReportPage && <SocialSidebar />}
-      {!isReportPage && <SocialProofNotification />}
+      {!hideChrome && <Navbar />}
+      {!hideChrome && <SocialSidebar />}
+      {!hideChrome && <SocialProofNotification />}
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about-us" element={<AboutUs />} />
@@ -57,10 +66,17 @@ const AppLayout = () => {
         <Route path="/departments/pathology/biochemistry-tests" element={<BiochemistryTests />} />
         <Route path="/departments/pathology/hematology-tests" element={<HematologyTests />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/seo" element={<AdminGuard><AdminLayout /></AdminGuard>}>
+          <Route index element={<AdminSeo />} />
+          <Route path="analytics" element={<AdminSeoAnalytics />} />
+          <Route path="keywords" element={<AdminSeoKeywords />} />
+          <Route path="indexing" element={<AdminSeoIndexing />} />
+        </Route>
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {!isReportPage && <Footer />}
+      {!hideChrome && <Footer />}
     </>
   );
 };
