@@ -672,7 +672,7 @@ const Index = () => {
             {[
               {
                 title: "Accurate & Reliable Testing",
-                text: "Advanced equipment and quality-controlled processes for dependable results.",
+                text: "Advanced equipment and quality-controlled processes for dependable results at a trusted NABL accredited lab in Gurgaon.",
               },
               {
                 title: "Patient-First Approach",
@@ -680,7 +680,7 @@ const Index = () => {
               },
               {
                 title: "Experienced Professionals",
-                text: "Advanced equipment and quality-controlled processes for dependable results.",
+                text: "Experienced professionals delivering accurate reports and dependable diagnostic care at the best diagnostic centre in Gurgaon.",
               },
             ].map((card) => (
               <div
