@@ -29,6 +29,7 @@ import HematologyTests from "./pages/HematologyTests";
 import Microbiology from "./pages/Microbiology";
 import Histopathology from "./pages/Histopathology";
 import Immunology from "./pages/Immunology";
+import MolecularDiagnostics from "./pages/MolecularDiagnostics";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminSeo from "./pages/admin/AdminSeo";
@@ -74,6 +75,7 @@ const AppLayout = () => {
         <Route path="/departments/pathology/histopathology-tests" element={<Histopathology />} />
         <Route path="/pathology/histopathology-tests" element={<Navigate to="/departments/pathology/histopathology-tests" replace />} />
         <Route path="/departments/pathology/immunology-tests" element={<Immunology />} />
+        <Route path="/departments/pathology/molecular-diagnostics" element={<MolecularDiagnostics />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/seo" element={<AdminGuard />}>

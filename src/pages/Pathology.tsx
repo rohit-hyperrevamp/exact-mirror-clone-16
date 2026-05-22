@@ -9,7 +9,7 @@ const labServices = [
   { icon: Droplets, label: "Hematology", href: "/departments/pathology/hematology-tests" },
   { icon: FileText, label: "Histopathology", href: "/departments/pathology/histopathology-tests" },
   { icon: ShieldCheck, label: "Immunology Tests", href: "/departments/pathology/immunology-tests" },
-  { icon: Dna, label: "Molecular Diagnostics" },
+  { icon: Dna, label: "Molecular Diagnostics", href: "/departments/pathology/molecular-diagnostics" },
 ];
 
 const homeCollectionItems = [
