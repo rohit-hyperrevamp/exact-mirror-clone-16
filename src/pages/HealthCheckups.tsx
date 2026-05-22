@@ -215,6 +215,41 @@ const HealthCheckups = () => {
         </div>
       </section>
 
+      {/* Preventive Health Checkup */}
+      <section className="py-16 px-4 md:px-8 bg-muted">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-[36px] font-bold text-foreground mb-4">Preventive Health Checkup for Better Wellness</h2>
+          <p className="text-muted-foreground text-[15px] leading-relaxed mb-6">
+            Regular preventive health checkup services help monitor vital health markers, identify lifestyle-related risks, and support long-term wellness management.
+          </p>
+          <p className="text-foreground font-semibold mb-3">Our health checkup packages are suitable for:</p>
+          <ul className="grid md:grid-cols-2 gap-3">
+            {[
+              "Working professionals",
+              "Senior citizens",
+              "Corporate employees",
+              "Preventive annual health screening",
+              "Routine diagnostic evaluation",
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-2 text-[15px] text-muted-foreground">
+                <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Local SEO */}
+      <section className="py-16 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-[36px] font-bold text-foreground mb-4">Full Body Checkup in Gurgaon</h2>
+          <p className="text-muted-foreground text-[15px] leading-relaxed">
+            Looking for a trusted health checkup centre in Gurgaon? Aarvak Diagnostics offers reliable full body health checkup packages, preventive screening, and diagnostic health checkup services with accurate reporting and expert care.
+          </p>
+        </div>
+      </section>
+
       <NewsletterSection />
     </div>
   );
