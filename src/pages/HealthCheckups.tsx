@@ -75,7 +75,7 @@ const HealthCheckups = () => {
             <div className="flex items-center gap-6">
               <div className="text-right text-white">
                 <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">About</p>
-                <h1 className="text-3xl md:text-5xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Full Body Health Checkup Packages in Gurgaon</h1>
+                <h1 className="text-3xl md:text-5xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Full Body Health Checkup in Gurgaon</h1>
               </div>
               <div className="w-px bg-white/40" style={{ height: '100px' }} />
               <div className="text-white">
