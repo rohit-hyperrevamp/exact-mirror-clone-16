@@ -137,8 +137,8 @@ const faqs = [
 
 const Index = () => {
   useSEO({
-    title: "Aarvak Diagnostics – Trusted Diagnostic Centre in India",
-    description: "Aarvak Diagnostics offers pathology, radiology & health checkup services across India. Book lab tests, health packages & get accurate diagnostic reports.",
+    title: "Diagnostic Centre in Gurgaon | Aarvak Diagnostics",
+    description: "Trusted diagnostic centre in Gurgaon for blood tests, pathology, radiology & health packages. NABL accredited lab with home collection.",
     canonical: "/",
     jsonLd: {
       "@context": "https://schema.org",
