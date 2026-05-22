@@ -90,10 +90,10 @@ const Pathology = () => {
               Advanced Pathology &<br />Diagnostic Services
             </h2>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              Our pathology lab offers a wide range of diagnostic services to help healthcare providers accurately diagnose and treat various medical conditions.
+              Our pathology lab in Gurgaon offers a wide range of diagnostic laboratory services to help healthcare providers accurately diagnose and treat various medical conditions.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-8">
-              Our team of experienced pathologists and technicians utilize the latest technology and techniques to deliver timely and accurate results.
+              Our team of experienced pathologists and technicians utilize the latest technology and techniques to deliver timely and accurate results through trusted pathology lab services and advanced clinical pathology labs standards.
             </p>
 
             <h3 className="text-xl font-bold text-foreground mb-5">Our Laboratory Services</h3>
