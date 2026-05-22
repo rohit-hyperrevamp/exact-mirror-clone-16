@@ -26,6 +26,7 @@ import AeoFaqDiagnosticTests from "./pages/AeoFaqDiagnosticTests";
 import AeoFaqHealthCheckups from "./pages/AeoFaqHealthCheckups";
 import BiochemistryTests from "./pages/BiochemistryTests";
 import HematologyTests from "./pages/HematologyTests";
+import Microbiology from "./pages/Microbiology";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminSeo from "./pages/admin/AdminSeo";
@@ -66,6 +67,8 @@ const AppLayout = () => {
         <Route path="/faq-health-checkups" element={<AeoFaqHealthCheckups />} />
         <Route path="/departments/pathology/biochemistry-tests" element={<BiochemistryTests />} />
         <Route path="/departments/pathology/hematology-tests" element={<HematologyTests />} />
+        <Route path="/departments/pathology/Microbiology" element={<Microbiology />} />
+        <Route path="/departments/pathology/microbiology" element={<Navigate to="/departments/pathology/Microbiology" replace />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/seo" element={<AdminGuard />}>
