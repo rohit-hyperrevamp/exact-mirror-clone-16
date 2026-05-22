@@ -420,7 +420,7 @@ const Index = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-primary-foreground text-center px-4">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Radiology Services</h2>
           <p className="text-lg mb-6 max-w-xl">
-            Accurate X-Ray Imaging With Modern Equipment And Expert Supervision.
+            Accurate X-ray imaging with modern equipment and expert supervision at our radiology centre in Gurgaon.
           </p>
           <Link
             to="/contact-us#contact"
