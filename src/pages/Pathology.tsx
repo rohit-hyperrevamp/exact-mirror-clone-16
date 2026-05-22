@@ -8,7 +8,7 @@ const labServices = [
   { icon: Microscope, label: "Microbiology", href: "/departments/pathology/Microbiology" },
   { icon: Droplets, label: "Hematology", href: "/departments/pathology/hematology-tests" },
   { icon: FileText, label: "Histopathology", href: "/departments/pathology/histopathology-tests" },
-  { icon: ShieldCheck, label: "Immunology Tests" },
+  { icon: ShieldCheck, label: "Immunology Tests", href: "/departments/pathology/immunology-tests" },
   { icon: Dna, label: "Molecular Diagnostics" },
 ];
 
