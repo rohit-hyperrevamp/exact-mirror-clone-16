@@ -251,7 +251,7 @@ const Index = () => {
             How Can We Help You Today?
           </h1>
           <p className="mt-3 text-lg sm:text-base text-aarvak-gray-600">
-            Choose What You&apos;re Looking For And Get Started In Seconds.
+            Choose what you&apos;re looking for and get started with a trusted diagnostic lab in Gurgaon in seconds.
           </p>
         </section>
 
