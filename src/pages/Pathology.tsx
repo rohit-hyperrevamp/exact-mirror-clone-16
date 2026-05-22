@@ -32,9 +32,9 @@ const homeCollectionItems = [
 
 const Pathology = () => {
   useSEO({
-    title: "Pathology Lab Services – Aarvak Diagnostics India",
-    description: "Accurate pathology lab tests including blood tests, biochemistry, microbiology and molecular diagnostics. Home sample collection available across Gurugram.",
-    canonical: "/pathology",
+    title: "Pathology Lab in Gurgaon | Aarvak Diagnostics",
+    description: "Trusted pathology lab in Gurgaon offering accurate pathology lab services, home collection, and advanced diagnostic laboratory services.",
+    canonical: "/departments/pathology",
   });
   return (
     <div className="bg-background">
