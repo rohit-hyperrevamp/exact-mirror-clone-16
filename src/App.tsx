@@ -58,7 +58,8 @@ const AppLayout = () => {
         <Route path="/corporate" element={<Corporate />} />
         <Route path="/pathology" element={<Navigate to="/departments/pathology" replace />} />
         <Route path="/departments/pathology" element={<Pathology />} />
-        <Route path="/radiology" element={<Radiology />} />
+        <Route path="/radiology" element={<Navigate to="/departments/radiology" replace />} />
+        <Route path="/departments/radiology" element={<Radiology />} />
         <Route path="/health-checkups" element={<HealthCheckups />} />
         <Route path="/insights" element={<Insights />} />
         <Route path="/insights/:slug" element={<BlogPost />} />
