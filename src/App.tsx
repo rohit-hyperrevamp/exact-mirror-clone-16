@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SocialSidebar from "./components/SocialSidebar";
@@ -52,7 +52,8 @@ const AppLayout = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/corporate" element={<Corporate />} />
-        <Route path="/pathology" element={<Pathology />} />
+        <Route path="/pathology" element={<Navigate to="/departments/pathology" replace />} />
+        <Route path="/departments/pathology" element={<Pathology />} />
         <Route path="/radiology" element={<Radiology />} />
         <Route path="/health-checkups" element={<HealthCheckups />} />
         <Route path="/insights" element={<Insights />} />

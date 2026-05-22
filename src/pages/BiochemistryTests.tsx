@@ -54,6 +54,10 @@ const testCategories = [
       "Kidney Function Test",
       "Kidney Dialysis Panel",
       "Protein-Creatinine Ratio",
+      "Peritoneal Equilibrium & Adequacy Test",
+      "Peritoneal Equilibrium Test",
+      "Kidney Panel (KFT) with Urine",
+      "Bicarbonate",
     ],
   },
   {
@@ -66,6 +70,10 @@ const testCategories = [
       "Glucose Tolerance Test (GTT)",
       "Gestational Glucose Tolerance",
       "Diabetes Check-up",
+      "Glucose 1 hr",
+      "Glucose (Fasting), Urine",
+      "Glucose (PP), Urine",
+      "Gestational Glucose Tolerance 3",
     ],
   },
   {
@@ -74,6 +82,7 @@ const testCategories = [
       "Cholesterol",
       "HDL Cholesterol",
       "LDL Cholesterol",
+      "LDL Cholesterol, Direct",
       "Triglycerides",
       "Lipid Profile",
     ],
@@ -88,6 +97,9 @@ const testCategories = [
       "Magnesium",
       "Chloride",
       "Phosphorus",
+      "Electrolytes",
+      "Bicarbonate",
+      "Phosphorus Levels",
     ],
   },
   {
@@ -99,6 +111,8 @@ const testCategories = [
       "Creatinine Kinase",
       "Amylase",
       "Lipase",
+      "Serum Amylase",
+      "Total Protein, Albumin, Globulin, Serum",
     ],
   },
   {
@@ -107,6 +121,7 @@ const testCategories = [
       "Iron Levels",
       "Iron Studies",
       "Iron Monitoring Panel",
+      "Iron Studies Monitoring Panel",
       "Transferrin",
       "Unsaturated Iron Binding Capacity",
       "Uric Acid",
@@ -120,8 +135,8 @@ const testCategories = [
     title: "Fluid & Specialized Tests",
     tests: [
       "CSF Examination Routine",
-      "Fluid Biochemistry Examination",
-      "Lipase (Fluid)",
+      "Fluid Examination for Biochemistry",
+      "Lipase, Fluid",
       "Triglycerides (Fluid)",
     ],
   },
@@ -165,9 +180,9 @@ const BiochemistryTests = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useSEO({
-    title: "Biochemistry Lab Tests in Gurugram – Aarvak Diagnostics",
+    title: "Biochemistry Blood Test | Aarvak Diagnostics",
     description:
-      "Accurate biochemistry blood tests including liver, kidney, glucose, lipid & enzyme panels. Advanced clinical biochemistry tests with reliable reports in Gurugram.",
+      "Book accurate biochemistry blood test services with advanced clinical biochemistry tests, complete biochemistry test list & fast reports.",
     canonical: "/departments/pathology/biochemistry-tests",
   });
 
@@ -195,10 +210,10 @@ const BiochemistryTests = () => {
               <div className="w-px bg-white/40" style={{ height: "100px" }} />
               <div className="text-white max-w-md">
                 <h1 className="text-2xl md:text-[32px] font-bold leading-tight">
-                  Biochemistry Lab Tests for Accurate Diagnosis
+                  Biochemistry Blood Test & Lab Tests for Accurate Diagnosis
                 </h1>
                 <p className="mt-3 text-[15px] opacity-85">
-                  Advanced biochemistry blood tests with precise analysis, modern technology, and expert validation for reliable health insights.
+                  Advanced biochemistry blood test services with precise analysis, modern technology, and expert validation for reliable health insights.
                 </p>
                 <Link
                   to="/contact-us#contact"
@@ -222,7 +237,7 @@ const BiochemistryTests = () => {
             Precision Biochemistry. Trusted Results.
           </h2>
           <p className="text-sm text-muted-foreground mt-2 font-medium">
-            Comprehensive blood chemistry analysis for confident clinical decisions.
+            Comprehensive blood chemistry analysis and clinical biochemistry tests for confident clinical decisions.
           </p>
         </div>
       </section>
@@ -246,7 +261,7 @@ const BiochemistryTests = () => {
               Our diagnostic center offers a wide range of biochemistry lab tests designed to evaluate organ function, detect diseases early, and monitor overall health.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              From routine screenings to specialised clinical biochemistry tests, our services help doctors make accurate and timely medical decisions.
+              From routine screenings to specialised clinical biochemistry tests, our services help doctors make accurate and timely medical decisions using advanced laboratory diagnostics.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-8">
               We use advanced equipment and strict quality protocols to ensure every biochemistry blood test delivers dependable results.

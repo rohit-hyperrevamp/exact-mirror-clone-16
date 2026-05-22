@@ -13,7 +13,7 @@ const staticPages = [
   { path: '/about-us', priority: '0.8', changefreq: 'monthly' },
   { path: '/contact-us', priority: '0.8', changefreq: 'monthly' },
   { path: '/corporate', priority: '0.7', changefreq: 'monthly' },
-  { path: '/pathology', priority: '0.9', changefreq: 'monthly' },
+  { path: '/departments/pathology', priority: '0.9', changefreq: 'monthly' },
   { path: '/radiology', priority: '0.9', changefreq: 'monthly' },
   { path: '/health-checkups', priority: '0.9', changefreq: 'monthly' },
   { path: '/insights', priority: '0.8', changefreq: 'weekly' },

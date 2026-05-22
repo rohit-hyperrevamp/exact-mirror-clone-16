@@ -10,7 +10,7 @@ const serviceCards = [
     img: "/images/health.png",
     icon: "/images/blood-icon.png",
     title: "Book A Lab Test",
-    desc: "Find And Book Individual Diagnostic Tests Easily",
+    desc: "Find and book individual diagnostic tests easily from a trusted blood test lab in Gurgaon.",
     btnText: "Book Test",
     link: "/contact-us#contact",
   },
@@ -26,7 +26,7 @@ const serviceCards = [
     img: "/images/healthtest.png",
     icon: "/images/home-icon.png",
     title: "Home Samples",
-    desc: "Safe And Convenient Sample Collection At Your Doorstep",
+    desc: "Safe and convenient home sample collection from a reliable pathology lab in Gurgaon.",
     btnText: "Book Home Collection",
     link: "/contact-us#contact",
   },
@@ -137,8 +137,8 @@ const faqs = [
 
 const Index = () => {
   useSEO({
-    title: "Aarvak Diagnostics – Trusted Diagnostic Centre in India",
-    description: "Aarvak Diagnostics offers pathology, radiology & health checkup services across India. Book lab tests, health packages & get accurate diagnostic reports.",
+    title: "Diagnostic Centre in Gurgaon | Aarvak Diagnostics",
+    description: "Trusted diagnostic centre in Gurgaon for blood tests, pathology, radiology & health packages. NABL accredited lab with home collection.",
     canonical: "/",
     jsonLd: {
       "@context": "https://schema.org",
@@ -203,10 +203,10 @@ const Index = () => {
           {/* Right: Heading + CTA */}
           <div className="w-full md:w-auto text-center md:text-left mt-4 md:mt-0 max-w-md">
             <h1 className="text-primary-foreground text-2xl md:text-3xl lg:text-[42px] font-bold leading-tight">
-              Diagnostic Care You<br />Can Trust
+              Diagnostic Centre in Gurgaon<br />You Can Trust
             </h1>
             <p className="text-primary-foreground/90 text-sm md:text-base mt-3">
-              Reliable tests and imaging, with care you can trust.
+              Reliable tests and imaging from a trusted diagnostic centre in Gurgaon, with care you can trust.
             </p>
             <div className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
               <Link
@@ -251,7 +251,7 @@ const Index = () => {
             How Can We Help You Today?
           </h1>
           <p className="mt-3 text-lg sm:text-base text-aarvak-gray-600">
-            Choose What You&apos;re Looking For And Get Started In Seconds.
+            Choose what you&apos;re looking for and get started with a trusted diagnostic lab in Gurgaon in seconds.
           </p>
         </section>
 
@@ -420,7 +420,7 @@ const Index = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-primary-foreground text-center px-4">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Radiology Services</h2>
           <p className="text-lg mb-6 max-w-xl">
-            Accurate X-Ray Imaging With Modern Equipment And Expert Supervision.
+            Accurate X-ray imaging with modern equipment and expert supervision at our radiology centre in Gurgaon.
           </p>
           <Link
             to="/contact-us#contact"
@@ -631,7 +631,7 @@ const Index = () => {
                 }}
               >
                 <p className="text-aarvak-gray-600" style={{ fontSize: '15px', lineHeight: '1.8' }}>
-                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
+                  Aarvak Diagnostics is a trusted diagnostic centre in Gurgaon offering blood tests, imaging, and preventive health services. As a reliable pathology lab in Gurgaon and blood test lab in Gurgaon, we use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
@@ -654,7 +654,7 @@ const Index = () => {
                 }}
               >
                 <p className="text-aarvak-gray-600 leading-relaxed text-sm">
-                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
+                  Aarvak Diagnostics is a trusted diagnostic centre in Gurgaon offering blood tests, imaging, and preventive health services. As a reliable pathology lab in Gurgaon and blood test lab in Gurgaon, we use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
@@ -672,7 +672,7 @@ const Index = () => {
             {[
               {
                 title: "Accurate & Reliable Testing",
-                text: "Advanced equipment and quality-controlled processes for dependable results.",
+                text: "Advanced equipment and quality-controlled processes for dependable results at a trusted NABL accredited lab in Gurgaon.",
               },
               {
                 title: "Patient-First Approach",
@@ -680,7 +680,7 @@ const Index = () => {
               },
               {
                 title: "Experienced Professionals",
-                text: "Advanced equipment and quality-controlled processes for dependable results.",
+                text: "Experienced professionals delivering accurate reports and dependable diagnostic care at the best diagnostic centre in Gurgaon.",
               },
             ].map((card) => (
               <div

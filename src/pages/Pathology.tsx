@@ -16,25 +16,25 @@ const homeCollectionItems = [
   {
     icon: Home,
     title: "Convenience",
-    desc: "We offer convenient home collection services for our customers who are unable to visit our lab.",
+    desc: "We offer convenient home collection services for customers looking for a trusted pathology lab near me without visiting the lab.",
   },
   {
     icon: UserCheck,
     title: "Professionalism",
-    desc: "Our trained phlebotomists ensure samples are collected properly and transported securely.",
+    desc: "Our trained phlebotomists ensure samples are collected properly and transported securely while maintaining high-quality laboratory services standards.",
   },
   {
     icon: Clock,
     title: "Fast Results",
-    desc: "Get your test results delivered electronically or physically as per your preference.",
+    desc: "Get accurate reports delivered electronically or physically as per your preference from the best pathology lab in Gurgaon.",
   },
 ];
 
 const Pathology = () => {
   useSEO({
-    title: "Pathology Lab Services – Aarvak Diagnostics India",
-    description: "Accurate pathology lab tests including blood tests, biochemistry, microbiology and molecular diagnostics. Home sample collection available across Gurugram.",
-    canonical: "/pathology",
+    title: "Pathology Lab in Gurgaon | Aarvak Diagnostics",
+    description: "Trusted pathology lab in Gurgaon offering accurate pathology lab services, home collection, and advanced diagnostic laboratory services.",
+    canonical: "/departments/pathology",
   });
   return (
     <div className="bg-background">
@@ -51,12 +51,12 @@ const Pathology = () => {
             <div className="flex items-center gap-6">
               <div className="text-right text-white">
                 <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">About</p>
-                <h1 className="text-4xl md:text-6xl font-bold italic" style={{ fontFamily: "Georgia, serif" }}>Our Pathology</h1>
+                <h2 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Our Pathology</h2>
               </div>
               <div className="w-px bg-white/40" style={{ height: '100px' }} />
               <div className="text-white">
-                <h2 className="text-2xl md:text-[32px] font-bold leading-tight">Precise Pathology Care</h2>
-                <p className="mt-3 text-[15px] opacity-80 max-w-md">Backed by modern technology and expert pathologists to ensure accurate test results you can trust.</p>
+                <h1 className="text-2xl md:text-[32px] font-bold leading-tight">Pathology Lab in Gurgaon</h1>
+                <p className="mt-3 text-[15px] opacity-80 max-w-md">Trusted pathology lab in Gurgaon backed by modern technology and expert pathologists to ensure accurate test results you can trust.</p>
                 <Link
                   to="/contact-us#contact"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
@@ -75,7 +75,7 @@ const Pathology = () => {
           <h2 className="text-xl md:text-[26px] font-bold leading-snug text-secondary">
             Accurate Testing. Reliable Results.
           </h2>
-          <p className="text-sm text-muted-foreground mt-2 font-medium">Precise lab analysis for confident medical decisions.</p>
+          <p className="text-sm text-muted-foreground mt-2 font-medium">Precise lab analysis and reliable pathology laboratory services for confident medical decisions.</p>
         </div>
       </section>
 
@@ -90,10 +90,10 @@ const Pathology = () => {
               Advanced Pathology &<br />Diagnostic Services
             </h2>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              Our pathology lab offers a wide range of diagnostic services to help healthcare providers accurately diagnose and treat various medical conditions.
+              Our pathology lab in Gurgaon offers a wide range of diagnostic laboratory services to help healthcare providers accurately diagnose and treat various medical conditions.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-8">
-              Our team of experienced pathologists and technicians utilize the latest technology and techniques to deliver timely and accurate results.
+              Our team of experienced pathologists and technicians utilize the latest technology and techniques to deliver timely and accurate results through trusted pathology lab services and advanced clinical pathology labs standards.
             </p>
 
             <h3 className="text-xl font-bold text-foreground mb-5">Our Laboratory Services</h3>

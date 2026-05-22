@@ -60,6 +60,9 @@ const Footer = () => {
                 <span className="font-bold text-gray-900">Location : </span>
                 Shop No.23, Ground Floor, Office No.S06, 5th Floor, Block-B, JMD Suburbio-2, Sector-67, Gurugram
               </p>
+              <p className="pt-2 border-t border-gray-100 mt-3">
+                Looking for a diagnostic centre near me? Aarvak Diagnostics offers trusted testing, radiology, and home sample collection services across Gurgaon.
+              </p>
             </div>
           </div>
 
