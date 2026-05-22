@@ -75,12 +75,13 @@ const HealthCheckups = () => {
             <div className="flex items-center gap-6">
               <div className="text-right text-white">
                 <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">About</p>
-                <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Health Packages</h1>
+                <h1 className="text-3xl md:text-5xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Full Body Health Checkup Packages in Gurgaon</h1>
               </div>
               <div className="w-px bg-white/40" style={{ height: '100px' }} />
               <div className="text-white">
                 <h2 className="text-2xl md:text-[32px] font-bold leading-tight">Trusted Health Checkups</h2>
-                <p className="mt-3 text-[15px] opacity-80 max-w-md">Structured health packages to help you stay ahead of illness and monitor your wellness.</p>
+                <p className="mt-3 text-[15px] opacity-80 max-w-md">Trusted health checkup packages designed to help you stay ahead of illness with preventive wellness monitoring and accurate diagnostics.</p>
+                <p className="mt-2 text-[14px] opacity-75 max-w-md">Book a full body health checkup in Gurgaon with preventive screening and advanced diagnostic evaluation.</p>
                 <Link
                   to="/contact-us#contact"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
