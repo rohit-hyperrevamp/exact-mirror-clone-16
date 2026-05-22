@@ -203,10 +203,10 @@ const Index = () => {
           {/* Right: Heading + CTA */}
           <div className="w-full md:w-auto text-center md:text-left mt-4 md:mt-0 max-w-md">
             <h1 className="text-primary-foreground text-2xl md:text-3xl lg:text-[42px] font-bold leading-tight">
-              Diagnostic Care You<br />Can Trust
+              Diagnostic Centre in Gurgaon<br />You Can Trust
             </h1>
             <p className="text-primary-foreground/90 text-sm md:text-base mt-3">
-              Reliable tests and imaging, with care you can trust.
+              Reliable tests and imaging from a trusted diagnostic centre in Gurgaon, with care you can trust.
             </p>
             <div className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
               <Link
