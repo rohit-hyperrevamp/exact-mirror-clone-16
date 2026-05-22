@@ -631,7 +631,7 @@ const Index = () => {
                 }}
               >
                 <p className="text-aarvak-gray-600" style={{ fontSize: '15px', lineHeight: '1.8' }}>
-                  Aarvak Diagnostics is a trusted diagnostic center offering blood tests, imaging, and preventive health services. We use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
+                  Aarvak Diagnostics is a trusted diagnostic centre in Gurgaon offering blood tests, imaging, and preventive health services. As a reliable pathology lab in Gurgaon and blood test lab in Gurgaon, we use modern technology and follow strict quality standards to ensure accurate results, while keeping patient care and comfort at the center of everything we do.
                 </p>
                 <Link
                   to="/about-us"
