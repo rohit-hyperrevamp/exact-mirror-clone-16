@@ -39,9 +39,11 @@ const testCategories = [
       "Haemoglobin (Hb)",
       "Hemoglobin & Hematocrit",
       "Total Leukocyte Count (TLC)",
+      "TLC",
       "Platelet Count",
       "Absolute Eosinophil Count",
       "Erythrocyte Sedimentation Rate (ESR)",
+      "Covestro Periodic Health Checkups Main Package B",
     ],
   },
   {
@@ -98,7 +100,6 @@ const testCategories = [
     tests: [
       "TLC & DLC Fluid",
       "PCV (Packed Cell Volume), Body Fluid",
-      "Covestro Periodic Health Checkups Main Package B",
     ],
   },
 ];
@@ -141,9 +142,9 @@ const HematologyTests = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useSEO({
-    title: "Hematology Tests in Gurugram – CBC & Blood Tests | Aarvak Diagnostics",
+    title: "Hematology Tests & CBC Test | Aarvak Diagnostics",
     description:
-      "Accurate hematology tests including CBC, coagulation, infection screening & advanced blood studies. Reliable hematology test reports in Gurugram.",
+      "Advanced hematology tests including CBC, clotting, infection screening & blood analysis with accurate reports and affordable pricing.",
     canonical: "/departments/pathology/hematology-tests",
   });
 
@@ -174,7 +175,7 @@ const HematologyTests = () => {
                   Hematology Tests for Accurate Blood Analysis
                 </h1>
                 <p className="mt-3 text-[15px] opacity-85">
-                  Comprehensive hematology tests including hematology CBC test analysis and advanced blood diagnostics to detect infections, anemia, and clotting disorders with precision.
+                  Comprehensive hematology lab tests including CBC and advanced blood analysis to detect infections, anemia, and clotting disorders with precision.
                 </p>
                 <Link
                   to="/contact-us#contact"
@@ -220,13 +221,13 @@ const HematologyTests = () => {
               Advanced Hematology Tests List<br />& Blood Diagnostics
             </h2>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              Our laboratory offers a wide range of hematology tests and hematology lab tests to evaluate blood health, clotting function, infections, and related disorders with accuracy.
+              Our laboratory offers a wide range of hematology tests and advanced blood diagnostics to evaluate blood health, diagnose disorders, and monitor overall well-being.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
               We provide a comprehensive hematology tests list including CBC, platelet studies, coagulation profiles, malaria screening, ESR, haemoglobin analysis, clotting tests, and specialised blood investigations at competitive hematology test prices in Gurugram.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              From routine CBC tests to specialized hematology investigations, our diagnostic services help identify infections, anemia, clotting disorders, and immune-related conditions.
+              From routine hematology CBC test services to specialized hematology investigations, our diagnostic services help identify infections, anemia, clotting disorders, and immune-related conditions.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-8">
               Using advanced technology and expert analysis, we ensure accurate and reliable results for every patient.
