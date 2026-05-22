@@ -16,6 +16,193 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "glp1-ozempic-blood-tests-monitoring-india",
+    img: "/images/blog-glp1-monitoring.jpg",
+    date: "May 22, 2026",
+    dateSort: "2026-05-22",
+    title: "On Ozempic or Mounjaro? The Blood Tests You Must Get Every 3 Months",
+    desc: "GLP-1 weight loss drugs are exploding in India. Here's the essential lab panel every user needs to stay safe and track real progress.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "GLP-1 Ozempic Blood Test Monitoring – Aarvak Diagnostics",
+    metaDescription: "Taking Ozempic or Mounjaro? Get the right monitoring blood tests every quarter at Aarvak Diagnostics, Gurugram. Stay safe, track progress.",
+    content: `GLP-1 receptor agonists like Ozempic, Wegovy, and Mounjaro have moved from diabetes clinics to dinner-table conversations across India. They genuinely help with weight loss and blood sugar control — but they are not "set and forget" injections. Without regular lab monitoring, side effects can creep up silently.
+
+At Aarvak Diagnostics, we're seeing a steady rise in patients on these medications. Here's the monitoring panel doctors recommend every 3 months.
+
+## Why Monitoring Matters
+
+GLP-1 drugs affect appetite, digestion, gallbladder function, kidney filtration, and muscle mass. Long-term users may face nutrient deficiencies, dehydration, or rare pancreatic and thyroid changes.
+
+## The Essential Quarterly Panel
+
+- **HbA1c & Fasting Glucose** — confirm the metabolic benefit is working
+- **Lipid Profile** — track cholesterol and triglyceride improvements
+- **Liver Function Test (LFT)** — flag rare hepatic side effects
+- **Kidney Function Test (KFT) + Electrolytes** — vomiting and reduced intake can affect kidneys
+- **Vitamin B12, Vitamin D, Iron Studies** — eating less often leads to silent deficiencies
+- **TSH** — baseline thyroid monitoring is recommended
+- **Lipase / Amylase** — only if you have abdominal pain (rules out pancreatitis)
+
+## Watch for These Symptoms Between Tests
+
+Persistent nausea, severe abdominal pain, dark urine, hair fall, or unusual fatigue all warrant an earlier check.
+
+## Smart Habits Alongside the Drug
+
+- Hit a protein target (1.2–1.6 g/kg) to protect muscle mass
+- Stay hydrated — at least 2.5 litres daily
+- Don't skip resistance training
+- Never share or buy GLP-1 pens from unverified sources
+
+[Book your GLP-1 monitoring panel](/contact-us#contact) at Aarvak Diagnostics with home sample collection across Gurugram.`,
+    tags: ["GLP-1", "Ozempic", "Weight Loss", "Diabetes", "Monitoring"],
+  },
+  {
+    slug: "sleep-deprivation-blood-test-results",
+    img: "/images/blog-sleep-lab-results.jpg",
+    date: "May 21, 2026",
+    dateSort: "2026-05-21",
+    title: "Bad Sleep Last Night? It Could Be Skewing Your Blood Test Results",
+    desc: "From cortisol spikes to inflated sugar readings, here's how a single poor night of sleep can mislead your lab report — and what to do about it.",
+    author: "Aarvak Diagnostics",
+    readTime: "4 min",
+    category: "Wellness",
+    metaTitle: "How Sleep Affects Blood Test Results – Aarvak Diagnostics",
+    metaDescription: "Poor sleep can change cortisol, glucose, and inflammation markers. Learn how to prepare for accurate blood tests at Aarvak Diagnostics, Gurugram.",
+    content: `You fasted properly, skipped your morning coffee, and showed up on time for your blood test. But you also tossed and turned till 3 AM. Surprise — that single bad night can quietly distort half a dozen of your lab values.
+
+## How Sleep Affects Your Blood Markers
+
+- **Cortisol** rises sharply after a poor night, mimicking chronic stress
+- **Fasting glucose and insulin resistance markers** can climb 10–15%
+- **CRP and other inflammation markers** trend higher
+- **TSH and reproductive hormones** show measurable shifts
+- **White blood cell counts** may look mildly elevated
+
+## When to Reschedule Your Test
+
+If you slept less than 4 hours, worked a night shift, or had a feverish, restless night, consider rescheduling non-urgent tests. For routine annual checkups, accuracy matters more than convenience.
+
+## Tests Most Sensitive to Sleep
+
+- Cortisol (morning)
+- Fasting Insulin and HOMA-IR
+- HbA1c is largely unaffected — it reflects 3 months
+- Hormone panels (LH, FSH, testosterone)
+- High-sensitivity CRP
+
+## How to Prep the Night Before
+
+- Aim for 7–8 hours of actual sleep
+- Avoid alcohol for 24 hours
+- Skip intense late-night workouts
+- Keep the bedroom cool and dark
+- Don't doom-scroll past midnight
+
+[Book a stress-free morning blood test](/contact-us#contact) at Aarvak Diagnostics with priority slots and home collection.`,
+    tags: ["Sleep", "Cortisol", "Blood Tests", "Wellness", "Lab Preparation"],
+  },
+  {
+    slug: "vitamin-b12-deficiency-indian-vegetarians",
+    img: "/images/blog-b12-vegetarians.jpg",
+    date: "May 20, 2026",
+    dateSort: "2026-05-20",
+    title: "Vitamin B12 Deficiency in Indian Vegetarians: The Silent Epidemic",
+    desc: "Tingling hands, brain fog, constant tiredness? Up to 47% of Indian vegetarians are B12 deficient. Here's how to test and fix it.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Nutrition",
+    metaTitle: "Vitamin B12 Deficiency Test for Vegetarians – Aarvak Diagnostics",
+    metaDescription: "Indian vegetarians are highly prone to B12 deficiency. Book accurate Vitamin B12 testing at Aarvak Diagnostics, Gurugram with home collection.",
+    content: `B12 is the one vitamin a plant-based Indian diet cannot reliably provide. Dal, paneer, ghee, and seasonal vegetables are wonderful — but none of them contain meaningful B12. The result? Studies show 40–47% of Indian vegetarians have low or borderline B12 levels.
+
+## Why Indians Are at Higher Risk
+
+- Strict lacto-vegetarian and vegan diets
+- Heavy use of antacids and PPIs (which block B12 absorption)
+- High prevalence of H. pylori infection
+- Diabetes medications like metformin reduce B12 over time
+- Older adults absorb less from food regardless of diet
+
+## Subtle Symptoms Most People Ignore
+
+- Persistent tiredness despite enough sleep
+- Tingling or numbness in fingers and toes
+- Brain fog and difficulty concentrating
+- Mouth ulcers and a smooth, sore tongue
+- Low mood or unexplained anxiety
+- Pale skin and breathlessness on mild exertion
+
+## Which Test to Ask For
+
+- **Serum Vitamin B12** — the standard screening test
+- **Active B12 (Holotranscobalamin)** — more accurate, picks up early deficiency
+- **Homocysteine and MMA** — confirm functional deficiency when B12 is borderline
+- Pair with **CBC** to check for macrocytic anemia
+
+## What to Do If You're Deficient
+
+- Oral methylcobalamin works well for mild cases
+- Severe deficiency needs B12 injections from a doctor
+- Vegetarians should consider a lifelong low-dose supplement
+- Recheck levels every 6 months until stable
+
+[Book your Vitamin B12 test](/contact-us#contact) at Aarvak Diagnostics with same-day home collection across Gurugram.`,
+    tags: ["Vitamin B12", "Vegetarian", "Nutrition", "Deficiency", "Blood Tests"],
+  },
+  {
+    slug: "uric-acid-gout-young-indians-rising",
+    img: "/images/blog-uric-acid-gout.jpg",
+    date: "May 19, 2026",
+    dateSort: "2026-05-19",
+    title: "Gout Is No Longer a Disease of the Old: Why Young Indians Need a Uric Acid Test",
+    desc: "Beer, biryani, late nights, and protein shakes are sending uric acid levels through the roof in 25–35-year-olds. Here's what to check and when.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Diagnostics",
+    metaTitle: "Uric Acid Test for Young Adults – Aarvak Diagnostics",
+    metaDescription: "Gout is rising in young Indians. Book an accurate uric acid blood test at Aarvak Diagnostics, Gurugram with fast reports and home collection.",
+    content: `Gout used to be the joke ailment of older uncles after a heavy biryani night. Not anymore. Rheumatology clinics across India are seeing a sharp rise in men and women in their late 20s and early 30s with painful, swollen big toes, ankles, and knees — classic signs of high uric acid.
+
+## Why Young Indians Are Suddenly Affected
+
+- Daily protein shakes and high-meat keto diets
+- Frequent beer and whisky consumption
+- Sugary drinks, especially fructose-sweetened beverages
+- Crash dieting and rapid weight loss
+- Sedentary desk jobs with low water intake
+- A family history of gout or kidney stones
+
+## Warning Signs Beyond the Big Toe
+
+- Sudden, intense joint pain at night
+- A red, hot, shiny swelling around one joint
+- Recurring kidney stones
+- Lower back pain without injury
+- Persistent foamy urine
+
+## The Right Tests to Book
+
+- **Serum Uric Acid** — the core test, ideally fasting
+- **24-Hour Urine Uric Acid** — distinguishes overproduction from poor excretion
+- **Kidney Function Test (KFT)** — uric acid stresses the kidneys
+- **Lipid Profile and HbA1c** — high uric acid clusters with metabolic syndrome
+- **CRP** — during an acute flare-up
+
+## Lifestyle Fixes That Actually Work
+
+- Drink 3 litres of water daily
+- Cut beer and sugary sodas first
+- Moderate red meat, organ meats, and seafood
+- Add cherries, coffee, and low-fat dairy
+- Lose weight slowly — crash diets spike uric acid further
+
+[Book your uric acid test](/contact-us#contact) at Aarvak Diagnostics. Fast reports and home sample collection across Gurugram.`,
+    tags: ["Uric Acid", "Gout", "Young Adults", "Joint Pain", "Diagnostics"],
+  },
+  {
     slug: "fasting-before-blood-tests-myths-debunked",
     img: "/images/blog-fasting-myths.jpg",
     date: "May 18, 2026",
