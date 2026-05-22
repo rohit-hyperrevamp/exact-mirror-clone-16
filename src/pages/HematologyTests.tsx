@@ -198,7 +198,7 @@ const HematologyTests = () => {
             Precise Blood Diagnostics. Trusted Reports.
           </h2>
           <p className="text-sm text-muted-foreground mt-2 font-medium">
-            Comprehensive hematology analysis for confident clinical decisions.
+            Comprehensive hematology lab tests and blood analysis for confident clinical decisions.
           </p>
         </div>
       </section>
