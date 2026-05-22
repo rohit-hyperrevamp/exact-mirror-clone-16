@@ -246,7 +246,7 @@ const BiochemistryTests = () => {
               Our diagnostic center offers a wide range of biochemistry lab tests designed to evaluate organ function, detect diseases early, and monitor overall health.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              From routine screenings to specialised clinical biochemistry tests, our services help doctors make accurate and timely medical decisions.
+              From routine screenings to specialised clinical biochemistry tests, our services help doctors make accurate and timely medical decisions using advanced laboratory diagnostics.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-8">
               We use advanced equipment and strict quality protocols to ensure every biochemistry blood test delivers dependable results.
