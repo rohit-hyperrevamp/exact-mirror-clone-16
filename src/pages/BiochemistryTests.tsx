@@ -195,10 +195,10 @@ const BiochemistryTests = () => {
               <div className="w-px bg-white/40" style={{ height: "100px" }} />
               <div className="text-white max-w-md">
                 <h1 className="text-2xl md:text-[32px] font-bold leading-tight">
-                  Biochemistry Lab Tests for Accurate Diagnosis
+                  Biochemistry Blood Test & Lab Tests for Accurate Diagnosis
                 </h1>
                 <p className="mt-3 text-[15px] opacity-85">
-                  Advanced biochemistry blood tests with precise analysis, modern technology, and expert validation for reliable health insights.
+                  Advanced biochemistry blood test services with precise analysis, modern technology, and expert validation for reliable health insights.
                 </p>
                 <Link
                   to="/contact-us#contact"
