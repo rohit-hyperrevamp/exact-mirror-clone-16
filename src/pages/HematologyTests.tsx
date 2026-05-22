@@ -174,7 +174,7 @@ const HematologyTests = () => {
                   Hematology Tests for Accurate Blood Analysis
                 </h1>
                 <p className="mt-3 text-[15px] opacity-85">
-                  Comprehensive hematology tests including CBC and advanced blood analysis to detect infections, anemia, and clotting disorders with precision.
+                  Comprehensive hematology tests including hematology CBC test analysis and advanced blood diagnostics to detect infections, anemia, and clotting disorders with precision.
                 </p>
                 <Link
                   to="/contact-us#contact"
