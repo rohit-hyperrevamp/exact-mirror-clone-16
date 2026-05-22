@@ -247,9 +247,9 @@ const Index = () => {
       {/* How Can We Help */}
       <main className="bg-background">
         <section className="text-center py-10 px-4">
-          <h1 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-aarvak-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-aarvak-gray-900">
             How Can We Help You Today?
-          </h1>
+          </h2>
           <p className="mt-3 text-lg sm:text-base text-aarvak-gray-600">
             Choose what you&apos;re looking for and get started with a trusted diagnostic lab in Gurgaon in seconds.
           </p>
