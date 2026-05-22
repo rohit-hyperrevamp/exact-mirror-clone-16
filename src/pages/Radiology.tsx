@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CheckCircle, Zap, Wind, Activity, HeartPulse } from "lucide-react";
+import { CheckCircle, Zap, Wind } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
 import useSEO from "@/hooks/useSEO";
 
@@ -37,16 +37,6 @@ const services = [
     icon: Wind,
     title: "PFT",
     desc: "Pulmonary Function Testing (PFT) for assessing lung health, breathing capacity, and respiratory performance.",
-  },
-  {
-    icon: Activity,
-    title: "Ultrasound Services",
-    desc: "Non-invasive ultrasound imaging services for abdominal, pelvic, pregnancy, and soft tissue evaluation.",
-  },
-  {
-    icon: HeartPulse,
-    title: "TMT & ECHO",
-    desc: "Cardiac diagnostic services including TMT and ECHO testing through trusted diagnostic partners.",
   },
 ];
 
