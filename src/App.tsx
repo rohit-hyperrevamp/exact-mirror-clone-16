@@ -30,6 +30,8 @@ import Microbiology from "./pages/Microbiology";
 import Histopathology from "./pages/Histopathology";
 import Immunology from "./pages/Immunology";
 import MolecularDiagnostics from "./pages/MolecularDiagnostics";
+import XRayServices from "./pages/XRayServices";
+import PFTTest from "./pages/PFTTest";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminSeo from "./pages/admin/AdminSeo";
@@ -60,6 +62,8 @@ const AppLayout = () => {
         <Route path="/departments/pathology" element={<Pathology />} />
         <Route path="/radiology" element={<Navigate to="/departments/radiology" replace />} />
         <Route path="/departments/radiology" element={<Radiology />} />
+        <Route path="/departments/radiology/x-ray-services" element={<XRayServices />} />
+        <Route path="/departments/radiology/pft-test" element={<PFTTest />} />
         <Route path="/health-checkups" element={<HealthCheckups />} />
         <Route path="/insights" element={<Insights />} />
         <Route path="/insights/:slug" element={<BlogPost />} />

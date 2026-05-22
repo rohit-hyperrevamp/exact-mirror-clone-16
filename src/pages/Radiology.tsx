@@ -188,15 +188,18 @@ const Radiology = () => {
           <h2 className="text-3xl md:text-[38px] font-bold text-foreground">Our Radiology Services</h2>
         </div>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-          {services.map((service) => (
-            <div key={service.title} className="bg-background rounded-2xl p-8 text-center shadow-sm border border-border">
-              <div className="w-14 h-14 rounded-full mx-auto flex items-center justify-center mb-5" style={{ backgroundColor: 'hsl(145, 60%, 90%)' }}>
-                <service.icon className="w-6 h-6 text-secondary" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">{service.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
-            </div>
-          ))}
+          {services.map((service) => {
+            const href = service.title === "X-Ray" ? "/departments/radiology/x-ray-services" : "/departments/radiology/pft-test";
+            return (
+              <Link key={service.title} to={href} className="bg-background rounded-2xl p-8 text-center shadow-sm border border-border hover:shadow-md hover:border-secondary/40 transition block">
+                <div className="w-14 h-14 rounded-full mx-auto flex items-center justify-center mb-5" style={{ backgroundColor: 'hsl(145, 60%, 90%)' }}>
+                  <service.icon className="w-6 h-6 text-secondary" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-3">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
