@@ -129,22 +129,47 @@ const HealthCheckups = () => {
               Comprehensive Health<br />Assessment Packages
             </h2>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              At Aarvak Diagnostics, we understand the importance of corporate health checkups.
+              At Aarvak Diagnostics, we understand the importance of preventive and routine medical health checkup services for individuals and organizations.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              We provide comprehensive testing and diagnostic services to ensure that your organization is running in top condition.
+              We provide comprehensive testing and diagnostic health checkup services to support preventive healthcare and overall wellness management.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px]">
-              Our health checkups are tailored to meet the needs of your business and help you identify any potential issues before they become a problem.
+              Our health checkup plans are tailored for individuals, families, and businesses to help identify potential health concerns before they become serious problems.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Featured Health Packages */}
-      <section className="py-20 px-4 md:px-8 bg-muted">
+      {/* Why Choose Our Health Checkup Centre */}
+      <section className="py-16 px-4 md:px-8 bg-muted">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-[42px] font-bold text-foreground text-center mb-12">Featured Health Packages</h2>
+          <h2 className="text-3xl md:text-[38px] font-bold text-foreground text-center mb-10">Why Choose Our Health Checkup Centre?</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              "Comprehensive preventive health checkup services",
+              "Affordable full body health checkup packages",
+              "Accurate laboratory and diagnostic testing",
+              "Experienced medical and diagnostic professionals",
+              "Fast report delivery and easy booking",
+              "Advanced preventive healthcare screening",
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3 bg-background rounded-xl p-5 shadow-sm">
+                <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                <p className="text-[15px] text-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Health Packages */}
+      <section className="py-20 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-[42px] font-bold text-foreground text-center mb-4">Featured Full Body Health Checkup Packages</h2>
+          <p className="text-center text-muted-foreground text-[15px] max-w-3xl mx-auto mb-12">
+            Explore our preventive health checkup and full body health checkup packages designed for routine wellness screening, lifestyle monitoring, and early disease detection.
+          </p>
           <div className="grid md:grid-cols-2 gap-6">
             {packages.map((pkg, i) => (
               <div
