@@ -75,6 +75,7 @@ const AppLayout = () => {
         <Route path="/departments/pathology/histopathology-tests" element={<Histopathology />} />
         <Route path="/pathology/histopathology-tests" element={<Navigate to="/departments/pathology/histopathology-tests" replace />} />
         <Route path="/departments/pathology/immunology-tests" element={<Immunology />} />
+        <Route path="/departments/pathology/molecular-diagnostics" element={<MolecularDiagnostics />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/seo" element={<AdminGuard />}>
