@@ -222,7 +222,7 @@ const BiochemistryTests = () => {
             Precision Biochemistry. Trusted Results.
           </h2>
           <p className="text-sm text-muted-foreground mt-2 font-medium">
-            Comprehensive blood chemistry analysis for confident clinical decisions.
+            Comprehensive blood chemistry analysis and clinical biochemistry tests for confident clinical decisions.
           </p>
         </div>
       </section>
