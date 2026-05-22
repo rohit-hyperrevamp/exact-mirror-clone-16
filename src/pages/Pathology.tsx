@@ -5,7 +5,7 @@ import useSEO from "@/hooks/useSEO";
 
 const labServices = [
   { icon: FlaskConical, label: "Biochemistry Tests", href: "/departments/pathology/biochemistry-tests" },
-  { icon: Microscope, label: "Microbiology" },
+  { icon: Microscope, label: "Microbiology", href: "/departments/pathology/Microbiology" },
   { icon: Droplets, label: "Hematology", href: "/departments/pathology/hematology-tests" },
   { icon: FileText, label: "Histopathology" },
   { icon: ShieldCheck, label: "Immunology Tests" },
