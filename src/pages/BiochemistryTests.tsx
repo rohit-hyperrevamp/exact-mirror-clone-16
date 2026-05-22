@@ -165,9 +165,9 @@ const BiochemistryTests = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useSEO({
-    title: "Biochemistry Lab Tests in Gurugram – Aarvak Diagnostics",
+    title: "Biochemistry Blood Test | Aarvak Diagnostics",
     description:
-      "Accurate biochemistry blood tests including liver, kidney, glucose, lipid & enzyme panels. Advanced clinical biochemistry tests with reliable reports in Gurugram.",
+      "Book accurate biochemistry blood test services with advanced clinical biochemistry tests, complete biochemistry test list & fast reports.",
     canonical: "/departments/pathology/biochemistry-tests",
   });
 
