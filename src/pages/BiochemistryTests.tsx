@@ -192,7 +192,7 @@ const BiochemistryTests = () => {
       <section className="relative w-full overflow-hidden px-2 md:px-3">
         <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: "420px" }}>
           <img
-            src="/images/pathology-banner.png"
+            src="/images/biochemistry-banner.jpg"
             alt="Biochemistry Lab Tests"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -247,7 +247,7 @@ const BiochemistryTests = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
           <div className="lg:w-5/12">
             <img
-              src="/images/diagnostics-service.png"
+              src="/images/biochemistry-service.jpg"
               alt="Advanced Clinical Biochemistry"
               className="w-full rounded-2xl object-cover"
               style={{ height: "480px" }}
