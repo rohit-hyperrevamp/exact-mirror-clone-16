@@ -64,7 +64,8 @@ const AppLayout = () => {
         <Route path="/departments/radiology" element={<Radiology />} />
         <Route path="/departments/radiology/x-ray-services" element={<XRayServices />} />
         <Route path="/departments/radiology/pft-test" element={<PFTTest />} />
-        <Route path="/health-checkups" element={<HealthCheckups />} />
+        <Route path="/health-checkups" element={<Navigate to="/departments/health-checkups" replace />} />
+        <Route path="/departments/health-checkups" element={<HealthCheckups />} />
         <Route path="/insights" element={<Insights />} />
         <Route path="/insights/:slug" element={<BlogPost />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
