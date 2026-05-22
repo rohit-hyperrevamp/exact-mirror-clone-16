@@ -16,17 +16,17 @@ const homeCollectionItems = [
   {
     icon: Home,
     title: "Convenience",
-    desc: "We offer convenient home collection services for our customers who are unable to visit our lab.",
+    desc: "We offer convenient home collection services for customers looking for a trusted pathology lab near me without visiting the lab.",
   },
   {
     icon: UserCheck,
     title: "Professionalism",
-    desc: "Our trained phlebotomists ensure samples are collected properly and transported securely.",
+    desc: "Our trained phlebotomists ensure samples are collected properly and transported securely while maintaining high-quality laboratory services standards.",
   },
   {
     icon: Clock,
     title: "Fast Results",
-    desc: "Get your test results delivered electronically or physically as per your preference.",
+    desc: "Get accurate reports delivered electronically or physically as per your preference from the best pathology lab in Gurgaon.",
   },
 ];
 
