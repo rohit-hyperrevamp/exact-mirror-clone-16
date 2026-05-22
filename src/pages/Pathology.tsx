@@ -75,7 +75,7 @@ const Pathology = () => {
           <h2 className="text-xl md:text-[26px] font-bold leading-snug text-secondary">
             Accurate Testing. Reliable Results.
           </h2>
-          <p className="text-sm text-muted-foreground mt-2 font-medium">Precise lab analysis for confident medical decisions.</p>
+          <p className="text-sm text-muted-foreground mt-2 font-medium">Precise lab analysis and reliable pathology laboratory services for confident medical decisions.</p>
         </div>
       </section>
 
