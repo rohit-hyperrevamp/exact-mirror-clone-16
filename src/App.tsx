@@ -29,6 +29,7 @@ import HematologyTests from "./pages/HematologyTests";
 import Microbiology from "./pages/Microbiology";
 import Histopathology from "./pages/Histopathology";
 import Immunology from "./pages/Immunology";
+import MolecularDiagnostics from "./pages/MolecularDiagnostics";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminSeo from "./pages/admin/AdminSeo";
