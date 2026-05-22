@@ -361,15 +361,6 @@ const BiochemistryTests = () => {
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Link
-              to="/contact-us#contact"
-              className="inline-flex items-center gap-2 bg-secondary text-white font-semibold px-7 py-3 rounded-full text-sm hover:bg-secondary/90 transition"
-            >
-              <Download className="w-4 h-4" />
-              Download Complete Biochemistry Test List (PDF)
-            </Link>
-          </div>
         </div>
       </section>
 
