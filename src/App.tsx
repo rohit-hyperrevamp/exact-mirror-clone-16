@@ -52,7 +52,6 @@ const AppLayout = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/corporate" element={<Corporate />} />
-        <Route path="/departments/pathology" element={<Pathology />} />
         <Route path="/pathology" element={<Navigate to="/departments/pathology" replace />} />
         <Route path="/departments/pathology" element={<Pathology />} />
         <Route path="/radiology" element={<Radiology />} />
