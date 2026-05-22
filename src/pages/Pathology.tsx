@@ -51,12 +51,12 @@ const Pathology = () => {
             <div className="flex items-center gap-6">
               <div className="text-right text-white">
                 <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">About</p>
-                <h1 className="text-4xl md:text-6xl font-bold italic" style={{ fontFamily: "Georgia, serif" }}>Our Pathology</h1>
+                <h2 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Our Pathology</h2>
               </div>
               <div className="w-px bg-white/40" style={{ height: '100px' }} />
               <div className="text-white">
-                <h2 className="text-2xl md:text-[32px] font-bold leading-tight">Precise Pathology Care</h2>
-                <p className="mt-3 text-[15px] opacity-80 max-w-md">Backed by modern technology and expert pathologists to ensure accurate test results you can trust.</p>
+                <h1 className="text-2xl md:text-[32px] font-bold leading-tight">Pathology Lab in Gurgaon</h1>
+                <p className="mt-3 text-[15px] opacity-80 max-w-md">Trusted pathology lab in Gurgaon backed by modern technology and expert pathologists to ensure accurate test results you can trust.</p>
                 <Link
                   to="/contact-us#contact"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
