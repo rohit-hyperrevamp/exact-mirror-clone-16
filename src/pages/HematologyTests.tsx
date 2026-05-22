@@ -217,10 +217,13 @@ const HematologyTests = () => {
           </div>
           <div className="lg:w-7/12 pt-2">
             <h2 className="text-3xl md:text-[38px] font-bold text-foreground leading-tight mb-6">
-              Advanced Hematology Tests<br />& Blood Diagnostics
+              Advanced Hematology Tests List<br />& Blood Diagnostics
             </h2>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              Our laboratory offers a wide range of hematology tests to evaluate blood health, diagnose disorders, and monitor overall well-being.
+              Our laboratory offers a wide range of hematology tests and hematology lab tests to evaluate blood health, clotting function, infections, and related disorders with accuracy.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
+              We provide a comprehensive hematology tests list including CBC, platelet studies, coagulation profiles, malaria screening, ESR, haemoglobin analysis, clotting tests, and specialised blood investigations at competitive hematology test prices in Gurugram.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
               From routine CBC tests to specialized hematology investigations, our diagnostic services help identify infections, anemia, clotting disorders, and immune-related conditions.
