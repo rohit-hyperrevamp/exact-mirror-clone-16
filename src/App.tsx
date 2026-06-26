@@ -22,6 +22,7 @@ import BlogPost from "./pages/BlogPost";
 import HyperrevampReporting from "./pages/HyperrevampReporting";
 import GeoDiagnosticCentreGurugram from "./pages/GeoDiagnosticCentreGurugram";
 import GeoDiagnosticLabSohnaRoad from "./pages/GeoDiagnosticLabSohnaRoad";
+import GeoLocationPage from "./pages/GeoLocationPage";
 import AeoFaqDiagnosticTests from "./pages/AeoFaqDiagnosticTests";
 import AeoFaqHealthCheckups from "./pages/AeoFaqHealthCheckups";
 import BiochemistryTests from "./pages/BiochemistryTests";
@@ -72,6 +73,7 @@ const AppLayout = () => {
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/diagnostic-centre-gurugram" element={<GeoDiagnosticCentreGurugram />} />
         <Route path="/diagnostic-lab-sohna-road-gurugram" element={<GeoDiagnosticLabSohnaRoad />} />
+        <Route path="/diagnostic-centre-gurugram/:slug" element={<GeoLocationPage />} />
         <Route path="/faq-diagnostic-tests" element={<AeoFaqDiagnosticTests />} />
         <Route path="/faq-health-checkups" element={<AeoFaqHealthCheckups />} />
         <Route path="/departments/pathology/biochemistry-tests" element={<BiochemistryTests />} />
