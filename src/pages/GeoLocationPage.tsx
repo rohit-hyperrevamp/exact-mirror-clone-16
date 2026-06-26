@@ -35,7 +35,7 @@ const GeoLocationPage = () => {
 
   const title = `Diagnostic Centre in ${loc.name}, Gurugram | Aarvak Diagnostics`;
   const description = `Aarvak Diagnostics is a trusted diagnostic centre near ${loc.name}, Gurugram offering pathology, radiology, health checkups & free home sample collection. Book online or call +91-9810063340.`;
-  const canonical = `/diagnostic-centre-${loc.slug}-gurugram`;
+  const canonical = `/diagnostic-centre-gurugram/${loc.slug}`;
 
   useSEO({
     title,
@@ -231,7 +231,7 @@ const GeoLocationPage = () => {
           <h2 className="text-xl font-bold text-gray-900 mb-4">Other Areas We Serve in Gurugram</h2>
           <div className="flex flex-wrap gap-2">
             {geoLocations.filter((l) => l.slug !== loc.slug).slice(0, 30).map((l) => (
-              <Link key={l.slug} to={`/diagnostic-centre-${l.slug}-gurugram`} className="text-xs bg-gray-100 text-gray-700 hover:bg-cyan-100 hover:text-cyan-800 px-3 py-1.5 rounded-full transition">
+              <Link key={l.slug} to={`/diagnostic-centre-gurugram/${l.slug}`} className="text-xs bg-gray-100 text-gray-700 hover:bg-cyan-100 hover:text-cyan-800 px-3 py-1.5 rounded-full transition">
                 {l.name}
               </Link>
             ))}
