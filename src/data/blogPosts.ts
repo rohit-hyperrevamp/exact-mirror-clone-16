@@ -16,6 +16,589 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "heatwave-hydration-kidney-function-test-gurugram",
+    img: "/images/blog-heatwave-kidney.jpg",
+    date: "June 26, 2026",
+    dateSort: "2026-06-26",
+    title: "Heatwave in Gurugram? Why a Kidney Function Test Should Be on Your List",
+    desc: "Dehydration during peak summer silently strains your kidneys. Here's why a KFT in Gurugram this season can catch problems before symptoms appear.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Kidney Function Test in Gurugram – Summer Hydration | Aarvak",
+    metaDescription: "Beat the Gurugram heatwave safely. Book a kidney function test (KFT) at Aarvak Diagnostics to track creatinine, urea & electrolytes with home collection.",
+    content: `Gurugram summers regularly cross 44 °C, and most of us only notice dehydration once a headache or dizziness sets in. By then, your kidneys have already been working overtime to conserve water and balance electrolytes. A simple [Kidney Function Test (KFT)](/departments/pathology) can show how well they're coping.
+
+## Why Summer Stresses Your Kidneys
+
+- You lose 1–2 litres of water daily through sweat alone
+- Sodium and potassium drop with heavy sweating
+- Concentrated urine increases the risk of stones and UTIs
+- High BP and diabetes patients are at much higher risk of acute kidney injury
+
+## What a KFT Measures
+
+A standard kidney panel at Aarvak Diagnostics includes:
+
+- **Creatinine & eGFR** — the gold standard for filtration capacity
+- **Blood Urea & BUN** — flags early dehydration and protein overload
+- **Uric Acid** — high in summer, especially with low water intake
+- **Sodium, Potassium, Chloride** — electrolyte balance
+- **Urine Routine & Microscopy** — early signs of infection or protein leakage
+
+## Who Should Test This Summer
+
+- Anyone over 40
+- Diabetics and hypertensives (annual KFT is non-negotiable)
+- Gym-goers on high-protein diets or creatine
+- Outdoor workers and field-sales professionals
+- Anyone with recurring back pain, foamy urine or reduced urine output
+
+## Simple Hydration Habits That Help
+
+- 2.5–3 L of water daily, sipped, not gulped
+- ORS or coconut water after outdoor exposure
+- Cut down caffeine and alcohol during heatwave days
+- Don't self-medicate with painkillers — NSAIDs hurt kidneys fast in dehydration
+
+[Book a kidney function test in Gurugram](/contact-us#contact) with [home sample collection](/insights/blood-test-at-home-home-collection-gurugram) from Aarvak Diagnostics. Pair it with an [LFT for liver health](/insights/liver-kidney-health-lft-kft-tests) for a complete summer wellness snapshot.`,
+    tags: ["Kidney Function Test", "KFT", "Summer Health", "Gurugram", "Hydration"],
+  },
+  {
+    slug: "premarital-health-checkup-tests-couples-gurugram",
+    img: "/images/blog-premarital-checkup.jpg",
+    date: "June 24, 2026",
+    dateSort: "2026-06-24",
+    title: "Pre-Marital Health Checkup: 10 Tests Every Couple in Gurugram Should Do",
+    desc: "From thalassemia screening to fertility hormones — the essential pre-marital test panel that protects your future family.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Wellness",
+    metaTitle: "Pre-Marital Health Checkup in Gurugram – Couple Tests | Aarvak",
+    metaDescription: "Pre-marital health checkup in Gurugram with thalassemia, HIV, fertility & genetic screening at Aarvak Diagnostics. Book a couple package with home collection.",
+    content: `A pre-marital health checkup isn't about distrust — it's about clarity. In India, conditions like thalassemia minor are often silent until a child inherits two copies. A short panel before marriage can prevent decades of stress.
+
+## Why Couples Are Choosing Pre-Marital Testing
+
+- Early detection of genetic carrier status (thalassemia, sickle cell)
+- Screening for sexually transmitted infections
+- Understanding fertility baseline
+- Identifying chronic conditions like diabetes, thyroid or PCOS
+- Building a foundation of open conversation around health
+
+## The Essential 10-Test Panel
+
+1. **CBC + Haemoglobin Electrophoresis** — thalassemia and sickle cell screen
+2. **Blood Group & Rh typing** — critical for future pregnancy planning
+3. **HIV 1 & 2**
+4. **HBsAg (Hepatitis B)** and **Anti-HCV (Hepatitis C)**
+5. **VDRL** — syphilis screen
+6. **Thyroid Profile (TSH, T3, T4)**
+7. **Fasting Blood Sugar + HbA1c**
+8. **Vitamin D & Vitamin B12**
+9. **AMH (women)** and **Semen Analysis (men)** — fertility baseline
+10. **Rubella IgG (women)** — confirms immunity before pregnancy
+
+## When to Test
+
+Ideally 3–6 months before the wedding. That window gives time for vaccination (Hepatitis B, Rubella), nutritional correction, or specialist consults if anything needs attention.
+
+## Privacy and Sensitivity
+
+At [Aarvak Diagnostics](/about-us), pre-marital tests are handled with strict confidentiality. Reports are shared only with the individual unless they choose to share them.
+
+## Couple Package Benefits
+
+A combined couple package usually costs 25–30% less than booking the same tests individually, and you can opt for joint [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) across Gurugram, DLF, Sohna Road and Golf Course Road.
+
+[Book a pre-marital health checkup in Gurugram](/contact-us#contact) today, or explore our [full body health checkup packages](/departments/health-checkups) if you want a wider wellness snapshot.`,
+    tags: ["Pre-Marital Checkup", "Couple Health", "Thalassemia", "Fertility Tests", "Gurugram"],
+  },
+  {
+    slug: "international-yoga-day-blood-tests-track-progress",
+    img: "/images/blog-yoga-day-tests.jpg",
+    date: "June 22, 2026",
+    dateSort: "2026-06-22",
+    title: "International Yoga Day: 6 Blood Tests That Prove Your Yoga Is Working",
+    desc: "Yoga changes your body inside out. These six lab markers show measurable proof — from cortisol to HbA1c — at Aarvak Diagnostics, Gurugram.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Blood Tests to Track Yoga Progress – Aarvak Diagnostics",
+    metaDescription: "Measure the real impact of your yoga practice with 6 key blood tests at Aarvak Diagnostics Gurugram. Track stress, sugar, lipids & inflammation.",
+    content: `Yoga calms the mind, but is it actually changing your body? On International Yoga Day, here are six lab markers that quietly improve with a consistent practice — and how to measure them.
+
+## 1. Cortisol (Stress Hormone)
+
+A 12-week regular yoga practice has been shown to lower morning cortisol by 15–25%. A morning serum cortisol test gives an objective stress score.
+
+## 2. HbA1c & Fasting Glucose
+
+Yoga improves insulin sensitivity. People with prediabetes often see a 0.3–0.5% drop in [HbA1c](/insights/hba1c-test-blood-sugar-3-month-average) over 3 months.
+
+## 3. Lipid Profile
+
+Pranayama and active asanas improve HDL ("good cholesterol") and lower triglycerides, especially in sedentary office workers.
+
+## 4. hs-CRP (Inflammation)
+
+This sensitive inflammation marker drops with regular practice — a strong indicator of long-term cardiovascular protection.
+
+## 5. Blood Pressure & Resting Heart Rate
+
+Not a blood test, but easily tracked. A 4–8 bpm drop in resting heart rate is common within 8 weeks of daily practice.
+
+## 6. Vitamin D
+
+Outdoor sunrise yoga gives a natural Vitamin D boost — often by 5–10 ng/mL over a summer. Worth testing baseline and post-monsoon.
+
+## Suggested Testing Schedule
+
+- **Baseline panel** before starting daily practice
+- **Repeat after 12 weeks** to see measurable changes
+- **Annual repeat** thereafter as part of your [preventive health checkup](/departments/health-checkups)
+
+## Build Your Own Yoga Progress Panel
+
+Aarvak Diagnostics offers a custom "Yoga Progress Panel" combining cortisol, HbA1c, lipid profile, hs-CRP and Vitamin D, with [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) across Gurugram.
+
+[Book your Yoga Progress Panel](/contact-us#contact) and see the numbers shift as your mat hours add up.`,
+    tags: ["Yoga", "Cortisol", "Wellness", "Preventive Health", "International Yoga Day"],
+  },
+  {
+    slug: "allergy-testing-hidden-allergies-symptoms",
+    img: "/images/blog-allergy-testing.jpg",
+    date: "June 19, 2026",
+    dateSort: "2026-06-19",
+    title: "Constantly Sneezing? An Allergy Test Could Finally Reveal Why",
+    desc: "From dust mites to wheat, hidden allergies trigger chronic symptoms most people blame on weather. Modern allergy testing in Gurugram now gives precise answers.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Pathology",
+    metaTitle: "Allergy Test in Gurugram – Hidden Allergy Panel | Aarvak",
+    metaDescription: "Identify hidden food and environmental allergies with comprehensive allergy testing at Aarvak Diagnostics Gurugram. Specific IgE panels, accurate reports.",
+    content: `If you constantly fight a runny nose, itchy eyes, skin rashes, bloating or unexplained fatigue, you may be reacting to something invisible. Modern allergy testing can identify the specific culprits — and finally stop the guesswork.
+
+## Common Hidden Allergies in North India
+
+- Dust mites (extremely common in Gurugram apartments)
+- Pollen from grasses and trees
+- Mould spores (peaks during monsoon)
+- Pet dander
+- Wheat, dairy, peanuts, soy, eggs and shellfish
+- Insect venom (bees, wasps)
+
+## Symptoms You Might Be Ignoring
+
+- Year-round nasal congestion or "always have a cold"
+- Itchy eyes and dark circles ("allergic shiners")
+- Chronic eczema or hives
+- Recurrent sinusitis or asthma flare-ups
+- Stomach cramps, bloating or diarrhoea after meals
+- Unexplained brain fog and fatigue
+
+## Allergy Tests Available at Aarvak Diagnostics
+
+- **Total IgE** — overall allergy load
+- **Specific IgE panel (RAST/ImmunoCAP)** — tests for 30+ common Indian allergens
+- **Food intolerance panel** — wheat, dairy, eggs, nuts, seafood
+- **Aero-allergen panel** — dust mites, pollen, mould, pet dander
+- **Eosinophil count + Absolute Eosinophil Count (AEC)**
+
+## Why Lab Testing Beats Trial-and-Error Diets
+
+Cutting out random foods without testing often causes nutritional gaps without solving the problem. A targeted specific IgE panel narrows the search and lets your doctor build a precise avoidance and treatment plan.
+
+## What to Expect
+
+- A single blood draw (no skin pricks needed)
+- Results in 48–72 hours
+- Detailed report with reactivity levels for each allergen
+- [Home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) available across Gurugram
+
+[Book an allergy test in Gurugram](/contact-us#contact) at Aarvak Diagnostics and stop blaming the weather for what your immune system is trying to tell you.`,
+    tags: ["Allergy Test", "Specific IgE", "Food Allergy", "Pathology", "Gurugram"],
+  },
+  {
+    slug: "fathers-day-full-body-checkup-men-over-40",
+    img: "/images/blog-fathers-day-checkup.jpg",
+    date: "June 15, 2026",
+    dateSort: "2026-06-15",
+    title: "This Father's Day, Gift Him a Full Body Checkup (Not Another Wallet)",
+    desc: "Indian men over 40 quietly carry heart, liver and prostate risks. Here's a Father's Day health checkup that actually shows you care.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Health Checkup",
+    metaTitle: "Father's Day Full Body Checkup in Gurugram | Aarvak",
+    metaDescription: "Gift your father a full body health checkup in Gurugram this Father's Day. Heart, liver, prostate & diabetes screening at Aarvak Diagnostics with home collection.",
+    content: `Indian fathers are notoriously bad at booking their own health checkups. They'll tell you "I'm fine" until something is clearly not. This Father's Day, take the appointment off his plate.
+
+## Why Men Over 40 Need an Annual Checkup
+
+- Heart disease strikes Indian men 10 years earlier than Western populations
+- Type 2 diabetes prevalence crosses 18% by age 45 in urban India
+- Fatty liver disease is now seen in 1 in 3 urban Indian men
+- Prostate issues become common after 50
+- Vitamin D and B12 deficiencies are silent but draining
+
+## The Ideal Father's Day Health Checkup Panel
+
+- **Lipid Profile + Apolipoprotein A & B** — true cardiac risk
+- **HbA1c + Fasting Glucose** — diabetes screen
+- **LFT + GGT** — liver health and alcohol-related markers
+- **KFT + Uric Acid**
+- **Thyroid Profile**
+- **Vitamin D & B12**
+- **PSA (Prostate Specific Antigen)** for age 50+
+- **ECG and Echo (TMT optional)** — see our [Radiology services](/radiology)
+- **Chest X-Ray** for smokers/ex-smokers
+- **Abdominal Ultrasound** — picks up fatty liver, gallstones, kidney stones
+
+## Add-On Tests Worth Considering
+
+- **hs-CRP** for cardiac inflammation
+- **Lp(a)** — a one-time genetic cardiac marker
+- **Stool occult blood** for colon health
+- **HbsAg + Anti-HCV** — Hepatitis screening
+
+## Make the Day Stress-Free
+
+Book a [home sample collection slot](/insights/home-sample-collection-benefits-safety-how-it-works) so he doesn't have to commute fasting. Pair it with our [full body health checkup packages](/departments/health-checkups) for a complete picture.
+
+[Gift a Father's Day full body checkup](/contact-us#contact) at Aarvak Diagnostics — it's the one gift he'll actually use.`,
+    tags: ["Father's Day", "Full Body Checkup", "Men's Health", "Preventive Health", "Gurugram"],
+  },
+  {
+    slug: "fatty-liver-disease-silent-epidemic-tests-india",
+    img: "/images/blog-fatty-liver.jpg",
+    date: "June 12, 2026",
+    dateSort: "2026-06-12",
+    title: "Fatty Liver Disease: The Silent Epidemic Quietly Hitting Urban India",
+    desc: "1 in 3 Indians now has fatty liver — and most don't know it. Here are the early tests to catch it before it turns into something worse.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Pathology",
+    metaTitle: "Fatty Liver Test in Gurugram – Early Detection | Aarvak",
+    metaDescription: "Detect fatty liver disease early with LFT, GGT, FibroScan & ultrasound at Aarvak Diagnostics, Gurugram. Affordable, accurate, with home sample collection.",
+    content: `Non-alcoholic fatty liver disease (NAFLD) is now the most common chronic liver condition in India. Many urban Indians in their 30s already have early-stage fatty liver — and almost none of them know it until a routine ultrasound flags it.
+
+## Why Fatty Liver Is Exploding in India
+
+- High-sugar, high-refined-carb diets
+- Sedentary work and long commutes
+- Central obesity even at "normal" weight (the "thin-fat" Indian)
+- Insulin resistance and prediabetes
+- Underdiagnosed sleep apnoea
+
+## Why You Shouldn't Ignore It
+
+Fatty liver can progress quietly from simple steatosis → NASH (inflammation) → fibrosis → cirrhosis → liver cancer. The earlier it's caught, the more easily it reverses with diet, exercise and weight loss.
+
+## Early Warning Signs
+
+- Mild fatigue or right-side upper abdominal discomfort
+- Dark patches on the neck or armpits (acanthosis nigricans)
+- Borderline-high triglycerides
+- Elevated ALT on a routine [LFT](/insights/liver-kidney-health-lft-kft-tests)
+
+## Tests That Detect Fatty Liver Early
+
+- **Liver Function Test (LFT)** — focus on ALT, AST, ALP
+- **GGT** — rises early in fatty liver
+- **Fasting Insulin + HOMA-IR** — measures insulin resistance
+- **Lipid Profile + Triglycerides**
+- **Abdominal Ultrasound** — first-line imaging (see our [Radiology services](/radiology))
+- **FibroScan / Elastography** — measures liver stiffness non-invasively
+- **HBsAg + Anti-HCV** — rules out viral causes
+
+## Reversing Fatty Liver
+
+- Lose 7–10% of body weight (this alone reverses most early NAFLD)
+- Cut added sugar, refined flour and fructose-rich drinks
+- 150 minutes of moderate exercise per week
+- Treat sleep apnoea if present
+- Avoid alcohol completely while liver enzymes are elevated
+
+[Book a fatty liver screening](/contact-us#contact) at Aarvak Diagnostics with [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) across Gurugram.`,
+    tags: ["Fatty Liver", "NAFLD", "LFT", "Liver Health", "Pathology"],
+  },
+  {
+    slug: "monsoon-fever-dengue-malaria-typhoid-testing-gurugram",
+    img: "/images/blog-monsoon-fever.jpg",
+    date: "June 10, 2026",
+    dateSort: "2026-06-10",
+    title: "Monsoon Fever in Gurugram? Get These 4 Tests Before You Pop a Paracetamol",
+    desc: "Dengue, malaria, typhoid and chikungunya all start the same way. Here's the test panel that pinpoints what you actually have.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Pathology",
+    metaTitle: "Monsoon Fever Test Panel in Gurugram – Aarvak Diagnostics",
+    metaDescription: "Fever in monsoon? Get dengue, malaria, typhoid & chikungunya tested fast at Aarvak Diagnostics Gurugram with home collection and same-day reports.",
+    content: `Every year between June and September, Gurugram sees a sharp spike in mosquito-borne and water-borne fevers. The symptoms overlap so much that self-medicating with paracetamol can be dangerous — especially in dengue, where the wrong painkiller can worsen bleeding.
+
+## The Big 4 Monsoon Fevers
+
+- **Dengue** — high fever, eye pain, body ache, rash, low platelets
+- **Malaria** — fever with chills and shivering, often cyclical
+- **Typhoid** — sustained fever, abdominal pain, constipation/diarrhoea
+- **Chikungunya** — fever with severe joint pain
+
+## The Recommended Fever Panel
+
+- **CBC with platelet count** — drops in dengue and severe malaria
+- **NS1 Antigen + Dengue IgM/IgG** — confirms dengue
+- **Malaria Antigen + Peripheral Smear**
+- **Widal + Typhi IgM (Typhidot)** — typhoid
+- **Chikungunya IgM** if joint pain dominates
+- **CRP + LFT + KFT** — assess severity
+- **Urine Routine** — rules out UTI
+
+## Red Flags That Need Immediate Testing
+
+- Fever above 102 °F for more than 48 hours
+- Severe headache or pain behind the eyes
+- Bleeding gums, nose bleeds or red spots on skin
+- Persistent vomiting or abdominal pain
+- Reduced urine output
+- Confusion or extreme drowsiness
+
+## Why Not Just Take Paracetamol?
+
+- Ibuprofen and aspirin can cause life-threatening bleeding in dengue
+- Untreated malaria can become cerebral within 48 hours
+- Typhoid needs specific antibiotics — wrong ones lengthen the illness
+
+## Fast, Reliable Testing
+
+At Aarvak Diagnostics, the full monsoon fever panel is processed in-house with same-day reports. Use [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) when stepping out feels unsafe.
+
+[Book a monsoon fever test panel in Gurugram](/contact-us#contact) and let your treatment be guided by data, not guesswork.`,
+    tags: ["Dengue", "Malaria", "Typhoid", "Monsoon Health", "Gurugram"],
+  },
+  {
+    slug: "diabetes-reversal-blood-tests-track-progress",
+    img: "/images/blog-diabetes-reversal.jpg",
+    date: "June 6, 2026",
+    dateSort: "2026-06-06",
+    title: "Reversing Type 2 Diabetes? These Are the Blood Tests That Actually Prove It",
+    desc: "HbA1c alone isn't enough. Here's the deeper test panel that tracks true remission from Type 2 diabetes.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Diabetes Reversal Blood Tests in Gurugram – Aarvak",
+    metaDescription: "Track Type 2 diabetes reversal with the right blood tests at Aarvak Diagnostics Gurugram. HbA1c, fasting insulin, HOMA-IR, lipids & more.",
+    content: `Type 2 diabetes can be put into remission with sustained weight loss, low-carb eating and exercise. But "feeling better" isn't proof. These are the lab markers that actually show your body is reversing the disease.
+
+## What Remission Means
+
+The American Diabetes Association defines remission as an HbA1c below 6.5% for at least 3 months without glucose-lowering medication. But long-term, you also want to see insulin resistance dropping, not just sugar.
+
+## The Reversal Tracking Panel
+
+- **HbA1c** every 3 months — your 3-month sugar average
+- **Fasting Glucose + Post-Prandial Glucose**
+- **Fasting Insulin + C-Peptide** — measures how hard your pancreas is working
+- **HOMA-IR** — the gold-standard insulin resistance score
+- **Lipid Profile + Triglycerides** — drops sharply with reversal
+- **LFT (especially ALT)** — fatty liver almost always improves in parallel
+- **hs-CRP** — chronic inflammation marker
+- **Vitamin D & B12** — often deficient in long-term diabetics
+
+## When to Test
+
+- Baseline before starting any reversal protocol
+- Every 3 months for the first year
+- Every 6 months once HbA1c stays under 6.0%
+
+## Lifestyle Habits That Move the Numbers
+
+- 10–15% sustained weight loss (the strongest single factor)
+- Low-carb or Mediterranean-style eating
+- Resistance training + brisk walking
+- 7–8 hours of sleep
+- Treating any underlying [fatty liver](/insights/liver-kidney-health-lft-kft-tests)
+
+## Don't Stop Medication on Your Own
+
+Reversal must be doctor-supervised. Stopping insulin or sulfonylureas suddenly is dangerous. Use lab data to guide your endocrinologist's tapering plan.
+
+[Book a Diabetes Reversal Panel](/contact-us#contact) at Aarvak Diagnostics with [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) across Gurugram.`,
+    tags: ["Diabetes Reversal", "HbA1c", "Insulin Resistance", "HOMA-IR", "Wellness"],
+  },
+  {
+    slug: "heart-attack-young-indians-warning-signs-tests",
+    img: "/images/blog-heart-attack-young.jpg",
+    date: "June 2, 2026",
+    dateSort: "2026-06-02",
+    title: "Heart Attacks in Young Indians: 7 Warning Signs and the Tests That Catch Them Early",
+    desc: "Cardiac arrests are striking Indians in their 30s. Here are the early signs and the cardiac screening panel that can save your life.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Wellness",
+    metaTitle: "Cardiac Test for Young Adults in Gurugram | Aarvak",
+    metaDescription: "Worried about heart attacks in young Indians? Book a cardiac screening at Aarvak Diagnostics Gurugram — lipid profile, hs-CRP, Lp(a), ECG & echo.",
+    content: `Indians develop heart disease 10 years earlier than other populations, and cardiac events in people under 40 are no longer rare. The good news: most early heart disease can be detected — and reversed — long before it becomes an emergency.
+
+## 7 Warning Signs You Shouldn't Ignore
+
+1. Chest tightness or pressure that comes with exertion
+2. Sudden breathlessness while climbing stairs you used to climb easily
+3. Pain radiating to the left arm, jaw or back
+4. Cold sweats with mild chest discomfort
+5. Unexplained fatigue or dizziness
+6. Heart palpitations lasting more than a few minutes
+7. Snoring with daytime sleepiness (possible sleep apnoea)
+
+## The Modern Cardiac Screening Panel
+
+- **Lipid Profile + Apolipoprotein A & B**
+- **Lp(a)** — a one-time genetic test that flags hidden cardiac risk
+- **hs-CRP** — vascular inflammation
+- **HbA1c + Fasting Insulin** — metabolic syndrome screen
+- **Homocysteine** — elevated in some young Indian heart attack patients
+- **TSH** — thyroid affects cholesterol and rhythm
+- **NT-proBNP** — early heart strain
+- **ECG, Echo and TMT** — see our [Radiology services](/radiology)
+
+## Who Should Test, and When
+
+- Anyone over 25 with a family history of heart attack before 55
+- All adults over 35, once every 2 years
+- Smokers, ex-smokers, diabetics — annually
+- High-stress jobs, long commutes, poor sleep — annually
+
+## Lifestyle Levers That Actually Work
+
+- Walk 8,000–10,000 steps a day
+- Cut trans fats and ultra-processed snacks
+- Treat sleep apnoea aggressively
+- Manage chronic stress — yoga, therapy, breaks
+- Limit alcohol; don't smoke
+
+## What to Do If Symptoms Appear
+
+Don't drive yourself — call an ambulance, chew an aspirin if conscious and not allergic, and get to a cardiac centre within the "golden hour."
+
+[Book a Young Adult Cardiac Screening](/contact-us#contact) at Aarvak Diagnostics, or explore our [full body health checkup packages](/departments/health-checkups) for a complete preventive profile.`,
+    tags: ["Heart Attack", "Cardiac Screening", "Young Indians", "Lipid Profile", "Wellness"],
+  },
+  {
+    slug: "pcos-hormone-testing-women-gurugram",
+    img: "/images/blog-pcos-testing.jpg",
+    date: "May 29, 2026",
+    dateSort: "2026-05-29",
+    title: "PCOS in Indian Women: The Complete Hormone Test Panel You Actually Need",
+    desc: "1 in 5 Indian women has PCOS. Here's the modern hormone panel that gives a clear diagnosis instead of a generic prescription.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Pathology",
+    metaTitle: "PCOS Hormone Test Panel in Gurugram | Aarvak Diagnostics",
+    metaDescription: "Get accurate PCOS hormone testing at Aarvak Diagnostics Gurugram — LH, FSH, AMH, testosterone, insulin & thyroid. Home sample collection available.",
+    content: `PCOS (Polycystic Ovary Syndrome) is one of the most common — and most underdiagnosed — hormonal conditions in Indian women. A targeted hormone panel can give you (and your gynaecologist) a clear picture instead of a generic "you have PCOS, take birth control pills" response.
+
+## Symptoms That Warrant Testing
+
+- Irregular or missed periods
+- Acne along the jawline and back
+- Hair growth on chin, upper lip or chest
+- Hair thinning on the scalp
+- Stubborn weight gain, especially around the abdomen
+- Dark velvety patches on the neck (acanthosis nigricans)
+- Difficulty conceiving
+
+## The Complete PCOS Hormone Panel
+
+- **LH, FSH and LH:FSH ratio** — classically raised in PCOS
+- **Total Testosterone + Free Testosterone**
+- **DHEAS** — adrenal androgens
+- **SHBG (Sex Hormone Binding Globulin)**
+- **Prolactin** — rules out other causes
+- **TSH, free T3, free T4** — thyroid often co-exists
+- **AMH (Anti-Müllerian Hormone)** — high in PCOS, also predicts fertility
+- **Fasting Insulin + Glucose + HOMA-IR**
+- **HbA1c**
+- **Lipid Profile + Vitamin D**
+
+## When in the Cycle to Test
+
+- Reproductive hormones (LH, FSH, prolactin) — Day 2–5 of the cycle
+- AMH and androgens — any day
+- If periods are absent for months, test any day
+
+## What the Results Mean
+
+PCOS is diagnosed using the **Rotterdam criteria** — 2 of 3:
+1. Irregular ovulation
+2. Clinical or biochemical signs of high androgens
+3. Polycystic ovaries on ultrasound (see our [Radiology services](/radiology))
+
+## Beyond Pills — What Actually Helps
+
+- 5–10% weight loss reverses many PCOS markers
+- Strength training improves insulin sensitivity
+- A lower-glycemic-load diet
+- Treating Vitamin D deficiency
+- Metformin or inositol under medical supervision
+
+[Book a PCOS hormone panel in Gurugram](/contact-us#contact) at Aarvak Diagnostics with [home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) and discreet reporting.`,
+    tags: ["PCOS", "Hormone Test", "Women's Health", "AMH", "Pathology"],
+  },
+  {
+    slug: "vitamin-b12-deficiency-indian-vegetarians-test",
+    img: "/images/blog-b12-vegetarian.jpg",
+    date: "May 26, 2026",
+    dateSort: "2026-05-26",
+    title: "Vitamin B12 Deficiency in Indian Vegetarians: Why You Need to Test (Even If You Feel Fine)",
+    desc: "Up to 70% of Indian vegetarians are B12 deficient. Here's why it matters, the right test, and how to fix it.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Pathology",
+    metaTitle: "Vitamin B12 Test in Gurugram – Vegetarian Health | Aarvak",
+    metaDescription: "Get an accurate Vitamin B12 test in Gurugram at Aarvak Diagnostics. Vital for Indian vegetarians. Home collection, fast reports, expert pathology.",
+    content: `Vitamin B12 deficiency is so common among Indian vegetarians that many people walk around with fatigue, brain fog and tingling hands for years before getting tested. The fix is usually simple — but only if you catch it.
+
+## Why Indian Vegetarians Are at High Risk
+
+- B12 is found almost exclusively in animal foods (meat, fish, eggs, dairy)
+- Dairy intake in India often isn't enough to meet daily B12 needs
+- Long-term acidity medication (PPIs) blocks absorption
+- Metformin (common in diabetics) lowers B12 levels
+- Older adults absorb less B12 from food naturally
+
+## Symptoms You Might Be Brushing Off
+
+- Persistent tiredness and weakness
+- Tingling, numbness or "pins and needles" in hands and feet
+- Brain fog, poor concentration, memory lapses
+- Mouth ulcers and a smooth, sore tongue
+- Pale skin, breathlessness on mild exertion
+- Mood changes, low mood, anxiety
+- Hair fall and brittle nails
+
+## The Right Tests to Ask For
+
+- **Serum Vitamin B12** — first-line, but can miss early deficiency
+- **Active B12 (Holotranscobalamin)** — more sensitive
+- **Homocysteine and MMA (Methylmalonic Acid)** — functional B12 status
+- **CBC with peripheral smear** — looks for macrocytic anaemia
+- **Folate and Vitamin D** — often deficient together
+- **Iron studies** — to rule out combined anaemia (see [our anaemia guide](/insights/liver-kidney-health-lft-kft-tests))
+
+## What "Normal" Doesn't Mean Optimal
+
+Lab "normal" ranges for B12 in India often start as low as 200 pg/mL. Many experts now consider levels below 400 pg/mL suboptimal, especially with symptoms. Always interpret with your doctor.
+
+## How to Correct a Deficiency
+
+- Oral high-dose B12 (methylcobalamin) for mild cases
+- B12 injections for severe deficiency or absorption issues
+- Fortified cereals, nutritional yeast and dairy
+- Repeat testing in 3 months
+
+[Book a Vitamin B12 test in Gurugram](/contact-us#contact) at Aarvak Diagnostics, or add it to your next [full body health checkup](/departments/health-checkups). [Home sample collection](/insights/home-sample-collection-benefits-safety-how-it-works) is available across Gurugram.`,
+    tags: ["Vitamin B12", "Vegetarian Health", "Deficiency", "Pathology", "Gurugram"],
+  },
+  {
     slug: "glp1-ozempic-blood-tests-monitoring-india",
     img: "/images/blog-glp1-monitoring.jpg",
     date: "May 22, 2026",
