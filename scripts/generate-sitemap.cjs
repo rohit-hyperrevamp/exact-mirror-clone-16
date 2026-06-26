@@ -30,7 +30,16 @@ const blogPages = slugMatches.map(m => ({
   changefreq: 'monthly',
 }));
 
-const allPages = [...staticPages, ...blogPages];
+// Read GEO location slugs from geoLocations.ts
+const geoFile = fs.readFileSync(path.join(__dirname, '..', 'src', 'data', 'geoLocations.ts'), 'utf-8');
+const geoSlugMatches = [...geoFile.matchAll(/slug:\s*"([^"]+)"/g)];
+const geoPages = geoSlugMatches.map(m => ({
+  path: `/diagnostic-centre-gurugram/${m[1]}`,
+  priority: '0.7',
+  changefreq: 'monthly',
+}));
+
+const allPages = [...staticPages, ...blogPages, ...geoPages];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
