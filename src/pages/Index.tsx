@@ -156,8 +156,28 @@ const Index = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const bodyScrollRef = useRef<HTMLDivElement>(null);
 
-  const maxTestSlide = Math.max(0, diagnosticTests.length - 3);
-  const maxPkgSlide = Math.max(0, healthPackages.length - 3);
+  // Responsive visible-card count for carousels: 1 on mobile, 2 on tablet, 3 on desktop
+  const [visibleCount, setVisibleCount] = useState(3);
+  useEffect(() => {
+    const compute = () => {
+      const w = window.innerWidth;
+      setVisibleCount(w < 640 ? 1 : w < 1024 ? 2 : 3);
+    };
+    compute();
+    window.addEventListener('resize', compute);
+    return () => window.removeEventListener('resize', compute);
+  }, []);
+
+  const maxTestSlide = Math.max(0, diagnosticTests.length - visibleCount);
+  const maxPkgSlide = Math.max(0, healthPackages.length - visibleCount);
+
+  // Clamp slide indexes when viewport size changes
+  useEffect(() => {
+    setTestSlide((s) => Math.min(s, maxTestSlide));
+    setPkgSlide((s) => Math.min(s, maxPkgSlide));
+  }, [maxTestSlide, maxPkgSlide]);
+
+  const slideWidthPct = 100 / visibleCount;
 
   // Auto-scroll for body system icons
   useEffect(() => {
@@ -202,8 +222,8 @@ const Index = () => {
 
           {/* Right: Heading + CTA */}
           <div className="w-full md:w-auto text-center md:text-left mt-4 md:mt-0 max-w-md">
-            <h1 className="text-primary-foreground text-2xl md:text-3xl lg:text-[42px] font-bold leading-tight">
-              Diagnostic Centre in Gurgaon<br />You Can Trust
+            <h1 className="text-primary-foreground text-xl sm:text-2xl md:text-3xl lg:text-[42px] font-bold leading-tight">
+              Diagnostic Centre in Gurgaon<br className="hidden sm:block" /> You Can Trust
             </h1>
             <p className="text-primary-foreground/90 text-sm md:text-base mt-3">
               Reliable tests and imaging from a trusted diagnostic centre in Gurgaon, with care you can trust.
@@ -306,10 +326,10 @@ const Index = () => {
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${testSlide * (100 / 3)}%)` }}
+              style={{ transform: `translateX(-${testSlide * slideWidthPct}%)` }}
             >
               {diagnosticTests.map((test) => (
-                <div key={test.name} className="w-full sm:w-1/2 lg:w-1/3 px-1 flex-shrink-0">
+                <div key={test.name} style={{ width: `${slideWidthPct}%` }} className="px-2 flex-shrink-0">
                   <div className="h-full rounded-2xl gradient-test-card p-5 text-primary-foreground shadow-xl">
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-1">
@@ -434,12 +454,12 @@ const Index = () => {
       </section>
 
       {/* Health Checkup Packages */}
-      <section className="py-20" style={{ backgroundColor: '#f5f5f5' }}>
-        <div className="text-center pb-12 px-4">
-          <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '42px' }}>
+      <section className="py-12 md:py-20" style={{ backgroundColor: '#f5f5f5' }}>
+        <div className="text-center pb-8 md:pb-12 px-4">
+          <h2 className="font-bold text-aarvak-gray-900 text-3xl md:text-[42px]">
             Health Checkup Packages
           </h2>
-          <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '18px' }}>
+          <p className="mt-3 text-aarvak-gray-600 text-base md:text-[18px]">
             Preventive health checkups designed to help you stay informed and proactive.
           </p>
         </div>
@@ -447,10 +467,10 @@ const Index = () => {
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${pkgSlide * (100 / 3)}%)`, gap: '32px' }}
+              style={{ transform: `translateX(-${pkgSlide * slideWidthPct}%)`, gap: '24px' }}
             >
               {healthPackages.map((pkg) => (
-                <div key={pkg.name} className="flex-shrink-0" style={{ width: 'calc(33.333% - 22px)' }}>
+                <div key={pkg.name} className="flex-shrink-0" style={{ width: `calc(${slideWidthPct}% - ${(24 * (visibleCount - 1)) / visibleCount}px)` }}>
                   <div
                     className="h-full flex flex-col text-white overflow-hidden"
                     style={{
@@ -593,7 +613,7 @@ const Index = () => {
 
           {/* Section Title */}
           <div className="text-center" style={{ marginBottom: '40px' }}>
-            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '42px' }}>
+            <h2 className="font-bold text-aarvak-gray-900 text-3xl md:text-[42px]">
               Care You Can Trust
             </h2>
             <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '17px', maxWidth: '560px', margin: '12px auto 0' }}>
@@ -725,7 +745,7 @@ const Index = () => {
       <section className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '36px' }}>Health Insights</h2>
+            <h2 className="font-bold text-aarvak-gray-900 text-2xl md:text-[36px]">Health Insights</h2>
             <p className="mt-2 text-aarvak-gray-600" style={{ fontSize: '16px' }}>Simple health information you can trust.</p>
           </div>
 
@@ -781,7 +801,7 @@ const Index = () => {
       <section className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '36px' }}>What Our Patients Say</h2>
+            <h2 className="font-bold text-aarvak-gray-900 text-2xl md:text-[36px]">What Our Patients Say</h2>
             <p className="mt-2 text-aarvak-gray-600" style={{ fontSize: '16px' }}>Real experiences from people who trust Aarvak Diagnostics.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
