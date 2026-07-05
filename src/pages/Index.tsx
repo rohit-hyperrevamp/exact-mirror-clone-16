@@ -326,10 +326,10 @@ const Index = () => {
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${testSlide * (100 / 3)}%)` }}
+              style={{ transform: `translateX(-${testSlide * slideWidthPct}%)` }}
             >
               {diagnosticTests.map((test) => (
-                <div key={test.name} className="w-full sm:w-1/2 lg:w-1/3 px-1 flex-shrink-0">
+                <div key={test.name} style={{ width: `${slideWidthPct}%` }} className="px-2 flex-shrink-0">
                   <div className="h-full rounded-2xl gradient-test-card p-5 text-primary-foreground shadow-xl">
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-1">
