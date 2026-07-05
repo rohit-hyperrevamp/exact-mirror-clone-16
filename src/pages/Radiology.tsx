@@ -89,11 +89,11 @@ const Radiology = () => {
             <div className="flex items-center gap-6">
               <div className="text-right text-white">
                 <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">About</p>
-                <h2 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Our Radiology</h2>
+                <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Radiology Centre in Gurgaon</h1>
               </div>
               <div className="w-px bg-white/40" style={{ height: '100px' }} />
               <div className="text-white max-w-md">
-                <h1 className="text-2xl md:text-[30px] font-bold leading-tight">Radiology Centre in Gurgaon for Accurate Imaging</h1>
+                <h2 className="text-2xl md:text-[30px] font-bold leading-tight">Accurate Imaging & Diagnostic Radiology</h2>
                 <p className="mt-3 text-[15px] opacity-80">Advanced diagnostic radiology services with modern imaging technology, experienced radiologists, and reliable reporting for accurate healthcare decisions.</p>
                 <Link
                   to="/contact-us#contact"

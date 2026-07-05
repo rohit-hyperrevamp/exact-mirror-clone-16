@@ -355,6 +355,7 @@ const Index = () => {
           <div className="flex justify-center items-center gap-6 mt-10">
             <button
               onClick={() => setTestSlide(Math.max(0, testSlide - 1))}
+              aria-label="Previous diagnostic tests"
               className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center text-2xl shadow"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -367,6 +368,7 @@ const Index = () => {
             </div>
             <button
               onClick={() => setTestSlide(Math.min(maxTestSlide, testSlide + 1))}
+              aria-label="Next diagnostic tests"
               className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center text-2xl shadow"
             >
               <ChevronRight className="w-5 h-5" />
@@ -399,7 +401,7 @@ const Index = () => {
                     key={item.name}
                     className="min-w-[150px] sm:min-w-[170px] bg-aarvak-gray-50 rounded-2xl h-36 sm:h-40 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition cursor-pointer"
                   >
-                    <img alt={item.name} src={item.icon} className="w-[72px] h-[72px]" />
+                    <img alt={`${item.name} body system icon`} src={item.icon} className="w-[72px] h-[72px]" />
                     <p className="mt-3 text-xl font-semibold text-aarvak-green">{item.name}</p>
                   </div>
                 ))}
@@ -563,6 +565,7 @@ const Index = () => {
           <div className="flex justify-center items-center gap-6 mt-12">
             <button
               onClick={() => setPkgSlide(Math.max(0, pkgSlide - 1))}
+              aria-label="Previous health packages"
               className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center text-2xl shadow"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -575,6 +578,7 @@ const Index = () => {
             </div>
             <button
               onClick={() => setPkgSlide(Math.min(maxPkgSlide, pkgSlide + 1))}
+              aria-label="Next health packages"
               className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center text-2xl shadow"
             >
               <ChevronRight className="w-5 h-5" />
@@ -814,14 +818,14 @@ const Index = () => {
           </div>
           {/* Carousel controls */}
           <div className="flex justify-center items-center gap-6 mt-10">
-            <button className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center shadow">
+            <button aria-label="Previous testimonial" className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center shadow">
               <ChevronLeft className="w-5 h-5" />
             </button>
             <div className="flex gap-2">
               <div className="w-8 h-2 bg-aarvak-blue rounded-full" />
               <div className="w-8 h-2 rounded-full" style={{ backgroundColor: 'hsl(var(--border))' }} />
             </div>
-            <button className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center shadow">
+            <button aria-label="Next testimonial" className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center shadow">
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>

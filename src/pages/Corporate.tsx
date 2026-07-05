@@ -231,12 +231,14 @@ const Corporate = () => {
           <div className="flex justify-center items-center gap-6 mt-8">
             <button
               onClick={() => setCampSlide(Math.max(0, campSlide - 1))}
+              aria-label="Previous camp photos"
               className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center shadow"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => setCampSlide(Math.min(maxCampSlide, campSlide + 1))}
+              aria-label="Next camp photos"
               className="w-10 h-10 bg-background rounded-full text-foreground flex items-center justify-center shadow"
             >
               <ChevronRight className="w-5 h-5" />

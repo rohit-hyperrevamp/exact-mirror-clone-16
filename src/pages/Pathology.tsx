@@ -43,7 +43,7 @@ const Pathology = () => {
         <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: '420px' }}>
           <img
             src="/images/pathology-banner.png"
-            alt="Pathology"
+            alt="Aarvak Diagnostics pathology laboratory"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
@@ -51,11 +51,11 @@ const Pathology = () => {
             <div className="flex items-center gap-6">
               <div className="text-right text-white">
                 <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">About</p>
-                <h2 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Our Pathology</h2>
+                <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>Pathology Lab in Gurgaon</h1>
               </div>
               <div className="w-px bg-white/40" style={{ height: '100px' }} />
               <div className="text-white">
-                <h1 className="text-2xl md:text-[32px] font-bold leading-tight">Pathology Lab in Gurgaon</h1>
+                <h2 className="text-2xl md:text-[32px] font-bold leading-tight">Our Pathology Services</h2>
                 <p className="mt-3 text-[15px] opacity-80 max-w-md">Trusted pathology lab in Gurgaon backed by modern technology and expert pathologists to ensure accurate test results you can trust.</p>
                 <Link
                   to="/contact-us#contact"

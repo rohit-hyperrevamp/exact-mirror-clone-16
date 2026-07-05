@@ -16,6 +16,58 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "full-body-checkup-guide-what-is-included-gurugram",
+    img: "/images/blog-full-body-checkup.jpg",
+    date: "July 5, 2026",
+    dateSort: "2026-07-05",
+    title: "Full Body Checkup: What Is Included and How to Prepare (Gurugram Guide)",
+    desc: "A clear breakdown of what a full body checkup includes, how to prepare, and which Aarvak health package fits your age and lifestyle.",
+    author: "Aarvak Diagnostics",
+    readTime: "7 min",
+    category: "Health Checkups",
+    metaTitle: "Full Body Checkup in Gurugram – What's Included & How to Prepare | Aarvak",
+    metaDescription: "Complete guide to a full body checkup in Gurugram: tests included, fasting rules, prices, and how to choose the right Aarvak Diagnostics health package.",
+    content: `A full body checkup is the fastest way to get a 360° view of your health in a single visit. At [Aarvak Diagnostics](/departments/health-checkups) in Gurugram, a comprehensive checkup combines blood work, urine analysis, and imaging to catch lifestyle diseases early — often before any symptoms appear.
+
+## What Is Included in a Full Body Checkup
+
+A standard Aarvak full body panel covers five core systems:
+
+- **Blood counts & anemia** — CBC, ESR, Peripheral Smear
+- **Diabetes screening** — Fasting Blood Sugar, HbA1c, Post-Prandial Sugar
+- **Heart health** — Lipid Profile (cholesterol, HDL, LDL, triglycerides)
+- **Liver function** — [LFT](/insights/liver-kidney-health-lft-kft-tests): SGOT, SGPT, Bilirubin, Alkaline Phosphatase, Albumin
+- **Kidney function** — [KFT](/insights/heatwave-hydration-kidney-function-test-gurugram): Creatinine, Urea, Uric Acid, Electrolytes
+- **Thyroid** — TSH, T3, T4
+- **Vitamin & mineral status** — Vitamin D, Vitamin B12, Iron studies
+- **Urine routine & microscopy**
+- **ECG and chest X-ray** (in advanced packages)
+
+Higher-tier packages also add markers like HbA1c trends, CRP for inflammation, and PSA (men) or pap smear (women).
+
+## How to Prepare for a Full Body Checkup
+
+- **Fast for 10–12 hours** before the sample — water is fine
+- Avoid alcohol for 24 hours
+- Skip strenuous exercise the night before
+- Carry a list of medications you take regularly
+- Book a morning slot for the most accurate fasting values
+- Choose [home sample collection](/insights/blood-test-at-home-home-collection-gurugram) if you can't visit the lab
+
+## Who Should Get One and How Often
+
+- **Age 25–35:** every 2 years, or annually if you have a family history of diabetes/heart disease
+- **Age 35–50:** annually; add cardiac markers and vitamin D
+- **50+ or existing conditions:** every 6–12 months with doctor-guided follow-ups
+
+## Choosing the Right Aarvak Health Package
+
+Aarvak offers tiered ADC packages — Basic, Essential, Essential Plus, Advanced and Comprehensive — so you only pay for what you need. See the [full list of health packages](/departments/health-checkups) or [talk to our team](/contact-us#contact) for a personalised recommendation.
+
+[Book a full body checkup in Gurugram](/contact-us#contact) with NABL-standard testing and free home sample collection.`,
+    tags: ["Full Body Checkup", "Health Package", "Preventive Health", "Gurugram"],
+  },
+  {
     slug: "heatwave-hydration-kidney-function-test-gurugram",
     img: "/images/blog-heatwave-kidney.jpg",
     date: "June 26, 2026",

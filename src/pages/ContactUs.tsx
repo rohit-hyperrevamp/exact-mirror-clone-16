@@ -53,7 +53,7 @@ const ContactUs = () => {
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-center h-full md:px-18 px-4 text-primary-foreground">
           <div className="w-full md:w-1/2 text-center md:text-right pr-6">
             <p className="text-base font-semibold md:text-3xl mb-1">Contact</p>
-            <h1 className="md:text-5xl text-2xl font-extrabold leading-tight">Aarvak</h1>
+            <h1 className="md:text-5xl text-2xl font-extrabold leading-tight">Contact Aarvak Diagnostics – Book a Test</h1>
           </div>
           <div className="hidden md:block w-[1px] h-[220px] bg-white/70 mx-6" />
           <div className="w-full md:w-1/3 text-center md:text-left mt-2 md:mt-0">
