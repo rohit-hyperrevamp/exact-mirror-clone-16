@@ -1,0 +1,46 @@
+# Aarvak Diagnostics
+
+> Trusted pathology, radiology and health checkup lab in Gurugram offering NABL-standard testing and home sample collection.
+
+Aarvak Diagnostics is a Gurugram-based diagnostic centre providing pathology, radiology, preventive health checkups, corporate camps, and home sample collection across Gurugram and nearby sectors.
+
+## Pages
+
+- [Home](/): Overview of Aarvak Diagnostics services in Gurugram.
+- [About Us](/about-us): Mission, leadership team, and clinical approach.
+- [Contact Us](/contact-us): Booking, phone, address, and enquiry form.
+- [Corporate Health Camps](/corporate): On-site corporate wellness and check-up camps.
+
+## Departments
+
+- [Pathology Lab](/departments/pathology): Blood, urine, and clinical pathology testing.
+- [Radiology Centre](/departments/radiology): Digital imaging, X-Ray and PFT services.
+- [X-Ray Services](/departments/radiology/x-ray-services): Digital X-ray for bones, chest and injury evaluation.
+- [PFT Test](/departments/radiology/pft-test): Pulmonary Function Testing for lung health.
+- [Health Checkups](/departments/health-checkups): Preventive full body checkup packages.
+- [Biochemistry Tests](/departments/pathology/biochemistry-tests): LFT, KFT, lipid, sugar, thyroid.
+- [Hematology Tests](/departments/pathology/hematology-tests): CBC, ESR, coagulation, peripheral smear.
+- [Microbiology](/departments/pathology/Microbiology): Cultures, sensitivity, infection panels.
+- [Histopathology](/departments/pathology/histopathology-tests): Tissue biopsy and cytology.
+- [Immunology Tests](/departments/pathology/immunology-tests): Allergy, autoimmune, hormone panels.
+- [Molecular Diagnostics](/departments/pathology/molecular-diagnostics): PCR and DNA-based testing.
+
+## Insights
+
+- [Health Insights Blog](/insights): Articles on preventive health, lab tests, and wellness.
+- [Full Body Checkup Guide](/insights/full-body-checkup-guide-what-is-included-gurugram): What's included and how to prepare.
+
+## Location Pages
+
+- [Diagnostic Centre in Gurugram](/diagnostic-centre-gurugram): Flagship lab overview.
+- [Diagnostic Lab on Sohna Road](/diagnostic-lab-sohna-road-gurugram): Sohna Road area coverage.
+
+## FAQ
+
+- [Diagnostic Tests FAQ](/faq-diagnostic-tests): Common questions about lab tests.
+- [Health Checkup FAQ](/faq-health-checkups): Common questions about health packages.
+
+## Optional
+
+- [Privacy Policy](/privacy-policy)
+- [Terms of Use](/terms-of-use)
