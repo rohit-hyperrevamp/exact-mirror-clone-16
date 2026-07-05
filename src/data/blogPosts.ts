@@ -68,7 +68,6 @@ Aarvak offers tiered ADC packages — Basic, Essential, Essential Plus, Advanced
     tags: ["Full Body Checkup", "Health Package", "Preventive Health", "Gurugram"],
   },
   {
-  {
     slug: "heatwave-hydration-kidney-function-test-gurugram",
     img: "/images/blog-heatwave-kidney.jpg",
     date: "June 26, 2026",
