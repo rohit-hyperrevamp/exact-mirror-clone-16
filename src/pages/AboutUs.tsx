@@ -24,7 +24,7 @@ const AboutUs = () => {
             <div className="flex items-center gap-6">
               <div className="text-right text-white">
                 <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">ABOUT</p>
-                <h1 className="text-4xl md:text-6xl font-bold italic" style={{ fontFamily: "Georgia, serif" }}>Aarvak</h1>
+                <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>About Aarvak Diagnostics – Our Mission and Team</h1>
               </div>
               <div className="w-px bg-white/40" style={{ height: '100px' }} />
               <div className="text-white">
