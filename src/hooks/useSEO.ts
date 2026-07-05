@@ -94,11 +94,9 @@ const useSEO = ({
       schemaEl.textContent = JSON.stringify(jsonLd);
     }
 
-    return () => {
-      document.title = "Aarvak Diagnostics – Trusted Diagnostic Centre in India";
-      const schema = document.getElementById(schemaId);
-      if (schema) schema.remove();
-    };
+    // Intentionally no cleanup: the next route's useSEO() will overwrite
+    // title/meta/canonical. Resetting on unmount briefly flashes the
+    // homepage title during route transitions.
   }, [title, description, canonical, ogType, ogImage, noindex, jsonLd]);
 };
 

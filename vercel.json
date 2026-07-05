@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     { "source": "/google15956c59f9f74aad.html", "destination": "/google15956c59f9f74aad.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },

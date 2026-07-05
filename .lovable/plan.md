@@ -1,88 +1,68 @@
 
-## Goal
+# Fix the P0 canonical & metadata bug (audit §2a)
 
-Add a private `/admin/seo` dashboard to aarvakdiagnostics.com that mirrors the Atman99 SEO/AEO/GEO dashboard — task tracker, blog pipeline, Google Search Console + GA4 analytics, keyword rankings, and Google Indexing API logs. Fully isolated from the public site (no nav/footer changes, no impact on existing pages).
+## The problem the audit found
 
-Login: hardcoded `8373914073` / `98765` (single admin, gated client-side + by a server-side check on the dashboard route).
+Every page on `aarvakdiagnostics.com` currently serves this in the raw HTML that Google crawls:
 
-## Scope
+- `<link rel="canonical" href="https://www.aarvakdiagnostics.com/" />`
+- `<title>Aarvak Diagnostics – Trusted Diagnostic Centre in India</title>`
+- Same meta description
 
-### 1. Routing & isolation
-- New route `/admin/seo/*` in `src/App.tsx`, rendered WITHOUT `Navbar`, `Footer`, `SocialSidebar`, `SocialProofNotification` (same treatment as `/hyperrevamp-reporting`).
-- `noindex` on all admin pages.
-- Add `Disallow: /admin/` to `public/robots.txt`.
+That's because the site is a client-side React SPA. `index.html` ships one hardcoded set of tags, and `useSEO.ts` only rewrites them **after** JavaScript runs. Google's indexer often reads the pre-JS HTML (and honors that canonical), so every URL — sector pages, insights posts, service pages — tells Google "the real page is the homepage." Result: ~71 pages stuck at "Discovered/Crawled – currently not indexed."
 
-### 2. Auth (simple, hardcoded)
-- `/admin/login` page with id + password fields.
-- On success, store a flag in `sessionStorage` and a hashed token; `AdminGuard` wraps `/admin/seo/*` and redirects to login if missing.
-- This is a soft gate (client-side). Sensitive data is protected by RLS on the Supabase tables (admin-only via a `is_admin` flag on a `seo_admins` table seeded with the one user).
+## The fix
 
-### 3. Database (new tables, separate from existing `form_submissions`)
-- `seo_admins` — id + login_id + password_hash, RLS read-only via service role.
-- `seo_tasks` — full task plan (section SEO/AEO/GEO, category, target_url, target_keyword, content_brief, status, scheduled_date, completed_at, notes…).
-- `seo_blog_posts` — blog pipeline (slug, title, meta, status draft→deployed, approval flow).
-- `seo_settings` — single row (blog_approval_required, auto_execute, last_auto_run_at).
-- `seo_integrations` — stores Google OAuth refresh token, property URL, etc.
-- `seo_indexing_log` — last N Google Indexing API pings.
-- All tables: RLS enabled, service-role only (edge functions act on behalf of the admin).
+Pre-render every known route into its own static `.html` file at build time, so the raw HTML Google fetches already has the right `<title>`, `<meta description>`, canonical, OG tags, and JSON-LD for that specific URL. The client-side `useSEO` hook keeps working unchanged for hydration.
 
-### 4. Dashboard UI (copied & adapted from Atman99)
-Files under `src/pages/admin/`:
-- `AdminLayout.tsx` — sidebar shell (just "SEO" + sub-tabs).
-- `AdminSeo.tsx` — main tab with KPI tiles, day-by-day task list, blog pipeline, filters, drill-in sheet.
-- `AdminSeoAnalytics.tsx` — GA4 + GSC KPIs, device split, top queries/pages/countries.
-- `AdminSeoKeywords.tsx` — keyword rank table from GSC.
-- `AdminSeoIndexing.tsx` — Indexing API log + manual ping.
-- Branded with Aarvak colors (navy `#001260`, blue `#0172B6`, yellow `#FFC107`) instead of Atman violet/emerald.
-- Replaces atman99.in references with aarvakdiagnostics.com everywhere.
+### Approach
 
-### 5. Edge functions (cloned & adapted)
-- `seo-google-oauth-start` — kicks off Google OAuth.
-- `seo-google-oauth-callback` — stores refresh token in `seo_integrations`.
-- `seo-google-analytics-fetch` — pulls GA4 + GSC metrics.
-- `seo-keywords-status` — pulls keyword positions from GSC for tracked keywords.
-- `seo-indexing-ping` — calls Google Indexing API.
-- `seo-auto-execute` — runs due tasks (stub initially — the task auto-execution logic is Atman99-specific; we'll keep it as a "mark done + log" runner so the UI works, without auto-editing aarvak's content).
+1. **Add a build-time prerender step.** After `vite build`, run a Node script that:
+   - Boots the built app inside `jsdom` (or `puppeteer` if needed for React 18).
+   - Iterates every route (10 core pages + 78 GEO pages + all blog slugs + department subpages + FAQ pages — same list `scripts/generate-sitemap.cjs` already enumerates).
+   - Renders each route, waits for `useSEO` to mutate `<head>`, then serializes and writes `dist/<route>/index.html`.
+   - Copies the correct canonical, title, description, OG tags, and JSON-LD into each file.
 
-### 6. Secrets the user will need to provide later (won't block UI from rendering)
-- `GOOGLE_OAUTH_CLIENT_ID`
-- `GOOGLE_OAUTH_CLIENT_SECRET`
-- `GA4_PROPERTY_ID` (for aarvak's GA4 property)
+2. **Neutralize the fallback in `index.html`.** Remove the hard-coded homepage canonical and generic title/description from `index.html` (or make them the homepage-only defaults that get overwritten during prerender). Keep viewport, charset, GA, favicon.
 
-The dashboard will render and the task tracker will work without these; the Analytics / Keywords / Indexing tabs will show "Connect Google" until OAuth is set up.
+3. **Fix `useSEO.ts` cleanup bug.** On unmount it resets `document.title` back to the generic homepage title, which briefly writes the wrong title on route change. Remove that reset.
 
-### 7. What WILL NOT change
-- No edits to any existing public page (Index, Pathology, Hematology, blogs, etc.).
-- No edits to `src/components/Navbar`, `Footer`, `Insights`, `BlogPost`, `useSEO`, etc.
-- No edits to existing `form_submissions` table or `send-email` edge function.
-- No edits to sitemap, existing routes, or SEO of public pages.
+4. **Vercel routing.** `vercel.json` currently rewrites everything to `/index.html`. Change to serve `dist/<route>/index.html` for that path when it exists, and fall back to the SPA index for unknown routes.
 
-## Deliverables (file list)
+5. **Sitemap & robots.** No change needed to the URL list, but verify `sitemap.xml` and `/favicon.ico` aren't accidentally listed as content URLs (audit §2c).
 
-Created:
-- `src/pages/AdminLogin.tsx`
-- `src/pages/admin/AdminLayout.tsx`
-- `src/pages/admin/AdminSeo.tsx`
-- `src/pages/admin/AdminSeoAnalytics.tsx`
-- `src/pages/admin/AdminSeoKeywords.tsx`
-- `src/pages/admin/AdminSeoIndexing.tsx`
-- `src/components/AdminGuard.tsx`
-- `supabase/functions/seo-google-oauth-start/index.ts`
-- `supabase/functions/seo-google-oauth-callback/index.ts`
-- `supabase/functions/seo-google-analytics-fetch/index.ts`
-- `supabase/functions/seo-keywords-status/index.ts`
-- `supabase/functions/seo-indexing-ping/index.ts`
-- `supabase/functions/seo-auto-execute/index.ts`
-- Migration creating 5 new `seo_*` tables + RLS + seed admin row.
+### Files to change
 
-Edited:
-- `src/App.tsx` — add `/admin/login` and `/admin/seo/*` routes, exclude them from chrome.
-- `public/robots.txt` — add `Disallow: /admin/`.
+```text
+package.json                 add "prerender" script + puppeteer/jsdom dep
+scripts/prerender.mjs        NEW – renders each route to dist/<route>/index.html
+scripts/routes.cjs           NEW – single source of truth for the URL list
+                             (reused by generate-sitemap.cjs + prerender.mjs)
+scripts/generate-sitemap.cjs consume shared routes.cjs
+vercel.json                  serve prerendered HTML per route, SPA fallback
+index.html                   remove hardcoded canonical / homepage-only title
+src/hooks/useSEO.ts          drop the title-reset on unmount
+```
 
-## Confirm before I start
+### Technical detail
 
-1. **Empty task plan** — Atman99's dashboard ships with ~30 days of pre-filled SEO/AEO/GEO tasks specific to that brand. For Aarvak, do you want me to (a) start with an empty task tracker you populate yourself, or (b) seed a similar 30-day plan tailored to Aarvak (hematology, pathology, radiology pages, Gurugram GEO, etc.)? **Default: (b)** — seeded plan.
+- **Prerender engine:** `puppeteer` (headless Chromium) is more reliable than `jsdom` for React 18 + client routing, and the sandbox already has Chromium available. Alternative: `vite-plugin-ssr` / `vike`, but that's a much bigger refactor — a post-build puppeteer walk is the minimal-risk fix.
+- **Wait condition:** after `page.goto(route)`, wait for `document.querySelector('link[rel="canonical"]').href` to differ from the homepage before serialization, so we know `useSEO` has run.
+- **Output structure:** for `/insights/thyroid-…`, write `dist/insights/thyroid-…/index.html`. Vercel serves directory `index.html` automatically.
+- **Rebuild frequency:** prerender runs on every deploy (`vite build && node scripts/prerender.mjs`), so any new blog post or geo location is picked up automatically.
 
-2. **Google OAuth secrets** — Analytics/Keywords/Indexing tabs require Google OAuth credentials + your GA4 property ID. I'll build the UI and edge functions; you'll add the secrets afterwards via Cloud settings when you're ready. OK to proceed and you'll wire creds later?
+### What this fixes from the audit
 
-Reply "go" (or with answers) and I'll build it.
+- §2a canonical bug (primary root cause) — resolved.
+- §2b "Discovered/Crawled – not indexed" – will unblock over 4–8 weeks as Google recrawls.
+- Homepage title/meta upgrade from §5 recommendation can be applied in the same pass to `src/pages/Index.tsx`'s `useSEO` call.
+
+### Not in scope for this change
+
+Anything unrelated to the canonical/metadata bug:
+- GBP Bookings/Chat setup (§3a) – client action, not code.
+- NAP corrections on `report.aarvakdiagnostics.com` footer (§8) – separate subdomain.
+- Form-submission debugging (§3b) – separate task; happy to tackle next.
+- `MedicalOrganization` schema expansion (§10 medium-term).
+
+Confirm and I'll implement.
