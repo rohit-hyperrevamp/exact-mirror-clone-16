@@ -13,23 +13,24 @@ const AboutUs = () => {
     <div className="bg-background">
       {/* Hero Banner - full width with rounded corners and side padding */}
       <section className="relative w-full overflow-hidden px-2 md:px-3">
-        <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: '420px' }}>
+        <div className="relative w-full rounded-2xl overflow-hidden min-h-[420px] md:h-[420px]">
           <img
             src="/images/about-banner.png"
             alt="About Aarvak"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
-          <div className="relative z-10 flex items-center justify-center h-full px-4">
-            <div className="flex items-center gap-6">
-              <div className="text-right text-white">
-                <p className="text-sm uppercase tracking-[0.25em] mb-1 font-medium">ABOUT</p>
-                <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: "Georgia, serif" }}>About Aarvak Diagnostics – Our Mission and Team</h1>
+          <div className="relative z-10 flex items-center justify-center min-h-[420px] md:h-full px-4 py-10 md:py-0">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 w-full max-w-4xl">
+              <div className="text-center md:text-right text-white">
+                <p className="text-xs md:text-sm uppercase tracking-[0.25em] mb-2 font-medium">ABOUT</p>
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight" style={{ fontFamily: "Georgia, serif" }}>About Aarvak Diagnostics</h1>
+                <p className="text-sm md:text-base opacity-80 mt-1">Our Mission and Team</p>
               </div>
-              <div className="w-px bg-white/40" style={{ height: '100px' }} />
-              <div className="text-white">
-                <h2 className="text-2xl md:text-[32px] font-bold leading-tight">Built on Trust.<br />Driven by Accuracy.</h2>
-                <p className="mt-3 text-[15px] opacity-80 max-w-md">Making quality diagnostic care accessible, reliable, and patient-first.</p>
+              <div className="hidden md:block w-px bg-white/40" style={{ height: '100px' }} />
+              <div className="text-center md:text-left text-white">
+                <h2 className="text-xl md:text-[32px] font-bold leading-tight">Built on Trust.<br />Driven by Accuracy.</h2>
+                <p className="mt-3 text-sm md:text-[15px] opacity-80 max-w-md">Making quality diagnostic care accessible, reliable, and patient-first.</p>
                 <Link
                   to="/contact-us#contact"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
@@ -44,8 +45,8 @@ const AboutUs = () => {
 
       {/* Tagline overlay - white card overlapping hero bottom */}
       <section className="relative z-20">
-        <div className="bg-background rounded-tr-[40px] -mt-16 relative pt-10 pb-8 px-6 md:px-12" style={{ maxWidth: '52%' }}>
-          <h2 className="text-xl md:text-[26px] font-bold leading-snug text-secondary">
+        <div className="bg-background rounded-tr-[40px] -mt-10 md:-mt-16 relative pt-8 md:pt-10 pb-6 md:pb-8 px-6 md:px-12 w-full md:max-w-[52%]">
+          <h2 className="text-lg md:text-[26px] font-bold leading-snug text-secondary">
             Health Is Personal. Your Diagnostics Should Be, Too.
           </h2>
           <p className="text-sm text-muted-foreground mt-2 font-medium">30 Years Of Global Wisdom. Right Next Door.</p>

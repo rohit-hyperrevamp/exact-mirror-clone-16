@@ -2,7 +2,7 @@ import { Facebook, Instagram, MessageCircle } from "lucide-react";
 
 const SocialSidebar = () => {
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-0 rounded-full overflow-hidden" style={{ backgroundColor: 'rgba(120,120,120,0.7)' }}>
+    <div className="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-0 rounded-full overflow-hidden" style={{ backgroundColor: 'rgba(120,120,120,0.7)' }}>
       <a
         href="https://www.facebook.com/AarvakDiagnostics"
         target="_blank"
