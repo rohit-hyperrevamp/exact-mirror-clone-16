@@ -156,8 +156,28 @@ const Index = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const bodyScrollRef = useRef<HTMLDivElement>(null);
 
-  const maxTestSlide = Math.max(0, diagnosticTests.length - 3);
-  const maxPkgSlide = Math.max(0, healthPackages.length - 3);
+  // Responsive visible-card count for carousels: 1 on mobile, 2 on tablet, 3 on desktop
+  const [visibleCount, setVisibleCount] = useState(3);
+  useEffect(() => {
+    const compute = () => {
+      const w = window.innerWidth;
+      setVisibleCount(w < 640 ? 1 : w < 1024 ? 2 : 3);
+    };
+    compute();
+    window.addEventListener('resize', compute);
+    return () => window.removeEventListener('resize', compute);
+  }, []);
+
+  const maxTestSlide = Math.max(0, diagnosticTests.length - visibleCount);
+  const maxPkgSlide = Math.max(0, healthPackages.length - visibleCount);
+
+  // Clamp slide indexes when viewport size changes
+  useEffect(() => {
+    setTestSlide((s) => Math.min(s, maxTestSlide));
+    setPkgSlide((s) => Math.min(s, maxPkgSlide));
+  }, [maxTestSlide, maxPkgSlide]);
+
+  const slideWidthPct = 100 / visibleCount;
 
   // Auto-scroll for body system icons
   useEffect(() => {
