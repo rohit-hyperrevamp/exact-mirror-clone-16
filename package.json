@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generate-sitemap.cjs && vite build && node scripts/prerender.mjs",
     "build:dev": "vite build --mode development",
+    "build:novercel": "vite build",
+    "prerender": "node scripts/prerender.mjs",
+    "sitemap": "node scripts/generate-sitemap.cjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
