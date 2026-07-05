@@ -613,7 +613,7 @@ const Index = () => {
 
           {/* Section Title */}
           <div className="text-center" style={{ marginBottom: '40px' }}>
-            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '42px' }}>
+            <h2 className="font-bold text-aarvak-gray-900 text-3xl md:text-[42px]">
               Care You Can Trust
             </h2>
             <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '17px', maxWidth: '560px', margin: '12px auto 0' }}>
@@ -745,7 +745,7 @@ const Index = () => {
       <section className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '36px' }}>Health Insights</h2>
+            <h2 className="font-bold text-aarvak-gray-900 text-2xl md:text-[36px]">Health Insights</h2>
             <p className="mt-2 text-aarvak-gray-600" style={{ fontSize: '16px' }}>Simple health information you can trust.</p>
           </div>
 
@@ -801,7 +801,7 @@ const Index = () => {
       <section className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '36px' }}>What Our Patients Say</h2>
+            <h2 className="font-bold text-aarvak-gray-900 text-2xl md:text-[36px]">What Our Patients Say</h2>
             <p className="mt-2 text-aarvak-gray-600" style={{ fontSize: '16px' }}>Real experiences from people who trust Aarvak Diagnostics.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
