@@ -454,12 +454,12 @@ const Index = () => {
       </section>
 
       {/* Health Checkup Packages */}
-      <section className="py-20" style={{ backgroundColor: '#f5f5f5' }}>
-        <div className="text-center pb-12 px-4">
-          <h2 className="font-bold text-aarvak-gray-900" style={{ fontSize: '42px' }}>
+      <section className="py-12 md:py-20" style={{ backgroundColor: '#f5f5f5' }}>
+        <div className="text-center pb-8 md:pb-12 px-4">
+          <h2 className="font-bold text-aarvak-gray-900 text-3xl md:text-[42px]">
             Health Checkup Packages
           </h2>
-          <p className="mt-3 text-aarvak-gray-600" style={{ fontSize: '18px' }}>
+          <p className="mt-3 text-aarvak-gray-600 text-base md:text-[18px]">
             Preventive health checkups designed to help you stay informed and proactive.
           </p>
         </div>
