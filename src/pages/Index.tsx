@@ -467,10 +467,10 @@ const Index = () => {
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${pkgSlide * (100 / 3)}%)`, gap: '32px' }}
+              style={{ transform: `translateX(-${pkgSlide * slideWidthPct}%)`, gap: '24px' }}
             >
               {healthPackages.map((pkg) => (
-                <div key={pkg.name} className="flex-shrink-0" style={{ width: 'calc(33.333% - 22px)' }}>
+                <div key={pkg.name} className="flex-shrink-0" style={{ width: `calc(${slideWidthPct}% - ${(24 * (visibleCount - 1)) / visibleCount}px)` }}>
                   <div
                     className="h-full flex flex-col text-white overflow-hidden"
                     style={{
