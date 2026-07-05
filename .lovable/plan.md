@@ -1,68 +1,30 @@
+## Mobile responsiveness fixes
 
-# Fix the P0 canonical & metadata bug (audit §2a)
+### Issues seen in screenshots
+1. **Popular Diagnostic Tests carousel (Home)** — cards render extremely narrow on mobile with text cropped ("P H O P", "Fas..BC Blood..&Suga..ESR"). Root cause: slide track uses `translateX(-${testSlide * (100/3)}%)` regardless of viewport, but child slides are `w-full sm:w-1/2 lg:w-1/3`. On mobile each slide is 100% wide, so a 33% translate squeezes 3 cards into the viewport with clipped content.
+2. **Hero title (Home)** — "Diagnostic Centre in Gurgaon You Can Trust" breaks awkwardly across 3 lines on mobile because of a hard `<br/>` / flex layout not intended for narrow widths.
+3. **General polish** — verify padding, section spacing, and card content on small screens across all pages.
 
-## The problem the audit found
+### Fixes
 
-Every page on `aarvakdiagnostics.com` currently serves this in the raw HTML that Google crawls:
+**A. Diagnostic Tests carousel — `src/pages/Index.tsx`**
+- Make `testSlide` step responsive: compute per-view count (1 mobile / 2 tablet / 3 desktop) via a `useEffect` + `matchMedia` (or a `visibleCount` state driven by `window.innerWidth`).
+- Translate by `100 / visibleCount` and set each slide width to `100 / visibleCount %` inline, replacing the fixed `w-full sm:w-1/2 lg:w-1/3`.
+- Clamp `testSlide` when viewport changes so we never scroll past the last group.
+- Same fix pattern applied to any other identical carousel on the page if present (testimonials/tests).
 
-- `<link rel="canonical" href="https://www.aarvakdiagnostics.com/" />`
-- `<title>Aarvak Diagnostics – Trusted Diagnostic Centre in India</title>`
-- Same meta description
+**B. Homepage hero title — `src/pages/Index.tsx`**
+- Adjust the hero H1/H2 stack so on mobile it reads as a single clean block: reduce font size at `<sm` (`text-3xl` instead of `text-4xl`), remove forced line breaks on mobile (`<br className="hidden md:block" />`), tighten `leading` and allow natural wrap.
 
-That's because the site is a client-side React SPA. `index.html` ships one hardcoded set of tags, and `useSEO.ts` only rewrites them **after** JavaScript runs. Google's indexer often reads the pre-JS HTML (and honors that canonical), so every URL — sector pages, insights posts, service pages — tells Google "the real page is the homepage." Result: ~71 pages stuck at "Discovered/Crawled – currently not indexed."
+**C. Sweep other pages for the same class of issue**
+- Re-check `HealthCheckups.tsx`, `Pathology.tsx`, `Radiology.tsx`, `Corporate.tsx`, `AboutUs.tsx`, `ContactUs.tsx` for:
+  - Fixed-percent translate carousels → apply same responsive fix.
+  - Multi-column grids that stay multi-col on mobile → ensure `grid-cols-1` base.
+  - Cards with `min-w`/fixed widths clipping text → switch to `w-full` on mobile.
+  - Horizontal flex rows without `flex-wrap` that overflow.
 
-## The fix
+**D. Verification**
+- After edits, run a Playwright pass at 390×844 (iPhone) and 768×1024 (tablet), screenshot Home, Health Checkups, Pathology, Radiology, About, Contact, Corporate. Confirm no text clipping, no horizontal scroll, hero readable.
 
-Pre-render every known route into its own static `.html` file at build time, so the raw HTML Google fetches already has the right `<title>`, `<meta description>`, canonical, OG tags, and JSON-LD for that specific URL. The client-side `useSEO` hook keeps working unchanged for hydration.
-
-### Approach
-
-1. **Add a build-time prerender step.** After `vite build`, run a Node script that:
-   - Boots the built app inside `jsdom` (or `puppeteer` if needed for React 18).
-   - Iterates every route (10 core pages + 78 GEO pages + all blog slugs + department subpages + FAQ pages — same list `scripts/generate-sitemap.cjs` already enumerates).
-   - Renders each route, waits for `useSEO` to mutate `<head>`, then serializes and writes `dist/<route>/index.html`.
-   - Copies the correct canonical, title, description, OG tags, and JSON-LD into each file.
-
-2. **Neutralize the fallback in `index.html`.** Remove the hard-coded homepage canonical and generic title/description from `index.html` (or make them the homepage-only defaults that get overwritten during prerender). Keep viewport, charset, GA, favicon.
-
-3. **Fix `useSEO.ts` cleanup bug.** On unmount it resets `document.title` back to the generic homepage title, which briefly writes the wrong title on route change. Remove that reset.
-
-4. **Vercel routing.** `vercel.json` currently rewrites everything to `/index.html`. Change to serve `dist/<route>/index.html` for that path when it exists, and fall back to the SPA index for unknown routes.
-
-5. **Sitemap & robots.** No change needed to the URL list, but verify `sitemap.xml` and `/favicon.ico` aren't accidentally listed as content URLs (audit §2c).
-
-### Files to change
-
-```text
-package.json                 add "prerender" script + puppeteer/jsdom dep
-scripts/prerender.mjs        NEW – renders each route to dist/<route>/index.html
-scripts/routes.cjs           NEW – single source of truth for the URL list
-                             (reused by generate-sitemap.cjs + prerender.mjs)
-scripts/generate-sitemap.cjs consume shared routes.cjs
-vercel.json                  serve prerendered HTML per route, SPA fallback
-index.html                   remove hardcoded canonical / homepage-only title
-src/hooks/useSEO.ts          drop the title-reset on unmount
-```
-
-### Technical detail
-
-- **Prerender engine:** `puppeteer` (headless Chromium) is more reliable than `jsdom` for React 18 + client routing, and the sandbox already has Chromium available. Alternative: `vite-plugin-ssr` / `vike`, but that's a much bigger refactor — a post-build puppeteer walk is the minimal-risk fix.
-- **Wait condition:** after `page.goto(route)`, wait for `document.querySelector('link[rel="canonical"]').href` to differ from the homepage before serialization, so we know `useSEO` has run.
-- **Output structure:** for `/insights/thyroid-…`, write `dist/insights/thyroid-…/index.html`. Vercel serves directory `index.html` automatically.
-- **Rebuild frequency:** prerender runs on every deploy (`vite build && node scripts/prerender.mjs`), so any new blog post or geo location is picked up automatically.
-
-### What this fixes from the audit
-
-- §2a canonical bug (primary root cause) — resolved.
-- §2b "Discovered/Crawled – not indexed" – will unblock over 4–8 weeks as Google recrawls.
-- Homepage title/meta upgrade from §5 recommendation can be applied in the same pass to `src/pages/Index.tsx`'s `useSEO` call.
-
-### Not in scope for this change
-
-Anything unrelated to the canonical/metadata bug:
-- GBP Bookings/Chat setup (§3a) – client action, not code.
-- NAP corrections on `report.aarvakdiagnostics.com` footer (§8) – separate subdomain.
-- Form-submission debugging (§3b) – separate task; happy to tackle next.
-- `MedicalOrganization` schema expansion (§10 medium-term).
-
-Confirm and I'll implement.
+### Out of scope
+- No content/copy changes, no redesigns, no desktop layout changes beyond what's needed to keep parity.
