@@ -401,7 +401,7 @@ const Index = () => {
                     key={item.name}
                     className="min-w-[150px] sm:min-w-[170px] bg-aarvak-gray-50 rounded-2xl h-36 sm:h-40 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition cursor-pointer"
                   >
-                    <img alt={item.name} src={item.icon} className="w-[72px] h-[72px]" />
+                    <img alt={`${item.name} body system icon`} src={item.icon} className="w-[72px] h-[72px]" />
                     <p className="mt-3 text-xl font-semibold text-aarvak-green">{item.name}</p>
                   </div>
                 ))}
