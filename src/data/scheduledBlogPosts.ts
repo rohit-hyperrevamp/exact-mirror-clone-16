@@ -2171,7 +2171,7 @@ Learn more on our [radiology department page](/departments/radiology).
   },
   {
     slug: "senior-citizen-health-checkups-preventive-care-guide",
-    img: "/images/blog-preventive.png",
+    img: "/images/blog-preventive-india.png",
     date: "August 21, 2026", dateSort: "2026-08-21",
     title: "Senior Citizen Health Checkups: A Preventive Care Guide for Ageing Parents",
     desc: "Marking World Senior Citizens' Day, a guide for adult children on the checkups that matter most for ageing parents.",
