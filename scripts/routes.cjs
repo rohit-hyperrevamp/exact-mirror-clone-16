@@ -34,10 +34,12 @@ function readSlugs(relFile) {
 
 function allRoutes() {
   const blogSlugs = readSlugs("src/data/blogPosts.ts");
+  const scheduledBlogSlugs = readSlugs("src/data/scheduledBlogPosts.ts");
   const geoSlugs = readSlugs("src/data/geoLocations.ts");
+  const uniqueBlogSlugs = Array.from(new Set([...blogSlugs, ...scheduledBlogSlugs]));
   return [
     ...staticPages,
-    ...blogSlugs.map((s) => ({ path: `/insights/${s}`, priority: "0.7", changefreq: "monthly" })),
+    ...uniqueBlogSlugs.map((s) => ({ path: `/insights/${s}`, priority: "0.7", changefreq: "monthly" })),
     ...geoSlugs.map((s) => ({ path: `/diagnostic-centre-gurugram/${s}`, priority: "0.7", changefreq: "monthly" })),
   ];
 }
