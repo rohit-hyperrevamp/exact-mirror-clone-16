@@ -1625,4 +1625,484 @@ Lab tests don't replace good nutrition and exercise — they complement them. Un
 Get your comprehensive metabolic assessment at [Aarvak Diagnostics](/contact-us#contact). Because effective weight management starts with understanding your body.`,
     tags: ["Weight Management", "Thyroid", "Insulin Resistance", "Hormones", "Metabolism"],
   },
+  {
+    slug: "monsoon-illnesses-gurugram-dengue-typhoid-viral-fever-tests",
+    img: "/images/blog-monsoon-fever.jpg", date: "July 6, 2026", dateSort: "2026-07-06",
+    title: "Monsoon Illnesses in Gurugram: Which Tests You Need for Dengue, Typhoid & Viral Fever",
+    desc: "Monsoon season brings a real spike in vector-borne and waterborne illness. Here is which tests to book at the first sign of fever, and why early testing matters.",
+    author: "Aarvak Diagnostics", readTime: "6 min", category: "Seasonal",
+    metaTitle: "Dengue, Typhoid & Viral Fever Tests in Gurugram – Monsoon Guide | Aarvak",
+    metaDescription: "Monsoon in Gurugram raises dengue, typhoid and viral fever risk. Know which tests to book, when to test, and how home collection works at Aarvak Diagnostics.",
+    content: `Every monsoon, Gurugram sees a sharp rise in fevers that look alike but need very different treatment. Testing early is the fastest way to tell them apart and start the right care.
+
+## Why Monsoon Season Raises Infection Risk
+
+Stagnant water becomes a breeding ground for mosquitoes, while contaminated water and food raise the risk of typhoid and gastroenteritis. Add crowded indoor spaces during rain and viral fevers spread just as fast.
+
+## Dengue, Typhoid & Viral Fever: Key Differences
+
+- **Dengue:** High fever, severe body ache, retro-orbital pain, low platelets. Confirmed by NS1 Antigen (day 1–5) or Dengue IgM/IgG (after day 5).
+- **Typhoid:** Prolonged fever, abdominal discomfort, weakness. Confirmed by Widal, Typhi Dot or blood culture.
+- **Viral fever:** Short-lived fever with cold, cough, throat pain. A CBC helps rule out bacterial or dengue cause.
+
+## Which Tests to Book and When
+
+At the first sign of fever lasting more than 24 hours, consider a **Fever Panel** that combines:
+
+- **[CBC](/insights/understanding-cbc-complete-blood-count-test)** to check platelets and infection markers
+- **Dengue NS1 / IgM**
+- **Typhoid (Widal / Typhi Dot)**
+- **Malaria antigen** and **Chikungunya IgM** where relevant
+- **Urine routine** if you have burning or abdominal pain
+
+Repeat platelet counts every 24–48 hours if dengue is suspected.
+
+## Home Collection During Monsoon
+
+Travelling with fever in Gurugram traffic and rain is the last thing you need. Aarvak's [home sample collection](/insights/blood-test-at-home-home-collection-gurugram) sends a trained phlebotomist to your door, with reports typically ready the same day.
+
+## FAQs
+
+**When should I test for dengue?** From day 1 to 5 of fever, NS1 antigen is most reliable. After that, switch to IgM.
+
+**Can a normal CBC rule out dengue?** No — always pair CBC with NS1 or IgM if symptoms fit.
+
+**How fast are reports?** Most monsoon fever tests at Aarvak are reported within 6–8 hours.
+
+Book a fever panel or [home collection](/contact-us#contact) at Aarvak Diagnostics, Gurugram.`,
+    tags: ["Dengue", "Typhoid", "Monsoon", "Viral Fever", "Gurugram"],
+  },
+  {
+    slug: "corporate-health-checkup-packages-gurugram-employee-wellness",
+    img: "/images/blog-corporate-health.jpg", date: "July 13, 2026", dateSort: "2026-07-13",
+    title: "Corporate Health Checkup Packages: Why Gurugram Companies Are Investing in Employee Wellness",
+    desc: "A look at what corporate health checkup packages typically cover, and why more Gurugram employers are budgeting for preventive care.",
+    author: "Aarvak Diagnostics", readTime: "6 min", category: "Corporate Wellness",
+    metaTitle: "Corporate Health Checkup Packages in Gurugram | Aarvak Diagnostics",
+    metaDescription: "See what corporate health checkup packages cover in Gurugram, why employers invest in preventive care, and how to set up on-site camps with Aarvak Diagnostics.",
+    content: `Employee health is no longer a perk — for Gurugram employers competing for talent, it is core infrastructure. A well-designed corporate checkup catches lifestyle risk early and keeps productivity steady.
+
+## What's Usually Included in a Corporate Package
+
+A typical corporate panel combines pathology, basic cardiology and a physician review:
+
+- CBC, blood sugar (FBS/HbA1c), lipid profile
+- Liver and kidney function
+- Thyroid (TSH)
+- Urine routine
+- ECG and BMI screening
+- Optional: chest X-ray, PFT, audiometry, vision testing
+
+Packages can be tiered by age band or role so a 25-year-old executive and a 50-year-old plant supervisor each get the right screening.
+
+## Why Preventive Screening Pays Off for Employers
+
+- Fewer sudden absences from undiagnosed diabetes, hypertension or thyroid issues
+- Early detection of fatty liver, anaemia and vitamin deficiencies that quietly drag down performance
+- Signals to employees that leadership takes their well-being seriously
+
+## On-Site Camps vs Centre Visits
+
+- **On-site camps** work well for large teams and factory or warehouse setups. Sample collection, ECG and basic screening happen at your office.
+- **Centre visits** suit smaller teams or when advanced imaging (ultrasound, X-ray) is part of the package.
+
+## How to Set Up a Programme for Your Team
+
+1. Share headcount, age mix and any role-specific hazards
+2. Pick a package tier and any add-ons like PFT or audiometry
+3. Schedule an on-site camp or staggered centre visits
+4. Receive consolidated, anonymised MIS for HR plus individual reports for each employee
+
+## FAQs
+
+**Do you cover pre-employment checkups?** Yes — full pre-employment panels including [PFT and audiometry](/insights/pre-employment-medical-checkup-pft-audiometry-ecg-guide).
+
+**How is employee data handled?** Individual reports go directly to the employee; HR receives only aggregated statistics.
+
+Talk to us about a corporate programme on the [Corporate page](/corporate) or [contact us](/contact-us#contact).`,
+    tags: ["Corporate Wellness", "Employee Health", "Gurugram", "Preventive Care"],
+  },
+  {
+    slug: "pre-employment-medical-checkup-pft-audiometry-ecg-guide",
+    img: "/images/pft-service.jpg", date: "July 20, 2026", dateSort: "2026-07-20",
+    title: "Pre-Employment Medical Checkup: What PFT, Audiometry & ECG Actually Test",
+    desc: "A plain-language explainer on pre-employment and periodic occupational health tests, what each one checks, and why employers require them.",
+    author: "Aarvak Diagnostics", readTime: "6 min", category: "Occupational Health",
+    metaTitle: "Pre-Employment Medical Checkup in India – PFT, Audiometry, ECG | Aarvak",
+    metaDescription: "Understand pre-employment medical checkups in India: what PFT, audiometry and ECG measure, why employers require them, and how Aarvak Diagnostics runs them.",
+    content: `Pre-employment and periodic medical exams protect both the employer and the employee. Knowing what each test actually checks makes the process less intimidating.
+
+## Why Employers Require These Tests
+
+- Confirm a candidate is fit for the physical demands of the role
+- Establish a baseline before job-related exposure (noise, dust, chemicals)
+- Meet statutory requirements under the Factories Act and industry standards
+- Reduce workplace incidents and long-term claims
+
+## PFT: What It Measures
+
+A **Pulmonary Function Test** measures how well your lungs move air. Key values include FVC (forced vital capacity), FEV1 (air exhaled in one second) and their ratio. It flags asthma, COPD and restrictive lung disease — critical for roles with dust, fumes or physical exertion. Learn more on the [PFT Test page](/departments/radiology/pft-test).
+
+## Audiometry & Hearing Screening
+
+**Audiometry** maps hearing sensitivity across frequencies. It is essential for anyone working around machinery, generators or high-noise environments, and forms the baseline for future noise-induced hearing loss claims.
+
+## ECG and Basic Cardiac Screening
+
+A resting **ECG** captures the heart's electrical rhythm in under a minute. Combined with blood pressure and lipid profile, it catches silent arrhythmias, conduction blocks and early signs of cardiac strain.
+
+Most pre-employment panels also include vision testing, CBC, blood sugar, liver and kidney function, urine routine and a physician fitness certificate.
+
+## FAQs
+
+**How long does a full pre-employment checkup take?** Usually 60–90 minutes at the centre.
+
+**Do results affect hiring?** They confirm fitness for a specific role — most findings are managed with follow-up, not disqualification.
+
+**Can Aarvak run these on-site?** Yes, for larger batches we bring the setup to your workplace.
+
+See our full [radiology and services](/departments/radiology) list or [contact us](/contact-us#contact) to schedule.`,
+    tags: ["Pre-Employment", "PFT", "Audiometry", "ECG", "Occupational Health"],
+  },
+  {
+    slug: "world-hepatitis-day-liver-function-tests-lft-guide",
+    img: "/images/blog-liver-detox.jpg", date: "July 27, 2026", dateSort: "2026-07-27",
+    title: "World Hepatitis Day: Why Liver Function Tests Matter More Than You Think",
+    desc: "Ahead of World Hepatitis Day (28 July), a look at what a Liver Function Test reveals and who should get one done.",
+    author: "Aarvak Diagnostics", readTime: "5 min", category: "Awareness",
+    metaTitle: "Liver Function Test & Hepatitis Screening – World Hepatitis Day | Aarvak",
+    metaDescription: "For World Hepatitis Day, learn what a Liver Function Test (LFT) reveals, who should get tested, and how to screen for hepatitis at Aarvak Diagnostics, Gurugram.",
+    content: `Every 28 July, World Hepatitis Day pushes a simple message: test early, treat early. The liver rarely complains until damage is advanced, which is why routine screening matters.
+
+## What World Hepatitis Day Is About
+
+Launched by the WHO, the day highlights viral hepatitis (A, B, C, D, E), one of the world's most under-diagnosed disease groups. Millions live with hepatitis B or C without knowing.
+
+## What an LFT Actually Checks
+
+A **Liver Function Test** measures:
+
+- **SGOT (AST) & SGPT (ALT):** Enzymes that leak when liver cells are damaged
+- **Alkaline Phosphatase & GGT:** Elevated in bile duct issues and alcohol use
+- **Bilirubin (total, direct, indirect):** Raised in jaundice
+- **Total protein, Albumin, Globulin:** Reflect the liver's synthetic function
+
+Screening adds **Hepatitis B surface antigen (HBsAg)** and **Anti-HCV** for viral cause.
+
+## Who Should Get Tested
+
+- Anyone with persistent fatigue, nausea, right-upper abdominal discomfort or yellowing of eyes
+- People on long-term medication, alcohol users and those with fatty liver on ultrasound
+- Healthcare workers and anyone with a family history of hepatitis
+- Before starting any lifestyle or fitness programme that stresses the liver
+
+## Prevention & Vaccination Basics
+
+- Hepatitis A and B are vaccine-preventable — check your child's immunisation record
+- Avoid unsterile needles, tattoos or piercings from unregulated setups
+- Safe drinking water and hand hygiene block hepatitis A and E
+
+## FAQs
+
+**Is fasting required for an LFT?** Not strictly, but 8–10 hours of fasting improves accuracy when combined with a lipid panel.
+
+**How often should I test?** Annually if you are on medication, drink regularly or have fatty liver.
+
+Book an LFT or hepatitis screening as part of a [full health checkup](/departments/health-checkups) or via [home collection](/contact-us#contact).`,
+    tags: ["Hepatitis", "LFT", "Liver", "World Hepatitis Day", "Awareness"],
+  },
+  {
+    slug: "full-body-checkup-guide-what-is-included-how-often",
+    img: "/images/blog-full-body-checkup.jpg", date: "August 3, 2026", dateSort: "2026-08-03",
+    title: "Full Body Checkup Guide: What's Included and How Often You Really Need One",
+    desc: "A breakdown of what a standard full body checkup covers, and honest guidance on how often different age groups actually need one.",
+    author: "Aarvak Diagnostics", readTime: "7 min", category: "Guides",
+    metaTitle: "Full Body Checkup Packages in Gurugram – What's Included & How Often | Aarvak",
+    metaDescription: "What does a full body checkup include and how often should you get one? Honest guidance by age group from Aarvak Diagnostics, Gurugram.",
+    content: `A full body checkup is the fastest way to see where your health actually stands. But "full body" means different things in different labs — here is what a proper panel should cover.
+
+## What's Typically Included in a Full Body Checkup
+
+- **Blood counts:** CBC, ESR
+- **Diabetes:** Fasting sugar, HbA1c
+- **Lipid profile:** Total cholesterol, HDL, LDL, triglycerides
+- **Liver function (LFT)** and **Kidney function (KFT)**
+- **Thyroid:** TSH (T3/T4 in wider panels)
+- **Vitamins:** Vitamin D, Vitamin B12, iron studies
+- **Urine routine & microscopy**
+- **ECG and chest X-ray** in advanced packages
+- **Ultrasound abdomen** and gender-specific markers in premium tiers
+
+## How Often You Actually Need One (By Age)
+
+- **20s:** Once every 2 years, or annually with a family history of diabetes or heart disease
+- **30s–40s:** Annually — this is when lifestyle risk starts compounding
+- **50+:** Annually with added cardiac markers, vitamin D and cancer screening panels
+- **Diabetic or hypertensive at any age:** Every 6 months for targeted markers
+
+## Fasting & Prep Instructions
+
+- Fast for 10–12 hours (water allowed)
+- Skip alcohol for 24 hours
+- Avoid strenuous exercise the night before
+- Take regular medication only if your doctor says so
+- Morning slots give the most accurate fasting values
+
+## Reading Your Report: What to Flag With a Doctor
+
+Focus on trends, not single values. Any of these deserve a doctor conversation:
+
+- HbA1c above 5.7%
+- LDL above 130 mg/dL or triglycerides above 200
+- SGPT/SGOT more than 1.5x upper limit
+- TSH outside 0.4–4.0
+- Vitamin D below 30 ng/mL
+
+## FAQs
+
+**Are home collection samples as accurate?** Yes, when a trained phlebotomist follows cold-chain protocols — which Aarvak's team does.
+
+**Can I do a full checkup while unwell?** Wait 5–7 days after a fever for accurate baseline values.
+
+Browse [health checkup packages](/departments/health-checkups) or [book at Aarvak](/contact-us#contact).`,
+    tags: ["Full Body Checkup", "Preventive Care", "Health Packages", "Gurugram"],
+  },
+  {
+    slug: "home-sample-collection-vs-lab-visit-which-to-choose",
+    img: "/images/blog-home-collection.jpg", date: "August 10, 2026", dateSort: "2026-08-10",
+    title: "Home Sample Collection vs Lab Visit: Which Should You Choose?",
+    desc: "A straightforward comparison of home sample collection and an in-centre visit, weighing accuracy and convenience rather than just price.",
+    author: "Aarvak Diagnostics", readTime: "5 min", category: "Services",
+    metaTitle: "Home Blood Test Collection vs Lab Visit in Gurugram | Aarvak Diagnostics",
+    metaDescription: "Home sample collection or lab visit — which is better? Compare accuracy, convenience and turnaround, and see when each option is right, from Aarvak Diagnostics.",
+    content: `Home sample collection has quietly become the default for routine testing in Gurugram. But there are still moments when walking into the centre is the smarter choice.
+
+## How Home Collection Works, Step by Step
+
+1. Book online or by phone with your preferred time slot
+2. A trained phlebotomist arrives with a sealed, cold-chain-ready kit
+3. Sample is collected using single-use, sterile vacutainers
+4. Samples travel back to the lab under temperature control
+5. Reports arrive by email/WhatsApp, usually the same day for routine tests
+
+## Accuracy: Does It Match In-Lab Testing?
+
+For the majority of tests — CBC, sugar, lipid profile, LFT, KFT, thyroid, vitamins — a properly handled home sample is as accurate as one drawn at the centre. What matters is the phlebotomist's training and cold-chain compliance, not the location.
+
+## When an In-Centre Visit Is Still Better
+
+- **Imaging:** X-ray, ultrasound, PFT and ECG must happen at the centre
+- **Special samples:** Glucose Tolerance Tests, timed urine collections, arterial blood gas
+- **Same-hour reports:** When you need results in hours, not by evening
+- **Physician review:** Full body checkups that bundle a doctor consultation
+
+## Booking & Turnaround Times
+
+- Home collection slots typically start at 6:30 AM for fasting samples
+- Most routine reports are ready within 6–8 hours
+- Specialised tests (hormones, cultures) may take 24–72 hours
+
+## FAQs
+
+**Is there a home collection charge?** Usually a small convenience fee, often waived above a threshold or in Aarvak service areas.
+
+**Which areas do you cover in Gurugram?** All major sectors, DLF phases, Sohna Road and Golf Course Road. See our [Sohna Road lab](/diagnostic-lab-sohna-road-gurugram) or check via [contact us](/contact-us#contact).
+
+Book a [home collection](/insights/blood-test-at-home-home-collection-gurugram) or visit Aarvak Diagnostics, Gurugram.`,
+    tags: ["Home Collection", "Lab Visit", "Convenience", "Gurugram"],
+  },
+  {
+    slug: "senior-citizen-health-checkups-preventive-guide-ageing-parents",
+    img: "/images/blog-preventive-india.png", date: "August 17, 2026", dateSort: "2026-08-17",
+    title: "Senior Citizen Health Checkups: A Preventive Care Guide for Ageing Parents",
+    desc: "Ahead of World Senior Citizens' Day, a guide for adult children on the checkups that matter most for ageing parents.",
+    author: "Aarvak Diagnostics", readTime: "6 min", category: "Preventive Care",
+    metaTitle: "Senior Citizen Health Checkup in Gurugram – Guide for Ageing Parents | Aarvak",
+    metaDescription: "A preventive care guide for ageing parents: which tests matter most after 60, how often to screen, and how to make testing easier at Aarvak Diagnostics, Gurugram.",
+    content: `Around World Senior Citizens' Day, most adult children realise the same thing: they know their parents' medicines but not their latest reports. A structured senior checkup fixes that.
+
+## Why Screening Needs Change With Age
+
+After 60, silent conditions — high blood pressure, prediabetes, low B12, thinning bones — quietly shape day-to-day energy and independence. Early detection turns most of them into manageable routines.
+
+## Tests That Matter Most After 60
+
+- **Cardiac:** Lipid profile, ECG, blood pressure, optional 2D Echo
+- **Diabetes:** Fasting sugar, HbA1c
+- **Kidney:** Creatinine, urea, eGFR, urine routine
+- **Liver:** LFT
+- **Bone & vitamins:** Vitamin D, Vitamin B12, calcium
+- **Thyroid:** TSH
+- **Cancer screening:** PSA (men), pap smear and mammography (women)
+- **Vision & hearing:** Baseline and annual review
+- **Bone density (DEXA):** Especially for post-menopausal women
+
+## How Often to Screen for Common Conditions
+
+- **Blood pressure:** Every visit / monthly at home
+- **Blood sugar & HbA1c:** Every 6 months if diabetic, annually otherwise
+- **Full checkup:** Annually
+- **Bone density:** Every 2 years after 60
+
+## Making Testing Easier for Elderly Parents
+
+- Choose morning [home sample collection](/insights/blood-test-at-home-home-collection-gurugram) to avoid queues
+- Group tests to reduce repeat pricks
+- Keep a single folder with past reports for trend comparison
+- Bring a family member to the centre for imaging appointments
+
+## FAQs
+
+**Do you offer senior-friendly slots?** Yes — priority appointments and wheelchair access at the centre.
+
+**Can reports be shared with the family doctor directly?** Yes, on request.
+
+Book a [senior health package](/departments/health-checkups) or [contact us](/contact-us#contact) to plan a yearly review.`,
+    tags: ["Senior Health", "Preventive Care", "Ageing Parents", "Gurugram"],
+  },
+  {
+    slug: "raksha-bandhan-gift-sibling-health-checkup",
+    img: "/images/blog-fathers-day-checkup.jpg", date: "August 21, 2026", dateSort: "2026-08-21",
+    title: "This Raksha Bandhan, Gift Your Sibling a Health Checkup, Not Just Sweets",
+    desc: "A timely angle for Raksha Bandhan: a health checkup voucher as a gift that actually protects your sibling.",
+    author: "Aarvak Diagnostics", readTime: "4 min", category: "Seasonal",
+    metaTitle: "Raksha Bandhan Health Checkup Gift Idea | Aarvak Diagnostics",
+    metaDescription: "Skip the sweets. Gift your sibling a preventive health checkup this Raksha Bandhan with Aarvak Diagnostics, Gurugram. Packages and how to book as a gift.",
+    content: `Rakhi is about protection. So why stop at a thread when you can gift the one thing that actually watches your sibling's back all year — a proper health checkup.
+
+## Why a Health Checkup Makes a Meaningful Gift
+
+- It catches lifestyle risks quietly building up in the 25–45 age bracket
+- Unlike sweets or gadgets, it protects the person you love
+- It sets a healthy annual tradition instead of a one-off gesture
+
+## Packages That Work Well as Gifts
+
+- **Young Adult (25–35):** CBC, sugar, lipid profile, LFT, KFT, TSH, urine routine, vitamin D and B12
+- **Working Professional (35–50):** Adds HbA1c, ECG, chest X-ray and stress markers
+- **Comprehensive:** Adds ultrasound abdomen and cardiac risk markers
+
+Browse the full range on the [Health Checkups page](/departments/health-checkups).
+
+## How to Book One as a Gift Voucher
+
+1. Pick a package that fits their age and lifestyle
+2. [Contact us](/contact-us#contact) to arrange a gift booking in their name
+3. Share a digital confirmation they can redeem at the centre or via home collection
+4. Add their preferred date, or leave it open for the year
+
+## Making It a Yearly Tradition
+
+Set a calendar reminder for next Rakhi to renew the checkup. Over five years, you build a trend line of their health — the most useful gift any doctor could ask to see.
+
+## FAQs
+
+**Can the report be shared with the sibling directly?** Yes — reports go straight to their email, keeping health data private.
+
+**Does it work for a brother in another city?** For now, gift bookings are honoured at our Gurugram centre.
+
+Make this Raksha Bandhan count — [book a gift checkup](/contact-us#contact) at Aarvak Diagnostics.`,
+    tags: ["Raksha Bandhan", "Gift", "Health Checkup", "Preventive Care"],
+  },
+  {
+    slug: "thyroid-testing-101-symptoms-tests-when-to-check",
+    img: "/images/blog-thyroid-india.jpg", date: "August 27, 2026", dateSort: "2026-08-27",
+    title: "Thyroid Testing 101: Symptoms, Tests & When to Get Checked",
+    desc: "Thyroid issues are widely underdiagnosed. Here are the common symptoms, which tests to ask for, and how often to retest.",
+    author: "Aarvak Diagnostics", readTime: "6 min", category: "Education",
+    metaTitle: "Thyroid Test Guide India – TSH, T3, T4 Explained | Aarvak Diagnostics",
+    metaDescription: "A practical thyroid testing guide for India: symptoms to watch, what TSH, T3 and T4 mean, and how often to screen — from Aarvak Diagnostics, Gurugram.",
+    content: `Thyroid disorders are among the most common yet under-diagnosed conditions in India. A simple blood test is often the difference between years of fatigue and a straightforward daily fix.
+
+## Common Thyroid Symptoms People Miss
+
+- Unexplained weight change
+- Constant tiredness despite full sleep
+- Hair thinning, dry skin, feeling cold
+- Anxiety, palpitations, tremors (in hyperthyroidism)
+- Irregular periods and fertility trouble
+- Brain fog and low mood
+
+## TSH, T3, T4: What Each Test Shows
+
+- **TSH (Thyroid Stimulating Hormone):** The screening test. High TSH usually means an underactive thyroid; low TSH means overactive.
+- **Free T4:** Confirms hypothyroidism and gauges severity.
+- **Free T3:** Useful in hyperthyroidism and specific autoimmune patterns.
+- **Anti-TPO antibodies:** Detects autoimmune (Hashimoto's or Graves') thyroid disease.
+
+A basic panel is TSH + Free T4. Add Free T3 and Anti-TPO if symptoms persist or TSH is borderline.
+
+## Who Should Get Screened and How Often
+
+- Anyone with symptoms above, at any age
+- Women planning pregnancy or in the first trimester
+- Everyone over 35, once every 2–3 years
+- Annually if you have a family history or existing autoimmune disease
+
+## Living With a Thyroid Condition
+
+Most thyroid issues are managed with a single daily tablet and 6–12 monthly monitoring. What matters is consistent timing, empty-stomach dosing and periodic retesting to adjust the dose.
+
+## FAQs
+
+**Do I need to fast?** Not required, but morning testing before your levothyroxine dose gives the most reliable TSH.
+
+**Why does my TSH keep fluctuating?** Illness, stress, iron/vitamin D deficiency, and even the time of day affect it. Retest under similar conditions.
+
+Book a [thyroid profile](/departments/health-checkups) or [contact us](/contact-us#contact) at Aarvak Diagnostics, Gurugram.`,
+    tags: ["Thyroid", "TSH", "T3", "T4", "Endocrinology"],
+  },
+  {
+    slug: "national-nutrition-week-vitamin-profile-tests-deficiencies",
+    img: "/images/blog-vitamin-d-summer.jpg", date: "September 3, 2026", dateSort: "2026-09-03",
+    title: "National Nutrition Week: How Diet & Vitamin Profile Tests Reveal Hidden Deficiencies",
+    desc: "For National Nutrition Week (1–7 September), a look at how vitamin and diet-related tests catch deficiencies before symptoms appear.",
+    author: "Aarvak Diagnostics", readTime: "6 min", category: "Awareness",
+    metaTitle: "Vitamin Deficiency Test India – National Nutrition Week Guide | Aarvak",
+    metaDescription: "For National Nutrition Week, learn how vitamin profile tests spot hidden deficiencies early. Book vitamin D, B12 and iron testing at Aarvak Diagnostics, Gurugram.",
+    content: `National Nutrition Week (1–7 September) is a reminder that what we eat quietly shapes how we feel. A vitamin profile turns that from guesswork into a plan.
+
+## What National Nutrition Week Is About
+
+Observed every September, it focuses on balanced diets, correcting deficiencies and building nutrition awareness across age groups.
+
+## Common Deficiencies in Urban Indian Diets
+
+- **Vitamin D:** Widespread despite the sun — indoor lifestyles and sunscreen play a role
+- **Vitamin B12:** Especially in vegetarians and vegans
+- **Iron & ferritin:** Common in women, adolescents and endurance exercisers
+- **Calcium and magnesium:** Often low in tea-heavy, dairy-light diets
+- **Vitamin B-complex and folate:** Depleted by stress and refined-grain diets
+
+## What a Vitamin Profile Test Includes
+
+A typical panel covers:
+
+- Vitamin D (25-OH)
+- Vitamin B12
+- Folate (Vitamin B9)
+- Iron studies (serum iron, ferritin, TIBC)
+- Calcium, magnesium, phosphorus
+- Optional: Vitamin B1, B6, homocysteine
+
+Pair it with a [CBC](/insights/understanding-cbc-complete-blood-count-test) to see anaemia patterns.
+
+## Turning Results Into a Diet Plan
+
+- **Low Vitamin D:** 15–20 minutes of morning sun plus supplementation as prescribed
+- **Low B12:** Fortified foods, dairy, eggs; oral or injectable supplements
+- **Low iron/ferritin:** Vitamin-C-rich meals with iron sources; treat underlying cause
+- **Low calcium:** Dairy, ragi, sesame, leafy greens
+
+Retest after 8–12 weeks to confirm the plan is working.
+
+## FAQs
+
+**Do I need to fast?** Overnight fasting improves accuracy when a lipid or sugar test is bundled in.
+
+**How often should I test?** Once a year for a baseline, every 3 months while correcting a deficiency.
+
+Book a vitamin profile or [full health checkup](/departments/health-checkups) via [contact us](/contact-us#contact) at Aarvak Diagnostics, Gurugram.`,
+    tags: ["Nutrition", "Vitamin D", "B12", "Iron", "National Nutrition Week"],
+  },
 ];
