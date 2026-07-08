@@ -1631,7 +1631,7 @@ Get your comprehensive metabolic assessment at [Aarvak Diagnostics](/contact-us#
   // ==========================================================================
   {
     slug: "monsoon-illnesses-gurugram-dengue-typhoid-viral-fever-tests",
-    img: "/images/blog-monsoon-fever.jpg",
+    img: "/images/blog-monsoon-fever-tests.jpg",
     date: "June 30, 2026", dateSort: "2026-06-30",
     title: "Monsoon Illnesses in Gurugram: Which Tests You Need for Dengue, Typhoid & Viral Fever",
     desc: "Monsoon season brings a real spike in vector-borne and waterborne illness. Which tests to book at the first sign of fever, and why early testing matters.",
