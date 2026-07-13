@@ -1,17 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    { "source": "/insights/vitamin-b12-deficiency-indian-vegetarians", "destination": "/insights/vitamin-b12-deficiency-indian-vegetarians-test", "statusCode": 301 },
-    { "source": "/insights/full-body-checkup-guide-what-included-how-often", "destination": "/insights/full-body-checkup-guide-what-is-included-gurugram", "statusCode": 301 },
-    { "source": "/insights/senior-citizen-health-checkups-preventive-care-guide", "destination": "/insights/senior-health-tests-over-60", "statusCode": 301 },
-    { "source": "/insights/thyroid-disorders-signs-symptoms-testing", "destination": "/insights/thyroid-disorders-indians-tsh-test-hidden-epidemic", "statusCode": 301 },
-    { "source": "/insights/thyroid-testing-101-symptoms-tests-when-to-check", "destination": "/insights/thyroid-disorders-indians-tsh-test-hidden-epidemic", "statusCode": 301 },
-    { "source": "/insights/corporate-health-checkups-employee-wellness", "destination": "/insights/corporate-health-audit-preventive-checkup-executives", "statusCode": 301 },
-    { "source": "/insights/corporate-health-checkup-packages-gurugram-employee-wellness", "destination": "/insights/corporate-health-audit-preventive-checkup-executives", "statusCode": 301 },
-    { "source": "/insights/dengue-malaria-typhoid-monsoon-tests", "destination": "/insights/monsoon-fever-dengue-malaria-typhoid-testing-gurugram", "statusCode": 301 },
-    { "source": "/insights/monsoon-illnesses-gurugram-dengue-typhoid-viral-fever-tests", "destination": "/insights/monsoon-fever-dengue-malaria-typhoid-testing-gurugram", "statusCode": 301 }
-  ],
   "rewrites": [
     { "source": "/google15956c59f9f74aad.html", "destination": "/google15956c59f9f74aad.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },

@@ -78,17 +78,10 @@ if (!existsSync(path.join(DIST, "index.html"))) {
   process.exit(1);
 }
 
-let browser;
-try {
-  browser = await puppeteer.launch({
-    headless: "new",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
-} catch (e) {
-  console.warn(`⚠ Skipping prerender — Chromium failed to launch: ${e.message}`);
-  server.close();
-  process.exit(0);
-}
+const browser = await puppeteer.launch({
+  headless: "new",
+  args: ["--no-sandbox", "--disable-setuid-sandbox"],
+});
 
 let ok = 0;
 let fail = 0;

@@ -741,7 +741,7 @@ If you slept less than 4 hours, worked a night shift, or had a feverish, restles
   },
   {
     slug: "vitamin-b12-deficiency-indian-vegetarians",
-    img: "/images/blog-b12-vegetarian.jpg",
+    img: "/images/blog-b12-vegetarians.jpg",
     date: "May 20, 2026",
     dateSort: "2026-05-20",
     title: "Vitamin B12 Deficiency in Indian Vegetarians: The Silent Epidemic",
