@@ -10,21 +10,21 @@ const taglineItems = [
 ];
 
 const whyChoose = [
-  "State-of-the-art imaging equipment",
-  "Experienced radiologists and technicians",
+  "Modern digital X-Ray imaging equipment",
+  "Experienced radiographers and technicians",
   "Fast turnaround time for reports",
-  "Advanced digital radiography services",
-  "Comprehensive network of diagnostic facilities",
+  "Digital radiography for Hip, Knee, Ankle & Chest",
+  "ECG and PFT services on-site",
   "Safe and patient-friendly imaging procedures",
 ];
 
 const detectList = [
-  "Bone fractures and joint conditions",
+  "Hip joint conditions and injuries",
+  "Knee joint conditions and injuries",
+  "Ankle joint conditions and injuries",
   "Chest and lung abnormalities",
-  "Respiratory health conditions",
-  "Internal organ imaging",
-  "Preventive health screening",
-  "Cardiac and pulmonary function assessment",
+  "Respiratory health conditions (via PFT)",
+  "Cardiac rhythm assessment (via ECG)",
 ];
 
 const services = [
