@@ -11,7 +11,7 @@ const buildFaqs = (loc: GeoLocation) => [
   },
   {
     q: `Do you offer home sample collection in ${loc.name}?`,
-    a: `Yes. We offer free home sample collection across ${loc.name} and surrounding areas including ${loc.nearby.slice(0, 2).join(" and ")}. Book online or call +91-9810063340 to schedule a slot.`,
+    a: `Yes. We offer free home sample collection across ${loc.name} and surrounding areas including ${loc.nearby.slice(0, 2).join(" and ")}. Book online or call +91-92663-33711 to schedule a slot.`,
   },
   {
     q: `What diagnostic tests are available for residents of ${loc.name}?`,
@@ -34,7 +34,7 @@ const GeoLocationPage = () => {
   if (!loc) return <Navigate to="/diagnostic-centre-gurugram" replace />;
 
   const title = `Diagnostic Centre in ${loc.name}, Gurugram | Aarvak Diagnostics`;
-  const description = `Aarvak Diagnostics is a trusted diagnostic centre near ${loc.name}, Gurugram offering pathology, radiology, health checkups & free home sample collection. Book online or call +91-9810063340.`;
+  const description = `Aarvak Diagnostics is a trusted diagnostic centre near ${loc.name}, Gurugram offering pathology, radiology, health checkups & free home sample collection. Book online or call +91-92663-33711.`;
   const canonical = `/diagnostic-centre-gurugram/${loc.slug}`;
 
   useSEO({
@@ -52,14 +52,14 @@ const GeoLocationPage = () => {
       areaServed: { "@type": "Place", name: `${loc.name}, Gurugram` },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "JMD Suburbio-2, Sector 67",
+        streetAddress: "Shop No.23, Ground Floor, Office No.S06, 5th Floor, Block-B, JMD Suburbio-2, Sector 67",
         addressLocality: "Gurugram",
         addressRegion: "Haryana",
         postalCode: "122018",
         addressCountry: "IN",
       },
       geo: { "@type": "GeoCoordinates", latitude: 28.413, longitude: 77.0432 },
-      telephone: "+91-9810063340",
+      telephone: "+91-92663-33711",
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -100,7 +100,7 @@ const GeoLocationPage = () => {
             <p className="text-base md:text-lg opacity-90 mb-6">NABL-standard pathology, radiology & free home sample collection serving {loc.name}.</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link to="/contact-us#contact" className="bg-aarvak-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">Book a Test Now</Link>
-              <a href="tel:+919810063340" className="bg-white text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Call +91-98100 63340</a>
+              <a href="tel:+919266333711" className="bg-white text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Call +91-92663 33711</a>
             </div>
           </div>
         </div>
