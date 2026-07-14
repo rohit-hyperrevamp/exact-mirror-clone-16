@@ -31,19 +31,24 @@ const services = [
   {
     icon: Zap,
     title: "X-Ray",
-    desc: "Advanced digital radiography services for bone fractures, chest exams, injury evaluation, and routine diagnostic imaging.",
+    desc: "Digital X-Ray imaging — available only for Hip Joint, Knee Joint, Ankle Joint and Chest.",
   },
   {
     icon: Wind,
     title: "PFT",
     desc: "Pulmonary Function Testing (PFT) for assessing lung health, breathing capacity, and respiratory performance.",
   },
+  {
+    icon: Activity,
+    title: "ECG",
+    desc: "Electrocardiogram (ECG) for assessing cardiac rhythm and basic heart function.",
+  },
 ];
 
 const faqs = [
   {
     q: "What is diagnostic radiology?",
-    a: "Diagnostic radiology uses imaging technologies such as X-rays and ultrasound to diagnose and monitor medical conditions.",
+    a: "Diagnostic radiology uses imaging technologies such as X-Ray to diagnose and monitor medical conditions. At Aarvak Diagnostics we offer X-Ray for Hip Joint, Knee Joint, Ankle Joint and Chest only.",
   },
   {
     q: "Do you provide digital radiography services?",
@@ -142,7 +147,7 @@ const Radiology = () => {
               Advanced Radiology &<br />Diagnostic Imaging
             </h2>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              Our radiology center offers a wide range of radiology diagnostic services including digital X-rays, ultrasound imaging, and allied diagnostic imaging support for accurate medical evaluation.
+              Our radiology centre offers digital X-Ray imaging along with ECG and PFT for accurate medical evaluation. Please note: our in-house X-Ray service covers only Hip Joint, Knee Joint, Ankle Joint and Chest X-Rays.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
               From routine scans to advanced diagnostic radiology procedures, our imaging services help doctors diagnose conditions early and plan effective treatment.
