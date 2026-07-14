@@ -77,7 +77,7 @@ const AboutUs = () => {
             <p className="mb-8 text-secondary font-medium text-[15px]">Quality, Care, And Consistency in Every Test.</p>
             <div className="space-y-6">
               {[
-                { title: "Clinical Integrity", desc: "100% Accurate, NABL-Standard Results You And Your Doctor Can Bank On." },
+                { title: "Clinical Integrity", desc: "Accurate Results Following NABL Protocols (Certification Application In Progress) — Reports You And Your Doctor Can Bank On." },
                 { title: "Painless Collection", desc: "Specialized Techniques For Kids And Seniors To Ensure Every Test Is Stress-Free." },
                 { title: "Absolute Ethics", desc: "No Hidden Costs, No Unnecessary Tests, And No Corporate Sales Targets." },
                 { title: "Global Standards", desc: "Bringing 30 Years Of International Healthcare Expertise To Your Local Community." },

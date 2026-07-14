@@ -8,7 +8,7 @@ import NotFound from "@/pages/NotFound";
 const buildFaqs = (loc: GeoLocation) => [
   {
     q: `Where is the nearest diagnostic centre to ${loc.name}?`,
-    a: `Aarvak Diagnostics is the nearest NABL-standard diagnostic centre to ${loc.name}, located at JMD Suburbio-2, Sector 67, Gurugram — ${loc.distance}. We serve all of ${loc.name} with both walk-in testing and free home sample collection.`,
+    a: `Aarvak Diagnostics is the nearest diagnostic centre to ${loc.name} following NABL protocols (certification application in progress), located at JMD Suburbio-2, Sector 67, Gurugram — ${loc.distance}. We serve all of ${loc.name} with both walk-in testing and free home sample collection.`,
   },
   {
     q: `Do you offer home sample collection in ${loc.name}?`,
@@ -105,7 +105,7 @@ const GeoLocationPage = () => {
           <div className="text-white max-w-3xl">
             <p className="text-sm uppercase tracking-widest opacity-80 mb-2">{loc.type === "sector" ? "Gurugram Sector" : "Gurugram"}</p>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">Diagnostic Centre in {loc.name}, Gurugram</h1>
-            <p className="text-base md:text-lg opacity-90 mb-6">NABL-standard pathology, radiology & free home sample collection serving {loc.name}.</p>
+            <p className="text-base md:text-lg opacity-90 mb-6">Pathology, radiology & free home sample collection serving {loc.name}. NABL protocols followed (certification in progress).</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link to="/contact-us#contact" className="bg-aarvak-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">Book a Test Now</Link>
               <a href="tel:+919266333711" className="bg-white text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Call +91-92663 33711</a>
@@ -152,7 +152,7 @@ const GeoLocationPage = () => {
             <Link to="/departments/pathology" className="text-cyan-700 underline">pathology and blood tests</Link>, advanced{" "}
             <Link to="/departments/radiology" className="text-cyan-700 underline">radiology and imaging</Link>, and curated{" "}
             <Link to="/departments/health-checkups" className="text-cyan-700 underline">full body health checkup packages in Gurugram</Link>{" "}
-            — with NABL-standard accuracy, same-day reports, and digital delivery via WhatsApp and email.
+            — following NABL protocols with same-day reports and digital delivery via WhatsApp and email.
           </p>
         </div>
 
@@ -199,7 +199,7 @@ const GeoLocationPage = () => {
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Why {loc.shortName} Chooses Aarvak Diagnostics</h2>
         <div className="grid md:grid-cols-2 gap-4 mb-14">
           {[
-            `NABL-standard quality with automated equipment for accurate results across ${loc.shortName}`,
+            `NABL protocols followed (certification in progress) with automated equipment for accurate results across ${loc.shortName}`,
             `Free home sample collection across ${loc.name} and nearby areas`,
             "Same-day reports for routine pathology; digital delivery on WhatsApp & email",
             "10+ years serving Gurugram with 4.8/5 patient rating from 200+ reviews",

@@ -45,7 +45,7 @@ const GeoDiagnosticCentreGurugram = () => {
     { q: "What services does Aarvak Diagnostics offer in Gurugram?", a: "We offer comprehensive pathology tests, radiology and imaging services, preventive health checkup packages, and convenient home sample collection across Gurugram." },
     { q: "Does Aarvak Diagnostics offer home sample collection in Gurugram?", a: "Yes, we offer home sample collection across all areas of Gurugram including Sector 67, Sohna Road, Golf Course Road, DLF, and surrounding localities." },
     { q: "What are the operating hours of Aarvak Diagnostics Gurugram?", a: "We are open Monday to Saturday from 7:00 AM to 9:00 PM. You can also book home collection at your preferred time slot." },
-    { q: "Is Aarvak Diagnostics in Gurugram NABL compliant?", a: "Yes, we follow strict NABL-standard protocols and use advanced automated equipment to ensure accurate and reliable diagnostic reports." },
+    { q: "Is Aarvak Diagnostics in Gurugram NABL certified?", a: "We follow NABL protocols and standards, and our NABL certification application has been submitted (accreditation currently in progress). We use advanced automated equipment to ensure accurate and reliable diagnostic reports." },
   ];
 
   return (
@@ -108,7 +108,7 @@ const GeoDiagnosticCentreGurugram = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {[
             { title: "Pathology & Lab Tests", desc: "Complete blood count, lipid profile, thyroid panel, liver & kidney function tests, and more.", link: "/pathology" },
-            { title: "Radiology & Imaging", desc: "Digital X-Ray, ultrasound, ECG, and other imaging services with expert interpretation.", link: "/radiology" },
+            { title: "Radiology & Imaging", desc: "Digital X-Ray (Hip Joint, Knee Joint, Ankle Joint & Chest), PFT and ECG with expert interpretation.", link: "/radiology" },
             { title: "Health Checkup Packages", desc: "Preventive screening packages from ₹599 to ₹2,999 for individuals and families.", link: "/health-checkups" },
             { title: "Home Sample Collection", desc: "Professional phlebotomists visit your home across Gurugram for convenient testing.", link: "/contact-us#contact" },
             { title: "Corporate Health Programs", desc: "Customised wellness programs for companies across Gurugram and NCR region.", link: "/corporate" },

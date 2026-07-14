@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min",
     category: "Wellness",
     metaTitle: "Monsoon Fever Panel in Gurugram – Dengue, Malaria, Typhoid | Aarvak",
-    metaDescription: "Confused between dengue, malaria or typhoid? Book a monsoon fever panel at Aarvak Diagnostics Gurugram with home sample collection and fast NABL-standard reports.",
+    metaDescription: "Confused between dengue, malaria or typhoid? Book a monsoon fever panel at Aarvak Diagnostics Gurugram with home sample collection and fast reports (NABL protocols followed; certification in progress).",
     content: `Every Gurugram monsoon brings a spike in fevers that look identical on day one — high temperature, body ache, headache, weakness. The tricky part is that dengue, malaria, typhoid and seasonal viral fevers each need very different treatment. Guessing wastes days; a targeted [fever panel](/departments/pathology) at Aarvak Diagnostics gives you a clear answer within hours.
 
 ## Why Monsoon Fevers Are Hard to Self-Diagnose
@@ -57,7 +57,7 @@ A standard Aarvak fever workup covers the common culprits in one sample:
 
 ## Fast, Safe Testing Without Leaving Home
 
-During heavy rain, stepping out with fever is the last thing you want. Aarvak Diagnostics offers [home sample collection across Gurugram](/insights/blood-test-at-home-home-collection-gurugram), NABL-standard processing, and digital reports usually the same day. Share the report with your doctor to start the right treatment immediately.
+During heavy rain, stepping out with fever is the last thing you want. Aarvak Diagnostics offers [home sample collection across Gurugram](/insights/blood-test-at-home-home-collection-gurugram), processing that follows NABL protocols (certification application in progress), and digital reports usually the same day. Share the report with your doctor to start the right treatment immediately.
 
 [Book a monsoon fever panel](/contact-us#contact) or call our team to get a phlebotomist at your door within the hour.`,
     tags: ["Fever Panel", "Dengue", "Malaria", "Typhoid", "Monsoon", "Gurugram"],
@@ -111,7 +111,7 @@ Higher-tier packages also add markers like HbA1c trends, CRP for inflammation, a
 
 Aarvak offers tiered ADC packages — Basic, Essential, Essential Plus, Advanced and Comprehensive — so you only pay for what you need. See the [full list of health packages](/departments/health-checkups) or [talk to our team](/contact-us#contact) for a personalised recommendation.
 
-[Book a full body checkup in Gurugram](/contact-us#contact) with NABL-standard testing and free home sample collection.`,
+[Book a full body checkup in Gurugram](/contact-us#contact) — testing follows NABL protocols (certification in progress) and free home sample collection is included.`,
     tags: ["Full Body Checkup", "Health Package", "Preventive Health", "Gurugram"],
   },
   {
@@ -349,8 +349,8 @@ Cutting out random foods without testing often causes nutritional gaps without s
 - **Thyroid Profile**
 - **Vitamin D & B12**
 - **PSA (Prostate Specific Antigen)** for age 50+
-- **ECG and Echo (TMT optional)** — see our [Radiology services](/radiology)
-- **Chest X-Ray** for smokers/ex-smokers
+- **ECG** — see our [Radiology services](/radiology)
+- **Chest X-Ray** for smokers/ex-smokers (chest X-Ray available on-site)
 - **Abdominal Ultrasound** — picks up fatty liver, gallstones, kidney stones
 
 ## Add-On Tests Worth Considering
@@ -535,7 +535,7 @@ Reversal must be doctor-supervised. Stopping insulin or sulfonylureas suddenly i
     readTime: "6 min",
     category: "Wellness",
     metaTitle: "Cardiac Test for Young Adults in Gurugram | Aarvak",
-    metaDescription: "Worried about heart attacks in young Indians? Book a cardiac screening at Aarvak Diagnostics Gurugram — lipid profile, hs-CRP, Lp(a), ECG & echo.",
+    metaDescription: "Worried about heart attacks in young Indians? Book a cardiac screening at Aarvak Diagnostics Gurugram — lipid profile, hs-CRP, Lp(a) and ECG.",
     content: `Indians develop heart disease 10 years earlier than other populations, and cardiac events in people under 40 are no longer rare. The good news: most early heart disease can be detected — and reversed — long before it becomes an emergency.
 
 ## 7 Warning Signs You Shouldn't Ignore
@@ -557,7 +557,7 @@ Reversal must be doctor-supervised. Stopping insulin or sulfonylureas suddenly i
 - **Homocysteine** — elevated in some young Indian heart attack patients
 - **TSH** — thyroid affects cholesterol and rhythm
 - **NT-proBNP** — early heart strain
-- **ECG, Echo and TMT** — see our [Radiology services](/radiology)
+- **ECG** — see our [Radiology services](/radiology)
 
 ## Who Should Test, and When
 
@@ -1301,7 +1301,7 @@ We offer convenient [home sample collection](/insights/home-sample-collection-be
 - **hs-CRP** for inflammation markers
 - **Lipoprotein(a)** — a hidden genetic risk factor
 - **HbA1c** for diabetes screening
-- **ECG and Echo** if symptoms or family history
+- **ECG** if symptoms or family history
 
 ## Lifestyle Habits That Protect
 
@@ -1877,7 +1877,7 @@ Here's what Aarvak Diagnostics ensures:
 - **Sterile, single-use equipment** for every collection
 - **Proper identification and labelling** of samples at the point of collection
 - **Temperature-controlled transport kits** to maintain sample integrity
-- **Adherence to NABL-equivalent quality standards** throughout the process
+- **Adherence to established laboratory quality standards** (NABL protocols followed; certification application in progress) throughout the process
 
 We treat every home visit with the same level of professionalism and hygiene that you'd experience at our diagnostic centres.
 
@@ -2218,10 +2218,8 @@ Doctors choose based on what they need to examine — not randomly.
 ## Medical Imaging for Diagnosis: Choosing the Right Tool
 
 Medical imaging for diagnosis works like selecting the right tool for the job:
-- X-rays for bone issues
-- Ultrasounds for organs and fluid
-- CT scans for detailed cross-sections
-- MRI scans for soft tissues and nerves
+- X-rays for bone and chest issues (at Aarvak Diagnostics we offer X-Ray for Hip Joint, Knee Joint, Ankle Joint and Chest)
+- Ultrasounds for organs and fluid (referral-based)
 
 Each test answers a specific question.
 

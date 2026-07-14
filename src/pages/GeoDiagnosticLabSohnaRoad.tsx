@@ -36,7 +36,7 @@ const GeoDiagnosticLabSohnaRoad = () => {
   const faqs = [
     { q: "Where is the nearest diagnostic lab to Sohna Road in Gurugram?", a: "Aarvak Diagnostics is located in JMD Suburbio-2, Sector 67, just minutes from Sohna Road. We serve patients from Sohna Road, Sector 48-68, Nirvana Country, and surrounding areas." },
     { q: "Can I get home sample collection near Sohna Road?", a: "Yes, we provide home sample collection across all Sohna Road localities. Our trained phlebotomist visits your home at your chosen time for convenient blood sample collection." },
-    { q: "What tests are available at Aarvak Diagnostics near Sohna Road?", a: "We offer a full range of pathology tests (CBC, thyroid, lipid profile, liver & kidney function), radiology services (X-ray, ultrasound, ECG), and preventive health checkup packages." },
+    { q: "What tests are available at Aarvak Diagnostics near Sohna Road?", a: "We offer a full range of pathology tests (CBC, thyroid, lipid profile, liver & kidney function), radiology services (Digital X-Ray for Hip Joint, Knee Joint, Ankle Joint & Chest, plus PFT and ECG), and preventive health checkup packages." },
     { q: "How quickly can I get my test reports?", a: "Most routine blood test reports are delivered within 6-12 hours via WhatsApp and email. Specialised tests may take 24-48 hours." },
     { q: "Do you offer health checkup packages near Sohna Road?", a: "Yes, we offer multiple health checkup packages starting from ₹599, covering essential blood tests, organ function panels, and comprehensive wellness screenings." },
   ];
@@ -95,7 +95,7 @@ const GeoDiagnosticLabSohnaRoad = () => {
             If you're looking for a reliable diagnostic lab near Sohna Road in Gurugram, Aarvak Diagnostics is your nearest trusted option. Located in Sector 67, we serve patients from Sohna Road, South City, Nirvana Country, Malibu Town, and all nearby residential and commercial areas.
           </p>
           <p className="text-gray-700 leading-relaxed mt-4">
-            Our centre offers a complete range of <Link to="/pathology" className="text-cyan-700 underline">pathology services</Link> including blood tests, urine analysis, and specialised panels. We also provide <Link to="/radiology" className="text-cyan-700 underline">radiology and imaging</Link> services including digital X-rays, ultrasound, and ECG.
+            Our centre offers a complete range of <Link to="/pathology" className="text-cyan-700 underline">pathology services</Link> including blood tests, urine analysis, and specialised panels. We also provide <Link to="/radiology" className="text-cyan-700 underline">radiology and imaging</Link> services including digital X-Ray (Hip Joint, Knee Joint, Ankle Joint & Chest only), PFT and ECG.
           </p>
           <p className="text-gray-700 leading-relaxed mt-4">
             For those who prefer testing from home, our <Link to="/insights/home-sample-collection-benefits-safety-how-it-works" className="text-cyan-700 underline">home sample collection</Link> service covers all Sohna Road localities with trained phlebotomists and temperature-controlled transport.

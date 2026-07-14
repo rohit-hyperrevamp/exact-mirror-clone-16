@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CheckCircle, Zap, Wind } from "lucide-react";
+import { CheckCircle, Zap, Wind, Activity } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
 import useSEO from "@/hooks/useSEO";
 
@@ -10,40 +10,45 @@ const taglineItems = [
 ];
 
 const whyChoose = [
-  "State-of-the-art imaging equipment",
-  "Experienced radiologists and technicians",
+  "Modern digital X-Ray imaging equipment",
+  "Experienced radiographers and technicians",
   "Fast turnaround time for reports",
-  "Advanced digital radiography services",
-  "Comprehensive network of diagnostic facilities",
+  "Digital radiography for Hip, Knee, Ankle & Chest",
+  "ECG and PFT services on-site",
   "Safe and patient-friendly imaging procedures",
 ];
 
 const detectList = [
-  "Bone fractures and joint conditions",
+  "Hip joint conditions and injuries",
+  "Knee joint conditions and injuries",
+  "Ankle joint conditions and injuries",
   "Chest and lung abnormalities",
-  "Respiratory health conditions",
-  "Internal organ imaging",
-  "Preventive health screening",
-  "Cardiac and pulmonary function assessment",
+  "Respiratory health conditions (via PFT)",
+  "Cardiac rhythm assessment (via ECG)",
 ];
 
 const services = [
   {
     icon: Zap,
     title: "X-Ray",
-    desc: "Advanced digital radiography services for bone fractures, chest exams, injury evaluation, and routine diagnostic imaging.",
+    desc: "Digital X-Ray imaging — available only for Hip Joint, Knee Joint, Ankle Joint and Chest.",
   },
   {
     icon: Wind,
     title: "PFT",
     desc: "Pulmonary Function Testing (PFT) for assessing lung health, breathing capacity, and respiratory performance.",
   },
+  {
+    icon: Activity,
+    title: "ECG",
+    desc: "Electrocardiogram (ECG) for assessing cardiac rhythm and basic heart function.",
+  },
 ];
 
 const faqs = [
   {
     q: "What is diagnostic radiology?",
-    a: "Diagnostic radiology uses imaging technologies such as X-rays and ultrasound to diagnose and monitor medical conditions.",
+    a: "Diagnostic radiology uses imaging technologies such as X-Ray to diagnose and monitor medical conditions. At Aarvak Diagnostics we offer X-Ray for Hip Joint, Knee Joint, Ankle Joint and Chest only.",
   },
   {
     q: "Do you provide digital radiography services?",
@@ -51,7 +56,7 @@ const faqs = [
   },
   {
     q: "What is included in radiology diagnostic services?",
-    a: "Radiology diagnostic services may include X-rays, ultrasound, PFT, TMT, ECHO, and other imaging procedures.",
+    a: "Our radiology diagnostic services include X-Ray (Hip Joint, Knee Joint, Ankle Joint and Chest only), ECG, and PFT (Pulmonary Function Test).",
   },
   {
     q: "What is the radiology test price?",
@@ -142,13 +147,13 @@ const Radiology = () => {
               Advanced Radiology &<br />Diagnostic Imaging
             </h2>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
-              Our radiology center offers a wide range of radiology diagnostic services including digital X-rays, ultrasound imaging, and allied diagnostic imaging support for accurate medical evaluation.
+              Our radiology centre offers digital X-Ray imaging along with ECG and PFT for accurate medical evaluation. Please note: our in-house X-Ray service covers only Hip Joint, Knee Joint, Ankle Joint and Chest X-Rays.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">
               From routine scans to advanced diagnostic radiology procedures, our imaging services help doctors diagnose conditions early and plan effective treatment.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-8">
-              We also provide allied diagnostic services like TMT, ECHO, Ultrasound, and other radiology lab services through our trusted channel partners.
+              Our in-house X-Ray service is limited to Hip Joint, Knee Joint, Ankle Joint and Chest X-Rays only. Alongside this we offer ECG and PFT (Pulmonary Function Test). We do not currently offer MRI, CT, ultrasound, ECHO or TMT.
             </p>
 
             <h3 className="text-xl font-bold text-foreground mb-5">Why Choose Our Radiology Services</h3>
