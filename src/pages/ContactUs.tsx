@@ -97,13 +97,15 @@ const ContactUs = () => {
               <div className="space-y-6">
                 <div>
                   <h4 className="font-bold text-lg mb-2">Visit Us</h4>
-                   <p className="text-sm opacity-80">Shop No.23, Ground Floor, Office No.S06, 5th Floor,</p>
-                   <p className="text-sm opacity-80">Block-B, JMD Suburbio-2, Sector-67, Gurugram</p>
+                    <p className="text-sm opacity-80">Shop No.23, Ground Floor, Office No.S06, 5th Floor,</p>
+                    <p className="text-sm opacity-80">Block-B, JMD Suburbio-2, Sector-67, Gurugram</p>
                 </div>
                 <hr className="border-white/20" />
                 <div>
                   <h4 className="font-bold text-lg mb-2">Call Us</h4>
-                  <a href="tel:9810063340" className="text-sm opacity-80 hover:opacity-100">+91 9810063340</a>
+                  <a href="tel:+919266333711" className="text-sm opacity-80 hover:opacity-100">+91 92663 33711</a>
+                  <br />
+                  <a href="tel:+919810063340" className="text-sm opacity-80 hover:opacity-100">+91 9810063340</a>
                 </div>
                 <hr className="border-white/20" />
                 <div>
