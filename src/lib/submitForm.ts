@@ -83,6 +83,15 @@ async function invokeSendEmail(payload: EmailPayload, successMessage: string) {
       throw new Error(data.error || "Email delivery failed");
     }
 
+    // GA4 conversion event
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+    if (typeof w.gtag === "function") {
+      w.gtag("event", payload.type === "subscribe" ? "newsletter_signup" : "generate_lead", {
+        event_category: "engagement",
+        event_label: payload.type,
+      });
+    }
+
     toast.success(successMessage);
     return true;
   } catch (err) {
