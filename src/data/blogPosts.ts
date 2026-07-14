@@ -16,6 +16,53 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "monsoon-fever-panel-dengue-malaria-typhoid-gurugram",
+    img: "/images/blog-monsoon-fever-panel.jpg",
+    date: "June 30, 2026",
+    dateSort: "2026-06-30",
+    title: "Monsoon Fever in Gurugram? Why a Fever Panel Beats Guessing the Cause",
+    desc: "Dengue, malaria, typhoid and viral fevers all start the same way. A monsoon fever panel at Aarvak Diagnostics helps pinpoint the cause fast.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Wellness",
+    metaTitle: "Monsoon Fever Panel in Gurugram – Dengue, Malaria, Typhoid | Aarvak",
+    metaDescription: "Confused between dengue, malaria or typhoid? Book a monsoon fever panel at Aarvak Diagnostics Gurugram with home sample collection and fast NABL-standard reports.",
+    content: `Every Gurugram monsoon brings a spike in fevers that look identical on day one — high temperature, body ache, headache, weakness. The tricky part is that dengue, malaria, typhoid and seasonal viral fevers each need very different treatment. Guessing wastes days; a targeted [fever panel](/departments/pathology) at Aarvak Diagnostics gives you a clear answer within hours.
+
+## Why Monsoon Fevers Are Hard to Self-Diagnose
+
+- **Overlapping symptoms** — fever, chills and fatigue appear in all four
+- **Mosquito-borne surge** — waterlogging in sectors across Gurugram increases dengue and malaria risk
+- **Contaminated water & food** — raises typhoid and gastroenteritis cases
+- **Self-medication risk** — painkillers like ibuprofen can be dangerous if it's actually dengue
+
+## What a Monsoon Fever Panel Includes
+
+A standard Aarvak fever workup covers the common culprits in one sample:
+
+- **CBC with Platelet Count** — falling platelets are an early dengue clue
+- **Dengue NS1 Antigen** (day 1–5) and **IgM/IgG** (after day 5)
+- **Malaria Parasite (MP) Smear & Rapid Antigen** — detects P. vivax and P. falciparum
+- **Typhoid** — Widal and/or Typhi-Dot IgM for early detection
+- **CRP & ESR** — general markers of infection and inflammation
+- **[Liver Function Test (LFT)](/insights/liver-kidney-health-lft-kft-tests)** — dengue and typhoid often affect the liver
+- **Urine routine** — rules out UTI presenting as fever
+
+## When to Book the Test
+
+- Fever above 100 °F lasting more than 24 hours
+- Severe body ache, retro-orbital pain, or rash
+- Vomiting, abdominal pain, or reduced urine output
+- Any fever in children, elderly, or people with diabetes/heart disease — do not wait
+
+## Fast, Safe Testing Without Leaving Home
+
+During heavy rain, stepping out with fever is the last thing you want. Aarvak Diagnostics offers [home sample collection across Gurugram](/insights/blood-test-at-home-home-collection-gurugram), NABL-standard processing, and digital reports usually the same day. Share the report with your doctor to start the right treatment immediately.
+
+[Book a monsoon fever panel](/contact-us#contact) or call our team to get a phlebotomist at your door within the hour.`,
+    tags: ["Fever Panel", "Dengue", "Malaria", "Typhoid", "Monsoon", "Gurugram"],
+  },
+  {
     slug: "full-body-checkup-guide-what-is-included-gurugram",
     img: "/images/blog-full-body-checkup.jpg",
     date: "July 5, 2026",
