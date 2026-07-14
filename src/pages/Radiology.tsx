@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: "What is included in radiology diagnostic services?",
-    a: "Radiology diagnostic services may include X-rays, ultrasound, PFT, TMT, ECHO, and other imaging procedures.",
+    a: "Our radiology diagnostic services include X-Ray (Hip Joint, Knee Joint, Ankle Joint and Chest only), ECG, and PFT (Pulmonary Function Test).",
   },
   {
     q: "What is the radiology test price?",
@@ -148,7 +148,7 @@ const Radiology = () => {
               From routine scans to advanced diagnostic radiology procedures, our imaging services help doctors diagnose conditions early and plan effective treatment.
             </p>
             <p className="text-muted-foreground leading-relaxed text-[15px] mb-8">
-              We also provide allied diagnostic services like TMT, ECHO, Ultrasound, and other radiology lab services through our trusted channel partners.
+              Our in-house X-Ray service is limited to Hip Joint, Knee Joint, Ankle Joint and Chest X-Rays only. Alongside this we offer ECG and PFT (Pulmonary Function Test). We do not currently offer MRI, CT, ultrasound, ECHO or TMT.
             </p>
 
             <h3 className="text-xl font-bold text-foreground mb-5">Why Choose Our Radiology Services</h3>
