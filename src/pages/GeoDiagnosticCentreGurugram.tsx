@@ -122,12 +122,18 @@ const GeoDiagnosticCentreGurugram = () => {
           ))}
         </div>
 
-        {/* Areas Served */}
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Areas We Serve in Gurugram</h2>
-        <div className="flex flex-wrap gap-3 mb-16">
-          {["Sector 67", "Sector 56", "Sector 49", "Sector 45", "Sector 57", "Sector 82", "Sohna Road", "Golf Course Road", "Golf Course Extension Road", "DLF Phase 1-5", "South City", "Huda City Centre", "MG Road", "Sector 14", "Nirvana Country", "Malibu Town"].map((area) => (
-            <span key={area} className="text-sm bg-cyan-50 text-cyan-700 px-4 py-2 rounded-full border border-cyan-200">{area}</span>
-          ))}
+        {/* Local Hubs */}
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Our Gurugram Diagnostic Hubs</h2>
+        <p className="text-gray-600 mb-6 text-sm">Two dedicated hub pages cover our full Gurugram service area. Pick the one nearest to you.</p>
+        <div className="grid md:grid-cols-2 gap-5 mb-16">
+          <Link to="/diagnostic-centre-gurugram/sector-67" className="p-6 border border-gray-200 rounded-2xl hover:border-cyan-400 hover:shadow-md transition group">
+            <h3 className="font-bold text-gray-900 group-hover:text-cyan-700 transition">Sector 67 Hub</h3>
+            <p className="text-sm text-gray-600 mt-1.5">Our flagship lab at JMD Suburbio-2. Covers the Golf Course Extension Road corridor and neighbouring sectors.</p>
+          </Link>
+          <Link to="/diagnostic-centre-gurugram/sohna-road" className="p-6 border border-gray-200 rounded-2xl hover:border-cyan-400 hover:shadow-md transition group">
+            <h3 className="font-bold text-gray-900 group-hover:text-cyan-700 transition">Sohna Road Hub</h3>
+            <p className="text-sm text-gray-600 mt-1.5">Serves the Sohna Road belt including Nirvana Country, Malibu Town and South City 2.</p>
+          </Link>
         </div>
 
         {/* Reviews */}
