@@ -60,7 +60,7 @@ const AboutUs = () => {
             <h2 className="text-3xl md:text-[38px] font-bold text-foreground mb-4">Who We Are</h2>
             <p className="mb-6 text-secondary font-medium text-[15px]">Reliable Diagnostics With A Patient-First Approach.</p>
             <p className="text-muted-foreground leading-relaxed text-[15px]">
-              <strong className="text-foreground">World-Class Standards. Neighborhood Accessibility.</strong> Since 2015, Aarvak Has Been Gurgaon's "Neighborhood Lab With A Global Brain." We bridge the gap between high-precision diagnostics and the personalised care of a local clinic. Operating From <strong className="text-foreground">Sector 67 (JMD Suburbia - 2) And Badshahpur</strong>, We Don't Just Process Samples, We Provide The Clarity Families Need To Make Informed Health Decisions.
+              <strong className="text-foreground">World-Class Standards. Neighborhood Accessibility.</strong> Since 2015, Aarvak Has Been Gurgaon's "Neighborhood Lab With A Global Brain." We bridge the gap between high-precision diagnostics and the personalised care of a local clinic. Operating From <strong className="text-foreground">Shop No.23, Ground Floor, Office No.S06, 5th Floor, Block-B, JMD Suburbio-2, Sector-67, Gurugram</strong>, We Don't Just Process Samples, We Provide The Clarity Families Need To Make Informed Health Decisions.
             </p>
           </div>
           <div className="lg:w-1/2">

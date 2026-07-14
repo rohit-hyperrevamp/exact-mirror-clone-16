@@ -11,7 +11,7 @@ const buildFaqs = (loc: GeoLocation) => [
   },
   {
     q: `Do you offer home sample collection in ${loc.name}?`,
-    a: `Yes. We offer free home sample collection across ${loc.name} and surrounding areas including ${loc.nearby.slice(0, 2).join(" and ")}. Book online or call +91-9810063340 to schedule a slot.`,
+    a: `Yes. We offer free home sample collection across ${loc.name} and surrounding areas including ${loc.nearby.slice(0, 2).join(" and ")}. Book online or call +91-92663-33711 to schedule a slot.`,
   },
   {
     q: `What diagnostic tests are available for residents of ${loc.name}?`,
@@ -34,7 +34,7 @@ const GeoLocationPage = () => {
   if (!loc) return <Navigate to="/diagnostic-centre-gurugram" replace />;
 
   const title = `Diagnostic Centre in ${loc.name}, Gurugram | Aarvak Diagnostics`;
-  const description = `Aarvak Diagnostics is a trusted diagnostic centre near ${loc.name}, Gurugram offering pathology, radiology, health checkups & free home sample collection. Book online or call +91-9810063340.`;
+  const description = `Aarvak Diagnostics is a trusted diagnostic centre near ${loc.name}, Gurugram offering pathology, radiology, health checkups & free home sample collection. Book online or call +91-92663-33711.`;
   const canonical = `/diagnostic-centre-gurugram/${loc.slug}`;
 
   useSEO({
@@ -52,14 +52,14 @@ const GeoLocationPage = () => {
       areaServed: { "@type": "Place", name: `${loc.name}, Gurugram` },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "JMD Suburbio-2, Sector 67",
+        streetAddress: "Shop No.23, Ground Floor, Office No.S06, 5th Floor, Block-B, JMD Suburbio-2, Sector 67",
         addressLocality: "Gurugram",
         addressRegion: "Haryana",
         postalCode: "122018",
         addressCountry: "IN",
       },
       geo: { "@type": "GeoCoordinates", latitude: 28.413, longitude: 77.0432 },
-      telephone: "+91-9810063340",
+      telephone: "+91-92663-33711",
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -100,7 +100,7 @@ const GeoLocationPage = () => {
             <p className="text-base md:text-lg opacity-90 mb-6">NABL-standard pathology, radiology & free home sample collection serving {loc.name}.</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link to="/contact-us#contact" className="bg-aarvak-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">Book a Test Now</Link>
-              <a href="tel:+919810063340" className="bg-white text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Call +91-98100 63340</a>
+              <a href="tel:+919266333711" className="bg-white text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Call +91-92663 33711</a>
             </div>
           </div>
         </div>
@@ -120,7 +120,8 @@ const GeoLocationPage = () => {
             <Phone className="w-7 h-7 text-cyan-600 flex-shrink-0" />
             <div>
               <h3 className="font-bold text-gray-900">Book from {loc.shortName}</h3>
-              <p className="text-gray-600 text-sm mt-1">+91 9810063340</p>
+              <p className="text-gray-600 text-sm mt-1">+91 92663 33711</p>
+              <p className="text-gray-600 text-sm">+91 9810063340</p>
               <p className="text-gray-600 text-sm">marketing@aarvakdiagnostics.com</p>
             </div>
           </div>
@@ -222,7 +223,7 @@ const GeoLocationPage = () => {
           <p className="text-cyan-100 mb-6 max-w-2xl mx-auto">Accurate reports, quick turnaround, and free home sample collection across {loc.name} and Gurugram.</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link to="/contact-us#contact" className="bg-white text-cyan-700 px-8 py-3 rounded-full font-semibold hover:bg-cyan-50 transition">Book Now</Link>
-            <a href="tel:+919810063340" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">Call +91-98100 63340</a>
+            <a href="tel:+919266333711" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">Call +91-92663 33711</a>
           </div>
         </div>
 

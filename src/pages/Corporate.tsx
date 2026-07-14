@@ -198,14 +198,14 @@ const Corporate = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Contact Us</h2>
           <div className="space-y-4 text-[15px]">
             <p><strong className="text-foreground">Phone:</strong>{" "}
+              <a href="tel:+919266333711" className="text-secondary hover:underline">+91 92663 33711</a>
+              {" / "}
               <a href="tel:+919810063340" className="text-secondary hover:underline">+91 9810063340</a>
-              {" | "}
-              <a href="tel:+919311245957" className="text-secondary hover:underline">+91 9311245957</a>
             </p>
             <p><strong className="text-foreground">Email:</strong>{" "}
-              <a href="mailto:aarvakdiagnostic@gmail.com" className="text-secondary hover:underline">aarvakdiagnostic@gmail.com</a>
+              <a href="mailto:marketing@aarvakdiagnostics.com" className="text-secondary hover:underline">marketing@aarvakdiagnostics.com</a>
             </p>
-            <p><strong className="text-foreground">Visit Us:</strong> 1310, Behind SBI Bank, Badshahpur, Sohna Road, Sector – 66, Gurugram</p>
+            <p><strong className="text-foreground">Visit Us:</strong> Shop No.23, Ground Floor, Office No.S06, 5th Floor, Block-B, JMD Suburbio-2, Sector-67, Gurugram</p>
           </div>
           <p className="mt-8 font-bold text-foreground text-lg">Get a Free Consultation</p>
           <p className="mt-2 text-sm text-muted-foreground">Reach out today to discuss your corporate health solutions.</p>

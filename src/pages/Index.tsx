@@ -128,8 +128,8 @@ const testimonials = [
 ];
 
 const faqs = [
-  { q: "How do I book a Home Collection?", a: "You can book instantly via WhatsApp (+91 9810063340) or our website. Our trained phlebotomists arrive within 60–90 minutes across Gurgaon with a temperature-controlled box to ensure sample freshness." },
-  { q: "Do you collect samples from home?", a: "Yes, we offer Home Sample Collection across Gurgaon. Just call or WhatsApp us at +91 9810063340 to book a slot." },
+  { q: "How do I book a Home Collection?", a: "You can book instantly via WhatsApp (+91 92663 33711) or our website. Our trained phlebotomists arrive within 60–90 minutes across Gurgaon with a temperature-controlled box to ensure sample freshness." },
+  { q: "Do you collect samples from home?", a: "Yes, we offer Home Sample Collection across Gurgaon. Just call or WhatsApp us at +91 92663 33711 to book a slot." },
   { q: "When will I receive my reports?", a: "Most routine blood test reports are delivered via WhatsApp and Email within 6 to 12 hours." },
   { q: "Is Aarvak Diagnostics NABL/ISO compliant?", a: "We follow strict NABL-standard protocols and use automated, high-end machinery to ensure accurate and reliable reports accepted by all major doctors and hospitals." },
   { q: "Do I need to fast before my blood test?", a: "For most tests such as Sugar or Cholesterol, 10–12 hours of fasting is recommended. You may drink plain water but avoid tea, coffee, or snacks." },

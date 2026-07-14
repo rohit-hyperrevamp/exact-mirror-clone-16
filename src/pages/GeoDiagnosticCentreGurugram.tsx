@@ -18,14 +18,14 @@ const GeoDiagnosticCentreGurugram = () => {
       "description": "Trusted diagnostic centre in Gurugram offering pathology, radiology, health checkups and home sample collection services.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "JMD Suburbio-2, Sector 67",
+        "streetAddress": "Shop No.23, Ground Floor, Office No.S06, 5th Floor, Block-B, JMD Suburbio-2, Sector 67",
         "addressLocality": "Gurugram",
         "addressRegion": "Haryana",
         "postalCode": "122018",
         "addressCountry": "IN"
       },
       "geo": { "@type": "GeoCoordinates", "latitude": 28.413, "longitude": 77.0432 },
-      "telephone": "+91-9810063340",
+      "telephone": "+91-92663-33711",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -79,7 +79,8 @@ const GeoDiagnosticCentreGurugram = () => {
             <Phone className="w-8 h-8 text-cyan-600 flex-shrink-0" />
             <div>
               <h3 className="font-bold text-gray-900">Contact Us</h3>
-              <p className="text-gray-600 text-sm mt-1">+91 9810063340</p>
+              <p className="text-gray-600 text-sm mt-1">+91 92663 33711</p>
+              <p className="text-gray-600 text-sm">+91 9810063340</p>
               <p className="text-gray-600 text-sm">marketing@aarvakdiagnostics.com</p>
             </div>
           </div>
