@@ -20,7 +20,7 @@ const SocialSidebar = () => {
         <Instagram className="w-5 h-5" style={{ color: '#E4405F' }} />
       </a>
       <a
-        href="https://wa.me/919810063340"
+        href="https://wa.me/919266333711"
         target="_blank"
         rel="noopener noreferrer"
         className="w-12 h-11 flex items-center justify-center hover:bg-white/10 transition"

@@ -80,7 +80,7 @@ const Navbar = () => {
         {/* Right side - phone + CTA */}
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="tel:9810063340"
+            href="tel:+919266333711"
             className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition"
           >
             <Phone className="w-4 h-4 text-green-700" />
