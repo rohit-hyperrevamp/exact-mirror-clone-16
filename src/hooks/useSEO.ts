@@ -94,6 +94,36 @@ const useSEO = ({
       schemaEl.textContent = JSON.stringify(jsonLd);
     }
 
+    // Auto BreadcrumbList schema derived from canonical path
+    const crumbId = "breadcrumb-schema";
+    let crumbEl = document.getElementById(crumbId);
+    const path = canonical.startsWith("http") ? new URL(canonical).pathname : canonical;
+    const segs = path.split("/").filter(Boolean);
+    if (segs.length > 0) {
+      const items = [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+        ...segs.map((seg, i) => ({
+          "@type": "ListItem",
+          position: i + 2,
+          name: decodeURIComponent(seg).replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+          item: `${BASE_URL}/${segs.slice(0, i + 1).join("/")}`,
+        })),
+      ];
+      if (!crumbEl) {
+        crumbEl = document.createElement("script");
+        crumbEl.id = crumbId;
+        crumbEl.setAttribute("type", "application/ld+json");
+        document.head.appendChild(crumbEl);
+      }
+      crumbEl.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: items,
+      });
+    } else if (crumbEl) {
+      crumbEl.remove();
+    }
+
     // Intentionally no cleanup: the next route's useSEO() will overwrite
     // title/meta/canonical. Resetting on unmount briefly flashes the
     // homepage title during route transitions.
