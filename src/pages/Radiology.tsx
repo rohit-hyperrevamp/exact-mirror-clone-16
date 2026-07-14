@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CheckCircle, Zap, Wind } from "lucide-react";
+import { CheckCircle, Zap, Wind, Activity } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
 import useSEO from "@/hooks/useSEO";
 
