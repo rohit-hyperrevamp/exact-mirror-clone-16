@@ -34,11 +34,12 @@ function readSlugs(relFile) {
 
 function allRoutes() {
   const blogSlugs = readSlugs("src/data/blogPosts.ts");
-  const geoSlugs = readSlugs("src/data/geoLocations.ts");
+  // Only the 2 consolidated hub pages are indexable under /diagnostic-centre-gurugram/.
+  const geoHubSlugs = ["sector-67", "sohna-road"];
   return [
     ...staticPages,
     ...blogSlugs.map((s) => ({ path: `/insights/${s}`, priority: "0.7", changefreq: "monthly" })),
-    ...geoSlugs.map((s) => ({ path: `/diagnostic-centre-gurugram/${s}`, priority: "0.7", changefreq: "monthly" })),
+    ...geoHubSlugs.map((s) => ({ path: `/diagnostic-centre-gurugram/${s}`, priority: "0.8", changefreq: "monthly" })),
   ];
 }
 

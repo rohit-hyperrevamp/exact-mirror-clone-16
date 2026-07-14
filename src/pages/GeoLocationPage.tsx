@@ -2,7 +2,8 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import useSEO from "@/hooks/useSEO";
 import { MapPin, Phone, Clock, CheckCircle2, Star, Home, FlaskConical, ScanLine, Heart } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
-import { geoLocations, type GeoLocation } from "@/data/geoLocations";
+import { geoLocations, geoRedirectMap, type GeoLocation } from "@/data/geoLocations";
+import NotFound from "@/pages/NotFound";
 
 const buildFaqs = (loc: GeoLocation) => [
   {
@@ -29,9 +30,16 @@ const buildFaqs = (loc: GeoLocation) => [
 
 const GeoLocationPage = () => {
   const { slug } = useParams<{ slug: string }>();
+
+  // Redirect merged-away areas to their hub, or to the index if there's no hub match.
+  if (slug && geoRedirectMap[slug]) {
+    return <Navigate to={`/diagnostic-centre-gurugram/${geoRedirectMap[slug]}`} replace />;
+  }
+
   const loc = geoLocations.find((l) => l.slug === slug);
 
-  if (!loc) return <Navigate to="/diagnostic-centre-gurugram" replace />;
+  // Unknown slug → real 404 page, not a hub fallback.
+  if (!loc) return <NotFound />;
 
   const title = `Diagnostic Centre in ${loc.name}, Gurugram | Aarvak Diagnostics`;
   const description = `Aarvak Diagnostics is a trusted diagnostic centre near ${loc.name}, Gurugram offering pathology, radiology, health checkups & free home sample collection. Book online or call +91-92663-33711.`;
@@ -138,9 +146,7 @@ const GeoLocationPage = () => {
         {/* Intro */}
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">Trusted Diagnostic Lab for {loc.name} Residents</h2>
         <div className="prose prose-gray max-w-none mb-12">
-          <p className="text-gray-700 leading-relaxed">
-            {loc.blurb} Aarvak Diagnostics serves {loc.name} from our flagship lab in Sector 67 — just {loc.distance.replace("from our Sector 67 lab", "").replace("from our Sector 67 lab,", "").trim()}. Whether you live near {loc.nearby.slice(0, 3).join(", ")}, you can walk in, drive over, or book free home sample collection in minutes.
-          </p>
+          <p className="text-gray-700 leading-relaxed">{loc.blurb}</p>
           <p className="text-gray-700 leading-relaxed mt-4">
             We offer a complete diagnostic menu — routine{" "}
             <Link to="/departments/pathology" className="text-cyan-700 underline">pathology and blood tests</Link>, advanced{" "}
@@ -163,6 +169,31 @@ const GeoLocationPage = () => {
             </Link>
           ))}
         </div>
+
+        {/* Covered areas served by this hub */}
+        {loc.coveredAreas && loc.coveredAreas.length > 0 && (
+          <>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Areas Covered by Our {loc.shortName} Hub</h2>
+            <p className="text-gray-600 mb-6 text-sm">Neighbourhoods and sectors served directly from this location with free home sample collection.</p>
+            <div className="grid md:grid-cols-2 gap-4 mb-14">
+              {loc.coveredAreas.map((area) => (
+                <div key={area.slug} className="p-5 border border-gray-200 rounded-xl bg-gray-50">
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="font-semibold text-gray-900">{area.name}</h3>
+                    {area.pin && <span className="text-xs text-gray-500">PIN {area.pin}</span>}
+                  </div>
+                  <p className="text-xs text-cyan-700 mb-2">{area.distance}</p>
+                  <p className="text-sm text-gray-700 mb-2">{area.blurb}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {area.nearby.map((n) => (
+                      <span key={n} className="text-[11px] bg-white text-gray-600 px-2 py-0.5 rounded-full border border-gray-200">{n}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
 
         {/* Why Aarvak */}
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Why {loc.shortName} Chooses Aarvak Diagnostics</h2>
@@ -227,12 +258,12 @@ const GeoLocationPage = () => {
           </div>
         </div>
 
-        {/* Other locations */}
+        {/* Other hubs */}
         <div className="mt-16">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Other Areas We Serve in Gurugram</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Explore Our Other Gurugram Hub</h2>
           <div className="flex flex-wrap gap-2">
-            {geoLocations.filter((l) => l.slug !== loc.slug).slice(0, 30).map((l) => (
-              <Link key={l.slug} to={`/diagnostic-centre-gurugram/${l.slug}`} className="text-xs bg-gray-100 text-gray-700 hover:bg-cyan-100 hover:text-cyan-800 px-3 py-1.5 rounded-full transition">
+            {geoLocations.filter((l) => l.slug !== loc.slug).map((l) => (
+              <Link key={l.slug} to={`/diagnostic-centre-gurugram/${l.slug}`} className="text-sm bg-gray-100 text-gray-700 hover:bg-cyan-100 hover:text-cyan-800 px-4 py-2 rounded-full transition">
                 {l.name}
               </Link>
             ))}
