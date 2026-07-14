@@ -10,39 +10,39 @@ const taglineItems = [
 ];
 
 const detectList = [
-  "Bone fractures and injuries",
+  "Hip joint conditions and injuries",
+  "Knee joint conditions and injuries",
+  "Ankle joint conditions and injuries",
   "Chest and lung conditions",
-  "Joint abnormalities",
-  "Spine and orthopedic conditions",
-  "Respiratory infections",
-  "Preventive and routine health screening",
+  "Respiratory infections (chest)",
+  "Pre-operative and routine chest screening",
 ];
 
 const services = [
-  { icon: Activity, title: "Chest X Ray", desc: "Chest X ray imaging for evaluating lungs, respiratory infections, chest pain, and other pulmonary conditions." },
-  { icon: Zap, title: "Digital X Ray", desc: "High-quality digital X ray imaging for orthopedic, abdominal, spinal, and routine diagnostic evaluation." },
-  { icon: ScanLine, title: "Diagnostic Radiography", desc: "Advanced diagnostic radiography services for accurate imaging and medical assessment across various health conditions." },
-  { icon: ShieldCheck, title: "Routine & Preventive Imaging", desc: "Basic imaging support for preventive health screening, injury assessment, and routine diagnostic care." },
+  { icon: Activity, title: "Chest X-Ray", desc: "Chest X-Ray imaging for evaluating lungs, respiratory infections, chest pain and other pulmonary conditions." },
+  { icon: Zap, title: "Hip Joint X-Ray", desc: "Digital X-Ray of the hip joint for evaluating joint pain, injury, arthritis and pre-operative assessment." },
+  { icon: ScanLine, title: "Knee Joint X-Ray", desc: "Digital X-Ray of the knee joint for injury, arthritis, joint alignment and orthopaedic review." },
+  { icon: ShieldCheck, title: "Ankle Joint X-Ray", desc: "Digital X-Ray of the ankle joint for sprains, fractures and joint evaluation." },
 ];
 
 const steps = [
-  "Patient positioning by trained radiology professionals",
-  "Advanced digital radiography imaging",
+  "Patient positioning by trained radiography professionals",
+  "Digital X-Ray imaging of the requested joint or chest",
   "Expert radiologist review and validation",
   "Quick and secure report delivery",
 ];
 
 const faqs = [
-  { q: "What is a digital X ray?", a: "A digital X ray uses advanced imaging technology to capture detailed internal images with faster processing and improved image clarity." },
-  { q: "What is a chest X ray used for?", a: "A chest X ray helps evaluate lungs, chest infections, breathing conditions, and other respiratory abnormalities." },
-  { q: "What is included in digital radiography services?", a: "Digital radiography services include chest X ray, bone imaging, spinal imaging, orthopedic evaluation, and routine diagnostic scans." },
-  { q: "What is the X ray test price?", a: "The X ray test price depends on the type of scan and body area being examined." },
+  { q: "Which X-Rays does Aarvak Diagnostics offer?", a: "We offer digital X-Ray for four body areas only: Hip Joint, Knee Joint, Ankle Joint and Chest. We do not currently offer other X-Ray body parts, MRI, CT, ultrasound, ECHO or TMT." },
+  { q: "What is a chest X-Ray used for?", a: "A chest X-Ray helps evaluate lungs, chest infections, breathing conditions and other respiratory abnormalities." },
+  { q: "Do you offer full-body or spine/abdominal X-Ray?", a: "No. Our in-house X-Ray service is limited to Hip Joint, Knee Joint, Ankle Joint and Chest X-Rays only." },
+  { q: "What is the X-Ray test price?", a: "The X-Ray test price depends on which of the four areas is being examined. Please contact us for current pricing." },
 ];
 
 const XRayServices = () => {
   useSEO({
-    title: "X Ray in Gurgaon | Digital X Ray Services",
-    description: "Book digital X ray in Gurgaon with accurate imaging, chest X ray, fast reports & affordable X ray test price at Aarvak Diagnostics.",
+    title: "X-Ray in Gurgaon (Hip, Knee, Ankle & Chest) | Aarvak",
+    description: "Book digital X-Ray in Gurgaon at Aarvak Diagnostics. Available only for Hip Joint, Knee Joint, Ankle Joint and Chest — accurate imaging, fast reports.",
     canonical: "/departments/radiology/x-ray-services",
     jsonLd: {
       "@context": "https://schema.org",
@@ -113,9 +113,9 @@ const XRayServices = () => {
             <h2 className="text-3xl md:text-[38px] font-bold text-foreground leading-tight mb-6">
               Advanced X Ray &<br />Diagnostic Imaging Services
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">Our radiology center offers advanced digital X ray services designed to support accurate diagnosis for bone injuries, chest conditions, joint problems, and routine health screening.</p>
-            <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">From chest X ray imaging to specialised diagnostic radiography procedures, our imaging services help doctors evaluate medical conditions with speed and precision.</p>
-            <p className="text-muted-foreground leading-relaxed text-[15px]">Using advanced digital radiography systems and strict imaging protocols, we ensure high-quality scans with reliable reporting and patient safety.</p>
+            <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">Our radiology centre offers digital X-Ray imaging designed to support accurate diagnosis for joint injuries and chest conditions. Please note: our X-Ray service is available only for the Hip Joint, Knee Joint, Ankle Joint and Chest.</p>
+            <p className="text-muted-foreground leading-relaxed text-[15px] mb-4">We do not currently offer X-Ray for other body parts, and we do not offer MRI, CT, ultrasound, ECHO or TMT.</p>
+            <p className="text-muted-foreground leading-relaxed text-[15px]">Using digital radiography systems and strict imaging protocols, we ensure high-quality scans with reliable reporting and patient safety.</p>
           </div>
         </div>
       </section>
