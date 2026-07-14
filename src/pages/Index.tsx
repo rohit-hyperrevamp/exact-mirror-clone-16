@@ -131,14 +131,14 @@ const faqs = [
   { q: "How do I book a Home Collection?", a: "You can book instantly via WhatsApp (+91 92663 33711) or our website. Our trained phlebotomists arrive within 60–90 minutes across Gurgaon with a temperature-controlled box to ensure sample freshness." },
   { q: "Do you collect samples from home?", a: "Yes, we offer Home Sample Collection across Gurgaon. Just call or WhatsApp us at +91 92663 33711 to book a slot." },
   { q: "When will I receive my reports?", a: "Most routine blood test reports are delivered via WhatsApp and Email within 6 to 12 hours." },
-  { q: "Is Aarvak Diagnostics NABL/ISO compliant?", a: "We follow strict NABL-standard protocols and use automated, high-end machinery to ensure accurate and reliable reports accepted by all major doctors and hospitals." },
+  { q: "Is Aarvak Diagnostics NABL certified?", a: "We follow NABL protocols and standards, and our NABL certification application has been submitted (accreditation currently in progress). We use automated, high-end machinery to ensure accurate and reliable reports accepted by all major doctors and hospitals." },
   { q: "Do I need to fast before my blood test?", a: "For most tests such as Sugar or Cholesterol, 10–12 hours of fasting is recommended. You may drink plain water but avoid tea, coffee, or snacks." },
 ];
 
 const Index = () => {
   useSEO({
     title: "Diagnostic Centre in Gurgaon | Aarvak Diagnostics",
-    description: "Trusted diagnostic centre in Gurgaon for blood tests, pathology, radiology & health packages. NABL accredited lab with home collection.",
+    description: "Trusted diagnostic centre in Gurgaon for blood tests, pathology, radiology & health packages with home collection. NABL protocols followed; certification application submitted.",
     canonical: "/",
     jsonLd: {
       "@context": "https://schema.org",
@@ -696,7 +696,7 @@ const Index = () => {
             {[
               {
                 title: "Accurate & Reliable Testing",
-                text: "Advanced equipment and quality-controlled processes for dependable results at a trusted NABL accredited lab in Gurgaon.",
+                text: "Advanced equipment and quality-controlled processes for dependable results at a trusted diagnostic lab in Gurgaon following NABL protocols (certification application in progress).",
               },
               {
                 title: "Patient-First Approach",
