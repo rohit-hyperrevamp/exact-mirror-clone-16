@@ -120,7 +120,8 @@ const GeoLocationPage = () => {
             <Phone className="w-7 h-7 text-cyan-600 flex-shrink-0" />
             <div>
               <h3 className="font-bold text-gray-900">Book from {loc.shortName}</h3>
-              <p className="text-gray-600 text-sm mt-1">+91 9810063340</p>
+              <p className="text-gray-600 text-sm mt-1">+91 92663 33711</p>
+              <p className="text-gray-600 text-sm">+91 9810063340</p>
               <p className="text-gray-600 text-sm">marketing@aarvakdiagnostics.com</p>
             </div>
           </div>
@@ -222,7 +223,7 @@ const GeoLocationPage = () => {
           <p className="text-cyan-100 mb-6 max-w-2xl mx-auto">Accurate reports, quick turnaround, and free home sample collection across {loc.name} and Gurugram.</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link to="/contact-us#contact" className="bg-white text-cyan-700 px-8 py-3 rounded-full font-semibold hover:bg-cyan-50 transition">Book Now</Link>
-            <a href="tel:+919810063340" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">Call +91-98100 63340</a>
+            <a href="tel:+919266333711" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">Call +91-92663 33711</a>
           </div>
         </div>
 
