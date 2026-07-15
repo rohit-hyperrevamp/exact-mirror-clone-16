@@ -56,8 +56,8 @@ const Corporate = () => {
 
       {/* Tagline overlay */}
       <section className="relative z-20">
-        <div className="bg-background rounded-tr-[40px] -mt-10 md:-mt-16 relative pt-8 md:pt-10 pb-6 md:pb-8 px-4 md:px-12 w-full md:max-w-[52%]">
-          <div className="flex flex-wrap items-center gap-3 md:gap-6">
+        <div className="bg-background rounded-tr-[40px] -mt-10 md:-mt-16 relative pt-8 md:pt-10 pb-6 md:pb-8 px-4 md:px-12 w-full lg:max-w-[62%]">
+          <div className="flex flex-nowrap items-center gap-3 md:gap-5 overflow-x-auto">
             {taglineItems.map((item, i) => (
               <div key={i} className="flex items-center gap-3 md:gap-6">
                 <div className="text-center">
