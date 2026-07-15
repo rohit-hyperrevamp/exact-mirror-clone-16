@@ -68,6 +68,8 @@ const server = createServer(async (req, res) => {
     res.writeHead(500);
     res.end(String(e));
   }
+});
+
 if (!existsSync(path.join(DIST, "index.html"))) {
   console.error("dist/index.html missing — run `vite build` first");
   process.exit(1);
