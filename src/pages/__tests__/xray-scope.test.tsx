@@ -25,16 +25,11 @@ describe("X-Ray scope: Hip / Knee / Ankle / Chest only", () => {
       const headings = Array.from(container.querySelectorAll("h3")).map(
         (h) => h.textContent?.trim() ?? "",
       );
-      const xrayCards = headings.filter((t) => /X-Ray/i.test(t));
+      const xrayCards = headings.filter((t) => / X-Ray$/.test(t));
 
       expect(xrayCards).toHaveLength(4);
-      expect(xrayCards).toEqual(
-        expect.arrayContaining([
-          "Chest X-Ray",
-          "Hip Joint X-Ray",
-          "Knee Joint X-Ray",
-          "Ankle Joint X-Ray",
-        ]),
+      expect(xrayCards.sort()).toEqual(
+        ["Ankle Joint X-Ray", "Chest X-Ray", "Hip Joint X-Ray", "Knee Joint X-Ray"],
       );
     });
 
