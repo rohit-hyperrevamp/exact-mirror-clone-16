@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import useSEO from "@/hooks/useSEO";
 import { MapPin, Phone, Clock, CheckCircle2, Star, Home, FlaskConical, ScanLine, Heart } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
-import { geoLocations, geoRedirectMap, type GeoLocation } from "@/data/geoLocations";
+import { geoLocations, geoRedirectMap, geoLegacySlugs, type GeoLocation } from "@/data/geoLocations";
 import NotFound from "@/pages/NotFound";
 
 const buildFaqs = (loc: GeoLocation) => [
@@ -31,9 +31,15 @@ const buildFaqs = (loc: GeoLocation) => [
 const GeoLocationPage = () => {
   const { slug } = useParams<{ slug: string }>();
 
-  // Redirect merged-away areas to their hub, or to the index if there's no hub match.
+  // Redirect merged-away areas to their hub.
   if (slug && geoRedirectMap[slug]) {
     return <Navigate to={`/diagnostic-centre-gurugram/${geoRedirectMap[slug]}`} replace />;
+  }
+
+  // Legacy previously-published slugs that aren't served by either hub →
+  // redirect to the /diagnostic-centre-gurugram index (not a hub they don't cover).
+  if (slug && geoLegacySlugs.has(slug)) {
+    return <Navigate to="/diagnostic-centre-gurugram" replace />;
   }
 
   const loc = geoLocations.find((l) => l.slug === slug);

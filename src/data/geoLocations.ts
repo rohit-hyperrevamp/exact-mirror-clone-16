@@ -72,7 +72,7 @@ export const geoLocations: GeoLocation[] = [
   },
 ];
 
-// Slugs that redirect to a specific hub (merged-away areas).
+// Slugs that redirect to a specific hub (merged-away areas covered by that hub).
 export const geoRedirectMap: Record<string, string> = {
   // → Sector 67 hub
   "golf-course-extension-road": "sector-67",
@@ -97,3 +97,20 @@ export const geoRedirectMap: Record<string, string> = {
   "malibu-town": "sohna-road",
   "south-city-2": "sohna-road",
 };
+
+// Previously-published per-area slugs (from the old 78-page set) that aren't
+// served by either hub. These redirect to the /diagnostic-centre-gurugram index
+// so existing inbound links / Google-indexed URLs never 404.
+export const geoLegacySlugs = new Set<string>([
+  "cyber-city", "dlf-phase-1", "dlf-phase-2", "dlf-phase-3", "dlf-phase-4", "dlf-phase-5",
+  "golf-course-road", "huda-city-centre", "manesar", "mg-road", "new-gurugram",
+  "palam-vihar", "sushant-lok", "udyog-vihar", "south-city-1",
+  "sector-14", "sector-15", "sector-17", "sector-21", "sector-22", "sector-23",
+  "sector-27", "sector-28", "sector-29", "sector-30", "sector-31",
+  "sector-38", "sector-39", "sector-40", "sector-42", "sector-43", "sector-44",
+  "sector-45", "sector-46", "sector-47", "sector-48", "sector-49", "sector-50",
+  "sector-51", "sector-52", "sector-53", "sector-54", "sector-55",
+  "sector-76", "sector-77", "sector-78", "sector-79", "sector-81", "sector-82",
+  "sector-83", "sector-84", "sector-86", "sector-89", "sector-92",
+  "sector-102", "sector-109",
+]);
