@@ -40,6 +40,7 @@ import AdminSeoAnalytics from "./pages/admin/AdminSeoAnalytics";
 import AdminSeoKeywords from "./pages/admin/AdminSeoKeywords";
 import AdminSeoIndexing from "./pages/admin/AdminSeoIndexing";
 import AdminGuard from "./components/AdminGuard";
+import AutoCanonical from "./components/AutoCanonical";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const AppLayout = () => {
 
   return (
     <>
+      <AutoCanonical />
       {!hideChrome && <Navbar />}
       {!hideChrome && <SocialSidebar />}
       {!hideChrome && <SocialProofNotification />}
