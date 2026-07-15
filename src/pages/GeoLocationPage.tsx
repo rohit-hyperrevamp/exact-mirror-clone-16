@@ -31,9 +31,15 @@ const buildFaqs = (loc: GeoLocation) => [
 const GeoLocationPage = () => {
   const { slug } = useParams<{ slug: string }>();
 
-  // Redirect merged-away areas to their hub, or to the index if there's no hub match.
+  // Redirect merged-away areas to their hub.
   if (slug && geoRedirectMap[slug]) {
     return <Navigate to={`/diagnostic-centre-gurugram/${geoRedirectMap[slug]}`} replace />;
+  }
+
+  // Legacy previously-published slugs that aren't served by either hub →
+  // redirect to the /diagnostic-centre-gurugram index (not a hub they don't cover).
+  if (slug && geoLegacySlugs.has(slug)) {
+    return <Navigate to="/diagnostic-centre-gurugram" replace />;
   }
 
   const loc = geoLocations.find((l) => l.slug === slug);
