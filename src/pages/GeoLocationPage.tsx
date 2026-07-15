@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import useSEO from "@/hooks/useSEO";
 import { MapPin, Phone, Clock, CheckCircle2, Star, Home, FlaskConical, ScanLine, Heart } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
-import { geoLocations, geoRedirectMap, type GeoLocation } from "@/data/geoLocations";
+import { geoLocations, geoRedirectMap, geoLegacySlugs, type GeoLocation } from "@/data/geoLocations";
 import NotFound from "@/pages/NotFound";
 
 const buildFaqs = (loc: GeoLocation) => [
