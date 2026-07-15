@@ -68,20 +68,26 @@ const server = createServer(async (req, res) => {
     res.writeHead(500);
     res.end(String(e));
   }
-});
-
-await new Promise((r) => server.listen(PORT, r));
-console.log(`serving ${DIST} on http://localhost:${PORT}`);
-
 if (!existsSync(path.join(DIST, "index.html"))) {
   console.error("dist/index.html missing — run `vite build` first");
   process.exit(1);
 }
 
-const browser = await puppeteer.launch({
-  headless: "new",
-  args: ["--no-sandbox", "--disable-setuid-sandbox"],
-});
+await new Promise((r) => server.listen(PORT, r));
+console.log(`serving ${DIST} on http://localhost:${PORT}`);
+
+let browser;
+try {
+  browser = await puppeteer.launch({
+    headless: "new",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
+} catch (error) {
+  server.close();
+  console.warn("⚠ Prerender skipped: headless Chrome could not start in this build environment.");
+  console.warn(error?.message || error);
+  process.exit(0);
+}
 
 let ok = 0;
 let fail = 0;
