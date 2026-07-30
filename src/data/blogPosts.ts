@@ -16,6 +16,521 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "senior-citizen-health-checkup-gurugram-tests-after-60",
+    img: "/images/blog-senior-checkup-july.jpg",
+    date: "July 30, 2026",
+    dateSort: "2026-07-30",
+    title: "Senior Citizen Health Checkup in Gurugram: Which Tests Matter After 60",
+    desc: "A practical, doctor-friendly list of the blood tests and screenings that matter most after 60 — with home sample collection across Gurugram.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Preventive Health",
+    metaTitle: "Senior Citizen Health Checkup Gurugram – Tests After 60 | Aarvak",
+    metaDescription: "Which health checkup tests do seniors need after 60? Full list of blood tests, X-ray and PFT with home sample collection in Gurugram from Aarvak Diagnostics.",
+    content: `After 60, most health problems are not sudden — they are slow changes that a routine [health checkup](/departments/health-checkups) picks up long before symptoms appear. Here is what a sensible senior checkup in Gurugram should include.
+
+## Core Blood Tests for Seniors
+
+- **CBC** — detects anaemia, infection and blood disorders
+- **Fasting Blood Sugar and HbA1c** — 3-month diabetes control at a glance
+- **[Kidney Function Test (KFT)](/departments/pathology/biochemistry-tests)** — creatinine, urea, eGFR
+- **[Liver Function Test (LFT)](/insights/liver-kidney-health-lft-kft-tests)** — especially if on long-term medication
+- **Lipid Profile** — cholesterol and triglycerides for cardiac risk
+- **Thyroid Profile (TSH, T3, T4)** — hypothyroidism is common and often missed
+- **Vitamin D and Vitamin B12** — linked to bone strength, balance and memory
+- **Urine routine** — early kidney and infection screening
+
+## Beyond Blood Work
+
+- **[Chest X-Ray](/departments/radiology/x-ray-services)** — for persistent cough or breathlessness
+- **[Hip, knee or ankle X-Ray](/departments/radiology/x-ray-services)** — for joint pain and mobility issues
+- **[PFT (Pulmonary Function Test)](/departments/radiology/pft-test)** — lung capacity in smokers, ex-smokers and asthmatics
+- **ECG** — basic cardiac rhythm screening
+
+## How Often?
+
+Once a year is enough for most healthy seniors. Twice a year if you have diabetes, hypertension, kidney disease or are on long-term medication.
+
+## Making It Easy for Elderly Parents
+
+Travelling to a lab fasting and early in the morning is the biggest barrier. Aarvak Diagnostics offers [home sample collection across Gurugram](/insights/blood-test-at-home-home-collection-gurugram) — including Sector 67, [Sohna Road](/diagnostic-centre-gurugram/sohna-road), Nirvana Country and Golf Course Extension Road — with digital reports usually the same day. Sample processing follows NABL protocols; our NABL certification application has been submitted.
+
+[Book a senior citizen checkup](/contact-us#contact) or call +91 92663 33711 to schedule a home visit.`,
+    tags: ["Senior Health", "Health Checkup", "Gurugram", "Preventive Care", "Home Collection"],
+  },
+  {
+    slug: "pft-test-gurugram-lung-function-breathlessness",
+    img: "/images/blog-pft-lungs-july.jpg",
+    date: "July 28, 2026",
+    dateSort: "2026-07-28",
+    title: "Breathless on the Stairs? What a PFT Test in Gurugram Actually Tells You",
+    desc: "Pulmonary Function Testing measures how well your lungs move air. Here's who needs a PFT in Gurugram, how it's done and how to prepare.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Radiology",
+    metaTitle: "PFT Test in Gurugram – Lung Function Test Cost & Preparation | Aarvak",
+    metaDescription: "What is a PFT test and who needs one? Understand spirometry, preparation and results. Book a Pulmonary Function Test in Gurugram at Aarvak Diagnostics.",
+    content: `Gurugram's air quality and long commutes mean breathing complaints are common — and often ignored until climbing two flights of stairs becomes hard. A [PFT (Pulmonary Function Test)](/departments/radiology/pft-test) is the simplest objective way to measure lung capacity.
+
+## What a PFT Measures
+
+- **FVC** — the total air you can forcefully exhale
+- **FEV1** — how much of that comes out in the first second
+- **FEV1/FVC ratio** — distinguishes obstructive (asthma, COPD) from restrictive patterns
+- **PEFR** — peak flow, useful in asthma monitoring
+
+## Who Should Get a PFT
+
+- Long-standing cough, wheeze or breathlessness
+- Known or suspected **asthma** or **COPD**
+- Current and former smokers
+- Pre-operative assessment before surgery
+- Occupational exposure to dust, fumes or chemicals
+- Follow-up after a serious chest infection
+
+## How to Prepare
+
+- Avoid heavy meals 2 hours before the test
+- Skip smoking for at least 6 hours
+- Ask your doctor whether to pause inhalers before the test
+- Wear loose clothing that doesn't restrict the chest
+
+The test takes 15–20 minutes. You breathe into a spirometer through a mouthpiece with a nose clip, repeating the effort a few times so the best reading is recorded.
+
+## What Happens Next
+
+Abnormal results usually lead to a [chest X-Ray](/departments/radiology/x-ray-services) and blood tests such as CBC, [allergy panels](/insights/world-asthma-day-allergy-tests) or IgE to look for the cause. Our radiology services follow NABL protocols; certification application submitted.
+
+[Book a PFT test in Gurugram](/contact-us#contact) at our Sector 67 centre, JMD Suburbio-2, Block-B.`,
+    tags: ["PFT", "Lung Function", "Asthma", "COPD", "Gurugram", "Radiology"],
+  },
+  {
+    slug: "x-ray-for-joint-pain-gurugram-hip-knee-ankle-chest",
+    img: "/images/blog-xray-joint-pain.jpg",
+    date: "July 26, 2026",
+    dateSort: "2026-07-26",
+    title: "Joint Pain in the Monsoon? When a Digital X-Ray Is Actually Needed",
+    desc: "Knee, hip and ankle pain flares in the rains. Here's when an X-ray helps, what it shows, and the exact X-ray scope available at Aarvak Diagnostics.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Radiology",
+    metaTitle: "X-Ray in Gurugram for Knee, Hip, Ankle & Chest | Aarvak Diagnostics",
+    metaDescription: "Digital X-ray in Gurugram for hip, knee, ankle and chest. Learn when a joint X-ray is needed, what it shows and how to book at Aarvak Diagnostics Sector 67.",
+    content: `Damp monsoon weather makes existing joint problems feel worse. Most pain settles with rest — but some needs imaging. A [digital X-ray](/departments/radiology/x-ray-services) is the fastest, lowest-cost way to see bone and joint structure.
+
+## Aarvak's X-Ray Scope
+
+Aarvak Diagnostics provides digital X-ray **only** for the **hip joint, knee joint, ankle joint and chest**. If your doctor has advised imaging of another region, we will tell you upfront so you don't lose a trip.
+
+## When a Joint X-Ray Helps
+
+- Pain that persists beyond 2–3 weeks despite rest
+- Swelling, deformity or grinding on movement
+- Difficulty bearing weight after a fall or twist
+- Suspected osteoarthritis — joint-space narrowing and spurs show clearly
+- Follow-up of a known fracture or joint condition
+
+## When a Chest X-Ray Helps
+
+- Cough lasting more than 2 weeks
+- Fever with breathlessness or chest pain
+- Pre-employment and pre-operative screening
+- Alongside a [PFT test](/departments/radiology/pft-test) for breathing complaints
+
+## X-Ray Isn't the Whole Answer
+
+Joint pain can also be inflammatory or metabolic. Pair imaging with blood tests when appropriate:
+
+- **[Uric acid](/insights/uric-acid-gout-young-indians-rising)** — gout, very common in Gurugram professionals
+- **RA Factor and CRP** — rheumatoid and inflammatory arthritis
+- **[Vitamin D and calcium](/insights/vitamin-d-deficiency-summer-india)** — bone strength
+- **CBC and ESR** — infection or systemic inflammation
+
+## Booking
+
+Walk in for X-ray at our Sector 67 centre, or [book a slot online](/contact-us#contact). Blood tests for the same complaint can be collected at home. Imaging follows NABL protocols; certification application submitted.`,
+    tags: ["X-Ray", "Joint Pain", "Knee", "Radiology", "Gurugram"],
+  },
+  {
+    slug: "vitamin-d-deficiency-monsoon-gurugram-test",
+    img: "/images/blog-vitamin-d-monsoon.jpg",
+    date: "July 24, 2026",
+    dateSort: "2026-07-24",
+    title: "Cloudy for Weeks: Why Vitamin D Drops During the Gurugram Monsoon",
+    desc: "Weeks of overcast skies mean far less sunlight — and falling vitamin D. Symptoms, ideal levels and how to test in Gurugram.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Wellness",
+    metaTitle: "Vitamin D Test in Gurugram – Monsoon Deficiency Guide | Aarvak",
+    metaDescription: "Monsoon cloud cover cuts sunlight and vitamin D levels. Know the symptoms, ideal range and book a vitamin D test with home collection in Gurugram.",
+    content: `India is a sunny country with a stubborn vitamin D problem — and the monsoon makes it worse. Weeks of cloud cover, indoor work and covered clothing mean skin synthesis almost stops.
+
+## Symptoms People Wrongly Blame on the Weather
+
+- Constant tiredness and low mood
+- Bone and lower-back ache
+- Muscle weakness and cramps
+- Frequent colds and slow recovery
+- Hair fall and poor sleep
+
+## Who Is Most at Risk in Gurugram
+
+- Office workers in air-conditioned buildings all day
+- Women with limited outdoor exposure
+- Adults above 50 and post-menopausal women
+- People with darker skin tone (needs longer sun exposure)
+- Anyone who is overweight — vitamin D is stored in fat tissue
+
+## Reading Your Report
+
+The test is **25-hydroxy vitamin D (25-OH-D)**, measured in ng/mL.
+
+- Below 20 — deficient
+- 20–30 — insufficient
+- 30–60 — sufficient for most adults
+- Above 100 — excess, usually from unsupervised supplements
+
+Never self-prescribe high-dose sachets. Retest after 8–12 weeks of treatment.
+
+## Test It Alongside
+
+- **[Vitamin B12](/insights/vitamin-b12-deficiency-indian-vegetarians-test)** — overlapping fatigue symptoms
+- **Calcium and phosphorus** — bone metabolism
+- **[Thyroid profile](/insights/thyroid-disorders-indians-tsh-test-hidden-epidemic)** — another common fatigue cause
+- **CBC** — rules out [anaemia](/insights/iron-deficiency-anaemia-indian-women-silent-epidemic)
+
+[Book a vitamin D test](/contact-us#contact) with free home sample collection across Gurugram. Testing follows NABL protocols; certification application submitted.`,
+    tags: ["Vitamin D", "Monsoon", "Fatigue", "Gurugram", "Blood Test"],
+  },
+  {
+    slug: "corporate-health-camp-gurugram-employee-wellness",
+    img: "/images/blog-corporate-camp-july.jpg",
+    date: "July 21, 2026",
+    dateSort: "2026-07-21",
+    title: "On-Site Corporate Health Camps in Gurugram: What HR Teams Should Plan",
+    desc: "A practical guide for HR and admin teams planning an employee health camp in Gurugram — test panels, logistics, timelines and outcomes.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Corporate Wellness",
+    metaTitle: "Corporate Health Camp in Gurugram for Employees | Aarvak Diagnostics",
+    metaDescription: "Planning an employee health camp in Gurugram? Test panels, logistics, timelines and reporting explained. Book an on-site corporate camp with Aarvak Diagnostics.",
+    content: `Employee health camps work best when they are planned as a programme, not a one-day event. Here is how HR teams across Cyber City, Golf Course Extension Road and the Sector 60–75 corridor typically run [corporate camps](/corporate) with us.
+
+## Step 1: Pick the Right Panel
+
+- **Basic screening** — CBC, blood sugar, blood pressure, BP and vitals
+- **Standard panel** — adds lipid profile, [liver and kidney function](/insights/liver-kidney-health-lft-kft-tests), HbA1c
+- **Comprehensive panel** — adds [thyroid](/insights/thyroid-disorders-indians-tsh-test-hidden-epidemic), vitamin D, vitamin B12, urine routine
+- **Add-ons** — ECG, and [PFT](/departments/radiology/pft-test) for dust-exposed or high-risk teams
+
+## Step 2: Plan the Logistics
+
+- Allow one collection station per 60–70 employees to keep queues under 10 minutes
+- Book morning slots (8:00–11:30 am) so fasting samples are easy
+- Share a fasting advisory 48 hours before the camp
+- Provide a private room for vitals and counselling
+
+## Step 3: Communicate to Employees
+
+Participation rises sharply when employees know the reports are confidential, digital and delivered to them directly — not to their manager.
+
+## Step 4: Use the Aggregate Data
+
+Anonymised, aggregate trends (percentage with high HbA1c, low vitamin D, abnormal lipids) let you plan the next quarter's wellness sessions instead of guessing.
+
+## What Aarvak Provides
+
+Trained phlebotomists, on-site setup, digital individual reports, and an anonymised organisational summary. Sample processing follows NABL protocols; NABL certification application submitted.
+
+[Request a corporate camp quote](/contact-us#contact) or email marketing@aarvakdiagnostics.com.`,
+    tags: ["Corporate Wellness", "Health Camp", "HR", "Gurugram", "Employee Health"],
+  },
+  {
+    slug: "kidney-function-test-kft-gurugram-early-warning-signs",
+    img: "/images/blog-kidney-kft-july.jpg",
+    date: "July 18, 2026",
+    dateSort: "2026-07-18",
+    title: "Your Kidneys Warn You Late: KFT Signs Gurugram Adults Shouldn't Ignore",
+    desc: "Kidney disease is silent until 60% function is lost. Understand creatinine, urea, eGFR and when to book a KFT in Gurugram.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Preventive Health",
+    metaTitle: "Kidney Function Test (KFT) in Gurugram – Creatinine & eGFR | Aarvak",
+    metaDescription: "Understand creatinine, urea, uric acid and eGFR in your KFT report. Book a kidney function test in Gurugram with home sample collection at Aarvak Diagnostics.",
+    content: `Kidneys rarely complain early. By the time swelling or reduced urine appears, a large share of function may already be lost. A simple [Kidney Function Test](/departments/pathology/biochemistry-tests) catches problems years earlier.
+
+## What a KFT Includes
+
+- **Serum creatinine** — the core filtration marker
+- **Blood urea / BUN** — protein waste clearance
+- **eGFR** — estimated filtration rate, calculated from creatinine, age and sex
+- **[Uric acid](/insights/uric-acid-gout-young-indians-rising)** — high levels stress the kidneys
+- **Sodium, potassium, chloride** — electrolyte balance
+- **Urine routine and microalbumin** — earliest sign of kidney damage in diabetics
+
+## Early Signs Worth Testing For
+
+- Swelling around the eyes in the morning or in the ankles
+- Frothy or foamy urine
+- Urinating more often at night
+- Unexplained fatigue, nausea or itching
+- Blood pressure that keeps creeping up
+
+## Who Should Test Annually
+
+- Anyone with **diabetes** or **hypertension** — the two biggest causes of kidney disease in India
+- Regular users of painkillers (NSAIDs)
+- Family history of kidney disease or stones
+- Adults above 45, as part of a [full body checkup](/insights/full-body-checkup-guide-what-is-included-gurugram)
+
+## Preparation
+
+Fasting is usually not required unless combined with sugar or lipid tests. Avoid heavy protein meals and strenuous gym sessions 24 hours before — both can raise creatinine temporarily. Stay normally hydrated.
+
+[Book a KFT in Gurugram](/contact-us#contact) with home sample collection. Testing follows NABL protocols; certification application submitted.`,
+    tags: ["Kidney Function Test", "KFT", "Creatinine", "Gurugram", "Preventive Care"],
+  },
+  {
+    slug: "always-tired-anaemia-test-gurugram-office-workers",
+    img: "/images/blog-anaemia-office.jpg",
+    date: "July 15, 2026",
+    dateSort: "2026-07-15",
+    title: "Always Tired at Work? The Blood Tests Behind Chronic Fatigue",
+    desc: "Constant tiredness in Gurugram's desk workforce is rarely just stress. Five blood tests that explain most cases of chronic fatigue.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Wellness",
+    metaTitle: "Chronic Fatigue Blood Tests in Gurugram – Anaemia, Thyroid, B12 | Aarvak",
+    metaDescription: "Tired all the time? Test for anaemia, thyroid, vitamin D, B12 and blood sugar. Book a fatigue panel in Gurugram with home collection at Aarvak Diagnostics.",
+    content: `"I'm just tired" is the most under-investigated complaint in Gurugram's office corridors. Long commutes and screen hours explain some of it — but a five-test panel explains most of the rest.
+
+## 1. CBC — Look for Anaemia
+
+Low haemoglobin is the single most common reversible cause of fatigue, especially in [women](/insights/iron-deficiency-anaemia-indian-women-silent-epidemic). Add **ferritin** and **iron studies** to know whether iron stores are truly low.
+
+## 2. Thyroid Profile (TSH, T3, T4)
+
+An underactive thyroid causes tiredness, weight gain, cold intolerance and low mood — and it is [very common in Indians](/insights/thyroid-disorders-indians-tsh-test-hidden-epidemic).
+
+## 3. Vitamin B12
+
+Vegetarian diets make [B12 deficiency](/insights/vitamin-b12-deficiency-indian-vegetarians-test) widespread. It causes fatigue, tingling in the hands and feet, and poor concentration.
+
+## 4. Vitamin D
+
+Indoor work plus [monsoon cloud cover](/insights/vitamin-d-deficiency-monsoon-gurugram-test) drives levels down, producing body ache and low energy.
+
+## 5. Blood Sugar and HbA1c
+
+Both undiagnosed diabetes and post-meal sugar crashes cause afternoon exhaustion. [HbA1c](/insights/diabetes-prevention-hba1c-young-adults) shows the 3-month picture in one test.
+
+## Worth Adding If Symptoms Persist
+
+- **[LFT and KFT](/insights/kidney-function-test-kft-gurugram-early-warning-signs)** — liver and kidney contribution
+- **Cortisol** — [chronic stress patterns](/insights/stress-cortisol-mental-health-tests)
+- **CRP and ESR** — hidden inflammation or infection
+
+## Get It Done Without Missing Work
+
+A single morning sample covers all of the above. Aarvak's phlebotomist can visit your home or office anywhere in Gurugram, and reports arrive digitally, usually the same day. Testing follows NABL protocols; certification application submitted.
+
+[Book a fatigue panel](/contact-us#contact) today.`,
+    tags: ["Fatigue", "Anaemia", "Thyroid", "Vitamin B12", "Gurugram", "Blood Test"],
+  },
+  {
+    slug: "thyroid-test-tsh-t3-t4-guide-gurugram",
+    img: "/images/blog-thyroid-july.jpg",
+    date: "July 12, 2026",
+    dateSort: "2026-07-12",
+    title: "TSH, T3, T4 Explained: Reading Your Thyroid Report Without Panicking",
+    desc: "A plain-language guide to thyroid test results, when to retest, and what a borderline TSH really means — for patients in Gurugram.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Pathology",
+    metaTitle: "Thyroid Test in Gurugram – TSH, T3, T4 Report Explained | Aarvak",
+    metaDescription: "What do TSH, T3 and T4 values mean? Understand normal ranges, borderline results and retesting. Book a thyroid profile in Gurugram at Aarvak Diagnostics.",
+    content: `A thyroid report has three main numbers and a lot of anxiety attached to them. Here is how to read it sensibly.
+
+## What Each Value Means
+
+- **TSH** — the pituitary's signal to the thyroid. High TSH usually means an **underactive** thyroid; low TSH usually means **overactive**.
+- **T4 (free T4)** — the main hormone produced by the thyroid gland
+- **T3 (free T3)** — the active form used by tissues
+
+## Typical Adult Reference Ranges
+
+- TSH: roughly 0.4–4.0 mIU/L
+- Free T4: roughly 0.8–1.8 ng/dL
+- Free T3: roughly 2.3–4.2 pg/mL
+
+Ranges differ slightly between laboratories and methods — always read against the range printed on your own report, and different targets apply in pregnancy.
+
+## Common Report Patterns
+
+- **High TSH, normal T4** — subclinical hypothyroidism; often just monitored
+- **High TSH, low T4** — overt hypothyroidism; usually treated
+- **Low TSH, high T3/T4** — hyperthyroidism; needs prompt review
+- **All normal, symptoms persist** — look at [anaemia](/insights/always-tired-anaemia-test-gurugram-office-workers), vitamin D and B12 instead
+
+## Symptoms That Justify Testing
+
+Weight change without diet change, hair fall, irregular periods, constipation, cold or heat intolerance, palpitations, low mood, or infertility investigations. Women over 35 and anyone with a family history should test annually.
+
+## Getting an Accurate Result
+
+- Test in the morning; TSH varies through the day
+- Take thyroid medication **after** the blood draw
+- Mention biotin supplements — they can distort results
+- Avoid testing during an acute illness
+
+Add **anti-TPO antibodies** if hypothyroidism is confirmed, to check for Hashimoto's thyroiditis.
+
+[Book a thyroid profile in Gurugram](/departments/pathology) with home sample collection. Testing follows NABL protocols; certification application submitted.`,
+    tags: ["Thyroid", "TSH", "Hypothyroidism", "Gurugram", "Pathology"],
+  },
+  {
+    slug: "dengue-platelet-count-monitoring-gurugram",
+    img: "/images/blog-dengue-platelet.jpg",
+    date: "July 9, 2026",
+    dateSort: "2026-07-09",
+    title: "Dengue Platelet Count: When to Test Daily and When to Worry",
+    desc: "Platelet counts fall and recover in a predictable pattern in dengue. Here's the testing timeline and the warning signs that need a hospital.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Pathology",
+    metaTitle: "Dengue Platelet Count Test in Gurugram – Daily CBC Monitoring | Aarvak",
+    metaDescription: "How low is too low in dengue? Understand platelet trends, NS1 and IgM timing, and daily CBC monitoring with home collection in Gurugram at Aarvak Diagnostics.",
+    content: `In dengue season, the number families watch most closely is the platelet count. Understanding the pattern removes a lot of unnecessary panic — and highlights the moments that genuinely matter.
+
+## The Testing Timeline
+
+- **Day 1–5 of fever** — **NS1 antigen** is the most reliable early test, along with **CBC**
+- **After day 5** — **IgM and IgG antibodies** become useful
+- **Throughout** — **CBC with platelet count and haematocrit**, often daily
+
+## How Platelets Behave
+
+A normal count is roughly 1.5–4.5 lakh/µL. In dengue, counts typically start falling around day 3–4, reach their lowest point around day 5–7, and recover over the following few days — usually without any transfusion.
+
+Doctors watch the **trend and the haematocrit**, not a single number. A rising haematocrit with falling platelets signals plasma leakage and matters more than the platelet figure alone.
+
+## Warning Signs That Need Immediate Hospital Care
+
+- Bleeding gums, nosebleeds, blood in vomit or stool
+- Severe abdominal pain or persistent vomiting
+- Cold, clammy skin, restlessness or drowsiness
+- Reduced urine output
+- Sudden drop in temperature with worsening weakness
+
+## Home Care Basics
+
+Paracetamol only — **never** ibuprofen, aspirin or other NSAIDs, which raise bleeding risk. Maintain oral fluids, ORS, coconut water and light meals. Rest fully; fatigue can persist for weeks after recovery.
+
+## Daily Monitoring Without Daily Travel
+
+Aarvak Diagnostics offers daily [home sample collection](/insights/blood-test-at-home-home-collection-gurugram) for CBC across Gurugram, with digital reports the same day so your doctor can track the trend. See also our [monsoon fever panel](/insights/monsoon-fever-panel-dengue-malaria-typhoid-gurugram). Testing follows NABL protocols; certification application submitted.
+
+[Book daily platelet monitoring](/contact-us#contact) or call +91 92663 33711.`,
+    tags: ["Dengue", "Platelet Count", "CBC", "Monsoon", "Gurugram"],
+  },
+  {
+    slug: "monsoon-skin-and-stomach-infections-culture-tests-gurugram",
+    img: "/images/blog-infection-culture-july.jpg",
+    date: "July 8, 2026",
+    dateSort: "2026-07-08",
+    title: "Monsoon Infections That Need a Culture Test, Not Another Antibiotic",
+    desc: "Repeat courses of antibiotics without a culture fuel resistance. When urine, stool, wound and throat cultures are the right call in Gurugram.",
+    author: "Aarvak Diagnostics",
+    readTime: "5 min",
+    category: "Pathology",
+    metaTitle: "Culture & Sensitivity Test in Gurugram – Urine, Stool, Wound | Aarvak",
+    metaDescription: "When do you need a culture and sensitivity test? Urine, stool, wound and throat cultures explained, with home sample collection in Gurugram at Aarvak Diagnostics.",
+    content: `Monsoon brings a wave of stomach upsets, urine infections and slow-healing skin infections. The usual response — another antibiotic course — often fails, because nobody identified the organism. That is what a [microbiology culture](/departments/pathology/Microbiology) does.
+
+## What Culture and Sensitivity Actually Tells You
+
+- **Which organism** is causing the infection
+- **Which antibiotics it responds to** (sensitivity)
+- **Which antibiotics it resists** — avoiding a wasted week
+
+## Common Monsoon Cultures
+
+- **Urine culture** — burning urination, frequency, lower abdominal pain, recurrent UTI
+- **Stool culture** — diarrhoea lasting over 3 days, blood or mucus in stool, after eating out
+- **Wound / pus culture** — non-healing cuts, boils, infected insect bites, diabetic foot wounds
+- **Throat swab** — severe sore throat with fever, especially in children
+- **Fungal (KOH) tests** — ringworm and athlete's foot, which peak in humid weather
+
+## Why Timing Matters
+
+Collect the sample **before** starting antibiotics wherever possible. Once treatment begins, cultures often return falsely negative. Cultures typically take 48–72 hours because bacteria need time to grow — a preliminary report may be available earlier.
+
+## Pair With Blood Work
+
+- **CBC** — bacterial vs viral pattern
+- **CRP and ESR** — inflammation severity
+- **[Blood sugar / HbA1c](/insights/diabetes-prevention-hba1c-young-adults)** — poorly controlled diabetes drives recurrent infections
+- **[KFT](/insights/kidney-function-test-kft-gurugram-early-warning-signs)** — before nephrotoxic antibiotics
+
+## Booking
+
+Sterile containers and collection instructions are provided; urine and stool samples can be picked up from home across Gurugram. Testing follows NABL protocols; certification application submitted.
+
+[Book a culture and sensitivity test](/contact-us#contact).`,
+    tags: ["Microbiology", "Culture Test", "UTI", "Monsoon", "Gurugram"],
+  },
+  {
+    slug: "waterborne-diseases-monsoon-typhoid-hepatitis-a-gurugram",
+    img: "/images/blog-waterborne-monsoon.jpg",
+    date: "July 6, 2026",
+    dateSort: "2026-07-06",
+    title: "Water-Borne Diseases in the Gurugram Monsoon: Tests That Catch Them Early",
+    desc: "Typhoid, hepatitis A, cholera and gastroenteritis all spike in the rains. The tests that identify them and the habits that prevent them.",
+    author: "Aarvak Diagnostics",
+    readTime: "6 min",
+    category: "Preventive Health",
+    metaTitle: "Water-Borne Disease Tests in Gurugram – Typhoid & Hepatitis A | Aarvak",
+    metaDescription: "Monsoon water contamination causes typhoid, hepatitis A and gastroenteritis. Know the symptoms and tests. Book with home sample collection in Gurugram.",
+    content: `Every monsoon, waterlogging and pipeline contamination across Gurugram push up cases of typhoid, hepatitis A and severe gastroenteritis. These illnesses share early symptoms with ordinary viral fever, so testing is what separates a week of rest from a hospital admission.
+
+## The Four to Watch
+
+- **Typhoid** — step-ladder fever, abdominal pain, constipation then loose stools, weakness
+- **Hepatitis A** — fatigue, nausea, loss of appetite, dark urine, yellow eyes
+- **Cholera / acute gastroenteritis** — watery diarrhoea, vomiting, rapid dehydration
+- **Amoebiasis and giardiasis** — loose stools with mucus, cramps, bloating
+
+## Which Test for Which Illness
+
+- **Typhoid** — Typhi-Dot IgM or blood culture (most accurate in week 1); Widal after week 1
+- **Hepatitis A** — HAV IgM antibody, plus [LFT](/insights/liver-kidney-health-lft-kft-tests) to assess liver involvement
+- **Gastroenteritis** — [stool routine and culture](/insights/monsoon-skin-and-stomach-infections-culture-tests-gurugram); electrolytes if dehydrated
+- **General** — CBC, CRP, and a [monsoon fever panel](/insights/monsoon-fever-panel-dengue-malaria-typhoid-gurugram) when the cause is unclear
+
+## Red Flags — Test the Same Day
+
+- Fever above 100 °F for more than 3 days
+- Yellowing of eyes or skin
+- Blood or mucus in stool
+- Vomiting that prevents fluid intake
+- Confusion, very low urine output, or dizziness on standing
+
+## Prevention That Actually Works
+
+- Drink boiled or properly filtered water; check RO filter service dates
+- Avoid cut fruit, chutneys, salads and juices from roadside vendors
+- Wash hands before eating and after commuting
+- Keep overhead and underground tanks cleaned during the season
+- Consider typhoid and hepatitis A vaccination — ask your physician
+
+## Testing From Home
+
+Fever plus rain plus traffic is a miserable combination. Aarvak Diagnostics collects samples from your home across Gurugram — Sector 67, [Sohna Road](/diagnostic-centre-gurugram/sohna-road), Golf Course Extension Road and nearby sectors — with digital reports usually the same day. Testing follows NABL protocols; certification application submitted.
+
+[Book a water-borne disease panel](/contact-us#contact) or call +91 92663 33711.`,
+    tags: ["Typhoid", "Hepatitis A", "Monsoon", "Water-borne", "Gurugram"],
+  },
+  {
     slug: "monsoon-fever-panel-dengue-malaria-typhoid-gurugram",
     img: "/images/blog-monsoon-fever-panel.jpg",
     date: "June 30, 2026",
