@@ -137,17 +137,44 @@ const faqs = [
 
 const Index = () => {
   useSEO({
-    title: "Diagnostic Centre in Gurgaon | Aarvak Diagnostics",
-    description: "Trusted diagnostic centre in Gurgaon for blood tests, pathology, radiology & health packages with home collection. NABL protocols followed; certification application submitted.",
+    title: "Diagnostic Centre in Gurgaon | Blood Test Lab | Aarvak",
+    description: "Aarvak Diagnostics is a trusted diagnostic centre in Gurgaon for blood tests, pathology, X-ray, PFT, ECG and full body health checkups with free home sample collection and same-day reports.",
     canonical: "/",
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
+      "@id": "https://www.aarvakdiagnostics.com/#organization",
       "name": "Aarvak Diagnostics",
       "url": "https://www.aarvakdiagnostics.com",
       "logo": "https://www.aarvakdiagnostics.com/images/aarvak-logo.webp",
-      "description": "Trusted diagnostic centre offering pathology, radiology and preventive health checkups across India.",
-      "address": { "@type": "PostalAddress", "addressLocality": "Gurugram", "addressCountry": "IN" },
+      "image": "https://www.aarvakdiagnostics.com/images/aarvak-logo.webp",
+      "description": "Diagnostic centre in Gurgaon offering pathology and blood tests, digital X-ray (hip, knee, ankle and chest), PFT, ECG and preventive full body health checkup packages with home sample collection. NABL protocols followed; certification application submitted.",
+      "telephone": "+91-92663-33711",
+      "email": "marketing@aarvakdiagnostics.com",
+      "priceRange": "₹₹",
+      "medicalSpecialty": ["Pathology", "Radiology", "PreventiveMedicine"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop No.23, Ground Floor, Office No.S06, 5th Floor, Block-B, JMD Suburbio-2, Sector-67",
+        "addressLocality": "Gurugram",
+        "addressRegion": "Haryana",
+        "postalCode": "122102",
+        "addressCountry": "IN"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Gurugram" },
+        { "@type": "Place", "name": "Sector 67, Gurugram" },
+        { "@type": "Place", "name": "Sohna Road, Gurugram" },
+        { "@type": "Place", "name": "Golf Course Extension Road, Gurugram" }
+      ],
+      "availableService": [
+        { "@type": "MedicalTest", "name": "Blood Tests & Pathology" },
+        { "@type": "MedicalTest", "name": "Full Body Health Checkup Packages" },
+        { "@type": "MedicalTest", "name": "Digital X-Ray (Hip, Knee, Ankle, Chest)" },
+        { "@type": "MedicalTest", "name": "Pulmonary Function Test (PFT)" },
+        { "@type": "MedicalTest", "name": "ECG" },
+        { "@type": "MedicalTest", "name": "Home Sample Collection" }
+      ],
       "sameAs": ["https://www.instagram.com/aarvakdiagnostics/", "https://www.facebook.com/aarvakdiagnostics/"]
     },
   });
