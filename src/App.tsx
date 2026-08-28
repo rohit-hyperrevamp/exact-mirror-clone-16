@@ -39,6 +39,8 @@ import AdminSeo from "./pages/admin/AdminSeo";
 import AdminSeoAnalytics from "./pages/admin/AdminSeoAnalytics";
 import AdminSeoKeywords from "./pages/admin/AdminSeoKeywords";
 import AdminSeoIndexing from "./pages/admin/AdminSeoIndexing";
+import AdminBlogs from "./pages/admin/AdminBlogs";
+
 import AdminGuard from "./components/AdminGuard";
 import AutoCanonical from "./components/AutoCanonical";
 
@@ -94,6 +96,8 @@ const AppLayout = () => {
             <Route path="analytics" element={<AdminSeoAnalytics />} />
             <Route path="keywords" element={<AdminSeoKeywords />} />
             <Route path="indexing" element={<AdminSeoIndexing />} />
+            <Route path="blogs" element={<AdminBlogs />} />
+
           </Route>
         </Route>
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
