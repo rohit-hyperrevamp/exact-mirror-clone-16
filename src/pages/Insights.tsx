@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 import { scheduledBlogPosts } from "@/data/scheduledBlogPosts";
+import usePublishedBlogPosts from "@/hooks/usePublishedBlogPosts";
 import useSEO from "@/hooks/useSEO";
 
 const Insights = () => {
@@ -10,11 +11,15 @@ const Insights = () => {
     canonical: "/insights",
   });
 
+  const { posts: dbPosts } = usePublishedBlogPosts();
+
   // Combine all posts and filter by date (only show posts with dateSort <= today)
   const today = new Date().toISOString().split("T")[0];
-  const allPosts = [...blogPosts, ...scheduledBlogPosts]
-    .filter((post) => post.dateSort <= today)
+  const staticPosts = [...blogPosts, ...scheduledBlogPosts].filter((p) => p.dateSort <= today);
+  const staticSlugs = new Set(staticPosts.map((p) => p.slug));
+  const allPosts = [...staticPosts, ...dbPosts.filter((p) => !staticSlugs.has(p.slug))]
     .sort((a, b) => b.dateSort.localeCompare(a.dateSort));
+
 
   return (
     <div className="bg-white">
