@@ -96,6 +96,18 @@ export const AdminBlogs = () => {
 
   return (
     <div className="max-w-6xl">
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+        <div className="flex items-start gap-3">
+          <AlertTriangle className="h-5 w-5 text-amber-600 mt-0.5 shrink-0" />
+          <div>
+            <p className="font-semibold text-[13px] text-amber-800">Missing source content</p>
+            <p className="text-[12px] text-amber-700 mt-1">
+              6 scheduled posts are missing complete source content. Waiting for content — no content has been generated automatically. Missing-content posts will not be published until their complete content has been provided.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="text-[22px] md:text-[26px] font-bold text-[#001260]">Blog Publishing</h1>
