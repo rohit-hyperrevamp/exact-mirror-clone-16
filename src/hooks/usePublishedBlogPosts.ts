@@ -17,7 +17,7 @@ export function usePublishedBlogPosts() {
       const { data } = await (supabase as any)
         .from("blog_posts")
         .select(
-          "slug,title,h1,meta_title,meta_description,excerpt,category,content,featured_image,tags,author,read_time,published_at,scheduled_date"
+          "slug,title,h1,meta_title,meta_description,excerpt,category,content,featured_image,tags,author,read_minutes,published_at,scheduled_date"
         )
         .eq("status", "published")
         .order("published_at", { ascending: false });
@@ -39,7 +39,7 @@ export function usePublishedBlogPosts() {
             title: r.h1 || r.title,
             desc: r.excerpt || r.meta_description || "",
             author: r.author || "Aarvak Diagnostics",
-            readTime: r.read_time || "6 min",
+            readTime: (r.read_minutes ? `${r.read_minutes} min` : "6 min"),
             category: r.category || "Health",
             content: r.content || "",
             tags: Array.isArray(r.tags) ? r.tags : [],
