@@ -48,7 +48,9 @@ Deno.serve(async (req) => {
     if (!auth.ok) return jsonResponse({ error: "unauthorized" }, 401);
   }
 
-  const action = String(body.action ?? "list");
+  const rawAction = String(body.action ?? "list");
+  const action = rawAction === "bootstrap_import" ? "import_calendar" : rawAction;
+
 
   try {
     switch (action) {
