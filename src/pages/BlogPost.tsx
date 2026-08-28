@@ -2,13 +2,16 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { blogPosts } from "@/data/blogPosts";
 import { scheduledBlogPosts } from "@/data/scheduledBlogPosts";
+import usePublishedBlogPosts from "@/hooks/usePublishedBlogPosts";
 import NewsletterSection from "@/components/NewsletterSection";
 
 const allPosts = [...blogPosts, ...scheduledBlogPosts];
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = allPosts.find((p) => p.slug === slug);
+  const { posts: dbPosts, loading } = usePublishedBlogPosts();
+  const post = allPosts.find((p) => p.slug === slug) || dbPosts.find((p) => p.slug === slug);
+
 
   useEffect(() => {
     if (!post) return;
@@ -93,7 +96,12 @@ const BlogPost = () => {
     };
   }, [post]);
 
+  if (!post && loading) {
+    return <div className="min-h-screen flex items-center justify-center text-gray-500">Loading…</div>;
+  }
+
   if (!post) {
+
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">

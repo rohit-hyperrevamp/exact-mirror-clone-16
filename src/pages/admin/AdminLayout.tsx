@@ -1,13 +1,15 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { clearAdminToken } from "@/lib/adminApi";
-import { BarChart3, ListChecks, Search, Send, LogOut, ArrowLeft, ShieldCheck } from "lucide-react";
+import { BarChart3, ListChecks, Search, Send, LogOut, ArrowLeft, ShieldCheck, CalendarClock } from "lucide-react";
 
 const NAV = [
   { to: "/admin/seo", label: "Plan", icon: ListChecks, end: true },
+  { to: "/admin/seo/blogs", label: "Blogs", icon: CalendarClock },
   { to: "/admin/seo/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/admin/seo/keywords", label: "Keywords", icon: Search },
   { to: "/admin/seo/indexing", label: "Indexing", icon: Send },
 ];
+
 
 export const AdminLayout = () => {
   const nav = useNavigate();
