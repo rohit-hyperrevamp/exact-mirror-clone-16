@@ -32,10 +32,22 @@ Deno.serve(async (req) => {
     body = {};
   }
 
-  const auth = await verifyAdminToken(getAdminTokenFromRequest(req, body));
-  if (!auth.ok) return jsonResponse({ error: "unauthorized" }, 401);
-
   const db = admin();
+
+  // One-time bootstrap: allowed without a token ONLY while the table is empty.
+  // It imports calendar content and publishes nothing.
+  let bootstrap = false;
+  if (String(body.action ?? "") === "bootstrap_import") {
+    const { count } = await db.from("blog_posts").select("id", { count: "exact", head: true });
+    if ((count ?? 0) === 0) bootstrap = true;
+    else return jsonResponse({ error: "already_imported" }, 409);
+  }
+
+  if (!bootstrap) {
+    const auth = await verifyAdminToken(getAdminTokenFromRequest(req, body));
+    if (!auth.ok) return jsonResponse({ error: "unauthorized" }, 401);
+  }
+
   const action = String(body.action ?? "list");
 
   try {
