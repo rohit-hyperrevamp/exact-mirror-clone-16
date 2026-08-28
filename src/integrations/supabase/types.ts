@@ -14,6 +14,155 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          author: string
+          category: string
+          content: string
+          created_at: string
+          excerpt: string | null
+          featured_image: string | null
+          h1: string | null
+          id: string
+          last_error: string | null
+          meta_description: string | null
+          meta_title: string | null
+          needs_review: boolean
+          primary_keyword: string | null
+          published_at: string | null
+          read_minutes: number
+          scheduled_date: string | null
+          scheduled_time: string
+          secondary_keywords: string[]
+          slug: string
+          source: string
+          status: string
+          tags: string[]
+          timezone: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author?: string
+          category?: string
+          content?: string
+          created_at?: string
+          excerpt?: string | null
+          featured_image?: string | null
+          h1?: string | null
+          id?: string
+          last_error?: string | null
+          meta_description?: string | null
+          meta_title?: string | null
+          needs_review?: boolean
+          primary_keyword?: string | null
+          published_at?: string | null
+          read_minutes?: number
+          scheduled_date?: string | null
+          scheduled_time?: string
+          secondary_keywords?: string[]
+          slug: string
+          source?: string
+          status?: string
+          tags?: string[]
+          timezone?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string
+          category?: string
+          content?: string
+          created_at?: string
+          excerpt?: string | null
+          featured_image?: string | null
+          h1?: string | null
+          id?: string
+          last_error?: string | null
+          meta_description?: string | null
+          meta_title?: string | null
+          needs_review?: boolean
+          primary_keyword?: string | null
+          published_at?: string | null
+          read_minutes?: number
+          scheduled_date?: string | null
+          scheduled_time?: string
+          secondary_keywords?: string[]
+          slug?: string
+          source?: string
+          status?: string
+          tags?: string[]
+          timezone?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      blog_publish_log: {
+        Row: {
+          action: string
+          created_at: string
+          id: string
+          message: string | null
+          ok: boolean
+          post_id: string | null
+          slug: string | null
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          id?: string
+          message?: string | null
+          ok?: boolean
+          post_id?: string | null
+          slug?: string | null
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          id?: string
+          message?: string | null
+          ok?: boolean
+          post_id?: string | null
+          slug?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_publish_log_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      blog_settings: {
+        Row: {
+          auto_publish_enabled: boolean
+          default_publish_time: string
+          id: boolean
+          overdue_grace_days: number
+          timezone: string
+          updated_at: string
+        }
+        Insert: {
+          auto_publish_enabled?: boolean
+          default_publish_time?: string
+          id?: boolean
+          overdue_grace_days?: number
+          timezone?: string
+          updated_at?: string
+        }
+        Update: {
+          auto_publish_enabled?: boolean
+          default_publish_time?: string
+          id?: boolean
+          overdue_grace_days?: number
+          timezone?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       form_submissions: {
         Row: {
           created_at: string
@@ -337,7 +486,17 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      blog_scheduled_at: {
+        Args: { p_date: string; p_time: string; p_tz: string }
+        Returns: string
+      }
+      publish_due_blog_posts: {
+        Args: never
+        Returns: {
+          flagged_count: number
+          published_count: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
