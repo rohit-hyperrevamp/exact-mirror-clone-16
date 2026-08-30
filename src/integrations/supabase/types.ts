@@ -248,7 +248,9 @@ export type Database = {
           enabled: boolean
           home_collection: boolean
           id: string
+          latitude: number | null
           location: string | null
+          longitude: number | null
           map_url: string | null
           name: string
           notes: string | null
@@ -267,7 +269,9 @@ export type Database = {
           enabled?: boolean
           home_collection?: boolean
           id?: string
+          latitude?: number | null
           location?: string | null
+          longitude?: number | null
           map_url?: string | null
           name: string
           notes?: string | null
@@ -286,7 +290,9 @@ export type Database = {
           enabled?: boolean
           home_collection?: boolean
           id?: string
+          latitude?: number | null
           location?: string | null
+          longitude?: number | null
           map_url?: string | null
           name?: string
           notes?: string | null
@@ -995,6 +1001,8 @@ export type Database = {
           booked_online: boolean
           cancel_reason: string | null
           cancelled_at: string | null
+          center_id: string | null
+          center_name: string | null
           collection_type: string
           created_at: string
           customer_email: string | null
@@ -1025,6 +1033,8 @@ export type Database = {
           booked_online?: boolean
           cancel_reason?: string | null
           cancelled_at?: string | null
+          center_id?: string | null
+          center_name?: string | null
           collection_type?: string
           created_at?: string
           customer_email?: string | null
@@ -1055,6 +1065,8 @@ export type Database = {
           booked_online?: boolean
           cancel_reason?: string | null
           cancelled_at?: string | null
+          center_id?: string | null
+          center_name?: string | null
           collection_type?: string
           created_at?: string
           customer_email?: string | null
@@ -1081,6 +1093,13 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "test_orders_center_id_fkey"
+            columns: ["center_id"]
+            isOneToOne: false
+            referencedRelation: "collection_centers"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "test_orders_customer_id_fkey"
             columns: ["customer_id"]

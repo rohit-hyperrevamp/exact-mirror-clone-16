@@ -51,6 +51,8 @@ export type CollectionCenter = {
   email: string | null;
   timings: string | null;
   map_url: string | null;
+  latitude: number | null;
+  longitude: number | null;
   home_collection: boolean;
   notes: string | null;
   sort_order: number;
