@@ -1,14 +1,60 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { clearAdminToken } from "@/lib/adminApi";
-import { BarChart3, ListChecks, Search, Send, LogOut, ArrowLeft, ShieldCheck, CalendarClock } from "lucide-react";
+import {
+  BarChart3,
+  ListChecks,
+  Search,
+  Send,
+  LogOut,
+  ArrowLeft,
+  ShieldCheck,
+  CalendarClock,
+  LayoutDashboard,
+  FlaskConical,
+  ShoppingBag,
+  ShoppingCart,
+  IndianRupee,
+  Users,
+  Gift,
+  Ticket,
+} from "lucide-react";
 
-const NAV = [
-  { to: "/admin/seo", label: "Plan", icon: ListChecks, end: true },
-  { to: "/admin/seo/blogs", label: "Blogs", icon: CalendarClock },
-  { to: "/admin/seo/analytics", label: "Analytics", icon: BarChart3 },
-  { to: "/admin/seo/keywords", label: "Keywords", icon: Search },
-  { to: "/admin/seo/indexing", label: "Indexing", icon: Send },
+const GROUPS: { title: string; items: { to: string; label: string; icon: typeof ListChecks; end?: boolean }[] }[] = [
+  {
+    title: "Overview",
+    items: [{ to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard, end: true }],
+  },
+  {
+    title: "Commerce",
+    items: [
+      { to: "/admin/catalog", label: "Catalog", icon: FlaskConical },
+      { to: "/admin/orders", label: "Test Orders", icon: ShoppingBag },
+      { to: "/admin/abandoned-carts", label: "Abandoned Carts", icon: ShoppingCart },
+      { to: "/admin/payments", label: "Payments", icon: IndianRupee },
+      { to: "/admin/customers", label: "Patients", icon: Users },
+    ],
+  },
+  {
+    title: "Growth",
+    items: [
+      { to: "/admin/rewards", label: "Rewards & Loyalty", icon: Gift },
+      { to: "/admin/promo-codes", label: "Promo Codes", icon: Ticket },
+    ],
+  },
+  {
+    title: "SEO",
+    items: [
+      { to: "/admin/seo", label: "Plan", icon: ListChecks, end: true },
+      { to: "/admin/seo/blogs", label: "Blogs", icon: CalendarClock },
+      { to: "/admin/seo/analytics", label: "Analytics", icon: BarChart3 },
+      { to: "/admin/seo/keywords", label: "Keywords", icon: Search },
+      { to: "/admin/seo/indexing", label: "Indexing", icon: Send },
+    ],
+  },
 ];
+
+const NAV = GROUPS.flatMap((g) => g.items);
+
 
 
 export const AdminLayout = () => {
