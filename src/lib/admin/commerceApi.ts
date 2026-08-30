@@ -224,12 +224,33 @@ export type DashboardData = {
 export const ORDER_STATES = [
   "pending",
   "confirmed",
+  "phlebotomist_on_the_way",
   "sample_collected",
+  "sample_received",
   "in_lab",
   "report_ready",
+  "report_delivered",
   "completed",
   "cancelled",
 ] as const;
+
+/** Patient-friendly labels for the lab fulfilment pipeline. */
+export const ORDER_STATE_LABELS: Record<string, string> = {
+  pending: "Pending",
+  confirmed: "Confirmed",
+  phlebotomist_on_the_way: "Collector on the way",
+  sample_collected: "Sample collected",
+  sample_received: "Sample received at lab",
+  in_lab: "Testing in progress",
+  report_ready: "Report ready",
+  report_delivered: "Report delivered",
+  completed: "Completed",
+  cancelled: "Cancelled",
+};
+
+export function orderStatusLabel(s: string) {
+  return ORDER_STATE_LABELS[s] ?? String(s ?? "").replace(/[_-]+/g, " ");
+}
 
 export const PAYMENT_METHODS = ["online", "pay_at_lab"] as const;
 export const PAYMENT_STATES = ["pending", "paid", "refunded", "failed"] as const;

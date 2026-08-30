@@ -111,12 +111,14 @@ export function StatusSelect({
   options,
   label = "Status",
   className,
+  renderLabel,
 }: {
   value: string;
   onChange: (v: string) => void;
   options: string[];
   label?: string;
   className?: string;
+  renderLabel?: (s: string) => string;
 }) {
   return (
     <label className={cn("flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1.5", className)}>
@@ -124,7 +126,7 @@ export function StatusSelect({
       <select value={value} onChange={(e) => onChange(e.target.value)} className="bg-transparent text-sm outline-none">
         {options.map((o) => (
           <option key={o} value={o}>
-            {statusLabel(o)}
+            {(renderLabel ?? statusLabel)(o)}
           </option>
         ))}
       </select>

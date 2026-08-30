@@ -6,6 +6,7 @@ import {
   collectionLabel,
   commerce,
   methodLabel,
+  orderStatusLabel,
   type Payment,
   type TestOrder,
   type TestOrderItem,
@@ -62,7 +63,13 @@ const AdminOrderDetail = () => {
         actions={
           order && (
             <>
-              <StatusSelect value={order.status} onChange={(v) => patch({ status: v })} options={[...ORDER_STATES]} label="Order" />
+              <StatusSelect
+                value={order.status}
+                onChange={(v) => patch({ status: v })}
+                options={[...ORDER_STATES]}
+                label="Order"
+                renderLabel={orderStatusLabel}
+              />
               <StatusSelect
                 value={order.payment_status}
                 onChange={(v) => patch({ payment_status: v })}

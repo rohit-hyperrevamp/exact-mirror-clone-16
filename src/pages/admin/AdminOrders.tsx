@@ -1,12 +1,13 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   COLLECTION_TYPES,
   ORDER_STATES,
   collectionLabel,
   commerce,
   methodLabel,
+  orderStatusLabel,
   type TestOrder,
 } from "@/lib/admin/commerceApi";
 import { AdminLoadError, AdminPageHeader, Badge, EmptyRow, Input, Row, Select, StatCard, TableShell, inr, statusLabel } from "@/lib/admin/ui";
@@ -15,12 +16,44 @@ import { Pager, usePager } from "@/lib/admin/pager";
 
 function tone(status: string) {
   if (status === "cancelled") return "bad" as const;
-  if (status === "completed" || status === "report_ready") return "good" as const;
+  if (status === "completed" || status === "report_ready" || status === "report_delivered") return "good" as const;
   if (status === "pending") return "warn" as const;
   return "neutral" as const;
 }
 
+function OrderStatusCell({ order, onSaved }: { order: TestOrder; onSaved: () => void }) {
+  const [busy, setBusy] = useState(false);
+  return (
+    <div className="flex flex-col gap-1">
+      <select
+        aria-label={`Update status for ${order.order_no}`}
+        value={order.status}
+        disabled={busy}
+        onChange={async (e) => {
+          const next = e.target.value;
+          setBusy(true);
+          try {
+            await commerce("update_order", { id: order.id, patch: { status: next } });
+            onSaved();
+          } finally {
+            setBusy(false);
+          }
+        }}
+        className="w-full rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-xs outline-none focus:border-[#0172B6] disabled:opacity-50"
+      >
+        {ORDER_STATES.map((s) => (
+          <option key={s} value={s}>
+            {orderStatusLabel(s)}
+          </option>
+        ))}
+      </select>
+      <Badge tone={tone(order.status)}>{orderStatusLabel(order.status)}</Badge>
+    </div>
+  );
+}
+
 const AdminOrders = () => {
+  const qc = useQueryClient();
   const { data, error } = useQuery({
     queryKey: ["admin-orders"],
     queryFn: () => commerce<{ rows: TestOrder[] }>("list_orders"),
@@ -49,7 +82,7 @@ const AdminOrders = () => {
   const revenue = filtered.reduce((s, o) => s + Number(o.total ?? 0), 0);
   const collected = filtered.filter((o) => o.payment_status === "paid").reduce((s, o) => s + Number(o.total ?? 0), 0);
   const { pageRows, pager } = usePager(filtered, 25);
-  const cols = "1.2fr 1fr 130px 130px 120px 110px";
+  const cols = "1.2fr 1fr 130px 130px 180px 110px";
 
   return (
     <>
@@ -74,7 +107,7 @@ const AdminOrders = () => {
           <option value="all">All statuses</option>
           {ORDER_STATES.map((s) => (
             <option key={s} value={s}>
-              {statusLabel(s)}
+              {orderStatusLabel(s)}
             </option>
           ))}
         </Select>
@@ -89,7 +122,7 @@ const AdminOrders = () => {
       </div>
 
       <Pager pager={pager} label="orders" />
-      <TableShell minWidth={950}>
+      <TableShell minWidth={1010}>
         <Row cols={cols} head>
           <div>Order</div>
           <div>Patient</div>
@@ -124,7 +157,13 @@ const AdminOrders = () => {
               </Badge>
             </div>
             <div>
-              <Badge tone={tone(o.status)}>{statusLabel(o.status)}</Badge>
+              <OrderStatusCell
+                order={o}
+                onSaved={() => {
+                  qc.invalidateQueries({ queryKey: ["admin-orders"] });
+                  qc.invalidateQueries({ queryKey: ["admin-dashboard"] });
+                }}
+              />
             </div>
             <div className="text-right tabular-nums font-medium">{inr(o.total)}</div>
           </Row>
