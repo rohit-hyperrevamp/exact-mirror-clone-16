@@ -40,6 +40,16 @@ import AdminSeoAnalytics from "./pages/admin/AdminSeoAnalytics";
 import AdminSeoKeywords from "./pages/admin/AdminSeoKeywords";
 import AdminSeoIndexing from "./pages/admin/AdminSeoIndexing";
 import AdminBlogs from "./pages/admin/AdminBlogs";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminCatalog from "./pages/admin/AdminCatalog";
+import AdminCatalogDetail from "./pages/admin/AdminCatalogDetail";
+import AdminOrders from "./pages/admin/AdminOrders";
+import AdminOrderDetail from "./pages/admin/AdminOrderDetail";
+import AdminAbandonedCarts from "./pages/admin/AdminAbandonedCarts";
+import AdminPayments from "./pages/admin/AdminPayments";
+import AdminCustomers from "./pages/admin/AdminCustomers";
+import AdminRewards from "./pages/admin/AdminRewards";
+import AdminPromoCodes from "./pages/admin/AdminPromoCodes";
 
 import AdminGuard from "./components/AdminGuard";
 import AutoCanonical from "./components/AutoCanonical";
