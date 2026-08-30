@@ -1,10 +1,6 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { clearAdminToken } from "@/lib/adminApi";
 import {
-  BarChart3,
-  ListChecks,
-  Search,
-  Send,
   LogOut,
   ArrowLeft,
   ShieldCheck,
@@ -17,7 +13,9 @@ import {
   Users,
   Gift,
   Ticket,
+  type LucideIcon,
 } from "lucide-react";
+
 
 const GROUPS: { title: string; items: { to: string; label: string; icon: typeof ListChecks; end?: boolean }[] }[] = [
   {
