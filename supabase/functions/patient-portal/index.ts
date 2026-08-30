@@ -423,7 +423,15 @@ Deno.serve(async (req) => {
           if (subtotal < Number(promo.min_order ?? 0)) return jsonResponse({ error: "promo_min_order" }, 400);
           discount = promoDiscount(promo, subtotal);
         }
-        const total = Math.max(0, Math.round((subtotal - discount) * 100) / 100);
+        const afterPromo = Math.max(0, Math.round((subtotal - discount) * 100) / 100);
+
+        // Redeem loyalty points (optional) against the post-promo amount.
+        const redeemed = await redeemLoyaltyPoints(db, {
+          customerId: customerId!,
+          requested: Math.floor(num(body.points_to_redeem)),
+          amount: afterPromo,
+        });
+        const total = Math.max(0, Math.round((afterPromo - redeemed.value) * 100) / 100);
 
         const { data: order, error: orderErr } = await db
           .from("test_orders")
@@ -441,6 +449,8 @@ Deno.serve(async (req) => {
             subtotal,
             discount,
             total,
+            points_used: redeemed.points,
+            points_value: redeemed.value,
             promo_code: promo?.code ?? null,
             payment_method: "online",
             payment_status: "paid",
