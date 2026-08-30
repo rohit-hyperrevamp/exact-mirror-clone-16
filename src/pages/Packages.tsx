@@ -55,7 +55,7 @@ const Packages = () => {
       if (category !== "all" && t.category !== category) return false;
       if (!bandTest(Number(t.price))) return false;
       if (homeOnly && !t.home_collection) return false;
-      if (offersOnly && !(t.mrp && Number(t.mrp) > Number(t.price))) return false;
+      if (offersOnly && !(Number(t.mrp ?? 0) > Number(t.price))) return false;
       if (!q) return true;
       const haystack = [t.name, t.description ?? "", ...(t.parameters ?? [])].join(" ").toLowerCase();
       return haystack.includes(q);
@@ -205,7 +205,7 @@ const Packages = () => {
               ) : (
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {visible.map((t) => {
-                    const hasOffer = t.mrp && Number(t.mrp) > Number(t.price);
+                    const hasOffer = Boolean(t.mrp) && Number(t.mrp) > Number(t.price);
                     const off = hasOffer
                       ? Math.round(((Number(t.mrp) - Number(t.price)) / Number(t.mrp)) * 100)
                       : 0;
