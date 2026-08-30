@@ -96,7 +96,16 @@ export const AdminLayout = () => {
         </nav>
       </aside>
 
-      <main className="flex-1 min-w-0 pt-6 md:pt-8 pb-16 px-4 md:px-10">
+      <main className="flex-1 min-w-0 pt-0 md:pt-8 pb-16 px-4 md:px-10">
+        <div className="md:hidden sticky top-0 z-40 -mx-4 mb-3 flex items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3">
+          <img src="/images/aarvak-logo.webp" alt="Aarvak Diagnostics logo" className="h-7 w-auto" />
+          <button
+            onClick={signOut}
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#001260] px-3 h-9 text-[12px] font-medium text-white"
+          >
+            <LogOut className="h-3.5 w-3.5" /> Sign out
+          </button>
+        </div>
         <div className="md:hidden flex gap-2 overflow-x-auto pb-4 -mx-4 px-4">
           {NAV.map((n) => (
             <NavLink
@@ -112,9 +121,6 @@ export const AdminLayout = () => {
               {n.label}
             </NavLink>
           ))}
-          <button onClick={signOut} className="shrink-0 px-3 h-9 rounded-full inline-flex items-center text-[12px] bg-white text-slate-700 border border-slate-200">
-            Sign out
-          </button>
         </div>
         <Outlet />
       </main>
