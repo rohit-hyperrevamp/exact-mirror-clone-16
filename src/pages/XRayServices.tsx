@@ -68,7 +68,7 @@ const XRayServices = () => {
               <div className="text-white max-w-md">
                 <h1 className="text-2xl md:text-[30px] font-bold leading-tight">Digital X Ray Services in Gurgaon</h1>
                 <p className="mt-3 text-[15px] opacity-80">Advanced digital X ray and diagnostic radiography services for accurate imaging, faster diagnosis, and reliable medical evaluation.</p>
-                <Link to="/packages" className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition">
+                <Link to="/contact-us#contact" className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition">
                   Book X Ray Test
                 </Link>
               </div>
@@ -228,7 +228,7 @@ const XRayServices = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Book Your X Ray Today</h2>
           <p className="text-muted-foreground text-[15px] mb-6">Accurate imaging. Fast reports. Better healthcare decisions.</p>
-          <Link to="/packages" className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded-full text-sm hover:bg-secondary/90 transition">Book Now</Link>
+          <Link to="/contact-us#contact" className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded-full text-sm hover:bg-secondary/90 transition">Book Now</Link>
         </div>
       </section>
 

@@ -101,7 +101,7 @@ const Radiology = () => {
                 <h2 className="text-xl md:text-[30px] font-bold leading-tight">Accurate Imaging & Diagnostic Radiology</h2>
                 <p className="mt-3 text-sm md:text-[15px] opacity-80">Advanced diagnostic radiology services with modern imaging technology, experienced radiologists, and reliable reporting for accurate healthcare decisions.</p>
                 <Link
-                  to="/packages"
+                  to="/contact-us#contact"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book Imaging Test
@@ -265,7 +265,7 @@ const Radiology = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Book Your Radiology Tests Today</h2>
           <p className="text-muted-foreground text-[15px] mb-6">Accurate imaging. Faster reports. Better healthcare decisions.</p>
           <Link
-            to="/packages"
+            to="/contact-us#contact"
             className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded-full text-sm hover:bg-secondary/90 transition"
           >
             Book Now
