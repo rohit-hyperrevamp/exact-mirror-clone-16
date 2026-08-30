@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle, Clock, Droplet, Home, Loader2, Search, Utensils } from "lucide-react";
+import { CheckCircle, Clock, Droplet, Home, Loader2, Utensils } from "lucide-react";
 import useSEO from "@/hooks/useSEO";
 import { PortalTest, portal } from "@/lib/patientPortal";
 
-type SortKey = "recommended" | "price-asc" | "price-desc";
+
 
 /** Health concerns are matched automatically against each package's name, description and inclusions. */
 const CONCERNS: { id: string; label: string; keywords: string[] }[] = [
