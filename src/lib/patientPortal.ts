@@ -129,9 +129,22 @@ export type PortalPromo = {
   discount: number | null;
 };
 
+export type LoyaltyTxn = {
+  id: string;
+  kind: "earn" | "redeem" | "adjust" | "expire";
+  points: number;
+  value_rupees: number;
+  balance_after: number | null;
+  order_no: string | null;
+  note: string | null;
+  created_at: string;
+};
+
 export type PortalRewards = {
   member: { points_balance: number; lifetime_points: number; tier: string } | null;
   config: { earn_percent: number; point_to_rupee: number; max_redeem_percent: number; min_order_amount: number } | null;
+  redeemable?: number;
+  history?: LoyaltyTxn[];
 };
 
 export type PortalCenter = {
