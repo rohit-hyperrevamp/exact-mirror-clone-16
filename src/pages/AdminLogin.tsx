@@ -15,7 +15,7 @@ const AdminLogin = () => {
     let m = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
     if (!m) { m = document.createElement("meta"); m.name = "robots"; document.head.appendChild(m); }
     m.content = "noindex, nofollow";
-    if (getAdminToken()) nav("/admin/seo", { replace: true });
+    if (getAdminToken()) nav("/admin/dashboard", { replace: true });
   }, [nav]);
 
   const submit = async (e: React.FormEvent) => {
@@ -25,7 +25,7 @@ const AdminLogin = () => {
     try {
       const { token } = await adminLogin(loginId.trim(), password);
       setAdminToken(token);
-      nav("/admin/seo", { replace: true });
+      nav("/admin/dashboard", { replace: true });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed");
     } finally {
