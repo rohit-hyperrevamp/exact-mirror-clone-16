@@ -4,7 +4,6 @@ import {
   LogOut,
   ArrowLeft,
   ShieldCheck,
-  CalendarClock,
   LayoutDashboard,
   FlaskConical,
   ShoppingBag,
@@ -38,10 +37,6 @@ const GROUPS: { title: string; items: { to: string; label: string; icon: LucideI
       { to: "/admin/rewards", label: "Rewards & Loyalty", icon: Gift },
       { to: "/admin/promo-codes", label: "Promo Codes", icon: Ticket },
     ],
-  },
-  {
-    title: "Content",
-    items: [{ to: "/admin/blogs", label: "Blogs", icon: CalendarClock }],
   },
 ];
 

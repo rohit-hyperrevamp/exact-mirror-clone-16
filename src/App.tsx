@@ -35,7 +35,6 @@ import XRayServices from "./pages/XRayServices";
 import PFTTest from "./pages/PFTTest";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
-import AdminBlogs from "./pages/admin/AdminBlogs";
 
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminCatalog from "./pages/admin/AdminCatalog";
@@ -112,7 +111,6 @@ const AppLayout = () => {
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="rewards" element={<AdminRewards />} />
             <Route path="promo-codes" element={<AdminPromoCodes />} />
-            <Route path="blogs" element={<AdminBlogs />} />
 
           </Route>
         </Route>
