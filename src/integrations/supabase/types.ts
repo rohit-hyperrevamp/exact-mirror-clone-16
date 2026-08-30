@@ -202,6 +202,42 @@ export type Database = {
         }
         Relationships: []
       }
+      booking_settings: {
+        Row: {
+          full_refund_percent: number
+          id: boolean
+          no_refund_hours: number
+          partial_refund_hours: number
+          partial_refund_percent: number
+          policy_text: string
+          reschedule_allowed: boolean
+          reschedule_min_hours: number
+          updated_at: string
+        }
+        Insert: {
+          full_refund_percent?: number
+          id?: boolean
+          no_refund_hours?: number
+          partial_refund_hours?: number
+          partial_refund_percent?: number
+          policy_text?: string
+          reschedule_allowed?: boolean
+          reschedule_min_hours?: number
+          updated_at?: string
+        }
+        Update: {
+          full_refund_percent?: number
+          id?: boolean
+          no_refund_hours?: number
+          partial_refund_hours?: number
+          partial_refund_percent?: number
+          policy_text?: string
+          reschedule_allowed?: boolean
+          reschedule_min_hours?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       collection_centers: {
         Row: {
           address: string | null
@@ -956,6 +992,9 @@ export type Database = {
       test_orders: {
         Row: {
           address: string | null
+          booked_online: boolean
+          cancel_reason: string | null
+          cancelled_at: string | null
           collection_type: string
           created_at: string
           customer_email: string | null
@@ -971,6 +1010,10 @@ export type Database = {
           payment_status: string
           pincode: string | null
           promo_code: string | null
+          refund_amount: number
+          refund_percent: number
+          reschedule_count: number
+          rescheduled_at: string | null
           scheduled_at: string | null
           status: string
           subtotal: number
@@ -979,6 +1022,9 @@ export type Database = {
         }
         Insert: {
           address?: string | null
+          booked_online?: boolean
+          cancel_reason?: string | null
+          cancelled_at?: string | null
           collection_type?: string
           created_at?: string
           customer_email?: string | null
@@ -994,6 +1040,10 @@ export type Database = {
           payment_status?: string
           pincode?: string | null
           promo_code?: string | null
+          refund_amount?: number
+          refund_percent?: number
+          reschedule_count?: number
+          rescheduled_at?: string | null
           scheduled_at?: string | null
           status?: string
           subtotal?: number
@@ -1002,6 +1052,9 @@ export type Database = {
         }
         Update: {
           address?: string | null
+          booked_online?: boolean
+          cancel_reason?: string | null
+          cancelled_at?: string | null
           collection_type?: string
           created_at?: string
           customer_email?: string | null
@@ -1017,6 +1070,10 @@ export type Database = {
           payment_status?: string
           pincode?: string | null
           promo_code?: string | null
+          refund_amount?: number
+          refund_percent?: number
+          reschedule_count?: number
+          rescheduled_at?: string | null
           scheduled_at?: string | null
           status?: string
           subtotal?: number
