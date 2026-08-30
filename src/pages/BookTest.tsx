@@ -333,7 +333,8 @@ const BookTest = () => {
 
                       <div className="space-y-2">
                         {(showAllCenters ? rankedCenters : rankedCenters.slice(0, 1)).map(({ center: c, km }, i) => {
-                          const isRecommended = coords != null && i === 0 && !showAllCenters ? true : coords != null && rankedCenters[0]?.center.id === c.id;
+                          const isRecommended = coords != null && rankedCenters[0]?.center.id === c.id;
+                          void i;
                           return (
                             <button
                               key={c.id}
