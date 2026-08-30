@@ -31,7 +31,9 @@ export type CommerceAction =
   | "update_loyalty"
   | "upsert_campaign"
   | "delete_campaign"
-  | "upsert_member";
+  | "upsert_member"
+  | "get_booking_policy"
+  | "update_booking_policy";
 
 export function commerce<T = unknown>(action: CommerceAction, payload: Record<string, unknown> = {}) {
   return callAdmin<T>("commerce-admin", { action, ...payload });

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, ChevronDown, Menu, X } from "lucide-react";
+import { Phone, ChevronDown, Menu, X, User } from "lucide-react";
+import { getPatientProfile } from "@/lib/patientPortal";
 
 const navLinks = [
   { label: "About Us", href: "/about-us" },
@@ -21,7 +22,18 @@ const navLinks = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [deptOpen, setDeptOpen] = useState(false);
+  const [patient, setPatient] = useState(() => getPatientProfile());
   const location = useLocation();
+
+  useEffect(() => {
+    const sync = () => setPatient(getPatientProfile());
+    window.addEventListener("aarvak-patient-auth", sync);
+    window.addEventListener("storage", sync);
+    return () => {
+      window.removeEventListener("aarvak-patient-auth", sync);
+      window.removeEventListener("storage", sync);
+    };
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm">
@@ -86,6 +98,15 @@ const Navbar = () => {
             <Phone className="w-4 h-4 text-green-700" />
           </a>
           <Link
+            to="/my-tests"
+            aria-label={patient ? "My tests and profile" : "Patient login"}
+            title={patient ? "My tests" : "Patient login"}
+            className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition relative"
+          >
+            <User className="w-4 h-4 text-[#001260]" />
+            {patient && <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-600 border-2 border-white" />}
+          </Link>
+          <Link
             to="/contact-us#contact"
             className="text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition"
             style={{ backgroundColor: '#4A7FC1' }}
@@ -94,13 +115,24 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile profile + toggle */}
+        <div className="lg:hidden flex items-center gap-1">
+        <Link
+          to="/my-tests"
+          aria-label={patient ? "My tests and profile" : "Patient login"}
+          className="p-2 relative"
+          onClick={() => setMobileOpen(false)}
+        >
+          <User className="w-6 h-6 text-[#001260]" />
+          {patient && <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-green-600" />}
+        </Link>
         <button
-          className="lg:hidden p-2"
+          className="p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -142,6 +174,13 @@ const Navbar = () => {
               </Link>
             )
           )}
+          <Link
+            to="/my-tests"
+            className="block text-sm font-medium text-gray-700 py-2"
+            onClick={() => setMobileOpen(false)}
+          >
+            {patient ? "My Tests" : "Patient Login"}
+          </Link>
           <Link
             to="/contact-us#contact"
             className="block text-center bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold"
