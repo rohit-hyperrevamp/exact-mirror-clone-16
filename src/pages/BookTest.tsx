@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { CheckCircle, Clock, Droplet, Home, Loader2, Lock, ShieldCheck, Utensils } from "lucide-react";
-import { useSEO } from "@/hooks/useSEO";
+import useSEO from "@/hooks/useSEO";
 import { toast } from "@/hooks/use-toast";
 import {
   BookingPolicy,
