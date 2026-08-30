@@ -6,18 +6,36 @@ import { PortalTest, portal } from "@/lib/patientPortal";
 
 type SortKey = "recommended" | "price-asc" | "price-desc";
 
-const PRICE_BANDS = [
-  { id: "all", label: "All prices", test: () => true },
-  { id: "under-1000", label: "Under ₹1,000", test: (p: number) => p < 1000 },
-  { id: "1000-2000", label: "₹1,000 – ₹2,000", test: (p: number) => p >= 1000 && p <= 2000 },
-  { id: "above-2000", label: "Above ₹2,000", test: (p: number) => p > 2000 },
+/** Health concerns are matched automatically against each package's name, description and inclusions. */
+const CONCERNS: { id: string; label: string; keywords: string[] }[] = [
+  { id: "full-body", label: "Full body checkup", keywords: ["wellness", "supreme", "advanced", "essential", "basic", "full body"] },
+  { id: "diabetes", label: "Diabetes & sugar", keywords: ["diabet", "hba1c", "blood sugar", "glucose"] },
+  { id: "heart", label: "Heart & cholesterol", keywords: ["heart", "lipid", "cholesterol", "cpk", "cardiac"] },
+  { id: "thyroid", label: "Thyroid & hormones", keywords: ["thyroid", "tsh", "t3", "t4"] },
+  { id: "liver", label: "Liver", keywords: ["liver", "lft", "sgot", "sgpt", "bilirubin", "amylase", "lipase"] },
+  { id: "kidney", label: "Kidney", keywords: ["kidney", "kft", "creatinine", "urea", "urine"] },
+  { id: "vitamins", label: "Vitamins & deficiency", keywords: ["vitamin", "b12", "vit. d", "iron", "ferritin"] },
+  { id: "anaemia", label: "Anaemia & blood count", keywords: ["cbc", "complete blood count", "haemoglobin", "hemoglobin", "esr", "iron"] },
+  { id: "immunity", label: "Immunity & inflammation", keywords: ["crp", "esr", "ra factor", "ige", "allergy", "immun"] },
+  { id: "pollution", label: "Pollution & lungs", keywords: ["pollution", "ige", "allerg"] },
+  { id: "pre-marriage", label: "Pre-marriage & infection screening", keywords: ["marriage", "hiv", "hbsag", "hcv", "std", "hepatitis"] },
+  { id: "cancer", label: "Cancer markers", keywords: ["psa", "ca-125", "ca/psa", "tumour", "tumor", "cancer"] },
 ];
+
+const haystackOf = (t: PortalTest) =>
+  [t.name, t.category ?? "", t.description ?? "", ...(t.parameters ?? [])].join(" ").toLowerCase();
+
+const concernsOf = (t: PortalTest) => {
+  const hay = haystackOf(t);
+  return CONCERNS.filter((c) => c.keywords.some((k) => hay.includes(k))).map((c) => c.id);
+};
+
 
 const Packages = () => {
   useSEO({
-    title: "Health Checkup Packages in Gurgaon | Aarvak Diagnostics",
+    title: "Health Checkup Packages | Book by Health Concern | Aarvak Diagnostics",
     description:
-      "Compare and book full body health checkup packages in Gurgaon. Transparent pricing, home sample collection and reports in 6–8 hours from Aarvak Diagnostics.",
+      "Book health checkup packages by health concern — diabetes, heart, thyroid, liver, kidney, vitamins and full body. Transparent pricing and reports in 6–8 hours.",
     canonical: "/packages",
   });
 
@@ -26,10 +44,7 @@ const Packages = () => {
   const [failed, setFailed] = useState(false);
 
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("all");
-  const [band, setBand] = useState("all");
-  const [homeOnly, setHomeOnly] = useState(false);
-  const [offersOnly, setOffersOnly] = useState(false);
+  const [concern, setConcern] = useState("all");
   const [sort, setSort] = useState<SortKey>("recommended");
 
   useEffect(() => {
@@ -43,34 +58,31 @@ const Packages = () => {
     };
   }, []);
 
-  const categories = useMemo(
-    () => Array.from(new Set(tests.map((t) => t.category).filter(Boolean))),
-    [tests],
-  );
+  /** Only show concern chips that actually match at least one live package. */
+  const concernOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    tests.forEach((t) => concernsOf(t).forEach((id) => counts.set(id, (counts.get(id) ?? 0) + 1)));
+    return CONCERNS.filter((c) => (counts.get(c.id) ?? 0) > 0).map((c) => ({
+      ...c,
+      count: counts.get(c.id) ?? 0,
+    }));
+  }, [tests]);
 
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const bandTest = PRICE_BANDS.find((b) => b.id === band)?.test ?? (() => true);
     const list = tests.filter((t) => {
-      if (category !== "all" && t.category !== category) return false;
-      if (!bandTest(Number(t.price))) return false;
-      if (homeOnly && !t.home_collection) return false;
-      if (offersOnly && !(Number(t.mrp ?? 0) > Number(t.price))) return false;
+      if (concern !== "all" && !concernsOf(t).includes(concern)) return false;
       if (!q) return true;
-      const haystack = [t.name, t.description ?? "", ...(t.parameters ?? [])].join(" ").toLowerCase();
-      return haystack.includes(q);
+      return haystackOf(t).includes(q);
     });
     if (sort === "price-asc") return [...list].sort((a, b) => Number(a.price) - Number(b.price));
     if (sort === "price-desc") return [...list].sort((a, b) => Number(b.price) - Number(a.price));
     return list;
-  }, [tests, query, category, band, homeOnly, offersOnly, sort]);
+  }, [tests, query, concern, sort]);
 
   const resetFilters = () => {
     setQuery("");
-    setCategory("all");
-    setBand("all");
-    setHomeOnly(false);
-    setOffersOnly(false);
+    setConcern("all");
     setSort("recommended");
   };
 
@@ -88,22 +100,23 @@ const Packages = () => {
         <div className="relative w-full overflow-hidden rounded-2xl">
           <img
             src="/images/package.png"
-            alt="Health checkup packages at Aarvak Diagnostics Gurugram"
+            alt="Health checkup packages at Aarvak Diagnostics"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-primary/80" />
           <div className="relative z-10 mx-auto max-w-5xl px-4 py-14 text-center text-primary-foreground md:py-20">
             <p className="text-xs font-medium uppercase tracking-[0.25em] opacity-80">Packages</p>
             <h1 className="mt-3 text-2xl font-bold leading-tight md:text-4xl lg:text-[44px]">
-              Health Checkup Packages in Gurgaon
+              Health Checkup Packages
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-sm opacity-90 md:text-base">
-              Pick a package, choose home collection or a nearby collection centre, and complete your
-              booking online in a few steps.
+              Choose by what you want checked — sugar, heart, thyroid, liver, kidney, vitamins or a
+              full body checkup — and complete your booking online in a few steps.
             </p>
           </div>
         </div>
       </section>
+
 
       {/* Filters */}
       <section className="px-4 pt-10 md:px-8">
@@ -115,26 +128,11 @@ const Packages = () => {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search by package or test name"
+                placeholder="Search a concern or test — e.g. thyroid, HbA1c, vitamin D"
                 className="w-full rounded-lg border border-border bg-background py-3 pl-11 pr-4 text-[15px] outline-none focus:border-secondary"
               />
             </label>
             <div className="flex flex-wrap gap-3">
-              {categories.length > 1 && (
-                <select
-                  aria-label="Filter by category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="rounded-lg border border-border bg-background px-4 py-3 text-[15px] outline-none focus:border-secondary"
-                >
-                  <option value="all">All categories</option>
-                  {categories.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-              )}
               <select
                 aria-label="Sort packages"
                 value={sort}
@@ -148,26 +146,34 @@ const Packages = () => {
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-2">
-            {PRICE_BANDS.map((b) => (
-              <button key={b.id} type="button" onClick={() => setBand(b.id)} className={chip(band === b.id)}>
-                {b.label}
+          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            What do you want checked?
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button type="button" onClick={() => setConcern("all")} className={chip(concern === "all")}>
+              All packages
+            </button>
+            {concernOptions.map((c) => (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => setConcern(concern === c.id ? "all" : c.id)}
+                className={chip(concern === c.id)}
+              >
+                {c.label} ({c.count})
               </button>
             ))}
-            <button type="button" onClick={() => setHomeOnly(!homeOnly)} className={chip(homeOnly)}>
-              Home collection
-            </button>
-            <button type="button" onClick={() => setOffersOnly(!offersOnly)} className={chip(offersOnly)}>
-              On offer
-            </button>
-            <button
-              type="button"
-              onClick={resetFilters}
-              className="rounded-full px-4 py-2 text-[13px] font-medium text-secondary underline-offset-4 hover:underline"
-            >
-              Clear filters
-            </button>
+            {(concern !== "all" || query || sort !== "recommended") && (
+              <button
+                type="button"
+                onClick={resetFilters}
+                className="rounded-full px-4 py-2 text-[13px] font-medium text-secondary underline-offset-4 hover:underline"
+              >
+                Clear filters
+              </button>
+            )}
           </div>
+
         </div>
       </section>
 
