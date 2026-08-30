@@ -202,6 +202,66 @@ export type Database = {
         }
         Relationships: []
       }
+      collection_centers: {
+        Row: {
+          address: string | null
+          alt_phone: string | null
+          city: string
+          created_at: string
+          email: string | null
+          enabled: boolean
+          home_collection: boolean
+          id: string
+          location: string | null
+          map_url: string | null
+          name: string
+          notes: string | null
+          phone: string | null
+          pincode: string | null
+          sort_order: number
+          timings: string | null
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          alt_phone?: string | null
+          city?: string
+          created_at?: string
+          email?: string | null
+          enabled?: boolean
+          home_collection?: boolean
+          id?: string
+          location?: string | null
+          map_url?: string | null
+          name: string
+          notes?: string | null
+          phone?: string | null
+          pincode?: string | null
+          sort_order?: number
+          timings?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          alt_phone?: string | null
+          city?: string
+          created_at?: string
+          email?: string | null
+          enabled?: boolean
+          home_collection?: boolean
+          id?: string
+          location?: string | null
+          map_url?: string | null
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          pincode?: string | null
+          sort_order?: number
+          timings?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       customers: {
         Row: {
           city: string | null
