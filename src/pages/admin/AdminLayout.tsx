@@ -61,16 +61,7 @@ export const AdminLayout = () => {
           <p className="text-white/50 text-[11px] mt-3 uppercase tracking-[0.16em]">Command Center</p>
         </div>
 
-        <div className="px-3 pb-4 shrink-0">
-          <button
-            onClick={signOut}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-[13px] font-medium bg-white/10 text-white hover:bg-white/20 transition"
-          >
-            <LogOut className="h-4 w-4" /> Sign out
-          </button>
-        </div>
-
-        <nav className="px-3 flex-1 space-y-5 overflow-y-auto pb-6">
+        <nav className="px-3 flex-1 space-y-5 overflow-y-auto pb-4">
           {GROUPS.map((g) => (
             <div key={g.title} className="space-y-1">
               <p className="px-3 pb-1 text-[10px] uppercase tracking-[0.2em] text-white/35">{g.title}</p>
@@ -94,6 +85,16 @@ export const AdminLayout = () => {
             </div>
           ))}
         </nav>
+
+        <div className="px-3 pt-3 pb-5 shrink-0 border-t border-white/10">
+          <button
+            onClick={signOut}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-[13px] font-medium bg-white/10 text-white hover:bg-white/20 transition"
+          >
+            <LogOut className="h-4 w-4" /> Sign out
+          </button>
+        </div>
+
       </aside>
 
       <main className="flex-1 min-w-0 pt-0 md:pt-8 pb-16 px-4 md:px-10">
