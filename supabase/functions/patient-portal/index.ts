@@ -66,6 +66,15 @@ type LoyaltyConfig = {
   point_to_rupee: number;
   min_order_amount: number;
   max_earn_per_order: number;
+  max_redeem_percent: number;
+};
+
+const DEFAULT_LOYALTY: LoyaltyConfig = {
+  earn_percent: 5,
+  point_to_rupee: 1,
+  min_order_amount: 0,
+  max_earn_per_order: 0,
+  max_redeem_percent: 100,
 };
 
 function tierFor(lifetime: number): string {
@@ -75,12 +84,53 @@ function tierFor(lifetime: number): string {
   return "bronze";
 }
 
+// deno-lint-ignore no-explicit-any
+async function loyaltyConfig(db: any): Promise<LoyaltyConfig> {
+  const { data } = await db.from("loyalty_settings").select("*").limit(1).maybeSingle();
+  return { ...DEFAULT_LOYALTY, ...(data ?? {}) } as LoyaltyConfig;
+}
+
+/** How many points a member may spend on an order of `amount` rupees. */
+export function redeemablePoints(cfg: LoyaltyConfig, balance: number, amount: number): number {
+  const rate = Number(cfg.point_to_rupee ?? 1) || 1;
+  const pct = Number(cfg.max_redeem_percent ?? 100);
+  const capRupees = Math.min(amount, (amount * (pct > 0 ? pct : 100)) / 100);
+  return Math.max(0, Math.min(Math.floor(balance), Math.floor(capRupees / rate)));
+}
+
+/** Spend points against an order. Returns points actually used and their rupee value. */
+// deno-lint-ignore no-explicit-any
+async function redeemLoyaltyPoints(
+  db: any,
+  opts: { customerId: string; requested: number; amount: number },
+): Promise<{ points: number; value: number; memberId: string | null; balanceAfter: number }> {
+  const none = { points: 0, value: 0, memberId: null, balanceAfter: 0 };
+  if (opts.requested <= 0) return none;
+  const cfg = await loyaltyConfig(db);
+  const { data: member } = await db
+    .from("loyalty_members")
+    .select("*")
+    .eq("customer_id", opts.customerId)
+    .maybeSingle();
+  if (!member) return none;
+  const balance = Number(member.points_balance ?? 0);
+  const allowed = redeemablePoints(cfg, balance, opts.amount);
+  const points = Math.min(Math.floor(opts.requested), allowed);
+  if (points <= 0) return { ...none, memberId: member.id, balanceAfter: balance };
+  const value = Math.round(points * (Number(cfg.point_to_rupee ?? 1) || 1) * 100) / 100;
+  const balanceAfter = balance - points;
+  await db.from("loyalty_members").update({ points_balance: balanceAfter }).eq("id", member.id);
+  return { points, value, memberId: member.id, balanceAfter };
+}
+
 /** Credit loyalty points for a paid booking. Never throws — rewards must not break a booking. */
 // deno-lint-ignore no-explicit-any
-async function awardLoyaltyPoints(db: any, opts: { customerId: string; phone: string | null; name: string | null; amount: number }) {
+async function awardLoyaltyPoints(
+  db: any,
+  opts: { customerId: string; phone: string | null; name: string | null; amount: number; orderId?: string | null; orderNo?: string | null },
+) {
   try {
-    const { data: cfg } = await db.from("loyalty_settings").select("*").limit(1).maybeSingle();
-    const c = (cfg ?? { earn_percent: 5, point_to_rupee: 1, min_order_amount: 0, max_earn_per_order: 0 }) as LoyaltyConfig;
+    const c = await loyaltyConfig(db);
     if (opts.amount < Number(c.min_order_amount ?? 0)) return 0;
     let points = Math.floor((opts.amount * Number(c.earn_percent ?? 0)) / 100);
     const cap = Number(c.max_earn_per_order ?? 0);
@@ -93,27 +143,49 @@ async function awardLoyaltyPoints(db: any, opts: { customerId: string; phone: st
       .eq("customer_id", opts.customerId)
       .maybeSingle();
 
+    let memberId: string | null = null;
+    let balanceAfter = points;
     if (existing) {
       const lifetime = Number(existing.lifetime_points ?? 0) + points;
+      balanceAfter = Number(existing.points_balance ?? 0) + points;
+      memberId = existing.id;
       await db
         .from("loyalty_members")
         .update({
-          points_balance: Number(existing.points_balance ?? 0) + points,
+          points_balance: balanceAfter,
           lifetime_points: lifetime,
           tier: tierFor(lifetime),
           name: existing.name ?? opts.name,
         })
         .eq("id", existing.id);
     } else {
-      await db.from("loyalty_members").insert({
-        customer_id: opts.customerId,
-        phone: opts.phone ?? "",
-        name: opts.name,
-        points_balance: points,
-        lifetime_points: points,
-        tier: tierFor(points),
-      });
+      const { data: created } = await db
+        .from("loyalty_members")
+        .insert({
+          customer_id: opts.customerId,
+          phone: opts.phone ?? "",
+          name: opts.name,
+          points_balance: points,
+          lifetime_points: points,
+          tier: tierFor(points),
+        })
+        .select("id")
+        .single();
+      memberId = created?.id ?? null;
     }
+
+    await db.from("loyalty_transactions").insert({
+      member_id: memberId,
+      customer_id: opts.customerId,
+      order_id: opts.orderId ?? null,
+      order_no: opts.orderNo ?? null,
+      kind: "earn",
+      points,
+      value_rupees: Math.round(points * (Number(c.point_to_rupee ?? 1) || 1) * 100) / 100,
+      balance_after: balanceAfter,
+      note: "Points earned on booking",
+    });
+
     return points;
   } catch (e) {
     console.error("loyalty award failed", e);
@@ -351,7 +423,15 @@ Deno.serve(async (req) => {
           if (subtotal < Number(promo.min_order ?? 0)) return jsonResponse({ error: "promo_min_order" }, 400);
           discount = promoDiscount(promo, subtotal);
         }
-        const total = Math.max(0, Math.round((subtotal - discount) * 100) / 100);
+        const afterPromo = Math.max(0, Math.round((subtotal - discount) * 100) / 100);
+
+        // Redeem loyalty points (optional) against the post-promo amount.
+        const redeemed = await redeemLoyaltyPoints(db, {
+          customerId: customerId!,
+          requested: Math.floor(num(body.points_to_redeem)),
+          amount: afterPromo,
+        });
+        const total = Math.max(0, Math.round((afterPromo - redeemed.value) * 100) / 100);
 
         const { data: order, error: orderErr } = await db
           .from("test_orders")
@@ -369,6 +449,8 @@ Deno.serve(async (req) => {
             subtotal,
             discount,
             total,
+            points_used: redeemed.points,
+            points_value: redeemed.value,
             promo_code: promo?.code ?? null,
             payment_method: "online",
             payment_status: "paid",
@@ -380,6 +462,21 @@ Deno.serve(async (req) => {
           .select("*")
           .single();
         if (orderErr) throw orderErr;
+
+        if (redeemed.points > 0) {
+          await db.from("loyalty_transactions").insert({
+            member_id: redeemed.memberId,
+            customer_id: customerId,
+            order_id: order.id,
+            order_no: order.order_no,
+            kind: "redeem",
+            points: -redeemed.points,
+            value_rupees: redeemed.value,
+            balance_after: redeemed.balanceAfter,
+            note: `Redeemed on order ${order.order_no}`,
+          });
+        }
+
 
         await db.from("test_order_items").insert({
           order_id: order.id,
@@ -416,29 +513,41 @@ Deno.serve(async (req) => {
           phone: (order.customer_phone as string) ?? sessionPhone,
           name: (order.customer_name as string) ?? null,
           amount: total,
+          orderId: order.id,
+          orderNo: order.order_no,
         });
 
         return jsonResponse({
           order: { ...order, items: [{ test_name: test.name, test_slug: test.slug, qty: 1, price: subtotal }] },
           points_earned: pointsEarned,
+          points_used: redeemed.points,
+          points_value: redeemed.value,
         });
       }
 
       case "my_rewards": {
         const { data: member } = await db.from("loyalty_members").select("*").eq("customer_id", customerId).maybeSingle();
-        const { data: cfg } = await db.from("loyalty_settings").select("*").limit(1).maybeSingle();
+        const cfg = await loyaltyConfig(db);
+        const { data: history = [] } = await db
+          .from("loyalty_transactions")
+          .select("id, kind, points, value_rupees, balance_after, order_no, note, created_at")
+          .eq("customer_id", customerId)
+          .order("created_at", { ascending: false })
+          .limit(50);
+        const balance = Number(member?.points_balance ?? 0);
+        const subtotal = num(body.subtotal);
         return jsonResponse({
           member: member
-            ? { points_balance: Number(member.points_balance ?? 0), lifetime_points: Number(member.lifetime_points ?? 0), tier: member.tier }
+            ? { points_balance: balance, lifetime_points: Number(member.lifetime_points ?? 0), tier: member.tier }
             : null,
-          config: cfg
-            ? {
-                earn_percent: Number(cfg.earn_percent ?? 0),
-                point_to_rupee: Number(cfg.point_to_rupee ?? 1),
-                max_redeem_percent: Number(cfg.max_redeem_percent ?? 0),
-                min_order_amount: Number(cfg.min_order_amount ?? 0),
-              }
-            : null,
+          config: {
+            earn_percent: Number(cfg.earn_percent ?? 0),
+            point_to_rupee: Number(cfg.point_to_rupee ?? 1),
+            max_redeem_percent: Number(cfg.max_redeem_percent ?? 0),
+            min_order_amount: Number(cfg.min_order_amount ?? 0),
+          },
+          redeemable: subtotal > 0 ? redeemablePoints(cfg, balance, subtotal) : redeemablePoints(cfg, balance, balance * (Number(cfg.point_to_rupee ?? 1) || 1)),
+          history: history ?? [],
         });
       }
 

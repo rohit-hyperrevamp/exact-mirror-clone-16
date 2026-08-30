@@ -8,6 +8,7 @@ import {
   PortalCenter,
   PortalOrder,
   PortalPromo,
+  PortalRewards,
   PortalTest,
   distanceKm,
   friendlyError,
@@ -51,11 +52,16 @@ const BookTest = () => {
   const [notes, setNotes] = useState("");
   const [order, setOrder] = useState<PortalOrder | null>(null);
   const [pointsEarned, setPointsEarned] = useState(0);
+  const [pointsSpent, setPointsSpent] = useState(0);
 
   const [promos, setPromos] = useState<PortalPromo[]>([]);
   const [promoInput, setPromoInput] = useState("");
   const [applied, setApplied] = useState<{ code: string; discount: number } | null>(null);
   const [promoBusy, setPromoBusy] = useState(false);
+
+  const [rewards, setRewards] = useState<PortalRewards | null>(null);
+  const [usePoints, setUsePoints] = useState(false);
+  const [pointsInput, setPointsInput] = useState(0);
 
   const [centers, setCenters] = useState<PortalCenter[]>([]);
   const [centerId, setCenterId] = useState("");
@@ -132,7 +138,29 @@ const BookTest = () => {
     }
   };
 
-  const payable = Math.max(0, (test?.price ?? 0) - (applied?.discount ?? 0));
+  const afterPromo = Math.max(0, (test?.price ?? 0) - (applied?.discount ?? 0));
+
+  // Loyalty balance for this patient, refreshed whenever the payable amount changes
+  useEffect(() => {
+    if (step !== "payment" || afterPromo <= 0) return;
+    let alive = true;
+    portal<PortalRewards>("my_rewards", { subtotal: afterPromo })
+      .then((r) => {
+        if (!alive) return;
+        setRewards(r);
+        setPointsInput((prev) => (prev ? Math.min(prev, r.redeemable ?? 0) : r.redeemable ?? 0));
+      })
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [step, afterPromo]);
+
+  const pointRate = rewards?.config?.point_to_rupee ?? 1;
+  const maxRedeemable = Math.min(rewards?.redeemable ?? 0, rewards?.member?.points_balance ?? 0);
+  const pointsToUse = usePoints ? Math.max(0, Math.min(Math.floor(pointsInput), maxRedeemable)) : 0;
+  const pointsRupees = Math.round(pointsToUse * pointRate * 100) / 100;
+  const payable = Math.max(0, Math.round((afterPromo - pointsRupees) * 100) / 100);
 
   const locate = () => {
     if (!("geolocation" in navigator)) {
@@ -226,7 +254,7 @@ const BookTest = () => {
   const payAndBook = async () => {
     setBusy(true);
     try {
-      const res = await portal<{ order: PortalOrder; points_earned?: number }>("create_booking", {
+      const res = await portal<{ order: PortalOrder; points_earned?: number; points_used?: number }>("create_booking", {
         slug,
         name,
         email,
@@ -237,9 +265,11 @@ const BookTest = () => {
         scheduled_at: new Date(scheduledAt).toISOString(),
         notes,
         promo_code: applied?.code,
+        points_to_redeem: pointsToUse,
       });
       setOrder(res.order);
       setPointsEarned(res.points_earned ?? 0);
+      setPointsSpent(res.points_used ?? 0);
       setStep("done");
     } catch (e) {
       toast({ title: friendlyError(e), variant: "destructive" });
@@ -505,11 +535,71 @@ const BookTest = () => {
                       <dd className="text-emerald-700 font-medium">− ₹ {applied.discount}</dd>
                     </div>
                   )}
+                  {pointsToUse > 0 && (
+                    <div className="flex justify-between px-4 py-3">
+                      <dt className="text-muted-foreground">Reward points ({pointsToUse})</dt>
+                      <dd className="text-emerald-700 font-medium">− ₹ {pointsRupees}</dd>
+                    </div>
+                  )}
                   <div className="flex justify-between px-4 py-3 bg-muted/50">
                     <dt className="font-semibold text-foreground">Amount payable</dt>
                     <dd className="font-bold text-foreground">₹ {payable}</dd>
                   </div>
                 </dl>
+
+                {/* Loyalty points */}
+                {(rewards?.member?.points_balance ?? 0) > 0 && (
+                  <div className="mt-5 rounded-xl border border-border p-4">
+                    <p className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                      <Gift className="w-4 h-4 text-secondary" />Use your reward points
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      You have {rewards?.member?.points_balance} points (1 point = ₹{pointRate}).{" "}
+                      {maxRedeemable > 0
+                        ? `You can use up to ${maxRedeemable} points on this booking.`
+                        : "Points cannot be used on this booking."}
+                    </p>
+                    {maxRedeemable > 0 && (
+                      <>
+                        <label className="mt-3 flex items-center gap-2 text-sm text-foreground">
+                          <input
+                            type="checkbox"
+                            checked={usePoints}
+                            onChange={(e) => {
+                              setUsePoints(e.target.checked);
+                              if (e.target.checked && !pointsInput) setPointsInput(maxRedeemable);
+                            }}
+                          />
+                          Redeem points on this order
+                        </label>
+                        {usePoints && (
+                          <div className="mt-3 flex flex-wrap items-center gap-2">
+                            <input
+                              type="number"
+                              min={0}
+                              max={maxRedeemable}
+                              aria-label="Points to redeem"
+                              className={`${inputClass} w-32`}
+                              value={pointsInput}
+                              onChange={(e) =>
+                                setPointsInput(Math.max(0, Math.min(maxRedeemable, Math.floor(Number(e.target.value) || 0))))
+                              }
+                            />
+                            <button
+                              type="button"
+                              onClick={() => setPointsInput(maxRedeemable)}
+                              className="rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground"
+                            >
+                              Use max ({maxRedeemable})
+                            </button>
+                            <span className="text-sm text-muted-foreground">Saves ₹{pointsRupees}</span>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                )}
+
 
                 {/* Promo code */}
                 <div className="mt-5 rounded-xl border border-border p-4">
@@ -615,6 +705,11 @@ const BookTest = () => {
                   )}
                   <div className="flex justify-between px-4 py-3"><span className="text-muted-foreground">Paid</span><span className="text-foreground">₹ {order.total}</span></div>
                 </div>
+                {pointsSpent > 0 && (
+                  <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-emerald-50 px-4 py-2.5 text-sm text-emerald-800">
+                    <Gift className="w-4 h-4" />You redeemed {pointsSpent} reward points on this booking.
+                  </p>
+                )}
                 {pointsEarned > 0 && (
                   <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-emerald-50 px-4 py-2.5 text-sm text-emerald-800">
                     <Gift className="w-4 h-4" />You earned {pointsEarned} reward points on this booking.

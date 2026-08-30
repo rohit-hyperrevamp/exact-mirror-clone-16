@@ -564,6 +564,70 @@ export type Database = {
         }
         Relationships: []
       }
+      loyalty_transactions: {
+        Row: {
+          balance_after: number | null
+          created_at: string
+          customer_id: string | null
+          id: string
+          kind: string
+          member_id: string | null
+          note: string | null
+          order_id: string | null
+          order_no: string | null
+          points: number
+          value_rupees: number
+        }
+        Insert: {
+          balance_after?: number | null
+          created_at?: string
+          customer_id?: string | null
+          id?: string
+          kind: string
+          member_id?: string | null
+          note?: string | null
+          order_id?: string | null
+          order_no?: string | null
+          points: number
+          value_rupees?: number
+        }
+        Update: {
+          balance_after?: number | null
+          created_at?: string
+          customer_id?: string | null
+          id?: string
+          kind?: string
+          member_id?: string | null
+          note?: string | null
+          order_id?: string | null
+          order_no?: string | null
+          points?: number
+          value_rupees?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "loyalty_transactions_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "loyalty_transactions_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "loyalty_members"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "loyalty_transactions_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "test_orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       payments: {
         Row: {
           amount: number
@@ -1017,6 +1081,8 @@ export type Database = {
           payment_method: string
           payment_status: string
           pincode: string | null
+          points_used: number
+          points_value: number
           promo_code: string | null
           refund_amount: number
           refund_percent: number
@@ -1049,6 +1115,8 @@ export type Database = {
           payment_method?: string
           payment_status?: string
           pincode?: string | null
+          points_used?: number
+          points_value?: number
           promo_code?: string | null
           refund_amount?: number
           refund_percent?: number
@@ -1081,6 +1149,8 @@ export type Database = {
           payment_method?: string
           payment_status?: string
           pincode?: string | null
+          points_used?: number
+          points_value?: number
           promo_code?: string | null
           refund_amount?: number
           refund_percent?: number
