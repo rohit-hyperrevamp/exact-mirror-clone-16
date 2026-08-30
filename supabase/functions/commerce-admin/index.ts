@@ -343,6 +343,41 @@ Deno.serve(async (req) => {
         return jsonResponse({ ok: true });
       }
 
+      // ---------------- Booking & cancellation policy ----------------
+      case "get_booking_policy": {
+        const { data, error } = await db.from("booking_settings").select("*").limit(1).maybeSingle();
+        if (error) throw error;
+        if (!data) {
+          const { data: created, error: e2 } = await db
+            .from("booking_settings")
+            .insert({ id: true })
+            .select()
+            .single();
+          if (e2) throw e2;
+          return jsonResponse({ policy: created });
+        }
+        return jsonResponse({ policy: data });
+      }
+      case "update_booking_policy": {
+        const row = (body.row ?? {}) as Body;
+        const patch = {
+          no_refund_hours: Math.max(0, num(row.no_refund_hours)),
+          partial_refund_hours: Math.max(0, num(row.partial_refund_hours)),
+          partial_refund_percent: Math.min(100, Math.max(0, num(row.partial_refund_percent))),
+          reschedule_allowed: Boolean(row.reschedule_allowed),
+          reschedule_min_hours: Math.max(0, num(row.reschedule_min_hours)),
+          policy_text: String(row.policy_text ?? "").slice(0, 4000),
+        };
+        const { data, error } = await db
+          .from("booking_settings")
+          .upsert({ id: true, ...patch })
+          .select()
+          .single();
+        if (error) throw error;
+        return jsonResponse({ policy: data });
+      }
+
+
       // ---------------- Promo codes ----------------
       case "list_promos": {
         const { data, error } = await db.from("promo_codes").select("*").order("created_at", { ascending: false });
