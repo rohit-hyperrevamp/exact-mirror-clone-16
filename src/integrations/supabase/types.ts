@@ -10,10 +10,49 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.17"
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
+      abandoned_carts: {
+        Row: {
+          created_at: string
+          customer_email: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          id: string
+          items: Json
+          recovered: boolean
+          source: string | null
+          subtotal: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          customer_email?: string | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          id?: string
+          items?: Json
+          recovered?: boolean
+          source?: string | null
+          subtotal?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          customer_email?: string | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          id?: string
+          items?: Json
+          recovered?: boolean
+          source?: string | null
+          subtotal?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       blog_posts: {
         Row: {
           author: string
@@ -163,6 +202,39 @@ export type Database = {
         }
         Relationships: []
       }
+      customers: {
+        Row: {
+          city: string | null
+          created_at: string
+          email: string | null
+          id: string
+          name: string | null
+          notes: string | null
+          phone: string
+          updated_at: string
+        }
+        Insert: {
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          name?: string | null
+          notes?: string | null
+          phone: string
+          updated_at?: string
+        }
+        Update: {
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          name?: string | null
+          notes?: string | null
+          phone?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       form_submissions: {
         Row: {
           created_at: string
@@ -205,6 +277,298 @@ export type Database = {
           payload?: Json
           phone?: string | null
           subject?: string | null
+        }
+        Relationships: []
+      }
+      lab_tests: {
+        Row: {
+          category: string
+          created_at: string
+          department: string | null
+          description: string | null
+          fasting_required: boolean
+          home_collection: boolean
+          id: string
+          image_url: string | null
+          mrp: number | null
+          name: string
+          parameters: string[]
+          prep_instructions: string | null
+          price: number
+          sample_type: string | null
+          slug: string
+          sort_order: number
+          status: string
+          sub: string | null
+          turnaround: string | null
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          department?: string | null
+          description?: string | null
+          fasting_required?: boolean
+          home_collection?: boolean
+          id?: string
+          image_url?: string | null
+          mrp?: number | null
+          name: string
+          parameters?: string[]
+          prep_instructions?: string | null
+          price?: number
+          sample_type?: string | null
+          slug: string
+          sort_order?: number
+          status?: string
+          sub?: string | null
+          turnaround?: string | null
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          department?: string | null
+          description?: string | null
+          fasting_required?: boolean
+          home_collection?: boolean
+          id?: string
+          image_url?: string | null
+          mrp?: number | null
+          name?: string
+          parameters?: string[]
+          prep_instructions?: string | null
+          price?: number
+          sample_type?: string | null
+          slug?: string
+          sort_order?: number
+          status?: string
+          sub?: string | null
+          turnaround?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      loyalty_campaigns: {
+        Row: {
+          active: boolean
+          audience: string | null
+          code: string
+          created_at: string
+          id: string
+          kind: string
+          name: string
+          updated_at: string
+          value: number
+        }
+        Insert: {
+          active?: boolean
+          audience?: string | null
+          code: string
+          created_at?: string
+          id?: string
+          kind?: string
+          name: string
+          updated_at?: string
+          value?: number
+        }
+        Update: {
+          active?: boolean
+          audience?: string | null
+          code?: string
+          created_at?: string
+          id?: string
+          kind?: string
+          name?: string
+          updated_at?: string
+          value?: number
+        }
+        Relationships: []
+      }
+      loyalty_members: {
+        Row: {
+          created_at: string
+          customer_id: string | null
+          id: string
+          lifetime_points: number
+          name: string | null
+          phone: string
+          points_balance: number
+          tier: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          customer_id?: string | null
+          id?: string
+          lifetime_points?: number
+          name?: string | null
+          phone: string
+          points_balance?: number
+          tier?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          customer_id?: string | null
+          id?: string
+          lifetime_points?: number
+          name?: string | null
+          phone?: string
+          points_balance?: number
+          tier?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "loyalty_members_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      loyalty_settings: {
+        Row: {
+          earn_percent: number
+          expiry_days: number
+          id: boolean
+          max_earn_per_order: number
+          max_redeem_percent: number
+          min_order_amount: number
+          point_to_rupee: number
+          updated_at: string
+        }
+        Insert: {
+          earn_percent?: number
+          expiry_days?: number
+          id?: boolean
+          max_earn_per_order?: number
+          max_redeem_percent?: number
+          min_order_amount?: number
+          point_to_rupee?: number
+          updated_at?: string
+        }
+        Update: {
+          earn_percent?: number
+          expiry_days?: number
+          id?: boolean
+          max_earn_per_order?: number
+          max_redeem_percent?: number
+          min_order_amount?: number
+          point_to_rupee?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      payments: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          customer_name: string | null
+          customer_phone: string | null
+          id: string
+          method: string | null
+          order_id: string | null
+          order_no: string | null
+          paid_at: string | null
+          provider: string
+          raw: Json
+          reference: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          customer_name?: string | null
+          customer_phone?: string | null
+          id?: string
+          method?: string | null
+          order_id?: string | null
+          order_no?: string | null
+          paid_at?: string | null
+          provider?: string
+          raw?: Json
+          reference?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          customer_name?: string | null
+          customer_phone?: string | null
+          id?: string
+          method?: string | null
+          order_id?: string | null
+          order_no?: string | null
+          paid_at?: string | null
+          provider?: string
+          raw?: Json
+          reference?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "payments_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "test_orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      promo_codes: {
+        Row: {
+          code: string
+          created_at: string
+          description: string | null
+          discount_type: string
+          discount_value: number
+          ends_at: string | null
+          id: string
+          max_redemptions: number | null
+          min_order: number
+          starts_at: string | null
+          status: string
+          times_used: number
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          description?: string | null
+          discount_type?: string
+          discount_value?: number
+          ends_at?: string | null
+          id?: string
+          max_redemptions?: number | null
+          min_order?: number
+          starts_at?: string | null
+          status?: string
+          times_used?: number
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          description?: string | null
+          discount_type?: string
+          discount_value?: number
+          ends_at?: string | null
+          id?: string
+          max_redemptions?: number | null
+          min_order?: number
+          starts_at?: string | null
+          status?: string
+          times_used?: number
+          updated_at?: string
         }
         Relationships: []
       }
@@ -480,6 +844,134 @@ export type Database = {
           week?: number | null
         }
         Relationships: []
+      }
+      test_order_items: {
+        Row: {
+          created_at: string
+          id: string
+          order_id: string
+          price: number
+          qty: number
+          test_id: string | null
+          test_name: string
+          test_slug: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          order_id: string
+          price?: number
+          qty?: number
+          test_id?: string | null
+          test_name: string
+          test_slug?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          order_id?: string
+          price?: number
+          qty?: number
+          test_id?: string | null
+          test_name?: string
+          test_slug?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "test_order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "test_orders"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "test_order_items_test_id_fkey"
+            columns: ["test_id"]
+            isOneToOne: false
+            referencedRelation: "lab_tests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      test_orders: {
+        Row: {
+          address: string | null
+          collection_type: string
+          created_at: string
+          customer_email: string | null
+          customer_id: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          discount: number
+          id: string
+          notes: string | null
+          order_no: string
+          paid_at: string | null
+          payment_method: string
+          payment_status: string
+          pincode: string | null
+          promo_code: string | null
+          scheduled_at: string | null
+          status: string
+          subtotal: number
+          total: number
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          collection_type?: string
+          created_at?: string
+          customer_email?: string | null
+          customer_id?: string | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          discount?: number
+          id?: string
+          notes?: string | null
+          order_no?: string
+          paid_at?: string | null
+          payment_method?: string
+          payment_status?: string
+          pincode?: string | null
+          promo_code?: string | null
+          scheduled_at?: string | null
+          status?: string
+          subtotal?: number
+          total?: number
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          collection_type?: string
+          created_at?: string
+          customer_email?: string | null
+          customer_id?: string | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          discount?: number
+          id?: string
+          notes?: string | null
+          order_no?: string
+          paid_at?: string | null
+          payment_method?: string
+          payment_status?: string
+          pincode?: string | null
+          promo_code?: string | null
+          scheduled_at?: string | null
+          status?: string
+          subtotal?: number
+          total?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "test_orders_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
