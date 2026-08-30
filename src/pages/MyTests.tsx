@@ -41,8 +41,27 @@ const minDateTime = () => {
 const statusStyles: Record<string, string> = {
   confirmed: "bg-emerald-50 text-emerald-700",
   pending: "bg-amber-50 text-amber-700",
+  phlebotomist_on_the_way: "bg-blue-50 text-blue-700",
+  sample_collected: "bg-blue-50 text-blue-700",
+  sample_received: "bg-indigo-50 text-indigo-700",
+  in_lab: "bg-indigo-50 text-indigo-700",
+  report_ready: "bg-emerald-50 text-emerald-700",
+  report_delivered: "bg-emerald-50 text-emerald-700",
   completed: "bg-sky-50 text-sky-700",
   cancelled: "bg-rose-50 text-rose-700",
+};
+
+const statusText: Record<string, string> = {
+  pending: "Pending",
+  confirmed: "Confirmed",
+  phlebotomist_on_the_way: "Collector on the way",
+  sample_collected: "Sample collected",
+  sample_received: "Sample received at lab",
+  in_lab: "Testing in progress",
+  report_ready: "Report ready",
+  report_delivered: "Report delivered",
+  completed: "Completed",
+  cancelled: "Cancelled",
 };
 
 const MyTests = () => {
@@ -284,7 +303,7 @@ const MyTests = () => {
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-1.5">
                         <span className={`text-[11px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full ${statusStyles[o.status] ?? "bg-muted text-muted-foreground"}`}>
-                          {o.status}
+                          {statusText[o.status] ?? o.status.replace(/_/g, " ")}
                         </span>
                         <span className="text-xs text-muted-foreground">{o.order_no}</span>
                       </div>
