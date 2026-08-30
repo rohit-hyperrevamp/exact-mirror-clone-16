@@ -254,7 +254,7 @@ const BookTest = () => {
   const payAndBook = async () => {
     setBusy(true);
     try {
-      const res = await portal<{ order: PortalOrder; points_earned?: number }>("create_booking", {
+      const res = await portal<{ order: PortalOrder; points_earned?: number; points_used?: number }>("create_booking", {
         slug,
         name,
         email,
@@ -265,9 +265,11 @@ const BookTest = () => {
         scheduled_at: new Date(scheduledAt).toISOString(),
         notes,
         promo_code: applied?.code,
+        points_to_redeem: pointsToUse,
       });
       setOrder(res.order);
       setPointsEarned(res.points_earned ?? 0);
+      setPointsSpent(res.points_used ?? 0);
       setStep("done");
     } catch (e) {
       toast({ title: friendlyError(e), variant: "destructive" });
