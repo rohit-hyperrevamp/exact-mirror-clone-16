@@ -1,3 +1,4 @@
+import { bookingUrl } from "@/lib/testSlug";
 import { Link } from "react-router-dom";
 import { CheckCircle } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -201,7 +202,7 @@ const HealthCheckups = () => {
                     <span className="text-2xl font-bold">₹ {pkg.price}</span>
                   </div>
                   <Link
-                    to="/contact-us#contact"
+                    to={bookingUrl(pkg.name)}
                     className="inline-block px-6 py-2.5 rounded-lg font-semibold text-sm text-foreground"
                     style={{ backgroundColor: '#f5b800' }}
                   >

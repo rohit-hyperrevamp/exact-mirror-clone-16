@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { bookingUrl } from "@/lib/testSlug";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
@@ -389,7 +390,7 @@ const Index = () => {
                         ))}
                       </ul>
                     </div>
-                    <Link to="/contact-us#contact">
+                    <Link to={bookingUrl(test.name)}>
                       <button className="mt-6 w-full bg-background text-foreground font-semibold py-2.5 rounded-xl hover:opacity-90 transition">
                         Book Now
                       </button>
@@ -589,7 +590,7 @@ const Index = () => {
 
                     {/* Book Now button */}
                     <div style={{ padding: '0 28px 28px' }}>
-                      <Link to="/contact-us#contact" className="block">
+                      <Link to={bookingUrl(pkg.name)} className="block">
                         <div
                           className="font-bold text-center transition hover:opacity-90"
                           style={{
