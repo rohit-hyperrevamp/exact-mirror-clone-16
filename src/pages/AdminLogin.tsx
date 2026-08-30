@@ -36,12 +36,14 @@ const AdminLogin = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl border p-8">
-        <div className="flex items-center gap-2 mb-1 text-[#0172B6]">
+        <img src="/images/aarvak-logo.webp" alt="Aarvak Diagnostics logo" className="h-12 w-auto" />
+        <div className="flex items-center gap-2 mt-5 text-[#0172B6]">
           <ShieldCheck className="h-5 w-5" />
-          <span className="text-xs uppercase tracking-[0.18em] font-semibold">Aarvak Command</span>
+          <span className="text-xs uppercase tracking-[0.18em] font-semibold">Aarvak Admin</span>
         </div>
-        <h1 className="text-2xl font-bold text-[#001260] mt-1">SEO Dashboard</h1>
-        <p className="text-sm text-slate-500 mt-1">Sign in to view SEO, AEO, GEO and analytics.</p>
+        <h1 className="text-2xl font-bold text-[#001260] mt-1">Control Center</h1>
+        <p className="text-sm text-slate-500 mt-1">Sign in to manage the catalog, orders, payments and patients.</p>
+
 
         <form onSubmit={submit} className="mt-6 space-y-4">
           <div>
