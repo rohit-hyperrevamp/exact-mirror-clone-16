@@ -12,6 +12,7 @@ const staticPages = [
   { path: "/departments/radiology/x-ray-services", priority: "0.8", changefreq: "monthly" },
   { path: "/departments/radiology/pft-test", priority: "0.8", changefreq: "monthly" },
   { path: "/departments/health-checkups", priority: "0.9", changefreq: "monthly" },
+  { path: "/packages", priority: "0.9", changefreq: "weekly" },
   { path: "/departments/pathology/biochemistry-tests", priority: "0.7", changefreq: "monthly" },
   { path: "/departments/pathology/hematology-tests", priority: "0.7", changefreq: "monthly" },
   { path: "/departments/pathology/Microbiology", priority: "0.7", changefreq: "monthly" },
