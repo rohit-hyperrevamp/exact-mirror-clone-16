@@ -513,29 +513,41 @@ Deno.serve(async (req) => {
           phone: (order.customer_phone as string) ?? sessionPhone,
           name: (order.customer_name as string) ?? null,
           amount: total,
+          orderId: order.id,
+          orderNo: order.order_no,
         });
 
         return jsonResponse({
           order: { ...order, items: [{ test_name: test.name, test_slug: test.slug, qty: 1, price: subtotal }] },
           points_earned: pointsEarned,
+          points_used: redeemed.points,
+          points_value: redeemed.value,
         });
       }
 
       case "my_rewards": {
         const { data: member } = await db.from("loyalty_members").select("*").eq("customer_id", customerId).maybeSingle();
-        const { data: cfg } = await db.from("loyalty_settings").select("*").limit(1).maybeSingle();
+        const cfg = await loyaltyConfig(db);
+        const { data: history = [] } = await db
+          .from("loyalty_transactions")
+          .select("id, kind, points, value_rupees, balance_after, order_no, note, created_at")
+          .eq("customer_id", customerId)
+          .order("created_at", { ascending: false })
+          .limit(50);
+        const balance = Number(member?.points_balance ?? 0);
+        const subtotal = num(body.subtotal);
         return jsonResponse({
           member: member
-            ? { points_balance: Number(member.points_balance ?? 0), lifetime_points: Number(member.lifetime_points ?? 0), tier: member.tier }
+            ? { points_balance: balance, lifetime_points: Number(member.lifetime_points ?? 0), tier: member.tier }
             : null,
-          config: cfg
-            ? {
-                earn_percent: Number(cfg.earn_percent ?? 0),
-                point_to_rupee: Number(cfg.point_to_rupee ?? 1),
-                max_redeem_percent: Number(cfg.max_redeem_percent ?? 0),
-                min_order_amount: Number(cfg.min_order_amount ?? 0),
-              }
-            : null,
+          config: {
+            earn_percent: Number(cfg.earn_percent ?? 0),
+            point_to_rupee: Number(cfg.point_to_rupee ?? 1),
+            max_redeem_percent: Number(cfg.max_redeem_percent ?? 0),
+            min_order_amount: Number(cfg.min_order_amount ?? 0),
+          },
+          redeemable: subtotal > 0 ? redeemablePoints(cfg, balance, subtotal) : redeemablePoints(cfg, balance, balance * (Number(cfg.point_to_rupee ?? 1) || 1)),
+          history: history ?? [],
         });
       }
 
