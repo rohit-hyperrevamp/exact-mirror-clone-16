@@ -112,3 +112,34 @@ export const friendlyError = (e: unknown) => {
   const key = e instanceof Error ? e.message : String(e);
   return ERROR_MESSAGES[key] ?? "Something went wrong. Please try again.";
 };
+
+export type PortalCenter = {
+  id: string;
+  name: string;
+  location: string | null;
+  address: string | null;
+  city: string | null;
+  pincode: string | null;
+  phone: string | null;
+  timings: string | null;
+  map_url: string | null;
+  home_collection: boolean;
+  latitude: number | null;
+  longitude: number | null;
+};
+
+/** Straight-line distance in km between two coordinates (haversine). */
+export const distanceKm = (
+  aLat: number,
+  aLng: number,
+  bLat: number,
+  bLng: number,
+): number => {
+  const toRad = (v: number) => (v * Math.PI) / 180;
+  const dLat = toRad(bLat - aLat);
+  const dLng = toRad(bLng - aLng);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(aLat)) * Math.cos(toRad(bLat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.min(1, Math.sqrt(h)));
+};

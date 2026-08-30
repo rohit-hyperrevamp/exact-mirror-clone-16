@@ -105,7 +105,7 @@ Deno.serve(async (req) => {
       case "centers": {
         const { data = [] } = await db
           .from("collection_centers")
-          .select("id, name, location, address, city, pincode, phone, timings, home_collection")
+          .select("id, name, location, address, city, pincode, phone, timings, home_collection, map_url, latitude, longitude")
           .eq("enabled", true)
           .order("sort_order", { ascending: true });
         return jsonResponse({ centers: data ?? [] });
@@ -181,6 +181,7 @@ Deno.serve(async (req) => {
         const name = str(body.name, 120);
         const email = str(body.email, 160);
         const notes = str(body.notes, 500);
+        const centerId = str(body.center_id, 60);
 
         if (!scheduledAt || Number.isNaN(new Date(scheduledAt).getTime())) {
           return jsonResponse({ error: "invalid_schedule" }, 400);
@@ -190,6 +191,19 @@ Deno.serve(async (req) => {
         }
         if (collectionType === "home_collection" && (!address || address.length < 8)) {
           return jsonResponse({ error: "address_required" }, 400);
+        }
+
+        let center: { id: string; name: string; address: string | null; location: string | null } | null = null;
+        if (collectionType === "walk_in") {
+          if (!centerId) return jsonResponse({ error: "center_required" }, 400);
+          const { data: c } = await db
+            .from("collection_centers")
+            .select("id, name, address, location")
+            .eq("id", centerId)
+            .eq("enabled", true)
+            .maybeSingle();
+          if (!c) return jsonResponse({ error: "center_not_found" }, 404);
+          center = c;
         }
 
         const { data: customer } = await db.from("customers").select("*").eq("id", customerId).maybeSingle();
@@ -207,7 +221,9 @@ Deno.serve(async (req) => {
             customer_phone: customer?.phone ?? sessionPhone,
             customer_email: email || customer?.email || null,
             collection_type: collectionType,
-            address: collectionType === "home_collection" ? address : null,
+            address: collectionType === "home_collection" ? address : center?.address ?? null,
+            center_id: center?.id ?? null,
+            center_name: center ? center.name : null,
             pincode: pincode || null,
             scheduled_at: new Date(scheduledAt).toISOString(),
             subtotal: total,
