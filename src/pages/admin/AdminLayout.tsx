@@ -12,6 +12,7 @@ import {
   Users,
   Gift,
   Ticket,
+  MapPin,
   type LucideIcon,
 } from "lucide-react";
 
