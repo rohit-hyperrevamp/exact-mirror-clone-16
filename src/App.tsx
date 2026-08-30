@@ -112,6 +112,8 @@ const AppLayout = () => {
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="rewards" element={<AdminRewards />} />
             <Route path="promo-codes" element={<AdminPromoCodes />} />
+            <Route path="blogs" element={<AdminBlogs />} />
+
           </Route>
         </Route>
 
