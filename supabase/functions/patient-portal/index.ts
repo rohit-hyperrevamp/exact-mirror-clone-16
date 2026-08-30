@@ -463,6 +463,21 @@ Deno.serve(async (req) => {
           .single();
         if (orderErr) throw orderErr;
 
+        if (redeemed.points > 0) {
+          await db.from("loyalty_transactions").insert({
+            member_id: redeemed.memberId,
+            customer_id: customerId,
+            order_id: order.id,
+            order_no: order.order_no,
+            kind: "redeem",
+            points: -redeemed.points,
+            value_rupees: redeemed.value,
+            balance_after: redeemed.balanceAfter,
+            note: `Redeemed on order ${order.order_no}`,
+          });
+        }
+
+
         await db.from("test_order_items").insert({
           order_id: order.id,
           test_id: test.id,
