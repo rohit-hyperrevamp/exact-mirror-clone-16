@@ -35,11 +35,8 @@ import XRayServices from "./pages/XRayServices";
 import PFTTest from "./pages/PFTTest";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
-import AdminSeo from "./pages/admin/AdminSeo";
-import AdminSeoAnalytics from "./pages/admin/AdminSeoAnalytics";
-import AdminSeoKeywords from "./pages/admin/AdminSeoKeywords";
-import AdminSeoIndexing from "./pages/admin/AdminSeoIndexing";
 import AdminBlogs from "./pages/admin/AdminBlogs";
+
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminCatalog from "./pages/admin/AdminCatalog";
 import AdminCatalogDetail from "./pages/admin/AdminCatalogDetail";
@@ -100,16 +97,8 @@ const AppLayout = () => {
         <Route path="/departments/pathology/molecular-diagnostics" element={<MolecularDiagnostics />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/seo" element={<AdminGuard />}>
-          <Route element={<AdminLayout />}>
-            <Route index element={<AdminSeo />} />
-            <Route path="analytics" element={<AdminSeoAnalytics />} />
-            <Route path="keywords" element={<AdminSeoKeywords />} />
-            <Route path="indexing" element={<AdminSeoIndexing />} />
-            <Route path="blogs" element={<AdminBlogs />} />
+        <Route path="/admin/seo/*" element={<Navigate to="/admin/dashboard" replace />} />
 
-          </Route>
-        </Route>
         <Route path="/admin" element={<AdminGuard />}>
           <Route element={<AdminLayout />}>
             <Route index element={<Navigate to="/admin/dashboard" replace />} />
@@ -123,6 +112,8 @@ const AppLayout = () => {
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="rewards" element={<AdminRewards />} />
             <Route path="promo-codes" element={<AdminPromoCodes />} />
+            <Route path="blogs" element={<AdminBlogs />} />
+
           </Route>
         </Route>
 

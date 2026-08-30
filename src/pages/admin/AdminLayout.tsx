@@ -1,10 +1,6 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { clearAdminToken } from "@/lib/adminApi";
 import {
-  BarChart3,
-  ListChecks,
-  Search,
-  Send,
   LogOut,
   ArrowLeft,
   ShieldCheck,
@@ -17,9 +13,11 @@ import {
   Users,
   Gift,
   Ticket,
+  type LucideIcon,
 } from "lucide-react";
 
-const GROUPS: { title: string; items: { to: string; label: string; icon: typeof ListChecks; end?: boolean }[] }[] = [
+
+const GROUPS: { title: string; items: { to: string; label: string; icon: LucideIcon; end?: boolean }[] }[] = [
   {
     title: "Overview",
     items: [{ to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard, end: true }],
@@ -42,16 +40,11 @@ const GROUPS: { title: string; items: { to: string; label: string; icon: typeof 
     ],
   },
   {
-    title: "SEO",
-    items: [
-      { to: "/admin/seo", label: "Plan", icon: ListChecks, end: true },
-      { to: "/admin/seo/blogs", label: "Blogs", icon: CalendarClock },
-      { to: "/admin/seo/analytics", label: "Analytics", icon: BarChart3 },
-      { to: "/admin/seo/keywords", label: "Keywords", icon: Search },
-      { to: "/admin/seo/indexing", label: "Indexing", icon: Send },
-    ],
+    title: "Content",
+    items: [{ to: "/admin/blogs", label: "Blogs", icon: CalendarClock }],
   },
 ];
+
 
 const NAV = GROUPS.flatMap((g) => g.items);
 
