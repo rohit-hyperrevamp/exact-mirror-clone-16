@@ -138,7 +138,29 @@ const BookTest = () => {
     }
   };
 
-  const payable = Math.max(0, (test?.price ?? 0) - (applied?.discount ?? 0));
+  const afterPromo = Math.max(0, (test?.price ?? 0) - (applied?.discount ?? 0));
+
+  // Loyalty balance for this patient, refreshed whenever the payable amount changes
+  useEffect(() => {
+    if (step !== "payment" || afterPromo <= 0) return;
+    let alive = true;
+    portal<PortalRewards>("my_rewards", { subtotal: afterPromo })
+      .then((r) => {
+        if (!alive) return;
+        setRewards(r);
+        setPointsInput((prev) => (prev ? Math.min(prev, r.redeemable ?? 0) : r.redeemable ?? 0));
+      })
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [step, afterPromo]);
+
+  const pointRate = rewards?.config?.point_to_rupee ?? 1;
+  const maxRedeemable = Math.min(rewards?.redeemable ?? 0, rewards?.member?.points_balance ?? 0);
+  const pointsToUse = usePoints ? Math.max(0, Math.min(Math.floor(pointsInput), maxRedeemable)) : 0;
+  const pointsRupees = Math.round(pointsToUse * pointRate * 100) / 100;
+  const payable = Math.max(0, Math.round((afterPromo - pointsRupees) * 100) / 100);
 
   const locate = () => {
     if (!("geolocation" in navigator)) {
