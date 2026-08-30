@@ -113,7 +113,7 @@ const GeoLocationPage = () => {
             <h1 className="text-3xl md:text-5xl font-bold mb-4">Diagnostic Centre in {loc.name}, Gurugram</h1>
             <p className="text-base md:text-lg opacity-90 mb-6">Pathology, radiology & free home sample collection serving {loc.name}. NABL protocols followed (certification in progress).</p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link to="/contact-us#contact" className="bg-aarvak-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">Book a Test Now</Link>
+              <Link to="/packages" className="bg-aarvak-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">Book a Test Now</Link>
               <a href="tel:+919266333711" className="bg-white text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Call +91-92663 33711</a>
             </div>
           </div>
@@ -259,7 +259,7 @@ const GeoLocationPage = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Your Test from {loc.name} Today</h2>
           <p className="text-cyan-100 mb-6 max-w-2xl mx-auto">Accurate reports, quick turnaround, and free home sample collection across {loc.name} and Gurugram.</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link to="/contact-us#contact" className="bg-white text-cyan-700 px-8 py-3 rounded-full font-semibold hover:bg-cyan-50 transition">Book Now</Link>
+            <Link to="/packages" className="bg-white text-cyan-700 px-8 py-3 rounded-full font-semibold hover:bg-cyan-50 transition">Book Now</Link>
             <a href="tel:+919266333711" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">Call +91-92663 33711</a>
           </div>
         </div>

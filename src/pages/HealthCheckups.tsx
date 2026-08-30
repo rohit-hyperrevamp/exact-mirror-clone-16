@@ -83,7 +83,7 @@ const HealthCheckups = () => {
                 <h2 className="text-xl md:text-[32px] font-bold leading-tight">Trusted Health Checkups</h2>
                 <p className="mt-3 text-sm md:text-[15px] opacity-80 max-w-md">Preventive wellness monitoring and accurate diagnostics to help you stay ahead of illness.</p>
                 <Link
-                  to="/contact-us#contact"
+                  to="/packages"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book a Checkup

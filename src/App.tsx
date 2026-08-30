@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import Pathology from "./pages/Pathology";
 import Radiology from "./pages/Radiology";
 import HealthCheckups from "./pages/HealthCheckups";
+import Packages from "./pages/Packages";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import BlogPost from "./pages/BlogPost";
@@ -81,6 +82,8 @@ const AppLayout = () => {
         <Route path="/departments/radiology/pft-test" element={<PFTTest />} />
         <Route path="/health-checkups" element={<Navigate to="/departments/health-checkups" replace />} />
         <Route path="/departments/health-checkups" element={<HealthCheckups />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/health-packages" element={<Navigate to="/packages" replace />} />
         <Route path="/book/:slug" element={<BookTest />} />
         <Route path="/my-tests" element={<MyTests />} />
         <Route path="/insights" element={<Insights />} />

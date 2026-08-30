@@ -1,0 +1,316 @@
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { CheckCircle, Clock, Droplet, Home, Loader2, Search, Utensils } from "lucide-react";
+import useSEO from "@/hooks/useSEO";
+import { PortalTest, portal } from "@/lib/patientPortal";
+
+type SortKey = "recommended" | "price-asc" | "price-desc";
+
+const PRICE_BANDS = [
+  { id: "all", label: "All prices", test: () => true },
+  { id: "under-1000", label: "Under ₹1,000", test: (p: number) => p < 1000 },
+  { id: "1000-2000", label: "₹1,000 – ₹2,000", test: (p: number) => p >= 1000 && p <= 2000 },
+  { id: "above-2000", label: "Above ₹2,000", test: (p: number) => p > 2000 },
+];
+
+const Packages = () => {
+  useSEO({
+    title: "Health Checkup Packages in Gurgaon | Aarvak Diagnostics",
+    description:
+      "Compare and book full body health checkup packages in Gurgaon. Transparent pricing, home sample collection and reports in 6–8 hours from Aarvak Diagnostics.",
+    canonical: "/packages",
+  });
+
+  const [tests, setTests] = useState<PortalTest[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [failed, setFailed] = useState(false);
+
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("all");
+  const [band, setBand] = useState("all");
+  const [homeOnly, setHomeOnly] = useState(false);
+  const [offersOnly, setOffersOnly] = useState(false);
+  const [sort, setSort] = useState<SortKey>("recommended");
+
+  useEffect(() => {
+    let alive = true;
+    portal<{ tests: PortalTest[] }>("catalog")
+      .then((r) => alive && setTests(r.tests ?? []))
+      .catch(() => alive && setFailed(true))
+      .finally(() => alive && setLoading(false));
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const categories = useMemo(
+    () => Array.from(new Set(tests.map((t) => t.category).filter(Boolean))),
+    [tests],
+  );
+
+  const visible = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    const bandTest = PRICE_BANDS.find((b) => b.id === band)?.test ?? (() => true);
+    const list = tests.filter((t) => {
+      if (category !== "all" && t.category !== category) return false;
+      if (!bandTest(Number(t.price))) return false;
+      if (homeOnly && !t.home_collection) return false;
+      if (offersOnly && !(Number(t.mrp ?? 0) > Number(t.price))) return false;
+      if (!q) return true;
+      const haystack = [t.name, t.description ?? "", ...(t.parameters ?? [])].join(" ").toLowerCase();
+      return haystack.includes(q);
+    });
+    if (sort === "price-asc") return [...list].sort((a, b) => Number(a.price) - Number(b.price));
+    if (sort === "price-desc") return [...list].sort((a, b) => Number(b.price) - Number(a.price));
+    return list;
+  }, [tests, query, category, band, homeOnly, offersOnly, sort]);
+
+  const resetFilters = () => {
+    setQuery("");
+    setCategory("all");
+    setBand("all");
+    setHomeOnly(false);
+    setOffersOnly(false);
+    setSort("recommended");
+  };
+
+  const chip = (active: boolean) =>
+    `rounded-full border px-4 py-2 text-[13px] font-medium transition ${
+      active
+        ? "border-secondary bg-secondary text-white"
+        : "border-border bg-background text-muted-foreground hover:border-secondary/60"
+    }`;
+
+  return (
+    <div className="bg-background">
+      {/* Hero */}
+      <section className="px-2 md:px-3">
+        <div className="relative w-full overflow-hidden rounded-2xl">
+          <img
+            src="/images/package.png"
+            alt="Health checkup packages at Aarvak Diagnostics Gurugram"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+          <div className="relative z-10 mx-auto max-w-5xl px-4 py-14 text-center text-primary-foreground md:py-20">
+            <p className="text-xs font-medium uppercase tracking-[0.25em] opacity-80">Packages</p>
+            <h1 className="mt-3 text-2xl font-bold leading-tight md:text-4xl lg:text-[44px]">
+              Health Checkup Packages in Gurgaon
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-sm opacity-90 md:text-base">
+              Pick a package, choose home collection or a nearby collection centre, and complete your
+              booking online in a few steps.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Filters */}
+      <section className="px-4 pt-10 md:px-8">
+        <div className="mx-auto max-w-7xl rounded-2xl border border-border bg-muted/50 p-4 md:p-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+            <label className="relative flex-1">
+              <span className="sr-only">Search packages</span>
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search by package or test name"
+                className="w-full rounded-lg border border-border bg-background py-3 pl-11 pr-4 text-[15px] outline-none focus:border-secondary"
+              />
+            </label>
+            <div className="flex flex-wrap gap-3">
+              {categories.length > 1 && (
+                <select
+                  aria-label="Filter by category"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  className="rounded-lg border border-border bg-background px-4 py-3 text-[15px] outline-none focus:border-secondary"
+                >
+                  <option value="all">All categories</option>
+                  {categories.map((c) => (
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
+                </select>
+              )}
+              <select
+                aria-label="Sort packages"
+                value={sort}
+                onChange={(e) => setSort(e.target.value as SortKey)}
+                className="rounded-lg border border-border bg-background px-4 py-3 text-[15px] outline-none focus:border-secondary"
+              >
+                <option value="recommended">Recommended</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {PRICE_BANDS.map((b) => (
+              <button key={b.id} type="button" onClick={() => setBand(b.id)} className={chip(band === b.id)}>
+                {b.label}
+              </button>
+            ))}
+            <button type="button" onClick={() => setHomeOnly(!homeOnly)} className={chip(homeOnly)}>
+              Home collection
+            </button>
+            <button type="button" onClick={() => setOffersOnly(!offersOnly)} className={chip(offersOnly)}>
+              On offer
+            </button>
+            <button
+              type="button"
+              onClick={resetFilters}
+              className="rounded-full px-4 py-2 text-[13px] font-medium text-secondary underline-offset-4 hover:underline"
+            >
+              Clear filters
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Results */}
+      <section className="px-4 py-10 md:px-8 md:py-14">
+        <div className="mx-auto max-w-7xl">
+          {loading ? (
+            <div className="flex items-center justify-center gap-3 py-20 text-muted-foreground">
+              <Loader2 className="h-5 w-5 animate-spin" /> Loading packages…
+            </div>
+          ) : failed ? (
+            <div className="rounded-2xl border border-border p-10 text-center">
+              <p className="text-[15px] text-muted-foreground">
+                We could not load the packages right now. Please refresh, or call us on{" "}
+                <a href="tel:+919266333711" className="font-semibold text-secondary">
+                  +91 92663 33711
+                </a>
+                .
+              </p>
+            </div>
+          ) : (
+            <>
+              <p className="mb-6 text-sm text-muted-foreground">
+                Showing {visible.length} of {tests.length} packages
+              </p>
+              {visible.length === 0 ? (
+                <div className="rounded-2xl border border-border p-10 text-center">
+                  <p className="text-[15px] text-muted-foreground">
+                    No packages match these filters.
+                  </p>
+                  <button onClick={resetFilters} className="mt-4 font-semibold text-secondary">
+                    Clear filters
+                  </button>
+                </div>
+              ) : (
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {visible.map((t) => {
+                    const hasOffer = Boolean(t.mrp) && Number(t.mrp) > Number(t.price);
+                    const off = hasOffer
+                      ? Math.round(((Number(t.mrp) - Number(t.price)) / Number(t.mrp)) * 100)
+                      : 0;
+                    return (
+                      <article
+                        key={t.id}
+                        className="flex flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm transition hover:shadow-md"
+                      >
+                        <div className="relative p-6 text-white" style={{ background: "linear-gradient(135deg, #1b75a6, #0c3f5d)" }}>
+                          {hasOffer && (
+                            <span className="absolute right-4 top-4 rounded-full bg-aarvak-yellow px-3 py-1 text-xs font-bold text-foreground">
+                              {off}% off
+                            </span>
+                          )}
+                          <h2 className="pr-20 text-lg font-bold leading-snug">{t.name}</h2>
+                          <p className="mt-1 text-xs opacity-80">{t.category}</p>
+                          <div className="mt-4 flex items-end gap-2">
+                            <span className="text-2xl font-bold">₹ {Number(t.price).toLocaleString("en-IN")}</span>
+                            {hasOffer && (
+                              <span className="text-sm line-through opacity-70">
+                                ₹ {Number(t.mrp).toLocaleString("en-IN")}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        <div className="flex flex-1 flex-col p-6">
+                          {t.description && (
+                            <p className="mb-4 text-sm text-muted-foreground">{t.description}</p>
+                          )}
+                          {t.parameters?.length ? (
+                            <ul className="mb-5 space-y-2">
+                              {t.parameters.slice(0, 6).map((p) => (
+                                <li key={p} className="flex items-start gap-2 text-sm text-foreground">
+                                  <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-secondary" />
+                                  <span>{p}</span>
+                                </li>
+                              ))}
+                              {t.parameters.length > 6 && (
+                                <li className="pl-6 text-sm text-muted-foreground">
+                                  + {t.parameters.length - 6} more inclusions
+                                </li>
+                              )}
+                            </ul>
+                          ) : null}
+
+                          <div className="mb-6 flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted-foreground">
+                            {t.turnaround && (
+                              <span className="inline-flex items-center gap-1.5">
+                                <Clock className="h-3.5 w-3.5" /> {t.turnaround}
+                              </span>
+                            )}
+                            {t.sample_type && (
+                              <span className="inline-flex items-center gap-1.5">
+                                <Droplet className="h-3.5 w-3.5" /> {t.sample_type}
+                              </span>
+                            )}
+                            {t.home_collection && (
+                              <span className="inline-flex items-center gap-1.5">
+                                <Home className="h-3.5 w-3.5" /> Home collection
+                              </span>
+                            )}
+                            {t.fasting_required && (
+                              <span className="inline-flex items-center gap-1.5">
+                                <Utensils className="h-3.5 w-3.5" /> Fasting required
+                              </span>
+                            )}
+                          </div>
+
+                          <Link
+                            to={`/book/${t.slug}`}
+                            className="mt-auto block rounded-xl bg-secondary py-3 text-center text-sm font-semibold text-white transition hover:opacity-90"
+                          >
+                            Book Now
+                          </Link>
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      </section>
+
+      {/* Help strip */}
+      <section className="px-4 pb-16 md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 rounded-2xl bg-muted p-8 text-center md:flex-row md:justify-between md:text-left">
+          <div>
+            <h2 className="text-xl font-bold text-foreground">Not sure which package suits you?</h2>
+            <p className="mt-1 text-[15px] text-muted-foreground">
+              Our team can help you choose the right checkup for your age and health history.
+            </p>
+          </div>
+          <a
+            href="tel:+919266333711"
+            className="rounded-full bg-secondary px-8 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Call +91 92663 33711
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Packages;

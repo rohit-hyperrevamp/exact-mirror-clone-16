@@ -58,7 +58,7 @@ const Pathology = () => {
                 <h2 className="text-xl md:text-[32px] font-bold leading-tight">Our Pathology Services</h2>
                 <p className="mt-3 text-sm md:text-[15px] opacity-80 max-w-md">Trusted pathology lab in Gurgaon backed by modern technology and expert pathologists to ensure accurate test results you can trust.</p>
                 <Link
-                  to="/contact-us#contact"
+                  to="/packages"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book a Test

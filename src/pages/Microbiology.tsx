@@ -186,7 +186,7 @@ const Microbiology = () => {
                   Advanced microbiology lab tests with precise analysis, modern diagnostic technology, and expert validation for reliable infection detection and disease monitoring.
                 </p>
                 <Link
-                  to="/contact-us#contact"
+                  to="/packages"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book a Test
@@ -434,7 +434,7 @@ const Microbiology = () => {
             Accurate infection diagnosis. Faster reports. Better treatment decisions.
           </p>
           <Link
-            to="/contact-us#contact"
+            to="/packages"
             className="inline-block bg-white text-secondary font-semibold px-8 py-3 rounded-full text-sm hover:bg-white/90 transition"
           >
             Book Now
