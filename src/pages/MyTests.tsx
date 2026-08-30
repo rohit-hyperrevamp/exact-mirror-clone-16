@@ -315,7 +315,29 @@ const MyTests = () => {
               </div>
             </div>
           </div>
+
+          {(rewards?.history?.length ?? 0) > 0 && (
+            <div className="mt-5 border-t border-border pt-4">
+              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Points history</p>
+              <ul className="divide-y divide-border">
+                {rewards!.history!.map((t) => (
+                  <li key={t.id} className="flex items-center justify-between gap-3 py-2 text-[14px]">
+                    <span className="text-muted-foreground">
+                      {new Date(t.created_at).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}
+                      {" · "}
+                      {t.kind === "redeem" ? "Redeemed" : t.kind === "earn" ? "Earned" : t.kind}
+                      {t.order_no ? ` · ${t.order_no}` : ""}
+                    </span>
+                    <span className={`font-semibold tabular-nums ${t.points < 0 ? "text-foreground" : "text-emerald-700"}`}>
+                      {t.points > 0 ? `+${t.points}` : t.points}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
+
 
         {loading ? (
           <div className="flex justify-center py-16"><Loader2 className="w-6 h-6 animate-spin text-secondary" /></div>
