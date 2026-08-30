@@ -106,6 +106,8 @@ export const ERROR_MESSAGES: Record<string, string> = {
   already_cancelled: "This booking is already cancelled.",
   not_cancellable: "This booking can no longer be cancelled.",
   unauthorized: "Your session expired. Please verify your mobile number again.",
+  center_required: "Please choose a collection centre for your visit.",
+  center_not_found: "That collection centre is no longer available. Please pick another one.",
 };
 
 export const friendlyError = (e: unknown) => {
