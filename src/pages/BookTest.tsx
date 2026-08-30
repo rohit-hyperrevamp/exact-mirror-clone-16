@@ -51,11 +51,16 @@ const BookTest = () => {
   const [notes, setNotes] = useState("");
   const [order, setOrder] = useState<PortalOrder | null>(null);
   const [pointsEarned, setPointsEarned] = useState(0);
+  const [pointsSpent, setPointsSpent] = useState(0);
 
   const [promos, setPromos] = useState<PortalPromo[]>([]);
   const [promoInput, setPromoInput] = useState("");
   const [applied, setApplied] = useState<{ code: string; discount: number } | null>(null);
   const [promoBusy, setPromoBusy] = useState(false);
+
+  const [rewards, setRewards] = useState<PortalRewards | null>(null);
+  const [usePoints, setUsePoints] = useState(false);
+  const [pointsInput, setPointsInput] = useState(0);
 
   const [centers, setCenters] = useState<PortalCenter[]>([]);
   const [centerId, setCenterId] = useState("");
