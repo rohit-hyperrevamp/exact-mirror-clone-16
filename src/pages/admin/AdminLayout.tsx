@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 
-const GROUPS: { title: string; items: { to: string; label: string; icon: typeof ListChecks; end?: boolean }[] }[] = [
+const GROUPS: { title: string; items: { to: string; label: string; icon: LucideIcon; end?: boolean }[] }[] = [
   {
     title: "Overview",
     items: [{ to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard, end: true }],
