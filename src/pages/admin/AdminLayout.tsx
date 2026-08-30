@@ -2,8 +2,6 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { clearAdminToken } from "@/lib/adminApi";
 import {
   LogOut,
-  ArrowLeft,
-  ShieldCheck,
   LayoutDashboard,
   FlaskConical,
   ShoppingBag,
