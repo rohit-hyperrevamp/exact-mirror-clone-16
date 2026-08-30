@@ -8,6 +8,7 @@ import {
   Clock,
   Droplet,
   FlaskConical,
+  Gift,
   Loader2,
   LogOut,
   Utensils,
@@ -18,6 +19,7 @@ import { toast } from "@/hooks/use-toast";
 import {
   BookingPolicy,
   PortalOrder,
+  PortalRewards,
   clearPatientSession,
   friendlyError,
   getPatientProfile,
@@ -76,6 +78,7 @@ const MyTests = () => {
   const [profile, setProfile] = useState(getPatientProfile());
   const [orders, setOrders] = useState<PortalOrder[]>([]);
   const [policy, setPolicy] = useState<BookingPolicy | null>(null);
+  const [rewards, setRewards] = useState<PortalRewards | null>(null);
   const [loading, setLoading] = useState(false);
   const [busy, setBusy] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -109,6 +112,17 @@ const MyTests = () => {
   useEffect(() => {
     if (loggedIn) load();
   }, [loggedIn, load]);
+
+  useEffect(() => {
+    if (!loggedIn) return;
+    let alive = true;
+    portal<PortalRewards>("my_rewards")
+      .then((r) => alive && setRewards(r))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [loggedIn, orders.length]);
 
   const sendOtp = async () => {
     setBusy(true);
@@ -271,6 +285,36 @@ const MyTests = () => {
           <button type="button" onClick={signOut} className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground">
             <LogOut className="w-4 h-4" />Sign out
           </button>
+        </div>
+
+        {/* Rewards & loyalty */}
+        <div className="mb-8 rounded-2xl bg-background shadow-sm p-5 md:p-6">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                <Gift className="w-4 h-4 text-secondary" />Rewards &amp; loyalty
+              </p>
+              <p className="text-muted-foreground text-[14px] mt-1">
+                {rewards?.config
+                  ? `Earn ${rewards.config.earn_percent}% of every booking back as points. 1 point = ₹${rewards.config.point_to_rupee}.`
+                  : "Earn points on every test you book with us."}
+              </p>
+            </div>
+            <div className="flex gap-6">
+              <div>
+                <p className="text-2xl font-bold text-foreground tabular-nums">{rewards?.member?.points_balance ?? 0}</p>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">Points</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-foreground tabular-nums">{rewards?.member?.lifetime_points ?? 0}</p>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">Lifetime</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-foreground capitalize">{rewards?.member?.tier ?? "—"}</p>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">Tier</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {loading ? (

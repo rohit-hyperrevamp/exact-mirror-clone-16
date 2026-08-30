@@ -76,6 +76,9 @@ export type PortalOrder = {
   status: string;
   payment_status: string;
   total: number;
+  subtotal?: number;
+  discount?: number;
+  promo_code?: string | null;
   collection_type: string;
   address: string | null;
   pincode: string | null;
