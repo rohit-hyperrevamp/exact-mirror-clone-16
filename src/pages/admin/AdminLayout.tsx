@@ -2,8 +2,6 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { clearAdminToken } from "@/lib/adminApi";
 import {
   LogOut,
-  ArrowLeft,
-  ShieldCheck,
   LayoutDashboard,
   FlaskConical,
   ShoppingBag,
@@ -53,19 +51,23 @@ export const AdminLayout = () => {
 
   return (
     <div className="min-h-screen flex bg-slate-50">
-      <aside className="hidden md:flex w-64 shrink-0 flex-col bg-[#001260] text-white min-h-screen sticky top-0">
-        <div className="px-6 pt-6 pb-6">
-          <a href="/" className="text-white/60 text-[11px] uppercase tracking-[0.16em] inline-flex items-center gap-2 hover:text-white">
-            <ArrowLeft className="h-3 w-3" /> Back to site
-          </a>
-          <div className="mt-4 flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-[#FFC107]" />
-            <p className="font-bold text-[18px] tracking-wide">
-              Aarvak <span className="text-[#FFC107]">Admin</span>
-            </p>
+      <aside className="hidden md:flex w-64 shrink-0 flex-col bg-[#001260] text-white h-screen sticky top-0">
+        <div className="px-6 pt-6 pb-5 shrink-0">
+          <div className="inline-flex items-center rounded-lg bg-white px-3 py-2">
+            <img src="/images/aarvak-logo.webp" alt="Aarvak Diagnostics logo" className="h-8 w-auto" />
           </div>
-          <p className="text-white/50 text-[11px] mt-1">Command Center</p>
+          <p className="text-white/50 text-[11px] mt-3 uppercase tracking-[0.16em]">Command Center</p>
         </div>
+
+        <div className="px-3 pb-4 shrink-0">
+          <button
+            onClick={signOut}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-[13px] font-medium bg-white/10 text-white hover:bg-white/20 transition"
+          >
+            <LogOut className="h-4 w-4" /> Sign out
+          </button>
+        </div>
+
         <nav className="px-3 flex-1 space-y-5 overflow-y-auto pb-6">
           {GROUPS.map((g) => (
             <div key={g.title} className="space-y-1">
@@ -90,15 +92,18 @@ export const AdminLayout = () => {
             </div>
           ))}
         </nav>
-
-        <div className="p-3 border-t border-white/10">
-          <button onClick={signOut} className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[13px] text-white/60 hover:text-white hover:bg-white/5">
-            <LogOut className="h-4 w-4" /> Sign out
-          </button>
-        </div>
       </aside>
 
-      <main className="flex-1 min-w-0 pt-6 md:pt-8 pb-16 px-4 md:px-10">
+      <main className="flex-1 min-w-0 pt-0 md:pt-8 pb-16 px-4 md:px-10">
+        <div className="md:hidden sticky top-0 z-40 -mx-4 mb-3 flex items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3">
+          <img src="/images/aarvak-logo.webp" alt="Aarvak Diagnostics logo" className="h-7 w-auto" />
+          <button
+            onClick={signOut}
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#001260] px-3 h-9 text-[12px] font-medium text-white"
+          >
+            <LogOut className="h-3.5 w-3.5" /> Sign out
+          </button>
+        </div>
         <div className="md:hidden flex gap-2 overflow-x-auto pb-4 -mx-4 px-4">
           {NAV.map((n) => (
             <NavLink
@@ -114,9 +119,6 @@ export const AdminLayout = () => {
               {n.label}
             </NavLink>
           ))}
-          <button onClick={signOut} className="shrink-0 px-3 h-9 rounded-full inline-flex items-center text-[12px] bg-white text-slate-700 border border-slate-200">
-            Sign out
-          </button>
         </div>
         <Outlet />
       </main>
