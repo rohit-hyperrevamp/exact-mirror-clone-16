@@ -1,14 +1,60 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { clearAdminToken } from "@/lib/adminApi";
-import { BarChart3, ListChecks, Search, Send, LogOut, ArrowLeft, ShieldCheck, CalendarClock } from "lucide-react";
+import {
+  BarChart3,
+  ListChecks,
+  Search,
+  Send,
+  LogOut,
+  ArrowLeft,
+  ShieldCheck,
+  CalendarClock,
+  LayoutDashboard,
+  FlaskConical,
+  ShoppingBag,
+  ShoppingCart,
+  IndianRupee,
+  Users,
+  Gift,
+  Ticket,
+} from "lucide-react";
 
-const NAV = [
-  { to: "/admin/seo", label: "Plan", icon: ListChecks, end: true },
-  { to: "/admin/seo/blogs", label: "Blogs", icon: CalendarClock },
-  { to: "/admin/seo/analytics", label: "Analytics", icon: BarChart3 },
-  { to: "/admin/seo/keywords", label: "Keywords", icon: Search },
-  { to: "/admin/seo/indexing", label: "Indexing", icon: Send },
+const GROUPS: { title: string; items: { to: string; label: string; icon: typeof ListChecks; end?: boolean }[] }[] = [
+  {
+    title: "Overview",
+    items: [{ to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard, end: true }],
+  },
+  {
+    title: "Commerce",
+    items: [
+      { to: "/admin/catalog", label: "Catalog", icon: FlaskConical },
+      { to: "/admin/orders", label: "Test Orders", icon: ShoppingBag },
+      { to: "/admin/abandoned-carts", label: "Abandoned Carts", icon: ShoppingCart },
+      { to: "/admin/payments", label: "Payments", icon: IndianRupee },
+      { to: "/admin/customers", label: "Patients", icon: Users },
+    ],
+  },
+  {
+    title: "Growth",
+    items: [
+      { to: "/admin/rewards", label: "Rewards & Loyalty", icon: Gift },
+      { to: "/admin/promo-codes", label: "Promo Codes", icon: Ticket },
+    ],
+  },
+  {
+    title: "SEO",
+    items: [
+      { to: "/admin/seo", label: "Plan", icon: ListChecks, end: true },
+      { to: "/admin/seo/blogs", label: "Blogs", icon: CalendarClock },
+      { to: "/admin/seo/analytics", label: "Analytics", icon: BarChart3 },
+      { to: "/admin/seo/keywords", label: "Keywords", icon: Search },
+      { to: "/admin/seo/indexing", label: "Indexing", icon: Send },
+    ],
+  },
 ];
+
+const NAV = GROUPS.flatMap((g) => g.items);
+
 
 
 export const AdminLayout = () => {
@@ -25,30 +71,36 @@ export const AdminLayout = () => {
           <div className="mt-4 flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-[#FFC107]" />
             <p className="font-bold text-[18px] tracking-wide">
-              Aarvak <span className="text-[#FFC107]">SEO</span>
+              Aarvak <span className="text-[#FFC107]">Admin</span>
             </p>
           </div>
           <p className="text-white/50 text-[11px] mt-1">Command Center</p>
         </div>
-        <nav className="px-3 flex-1 space-y-1">
-          {NAV.map((n) => {
-            const Icon = n.icon;
-            return (
-              <NavLink
-                key={n.to}
-                to={n.to}
-                end={n.end}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2.5 rounded-lg text-[13px] transition ${
-                    isActive ? "bg-white/10 text-white" : "text-white/60 hover:text-white hover:bg-white/5"
-                  }`
-                }
-              >
-                <Icon className="h-4 w-4" /> {n.label}
-              </NavLink>
-            );
-          })}
+        <nav className="px-3 flex-1 space-y-5 overflow-y-auto pb-6">
+          {GROUPS.map((g) => (
+            <div key={g.title} className="space-y-1">
+              <p className="px-3 pb-1 text-[10px] uppercase tracking-[0.2em] text-white/35">{g.title}</p>
+              {g.items.map((n) => {
+                const Icon = n.icon;
+                return (
+                  <NavLink
+                    key={n.to}
+                    to={n.to}
+                    end={n.end}
+                    className={({ isActive }) =>
+                      `flex items-center gap-3 px-3 py-2.5 rounded-lg text-[13px] transition ${
+                        isActive ? "bg-white/10 text-white" : "text-white/60 hover:text-white hover:bg-white/5"
+                      }`
+                    }
+                  >
+                    <Icon className="h-4 w-4" /> {n.label}
+                  </NavLink>
+                );
+              })}
+            </div>
+          ))}
         </nav>
+
         <div className="p-3 border-t border-white/10">
           <button onClick={signOut} className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[13px] text-white/60 hover:text-white hover:bg-white/5">
             <LogOut className="h-4 w-4" /> Sign out

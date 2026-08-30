@@ -40,6 +40,16 @@ import AdminSeoAnalytics from "./pages/admin/AdminSeoAnalytics";
 import AdminSeoKeywords from "./pages/admin/AdminSeoKeywords";
 import AdminSeoIndexing from "./pages/admin/AdminSeoIndexing";
 import AdminBlogs from "./pages/admin/AdminBlogs";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminCatalog from "./pages/admin/AdminCatalog";
+import AdminCatalogDetail from "./pages/admin/AdminCatalogDetail";
+import AdminOrders from "./pages/admin/AdminOrders";
+import AdminOrderDetail from "./pages/admin/AdminOrderDetail";
+import AdminAbandonedCarts from "./pages/admin/AdminAbandonedCarts";
+import AdminPayments from "./pages/admin/AdminPayments";
+import AdminCustomers from "./pages/admin/AdminCustomers";
+import AdminRewards from "./pages/admin/AdminRewards";
+import AdminPromoCodes from "./pages/admin/AdminPromoCodes";
 
 import AdminGuard from "./components/AdminGuard";
 import AutoCanonical from "./components/AutoCanonical";
@@ -100,6 +110,22 @@ const AppLayout = () => {
 
           </Route>
         </Route>
+        <Route path="/admin" element={<AdminGuard />}>
+          <Route element={<AdminLayout />}>
+            <Route index element={<Navigate to="/admin/dashboard" replace />} />
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="catalog" element={<AdminCatalog />} />
+            <Route path="catalog/:id" element={<AdminCatalogDetail />} />
+            <Route path="orders" element={<AdminOrders />} />
+            <Route path="orders/:id" element={<AdminOrderDetail />} />
+            <Route path="abandoned-carts" element={<AdminAbandonedCarts />} />
+            <Route path="payments" element={<AdminPayments />} />
+            <Route path="customers" element={<AdminCustomers />} />
+            <Route path="rewards" element={<AdminRewards />} />
+            <Route path="promo-codes" element={<AdminPromoCodes />} />
+          </Route>
+        </Route>
+
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
