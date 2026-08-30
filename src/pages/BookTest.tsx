@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { CheckCircle, Clock, Droplet, Home, Loader2, Lock, ShieldCheck, Utensils } from "lucide-react";
+import { CheckCircle, Clock, Droplet, Home, Loader2, Lock, MapPin, Navigation, ShieldCheck, Utensils } from "lucide-react";
 import useSEO from "@/hooks/useSEO";
 import { toast } from "@/hooks/use-toast";
 import {
   BookingPolicy,
+  PortalCenter,
   PortalOrder,
   PortalTest,
+  distanceKm,
   friendlyError,
   getPatientProfile,
   getPatientToken,
@@ -48,6 +50,12 @@ const BookTest = () => {
   const [notes, setNotes] = useState("");
   const [order, setOrder] = useState<PortalOrder | null>(null);
 
+  const [centers, setCenters] = useState<PortalCenter[]>([]);
+  const [centerId, setCenterId] = useState("");
+  const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [geoState, setGeoState] = useState<"idle" | "locating" | "done" | "denied">("idle");
+  const [showAllCenters, setShowAllCenters] = useState(false);
+
   useSEO({
     title: test ? `Book ${test.name} in Gurugram | Aarvak Diagnostics` : "Book a Test | Aarvak Diagnostics",
     description: test
@@ -76,12 +84,69 @@ const BookTest = () => {
     };
   }, [slug]);
 
+  // Load enabled collection centres once
+  useEffect(() => {
+    let alive = true;
+    portal<{ centers: PortalCenter[] }>("centers")
+      .then((r) => alive && setCenters(r.centers ?? []))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const locate = () => {
+    if (!("geolocation" in navigator)) {
+      setGeoState("denied");
+      return;
+    }
+    setGeoState("locating");
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        setGeoState("done");
+      },
+      () => setGeoState("denied"),
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 5 * 60 * 1000 },
+    );
+  };
+
+  // Ask for location only when the patient chooses to visit a centre
+  useEffect(() => {
+    if (collectionType === "walk_in" && geoState === "idle") locate();
+  }, [collectionType, geoState]);
+
+  /** Centres sorted by distance from the patient when coordinates are known. */
+  const rankedCenters = useMemo(() => {
+    const withDistance = centers.map((c) => ({
+      center: c,
+      km:
+        coords && c.latitude != null && c.longitude != null
+          ? distanceKm(coords.lat, coords.lng, Number(c.latitude), Number(c.longitude))
+          : null,
+    }));
+    if (!coords) return withDistance;
+    return [...withDistance].sort((a, b) => (a.km ?? Infinity) - (b.km ?? Infinity));
+  }, [centers, coords]);
+
+  const recommended = rankedCenters[0] ?? null;
+
+  // Preselect the nearest / first centre
+  useEffect(() => {
+    if (collectionType !== "walk_in") return;
+    if (!recommended) return;
+    setCenterId((prev) => (prev && centers.some((c) => c.id === prev) ? prev : recommended.center.id));
+  }, [collectionType, recommended, centers]);
+
+  const selectedCenter = centers.find((c) => c.id === centerId) ?? null;
+
   const detailsValid = useMemo(() => {
     if (!name.trim() || !/^[6-9]\d{9}$/.test(phone.replace(/\D/g, "").slice(-10))) return false;
     if (!scheduledAt) return false;
     if (collectionType === "home_collection" && address.trim().length < 8) return false;
+    if (collectionType === "walk_in" && !centerId) return false;
     return true;
-  }, [name, phone, scheduledAt, collectionType, address]);
+  }, [name, phone, scheduledAt, collectionType, address, centerId]);
 
   const continueFromDetails = async () => {
     if (!detailsValid) {
@@ -128,6 +193,7 @@ const BookTest = () => {
         name,
         email,
         collection_type: collectionType,
+        center_id: collectionType === "walk_in" ? centerId : undefined,
         address,
         pincode,
         scheduled_at: new Date(scheduledAt).toISOString(),
@@ -209,7 +275,7 @@ const BookTest = () => {
                     <div className="grid sm:grid-cols-2 gap-3">
                       {([
                         { key: "home_collection", label: "Home collection", desc: "Our phlebotomist visits you" },
-                        { key: "walk_in", label: "Visit the lab", desc: "Sector 67, Gurugram" },
+                        { key: "walk_in", label: "Visit a collection centre", desc: "We suggest the one nearest to you" },
                       ] as const).map((o) => (
                         <button
                           key={o.key}
@@ -236,6 +302,79 @@ const BookTest = () => {
                         <label className="block text-sm font-medium text-foreground mb-1.5" htmlFor="bk-pin">Pincode</label>
                         <input id="bk-pin" className={inputClass} inputMode="numeric" value={pincode} onChange={(e) => setPincode(e.target.value.replace(/\D/g, "").slice(0, 6))} />
                       </div>
+                    </div>
+                  )}
+
+                  {collectionType === "walk_in" && (
+                    <div className="rounded-xl border border-border p-4">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <span className="text-sm font-medium text-foreground">Choose your collection centre *</span>
+                        {geoState === "locating" && (
+                          <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <Loader2 className="w-3.5 h-3.5 animate-spin" /> Finding centres near you…
+                          </span>
+                        )}
+                        {geoState !== "locating" && !coords && (
+                          <button
+                            type="button"
+                            onClick={locate}
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-secondary"
+                          >
+                            <Navigation className="w-3.5 h-3.5" /> Use my location
+                          </button>
+                        )}
+                      </div>
+
+                      {geoState === "denied" && !coords && (
+                        <p className="text-xs text-muted-foreground mb-3">
+                          Location access is off, so we can&apos;t auto-suggest the closest centre. Please pick one below.
+                        </p>
+                      )}
+
+                      <div className="space-y-2">
+                        {(showAllCenters ? rankedCenters : rankedCenters.slice(0, 1)).map(({ center: c, km }, i) => {
+                          const isRecommended = coords != null && i === 0 && !showAllCenters ? true : coords != null && rankedCenters[0]?.center.id === c.id;
+                          return (
+                            <button
+                              key={c.id}
+                              type="button"
+                              onClick={() => setCenterId(c.id)}
+                              className={`w-full text-left rounded-xl border p-4 transition ${
+                                centerId === c.id ? "border-secondary bg-secondary/5" : "border-border hover:border-secondary/50"
+                              }`}
+                            >
+                              <span className="flex flex-wrap items-center gap-2">
+                                <span className="font-semibold text-[15px] text-foreground">{c.name}</span>
+                                {isRecommended && (
+                                  <span className="rounded-full bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-wide px-2 py-0.5">
+                                    Nearest to you
+                                  </span>
+                                )}
+                                {km != null && (
+                                  <span className="text-xs text-muted-foreground">{km < 1 ? "under 1 km" : `${km.toFixed(1)} km away`}</span>
+                                )}
+                              </span>
+                              <span className="mt-1 flex items-start gap-1.5 text-xs text-muted-foreground">
+                                <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                                <span>{c.address || c.location || c.city}</span>
+                              </span>
+                              {c.timings && <span className="block text-xs text-muted-foreground mt-1">{c.timings}</span>}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {rankedCenters.length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => setShowAllCenters((v) => !v)}
+                          className="mt-3 text-xs font-semibold text-secondary"
+                        >
+                          {showAllCenters
+                            ? "Show only the recommended centre"
+                            : `Choose a different centre (${rankedCenters.length - 1} more)`}
+                        </button>
+                      )}
                     </div>
                   )}
 
@@ -302,7 +441,9 @@ const BookTest = () => {
                   {[
                     ["Test", test.name],
                     ["Patient", `${name} · +91 ${phone}`],
-                    ["Collection", collectionType === "home_collection" ? `Home collection — ${address}` : "Walk-in at Sector 67, Gurugram"],
+                    ["Collection", collectionType === "home_collection"
+                      ? `Home collection — ${address}`
+                      : `Visit ${selectedCenter?.name ?? "collection centre"}${selectedCenter?.address ? ` — ${selectedCenter.address}` : ""}`],
                     ["Appointment", scheduledAt ? new Date(scheduledAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" }) : "—"],
                   ].map(([k, v]) => (
                     <div key={k} className="flex flex-col sm:flex-row sm:justify-between gap-1 px-4 py-3">
