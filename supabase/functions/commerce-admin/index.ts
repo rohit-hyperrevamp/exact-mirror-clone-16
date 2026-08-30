@@ -319,6 +319,30 @@ Deno.serve(async (req) => {
         return jsonResponse({ row: data });
       }
 
+      // ---------------- Collection centers ----------------
+      case "list_centers": {
+        const { data, error } = await db
+          .from("collection_centers")
+          .select("*")
+          .order("sort_order", { ascending: true })
+          .order("name", { ascending: true });
+        if (error) throw error;
+        return jsonResponse({ rows: data ?? [] });
+      }
+      case "upsert_center": {
+        const row = { ...((body.row ?? {}) as Body) };
+        const { data, error } = row.id
+          ? await db.from("collection_centers").update(row).eq("id", row.id).select().single()
+          : await db.from("collection_centers").insert(row).select().single();
+        if (error) throw error;
+        return jsonResponse({ row: data });
+      }
+      case "delete_center": {
+        const { error } = await db.from("collection_centers").delete().eq("id", body.id);
+        if (error) throw error;
+        return jsonResponse({ ok: true });
+      }
+
       // ---------------- Promo codes ----------------
       case "list_promos": {
         const { data, error } = await db.from("promo_codes").select("*").order("created_at", { ascending: false });
