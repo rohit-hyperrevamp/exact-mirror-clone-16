@@ -46,6 +46,7 @@ import AdminPayments from "./pages/admin/AdminPayments";
 import AdminCustomers from "./pages/admin/AdminCustomers";
 import AdminRewards from "./pages/admin/AdminRewards";
 import AdminPromoCodes from "./pages/admin/AdminPromoCodes";
+import AdminCollectionCenters from "./pages/admin/AdminCollectionCenters";
 
 import AdminGuard from "./components/AdminGuard";
 import AutoCanonical from "./components/AutoCanonical";
@@ -109,6 +110,7 @@ const AppLayout = () => {
             <Route path="abandoned-carts" element={<AdminAbandonedCarts />} />
             <Route path="payments" element={<AdminPayments />} />
             <Route path="customers" element={<AdminCustomers />} />
+            <Route path="collection-centers" element={<AdminCollectionCenters />} />
             <Route path="rewards" element={<AdminRewards />} />
             <Route path="promo-codes" element={<AdminPromoCodes />} />
 

@@ -21,6 +21,9 @@ export type CommerceAction =
   | "update_payment"
   | "list_customers"
   | "upsert_customer"
+  | "list_centers"
+  | "upsert_center"
+  | "delete_center"
   | "list_promos"
   | "upsert_promo"
   | "delete_promo"
@@ -33,6 +36,26 @@ export type CommerceAction =
 export function commerce<T = unknown>(action: CommerceAction, payload: Record<string, unknown> = {}) {
   return callAdmin<T>("commerce-admin", { action, ...payload });
 }
+
+export type CollectionCenter = {
+  id: string;
+  name: string;
+  location: string | null;
+  address: string | null;
+  city: string;
+  pincode: string | null;
+  phone: string | null;
+  alt_phone: string | null;
+  email: string | null;
+  timings: string | null;
+  map_url: string | null;
+  home_collection: boolean;
+  notes: string | null;
+  sort_order: number;
+  enabled: boolean;
+  created_at: string;
+  updated_at: string;
+};
 
 export type LabTest = {
   id: string;
