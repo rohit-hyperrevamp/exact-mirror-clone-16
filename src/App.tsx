@@ -35,11 +35,8 @@ import XRayServices from "./pages/XRayServices";
 import PFTTest from "./pages/PFTTest";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
-import AdminSeo from "./pages/admin/AdminSeo";
-import AdminSeoAnalytics from "./pages/admin/AdminSeoAnalytics";
-import AdminSeoKeywords from "./pages/admin/AdminSeoKeywords";
-import AdminSeoIndexing from "./pages/admin/AdminSeoIndexing";
 import AdminBlogs from "./pages/admin/AdminBlogs";
+
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminCatalog from "./pages/admin/AdminCatalog";
 import AdminCatalogDetail from "./pages/admin/AdminCatalogDetail";
