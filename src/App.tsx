@@ -33,6 +33,8 @@ import Immunology from "./pages/Immunology";
 import MolecularDiagnostics from "./pages/MolecularDiagnostics";
 import XRayServices from "./pages/XRayServices";
 import PFTTest from "./pages/PFTTest";
+import BookTest from "./pages/BookTest";
+import MyTests from "./pages/MyTests";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./pages/admin/AdminLayout";
 
@@ -47,6 +49,7 @@ import AdminCustomers from "./pages/admin/AdminCustomers";
 import AdminRewards from "./pages/admin/AdminRewards";
 import AdminPromoCodes from "./pages/admin/AdminPromoCodes";
 import AdminCollectionCenters from "./pages/admin/AdminCollectionCenters";
+import AdminBookingPolicy from "./pages/admin/AdminBookingPolicy";
 
 import AdminGuard from "./components/AdminGuard";
 import AutoCanonical from "./components/AutoCanonical";
@@ -78,6 +81,8 @@ const AppLayout = () => {
         <Route path="/departments/radiology/pft-test" element={<PFTTest />} />
         <Route path="/health-checkups" element={<Navigate to="/departments/health-checkups" replace />} />
         <Route path="/departments/health-checkups" element={<HealthCheckups />} />
+        <Route path="/book/:slug" element={<BookTest />} />
+        <Route path="/my-tests" element={<MyTests />} />
         <Route path="/insights" element={<Insights />} />
         <Route path="/insights/:slug" element={<BlogPost />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -111,6 +116,7 @@ const AppLayout = () => {
             <Route path="payments" element={<AdminPayments />} />
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="collection-centers" element={<AdminCollectionCenters />} />
+            <Route path="cancellation-policy" element={<AdminBookingPolicy />} />
             <Route path="rewards" element={<AdminRewards />} />
             <Route path="promo-codes" element={<AdminPromoCodes />} />
 

@@ -11,6 +11,7 @@ import {
   Gift,
   Ticket,
   MapPin,
+  CalendarX,
   type LucideIcon,
 } from "lucide-react";
 
@@ -29,6 +30,7 @@ const GROUPS: { title: string; items: { to: string; label: string; icon: LucideI
       { to: "/admin/payments", label: "Payments", icon: IndianRupee },
       { to: "/admin/customers", label: "Patients", icon: Users },
       { to: "/admin/collection-centers", label: "Collection Centers", icon: MapPin },
+      { to: "/admin/cancellation-policy", label: "Cancellation Policy", icon: CalendarX },
     ],
   },
   {
