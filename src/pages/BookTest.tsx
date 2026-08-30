@@ -55,6 +55,7 @@ const BookTest = () => {
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [geoState, setGeoState] = useState<"idle" | "locating" | "done" | "denied">("idle");
   const [showAllCenters, setShowAllCenters] = useState(false);
+  const [centerPickedManually, setCenterPickedManually] = useState(false);
 
   useSEO({
     title: test ? `Book ${test.name} in Gurugram | Aarvak Diagnostics` : "Book a Test | Aarvak Diagnostics",
@@ -131,12 +132,11 @@ const BookTest = () => {
 
   const recommended = rankedCenters[0] ?? null;
 
-  // Preselect the nearest / first centre
+  // Preselect the nearest centre until the patient picks one themselves
   useEffect(() => {
-    if (collectionType !== "walk_in") return;
-    if (!recommended) return;
-    setCenterId((prev) => (prev && centers.some((c) => c.id === prev) ? prev : recommended.center.id));
-  }, [collectionType, recommended, centers]);
+    if (collectionType !== "walk_in" || !recommended || centerPickedManually) return;
+    setCenterId(recommended.center.id);
+  }, [collectionType, recommended, centerPickedManually]);
 
   const selectedCenter = centers.find((c) => c.id === centerId) ?? null;
 
@@ -339,7 +339,10 @@ const BookTest = () => {
                             <button
                               key={c.id}
                               type="button"
-                              onClick={() => setCenterId(c.id)}
+                              onClick={() => {
+                                setCenterId(c.id);
+                                setCenterPickedManually(true);
+                              }}
                               className={`w-full text-left rounded-xl border p-4 transition ${
                                 centerId === c.id ? "border-secondary bg-secondary/5" : "border-border hover:border-secondary/50"
                               }`}
