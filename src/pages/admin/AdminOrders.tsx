@@ -14,17 +14,10 @@ import { AdminLoadError, AdminPageHeader, Badge, EmptyRow, Input, Row, Select, S
 import { DateRangeFilter, filterByDate, useDateRange } from "@/lib/admin/date-filter";
 import { Pager, usePager } from "@/lib/admin/pager";
 
-function tone(status: string) {
-  if (status === "cancelled") return "bad" as const;
-  if (status === "completed" || status === "report_ready" || status === "report_delivered") return "good" as const;
-  if (status === "pending") return "warn" as const;
-  return "neutral" as const;
-}
-
 function OrderStatusCell({ order, onSaved }: { order: TestOrder; onSaved: () => void }) {
   const [busy, setBusy] = useState(false);
   return (
-    <div className="flex flex-col gap-1">
+    <div>
       <select
         aria-label={`Update status for ${order.order_no}`}
         value={order.status}
@@ -47,7 +40,6 @@ function OrderStatusCell({ order, onSaved }: { order: TestOrder; onSaved: () => 
           </option>
         ))}
       </select>
-      <Badge tone={tone(order.status)}>{orderStatusLabel(order.status)}</Badge>
     </div>
   );
 }
