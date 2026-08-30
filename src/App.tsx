@@ -100,16 +100,8 @@ const AppLayout = () => {
         <Route path="/departments/pathology/molecular-diagnostics" element={<MolecularDiagnostics />} />
         <Route path="/hyperrevamp-reporting" element={<HyperrevampReporting />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/seo" element={<AdminGuard />}>
-          <Route element={<AdminLayout />}>
-            <Route index element={<AdminSeo />} />
-            <Route path="analytics" element={<AdminSeoAnalytics />} />
-            <Route path="keywords" element={<AdminSeoKeywords />} />
-            <Route path="indexing" element={<AdminSeoIndexing />} />
-            <Route path="blogs" element={<AdminBlogs />} />
+        <Route path="/admin/seo/*" element={<Navigate to="/admin/dashboard" replace />} />
 
-          </Route>
-        </Route>
         <Route path="/admin" element={<AdminGuard />}>
           <Route element={<AdminLayout />}>
             <Route index element={<Navigate to="/admin/dashboard" replace />} />
