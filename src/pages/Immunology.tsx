@@ -333,7 +333,7 @@ const Immunology = () => {
                   Comprehensive immunology tests with advanced serology analysis, hormone profiling, autoimmune screening, and infection marker evaluation for accurate clinical diagnosis and preventive healthcare.
                 </p>
                 <Link
-                  to="/contact-us#contact"
+                  to="/packages"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book a Test
@@ -568,7 +568,7 @@ const Immunology = () => {
             Accurate immune analysis. Reliable hormone testing. Better healthcare decisions.
           </p>
           <Link
-            to="/contact-us#contact"
+            to="/packages"
             className="inline-block bg-white text-secondary font-semibold px-8 py-3 rounded-full text-sm hover:bg-white/90 transition"
           >
             Book Now

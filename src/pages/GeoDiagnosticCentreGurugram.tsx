@@ -58,7 +58,7 @@ const GeoDiagnosticCentreGurugram = () => {
           <div className="text-white max-w-3xl">
             <h1 className="text-3xl md:text-5xl font-bold mb-4">Best Diagnostic Centre in Gurugram</h1>
             <p className="text-lg md:text-xl opacity-90">Trusted by 50,000+ patients for accurate pathology, radiology & health checkup services</p>
-            <Link to="/contact-us#contact" className="inline-block mt-6 bg-aarvak-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">
+            <Link to="/packages" className="inline-block mt-6 bg-aarvak-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">
               Book a Test Now
             </Link>
           </div>
@@ -164,7 +164,7 @@ const GeoDiagnosticCentreGurugram = () => {
         <div className="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-2xl p-8 md:p-12 text-center text-white">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Book Your Diagnostic Test in Gurugram Today</h2>
           <p className="text-cyan-100 mb-6 max-w-2xl mx-auto">Get accurate reports, quick turnaround, and the convenience of home sample collection across Gurugram.</p>
-          <Link to="/contact-us#contact" className="inline-block bg-white text-cyan-700 px-8 py-3 rounded-full font-semibold hover:bg-cyan-50 transition">
+          <Link to="/packages" className="inline-block bg-white text-cyan-700 px-8 py-3 rounded-full font-semibold hover:bg-cyan-50 transition">
             Book Now
           </Link>
         </div>

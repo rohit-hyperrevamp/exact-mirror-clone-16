@@ -112,7 +112,7 @@ const AeoFaqHealthCheckups = () => {
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">Ready to take charge of your health?</p>
-          <Link to="/contact-us#contact" className="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition">
+          <Link to="/packages" className="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition">
             Book Health Checkup
           </Link>
         </div>

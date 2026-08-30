@@ -114,7 +114,7 @@ const MolecularDiagnostics = () => {
                   Advanced molecular diagnostics with high-precision PCR testing, DNA and RNA analysis, and infection detection services designed for accurate and timely clinical diagnosis.
                 </p>
                 <Link
-                  to="/contact-us#contact"
+                  to="/packages"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book a Test
@@ -367,7 +367,7 @@ const MolecularDiagnostics = () => {
             Advanced molecular analysis. Accurate PCR testing. Reliable healthcare decisions.
           </p>
           <Link
-            to="/contact-us#contact"
+            to="/packages"
             className="inline-block bg-white text-secondary font-semibold px-8 py-3 rounded-full text-sm hover:bg-white/90 transition"
           >
             Book Now

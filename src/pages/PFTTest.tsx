@@ -247,7 +247,7 @@ const PFTTest = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Book Your PFT Test Today</h2>
           <p className="text-muted-foreground text-[15px] mb-6">Accurate respiratory assessment. Faster reports. Better lung health decisions.</p>
-          <Link to="/contact-us#contact" className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded-full text-sm hover:bg-secondary/90 transition">Book Now</Link>
+          <Link to="/packages" className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded-full text-sm hover:bg-secondary/90 transition">Book Now</Link>
         </div>
       </section>
 

@@ -55,7 +55,7 @@ const GeoDiagnosticLabSohnaRoad = () => {
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">Diagnostic Lab Near Sohna Road</h1>
             <p className="text-lg md:text-xl opacity-90">Accurate pathology, radiology & home sample collection — just minutes from Sohna Road</p>
-            <Link to="/contact-us#contact" className="inline-block mt-6 bg-aarvak-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">
+            <Link to="/packages" className="inline-block mt-6 bg-aarvak-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-aarvak-blue-hover transition">
               Book Your Test
             </Link>
           </div>
@@ -149,7 +149,7 @@ const GeoDiagnosticLabSohnaRoad = () => {
         <div className="bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-2xl p-8 md:p-12 text-center text-white">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Get Tested Near Sohna Road Today</h2>
           <p className="text-cyan-100 mb-6">Walk in or book home collection. Reports delivered digitally within hours.</p>
-          <Link to="/contact-us#contact" className="inline-block bg-white text-cyan-700 px-8 py-3 rounded-full font-semibold hover:bg-cyan-50 transition">
+          <Link to="/packages" className="inline-block bg-white text-cyan-700 px-8 py-3 rounded-full font-semibold hover:bg-cyan-50 transition">
             Book Now
           </Link>
         </div>

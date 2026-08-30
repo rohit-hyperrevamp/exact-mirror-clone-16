@@ -216,7 +216,7 @@ const BiochemistryTests = () => {
                   Advanced biochemistry blood test services with precise analysis, modern technology, and expert validation for reliable health insights.
                 </p>
                 <Link
-                  to="/contact-us#contact"
+                  to="/packages"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book a Test
@@ -464,7 +464,7 @@ const BiochemistryTests = () => {
             Accurate diagnostics. Faster results. Better health decisions.
           </p>
           <Link
-            to="/contact-us#contact"
+            to="/packages"
             className="inline-block bg-white text-secondary font-semibold px-8 py-3 rounded-full text-sm hover:bg-white/90 transition"
           >
             Book Now

@@ -32,7 +32,7 @@ const AboutUs = () => {
                 <h2 className="text-xl md:text-[32px] font-bold leading-tight">Built on Trust.<br />Driven by Accuracy.</h2>
                 <p className="mt-3 text-sm md:text-[15px] opacity-80 max-w-md">Making quality diagnostic care accessible, reliable, and patient-first.</p>
                 <Link
-                  to="/contact-us#contact"
+                  to="/packages"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book a Test

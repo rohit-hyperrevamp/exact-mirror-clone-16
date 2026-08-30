@@ -61,7 +61,7 @@ const ContactUs = () => {
             <h2 className="text-xl md:text-4xl font-semibold mb-3">We're here to help.</h2>
             <p className="text-sm md:text-base opacity-90 mb-6">Reach out to us for appointments, reports, or general inquiries.</p>
             <Link
-              to="/contact-us#contact"
+              to="/packages"
               className="inline-block bg-secondary text-primary-foreground px-8 py-3 rounded-full font-semibold hover:opacity-90 transition"
             >
               Book a Test

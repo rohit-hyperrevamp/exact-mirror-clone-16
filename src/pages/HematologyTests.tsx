@@ -178,7 +178,7 @@ const HematologyTests = () => {
                   Comprehensive hematology lab tests including CBC and advanced blood analysis to detect infections, anemia, and clotting disorders with precision.
                 </p>
                 <Link
-                  to="/contact-us#contact"
+                  to="/packages"
                   className="inline-block mt-5 text-white font-semibold px-7 py-3 rounded-full text-sm bg-secondary hover:bg-secondary/90 transition"
                 >
                   Book a Test
@@ -442,7 +442,7 @@ const HematologyTests = () => {
             Accurate blood analysis. Faster reports. Better health decisions.
           </p>
           <Link
-            to="/contact-us#contact"
+            to="/packages"
             className="inline-block bg-white text-secondary font-semibold px-8 py-3 rounded-full text-sm hover:bg-white/90 transition"
           >
             Book Now
