@@ -43,9 +43,7 @@ const Packages = () => {
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
 
-  const [query, setQuery] = useState("");
   const [concern, setConcern] = useState("all");
-  const [sort, setSort] = useState<SortKey>("recommended");
 
   useEffect(() => {
     let alive = true;
@@ -68,23 +66,12 @@ const Packages = () => {
     }));
   }, [tests]);
 
-  const visible = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const list = tests.filter((t) => {
-      if (concern !== "all" && !concernsOf(t).includes(concern)) return false;
-      if (!q) return true;
-      return haystackOf(t).includes(q);
-    });
-    if (sort === "price-asc") return [...list].sort((a, b) => Number(a.price) - Number(b.price));
-    if (sort === "price-desc") return [...list].sort((a, b) => Number(b.price) - Number(a.price));
-    return list;
-  }, [tests, query, concern, sort]);
+  const visible = useMemo(
+    () => (concern === "all" ? tests : tests.filter((t) => concernsOf(t).includes(concern))),
+    [tests, concern],
+  );
 
-  const resetFilters = () => {
-    setQuery("");
-    setConcern("all");
-    setSort("recommended");
-  };
+  const resetFilters = () => setConcern("all");
 
   const chip = (active: boolean) =>
     `rounded-full border px-4 py-2 text-[13px] font-medium transition ${
@@ -92,6 +79,7 @@ const Packages = () => {
         ? "border-secondary bg-secondary text-white"
         : "border-border bg-background text-muted-foreground hover:border-secondary/60"
     }`;
+
 
   return (
     <div className="bg-background">
