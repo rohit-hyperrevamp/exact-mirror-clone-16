@@ -13,7 +13,7 @@ const serviceCards = [
     title: "Book A Lab Test",
     desc: "Find and book individual diagnostic tests easily from a trusted blood test lab in Gurgaon.",
     btnText: "Book Test",
-    link: "/contact-us#contact",
+    link: "/packages",
   },
   {
     img: "/images/package.png",
@@ -21,7 +21,7 @@ const serviceCards = [
     title: "Health Packages",
     desc: "Preventive Checkups Designed For Different Health Needs",
     btnText: "Explore Packages",
-    link: "/#package",
+    link: "/packages",
   },
   {
     img: "/images/healthtest.png",
@@ -29,7 +29,7 @@ const serviceCards = [
     title: "Home Samples",
     desc: "Safe and convenient home sample collection from a reliable pathology lab in Gurgaon.",
     btnText: "Book Home Collection",
-    link: "/contact-us#contact",
+    link: "/packages",
   },
 ];
 
@@ -258,13 +258,13 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
               <Link
-                to="/contact-us#contact"
+                to="/packages"
                 className="bg-aarvak-blue text-primary-foreground px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-aarvak-blue-hover transition-colors"
               >
                 Book a Test
               </Link>
               <Link
-                to="/#package"
+                to="/packages"
                 className="bg-primary-foreground text-foreground px-8 py-3 rounded-full font-semibold text-sm md:text-base hover:bg-primary-foreground/90 transition-colors"
               >
                 Explore Packages

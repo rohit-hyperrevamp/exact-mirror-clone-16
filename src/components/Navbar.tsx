@@ -4,6 +4,7 @@ import { Phone, ChevronDown, Menu, X, User } from "lucide-react";
 import { getPatientProfile } from "@/lib/patientPortal";
 
 const navLinks = [
+  { label: "Packages", href: "/packages" },
   { label: "About Us", href: "/about-us" },
   { label: "Corporate", href: "/corporate" },
   {
@@ -107,7 +108,7 @@ const Navbar = () => {
             {patient && <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-600 border-2 border-white" />}
           </Link>
           <Link
-            to="/contact-us#contact"
+            to="/packages"
             className="text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition"
             style={{ backgroundColor: '#4A7FC1' }}
           >
@@ -182,7 +183,7 @@ const Navbar = () => {
             {patient ? "My Tests" : "Patient Login"}
           </Link>
           <Link
-            to="/contact-us#contact"
+            to="/packages"
             className="block text-center bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold"
             onClick={() => setMobileOpen(false)}
           >
