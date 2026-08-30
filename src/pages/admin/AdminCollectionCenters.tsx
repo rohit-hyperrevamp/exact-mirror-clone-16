@@ -16,6 +16,8 @@ const BLANK: Partial<CollectionCenter> = {
   email: "",
   timings: "7:00 AM – 8:00 PM",
   map_url: "",
+  latitude: null,
+  longitude: null,
   home_collection: true,
   notes: "",
   sort_order: 0,
@@ -118,6 +120,22 @@ const AdminCollectionCenters = () => {
           </Field>
           <Field label="Google Maps link">
             <Input value={draft.map_url ?? ""} onChange={(e) => setDraft({ ...draft, map_url: e.target.value })} />
+          </Field>
+          <Field label="Latitude" help="Used to suggest the nearest center to patients">
+            <Input
+              value={draft.latitude ?? ""}
+              onChange={(e) => setDraft({ ...draft, latitude: e.target.value === "" ? null : Number(e.target.value) })}
+              inputMode="decimal"
+              placeholder="28.4028"
+            />
+          </Field>
+          <Field label="Longitude" help="Used to suggest the nearest center to patients">
+            <Input
+              value={draft.longitude ?? ""}
+              onChange={(e) => setDraft({ ...draft, longitude: e.target.value === "" ? null : Number(e.target.value) })}
+              inputMode="decimal"
+              placeholder="77.0568"
+            />
           </Field>
           <Field label="Home collection">
             <Select
