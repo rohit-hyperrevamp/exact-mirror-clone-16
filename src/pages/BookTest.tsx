@@ -8,6 +8,7 @@ import {
   PortalCenter,
   PortalOrder,
   PortalPromo,
+  PortalRewards,
   PortalTest,
   distanceKm,
   friendlyError,
