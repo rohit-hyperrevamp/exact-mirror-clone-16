@@ -6,12 +6,30 @@ import { PortalTest, portal } from "@/lib/patientPortal";
 
 type SortKey = "recommended" | "price-asc" | "price-desc";
 
-const PRICE_BANDS = [
-  { id: "all", label: "All prices", test: () => true },
-  { id: "under-1000", label: "Under ₹1,000", test: (p: number) => p < 1000 },
-  { id: "1000-2000", label: "₹1,000 – ₹2,000", test: (p: number) => p >= 1000 && p <= 2000 },
-  { id: "above-2000", label: "Above ₹2,000", test: (p: number) => p > 2000 },
+/** Health concerns are matched automatically against each package's name, description and inclusions. */
+const CONCERNS: { id: string; label: string; keywords: string[] }[] = [
+  { id: "full-body", label: "Full body checkup", keywords: ["wellness", "supreme", "advanced", "essential", "basic", "full body"] },
+  { id: "diabetes", label: "Diabetes & sugar", keywords: ["diabet", "hba1c", "blood sugar", "glucose"] },
+  { id: "heart", label: "Heart & cholesterol", keywords: ["heart", "lipid", "cholesterol", "cpk", "cardiac"] },
+  { id: "thyroid", label: "Thyroid & hormones", keywords: ["thyroid", "tsh", "t3", "t4"] },
+  { id: "liver", label: "Liver", keywords: ["liver", "lft", "sgot", "sgpt", "bilirubin", "amylase", "lipase"] },
+  { id: "kidney", label: "Kidney", keywords: ["kidney", "kft", "creatinine", "urea", "urine"] },
+  { id: "vitamins", label: "Vitamins & deficiency", keywords: ["vitamin", "b12", "vit. d", "iron", "ferritin"] },
+  { id: "anaemia", label: "Anaemia & blood count", keywords: ["cbc", "complete blood count", "haemoglobin", "hemoglobin", "esr", "iron"] },
+  { id: "immunity", label: "Immunity & inflammation", keywords: ["crp", "esr", "ra factor", "ige", "allergy", "immun"] },
+  { id: "pollution", label: "Pollution & lungs", keywords: ["pollution", "ige", "allerg"] },
+  { id: "pre-marriage", label: "Pre-marriage & infection screening", keywords: ["marriage", "hiv", "hbsag", "hcv", "std", "hepatitis"] },
+  { id: "cancer", label: "Cancer markers", keywords: ["psa", "ca-125", "ca/psa", "tumour", "tumor", "cancer"] },
 ];
+
+const haystackOf = (t: PortalTest) =>
+  [t.name, t.category ?? "", t.description ?? "", ...(t.parameters ?? [])].join(" ").toLowerCase();
+
+const concernsOf = (t: PortalTest) => {
+  const hay = haystackOf(t);
+  return CONCERNS.filter((c) => c.keywords.some((k) => hay.includes(k))).map((c) => c.id);
+};
+
 
 const Packages = () => {
   useSEO({
