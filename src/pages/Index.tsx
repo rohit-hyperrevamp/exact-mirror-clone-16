@@ -436,7 +436,7 @@ const Index = () => {
               <p className="mt-4 text-sm sm:text-base text-aarvak-gray-600 max-w-md">
                 Choose An Organ System To View Commonly Recommended Diagnostic Tests.
               </p>
-              <Link to="/#package">
+              <Link to="/packages">
                 <button className="mt-6 rounded-full bg-aarvak-blue px-6 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-aarvak-blue-hover">
                   Explore
                 </button>
