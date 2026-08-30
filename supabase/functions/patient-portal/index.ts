@@ -66,6 +66,15 @@ type LoyaltyConfig = {
   point_to_rupee: number;
   min_order_amount: number;
   max_earn_per_order: number;
+  max_redeem_percent: number;
+};
+
+const DEFAULT_LOYALTY: LoyaltyConfig = {
+  earn_percent: 5,
+  point_to_rupee: 1,
+  min_order_amount: 0,
+  max_earn_per_order: 0,
+  max_redeem_percent: 100,
 };
 
 function tierFor(lifetime: number): string {
@@ -75,12 +84,53 @@ function tierFor(lifetime: number): string {
   return "bronze";
 }
 
+// deno-lint-ignore no-explicit-any
+async function loyaltyConfig(db: any): Promise<LoyaltyConfig> {
+  const { data } = await db.from("loyalty_settings").select("*").limit(1).maybeSingle();
+  return { ...DEFAULT_LOYALTY, ...(data ?? {}) } as LoyaltyConfig;
+}
+
+/** How many points a member may spend on an order of `amount` rupees. */
+export function redeemablePoints(cfg: LoyaltyConfig, balance: number, amount: number): number {
+  const rate = Number(cfg.point_to_rupee ?? 1) || 1;
+  const pct = Number(cfg.max_redeem_percent ?? 100);
+  const capRupees = Math.min(amount, (amount * (pct > 0 ? pct : 100)) / 100);
+  return Math.max(0, Math.min(Math.floor(balance), Math.floor(capRupees / rate)));
+}
+
+/** Spend points against an order. Returns points actually used and their rupee value. */
+// deno-lint-ignore no-explicit-any
+async function redeemLoyaltyPoints(
+  db: any,
+  opts: { customerId: string; requested: number; amount: number },
+): Promise<{ points: number; value: number; memberId: string | null; balanceAfter: number }> {
+  const none = { points: 0, value: 0, memberId: null, balanceAfter: 0 };
+  if (opts.requested <= 0) return none;
+  const cfg = await loyaltyConfig(db);
+  const { data: member } = await db
+    .from("loyalty_members")
+    .select("*")
+    .eq("customer_id", opts.customerId)
+    .maybeSingle();
+  if (!member) return none;
+  const balance = Number(member.points_balance ?? 0);
+  const allowed = redeemablePoints(cfg, balance, opts.amount);
+  const points = Math.min(Math.floor(opts.requested), allowed);
+  if (points <= 0) return { ...none, memberId: member.id, balanceAfter: balance };
+  const value = Math.round(points * (Number(cfg.point_to_rupee ?? 1) || 1) * 100) / 100;
+  const balanceAfter = balance - points;
+  await db.from("loyalty_members").update({ points_balance: balanceAfter }).eq("id", member.id);
+  return { points, value, memberId: member.id, balanceAfter };
+}
+
 /** Credit loyalty points for a paid booking. Never throws — rewards must not break a booking. */
 // deno-lint-ignore no-explicit-any
-async function awardLoyaltyPoints(db: any, opts: { customerId: string; phone: string | null; name: string | null; amount: number }) {
+async function awardLoyaltyPoints(
+  db: any,
+  opts: { customerId: string; phone: string | null; name: string | null; amount: number; orderId?: string | null; orderNo?: string | null },
+) {
   try {
-    const { data: cfg } = await db.from("loyalty_settings").select("*").limit(1).maybeSingle();
-    const c = (cfg ?? { earn_percent: 5, point_to_rupee: 1, min_order_amount: 0, max_earn_per_order: 0 }) as LoyaltyConfig;
+    const c = await loyaltyConfig(db);
     if (opts.amount < Number(c.min_order_amount ?? 0)) return 0;
     let points = Math.floor((opts.amount * Number(c.earn_percent ?? 0)) / 100);
     const cap = Number(c.max_earn_per_order ?? 0);
@@ -93,27 +143,49 @@ async function awardLoyaltyPoints(db: any, opts: { customerId: string; phone: st
       .eq("customer_id", opts.customerId)
       .maybeSingle();
 
+    let memberId: string | null = null;
+    let balanceAfter = points;
     if (existing) {
       const lifetime = Number(existing.lifetime_points ?? 0) + points;
+      balanceAfter = Number(existing.points_balance ?? 0) + points;
+      memberId = existing.id;
       await db
         .from("loyalty_members")
         .update({
-          points_balance: Number(existing.points_balance ?? 0) + points,
+          points_balance: balanceAfter,
           lifetime_points: lifetime,
           tier: tierFor(lifetime),
           name: existing.name ?? opts.name,
         })
         .eq("id", existing.id);
     } else {
-      await db.from("loyalty_members").insert({
-        customer_id: opts.customerId,
-        phone: opts.phone ?? "",
-        name: opts.name,
-        points_balance: points,
-        lifetime_points: points,
-        tier: tierFor(points),
-      });
+      const { data: created } = await db
+        .from("loyalty_members")
+        .insert({
+          customer_id: opts.customerId,
+          phone: opts.phone ?? "",
+          name: opts.name,
+          points_balance: points,
+          lifetime_points: points,
+          tier: tierFor(points),
+        })
+        .select("id")
+        .single();
+      memberId = created?.id ?? null;
     }
+
+    await db.from("loyalty_transactions").insert({
+      member_id: memberId,
+      customer_id: opts.customerId,
+      order_id: opts.orderId ?? null,
+      order_no: opts.orderNo ?? null,
+      kind: "earn",
+      points,
+      value_rupees: Math.round(points * (Number(c.point_to_rupee ?? 1) || 1) * 100) / 100,
+      balance_after: balanceAfter,
+      note: "Points earned on booking",
+    });
+
     return points;
   } catch (e) {
     console.error("loyalty award failed", e);
