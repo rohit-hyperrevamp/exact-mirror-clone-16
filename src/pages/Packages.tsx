@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle, Clock, Droplet, Home, Loader2, Search, Utensils } from "lucide-react";
+import { CheckCircle, Clock, Droplet, Home, Loader2, Utensils } from "lucide-react";
 import useSEO from "@/hooks/useSEO";
 import { PortalTest, portal } from "@/lib/patientPortal";
 
-type SortKey = "recommended" | "price-asc" | "price-desc";
+
 
 /** Health concerns are matched automatically against each package's name, description and inclusions. */
 const CONCERNS: { id: string; label: string; keywords: string[] }[] = [
@@ -43,9 +43,7 @@ const Packages = () => {
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
 
-  const [query, setQuery] = useState("");
   const [concern, setConcern] = useState("all");
-  const [sort, setSort] = useState<SortKey>("recommended");
 
   useEffect(() => {
     let alive = true;
@@ -68,23 +66,12 @@ const Packages = () => {
     }));
   }, [tests]);
 
-  const visible = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const list = tests.filter((t) => {
-      if (concern !== "all" && !concernsOf(t).includes(concern)) return false;
-      if (!q) return true;
-      return haystackOf(t).includes(q);
-    });
-    if (sort === "price-asc") return [...list].sort((a, b) => Number(a.price) - Number(b.price));
-    if (sort === "price-desc") return [...list].sort((a, b) => Number(b.price) - Number(a.price));
-    return list;
-  }, [tests, query, concern, sort]);
+  const visible = useMemo(
+    () => (concern === "all" ? tests : tests.filter((t) => concernsOf(t).includes(concern))),
+    [tests, concern],
+  );
 
-  const resetFilters = () => {
-    setQuery("");
-    setConcern("all");
-    setSort("recommended");
-  };
+  const resetFilters = () => setConcern("all");
 
   const chip = (active: boolean) =>
     `rounded-full border px-4 py-2 text-[13px] font-medium transition ${
@@ -92,6 +79,7 @@ const Packages = () => {
         ? "border-secondary bg-secondary text-white"
         : "border-border bg-background text-muted-foreground hover:border-secondary/60"
     }`;
+
 
   return (
     <div className="bg-background">
@@ -121,32 +109,7 @@ const Packages = () => {
       {/* Filters */}
       <section className="px-4 pt-10 md:px-8">
         <div className="mx-auto max-w-7xl rounded-2xl border border-border bg-muted/50 p-4 md:p-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-            <label className="relative flex-1">
-              <span className="sr-only">Search packages</span>
-              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search a concern or test — e.g. thyroid, HbA1c, vitamin D"
-                className="w-full rounded-lg border border-border bg-background py-3 pl-11 pr-4 text-[15px] outline-none focus:border-secondary"
-              />
-            </label>
-            <div className="flex flex-wrap gap-3">
-              <select
-                aria-label="Sort packages"
-                value={sort}
-                onChange={(e) => setSort(e.target.value as SortKey)}
-                className="rounded-lg border border-border bg-background px-4 py-3 text-[15px] outline-none focus:border-secondary"
-              >
-                <option value="recommended">Recommended</option>
-                <option value="price-asc">Price: low to high</option>
-                <option value="price-desc">Price: high to low</option>
-              </select>
-            </div>
-          </div>
-
-          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
             What do you want checked?
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -163,19 +126,10 @@ const Packages = () => {
                 {c.label} ({c.count})
               </button>
             ))}
-            {(concern !== "all" || query || sort !== "recommended") && (
-              <button
-                type="button"
-                onClick={resetFilters}
-                className="rounded-full px-4 py-2 text-[13px] font-medium text-secondary underline-offset-4 hover:underline"
-              >
-                Clear filters
-              </button>
-            )}
           </div>
-
         </div>
       </section>
+
 
       {/* Results */}
       <section className="px-4 py-10 md:px-8 md:py-14">
