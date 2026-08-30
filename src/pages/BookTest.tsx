@@ -705,6 +705,11 @@ const BookTest = () => {
                   )}
                   <div className="flex justify-between px-4 py-3"><span className="text-muted-foreground">Paid</span><span className="text-foreground">₹ {order.total}</span></div>
                 </div>
+                {pointsSpent > 0 && (
+                  <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-emerald-50 px-4 py-2.5 text-sm text-emerald-800">
+                    <Gift className="w-4 h-4" />You redeemed {pointsSpent} reward points on this booking.
+                  </p>
+                )}
                 {pointsEarned > 0 && (
                   <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-emerald-50 px-4 py-2.5 text-sm text-emerald-800">
                     <Gift className="w-4 h-4" />You earned {pointsEarned} reward points on this booking.
