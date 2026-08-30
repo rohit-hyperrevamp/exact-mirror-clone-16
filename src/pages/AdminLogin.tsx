@@ -11,7 +11,7 @@ const AdminLogin = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "Admin Login — Aarvak Diagnostics";
+    document.title = "Aarvak Admin — Control Center";
     let m = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
     if (!m) { m = document.createElement("meta"); m.name = "robots"; document.head.appendChild(m); }
     m.content = "noindex, nofollow";
