@@ -128,26 +128,11 @@ const Packages = () => {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search by package or test name"
+                placeholder="Search a concern or test — e.g. thyroid, HbA1c, vitamin D"
                 className="w-full rounded-lg border border-border bg-background py-3 pl-11 pr-4 text-[15px] outline-none focus:border-secondary"
               />
             </label>
             <div className="flex flex-wrap gap-3">
-              {categories.length > 1 && (
-                <select
-                  aria-label="Filter by category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="rounded-lg border border-border bg-background px-4 py-3 text-[15px] outline-none focus:border-secondary"
-                >
-                  <option value="all">All categories</option>
-                  {categories.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-              )}
               <select
                 aria-label="Sort packages"
                 value={sort}
@@ -161,26 +146,34 @@ const Packages = () => {
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-2">
-            {PRICE_BANDS.map((b) => (
-              <button key={b.id} type="button" onClick={() => setBand(b.id)} className={chip(band === b.id)}>
-                {b.label}
+          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            What do you want checked?
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button type="button" onClick={() => setConcern("all")} className={chip(concern === "all")}>
+              All packages
+            </button>
+            {concernOptions.map((c) => (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => setConcern(concern === c.id ? "all" : c.id)}
+                className={chip(concern === c.id)}
+              >
+                {c.label} ({c.count})
               </button>
             ))}
-            <button type="button" onClick={() => setHomeOnly(!homeOnly)} className={chip(homeOnly)}>
-              Home collection
-            </button>
-            <button type="button" onClick={() => setOffersOnly(!offersOnly)} className={chip(offersOnly)}>
-              On offer
-            </button>
-            <button
-              type="button"
-              onClick={resetFilters}
-              className="rounded-full px-4 py-2 text-[13px] font-medium text-secondary underline-offset-4 hover:underline"
-            >
-              Clear filters
-            </button>
+            {(concern !== "all" || query || sort !== "recommended") && (
+              <button
+                type="button"
+                onClick={resetFilters}
+                className="rounded-full px-4 py-2 text-[13px] font-medium text-secondary underline-offset-4 hover:underline"
+              >
+                Clear filters
+              </button>
+            )}
           </div>
+
         </div>
       </section>
 
