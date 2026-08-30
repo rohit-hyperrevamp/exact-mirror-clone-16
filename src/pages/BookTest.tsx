@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { CheckCircle, Clock, Droplet, Home, Loader2, Lock, MapPin, Navigation, ShieldCheck, Utensils } from "lucide-react";
+import { BadgePercent, CheckCircle, Clock, Droplet, Gift, Home, Loader2, Lock, MapPin, Navigation, ShieldCheck, Utensils } from "lucide-react";
 import useSEO from "@/hooks/useSEO";
 import { toast } from "@/hooks/use-toast";
 import {
   BookingPolicy,
   PortalCenter,
   PortalOrder,
+  PortalPromo,
   PortalTest,
   distanceKm,
   friendlyError,
@@ -49,6 +50,12 @@ const BookTest = () => {
   const [scheduledAt, setScheduledAt] = useState("");
   const [notes, setNotes] = useState("");
   const [order, setOrder] = useState<PortalOrder | null>(null);
+  const [pointsEarned, setPointsEarned] = useState(0);
+
+  const [promos, setPromos] = useState<PortalPromo[]>([]);
+  const [promoInput, setPromoInput] = useState("");
+  const [applied, setApplied] = useState<{ code: string; discount: number } | null>(null);
+  const [promoBusy, setPromoBusy] = useState(false);
 
   const [centers, setCenters] = useState<PortalCenter[]>([]);
   const [centerId, setCenterId] = useState("");
@@ -95,6 +102,37 @@ const BookTest = () => {
       alive = false;
     };
   }, []);
+
+  // Promo codes available for this order value
+  useEffect(() => {
+    if (!test) return;
+    let alive = true;
+    portal<{ promos: PortalPromo[] }>("promos", { subtotal: test.price })
+      .then((r) => alive && setPromos(r.promos ?? []))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [test]);
+
+  const applyPromo = async (raw: string) => {
+    const code = raw.trim().toUpperCase();
+    if (!code || !test) return;
+    setPromoBusy(true);
+    try {
+      const res = await portal<{ discount: number; promo: { code: string } }>("quote_promo", { code, subtotal: test.price });
+      setApplied({ code: res.promo.code, discount: res.discount });
+      setPromoInput(res.promo.code);
+      toast({ title: `Promo ${res.promo.code} applied`, description: `You saved ₹${res.discount}.` });
+    } catch (e) {
+      setApplied(null);
+      toast({ title: friendlyError(e), variant: "destructive" });
+    } finally {
+      setPromoBusy(false);
+    }
+  };
+
+  const payable = Math.max(0, (test?.price ?? 0) - (applied?.discount ?? 0));
 
   const locate = () => {
     if (!("geolocation" in navigator)) {
@@ -188,7 +226,7 @@ const BookTest = () => {
   const payAndBook = async () => {
     setBusy(true);
     try {
-      const res = await portal<{ order: PortalOrder }>("create_booking", {
+      const res = await portal<{ order: PortalOrder; points_earned?: number }>("create_booking", {
         slug,
         name,
         email,
@@ -198,8 +236,10 @@ const BookTest = () => {
         pincode,
         scheduled_at: new Date(scheduledAt).toISOString(),
         notes,
+        promo_code: applied?.code,
       });
       setOrder(res.order);
+      setPointsEarned(res.points_earned ?? 0);
       setStep("done");
     } catch (e) {
       toast({ title: friendlyError(e), variant: "destructive" });
@@ -455,11 +495,86 @@ const BookTest = () => {
                       <dd className="text-foreground sm:text-right sm:max-w-[60%]">{v}</dd>
                     </div>
                   ))}
+                  <div className="flex justify-between px-4 py-3">
+                    <dt className="text-muted-foreground">Package price</dt>
+                    <dd className="text-foreground">₹ {test.price}</dd>
+                  </div>
+                  {applied && (
+                    <div className="flex justify-between px-4 py-3">
+                      <dt className="text-muted-foreground">Promo {applied.code}</dt>
+                      <dd className="text-emerald-700 font-medium">− ₹ {applied.discount}</dd>
+                    </div>
+                  )}
                   <div className="flex justify-between px-4 py-3 bg-muted/50">
                     <dt className="font-semibold text-foreground">Amount payable</dt>
-                    <dd className="font-bold text-foreground">₹ {test.price}</dd>
+                    <dd className="font-bold text-foreground">₹ {payable}</dd>
                   </div>
                 </dl>
+
+                {/* Promo code */}
+                <div className="mt-5 rounded-xl border border-border p-4">
+                  <p className="flex items-center gap-2 text-sm font-semibold text-foreground mb-3">
+                    <BadgePercent className="w-4 h-4 text-secondary" />Have a promo code?
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <input
+                      aria-label="Promo code"
+                      className={`${inputClass} flex-1 min-w-[180px] uppercase`}
+                      value={promoInput}
+                      onChange={(e) => setPromoInput(e.target.value.toUpperCase().slice(0, 24))}
+                      placeholder="Enter code"
+                    />
+                    {applied ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setApplied(null);
+                          setPromoInput("");
+                        }}
+                        className="rounded-lg border border-border px-5 py-3 text-sm font-semibold text-foreground"
+                      >
+                        Remove
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => applyPromo(promoInput)}
+                        disabled={promoBusy || !promoInput.trim()}
+                        className="inline-flex items-center gap-2 rounded-lg bg-secondary text-white px-5 py-3 text-sm font-semibold disabled:opacity-60"
+                      >
+                        {promoBusy && <Loader2 className="w-4 h-4 animate-spin" />}Apply
+                      </button>
+                    )}
+                  </div>
+
+                  {promos.length > 0 && (
+                    <div className="mt-4">
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Available offers</p>
+                      <ul className="space-y-2">
+                        {promos.map((p) => (
+                          <li key={p.code} className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-muted/50 px-3 py-2.5">
+                            <span className="min-w-0">
+                              <span className="block font-semibold text-sm text-foreground">{p.code}</span>
+                              <span className="block text-xs text-muted-foreground">
+                                {p.description ||
+                                  (p.discount_type === "percent" ? `${p.discount_value}% off` : `₹${p.discount_value} off`)}
+                                {p.discount ? ` · saves ₹${p.discount}` : ""}
+                              </span>
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => applyPromo(p.code)}
+                              disabled={promoBusy || applied?.code === p.code}
+                              className="text-xs font-bold uppercase tracking-wide text-secondary disabled:opacity-50"
+                            >
+                              {applied?.code === p.code ? "Applied" : "Apply"}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
 
                 {policy?.policy_text && (
                   <p className="text-xs text-muted-foreground mt-4 leading-relaxed">
@@ -474,7 +589,7 @@ const BookTest = () => {
                   className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-secondary text-white font-semibold px-6 py-3.5 disabled:opacity-60"
                 >
                   {busy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Lock className="w-4 h-4" />}
-                  Pay ₹{test.price} (mock)
+                  Pay ₹{payable} (mock)
                 </button>
               </>
             )}
@@ -492,8 +607,19 @@ const BookTest = () => {
                     <span className="text-muted-foreground">Appointment</span>
                     <span className="text-foreground">{order.scheduled_at ? new Date(order.scheduled_at).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" }) : "—"}</span>
                   </div>
+                  {Number(order.discount ?? 0) > 0 && (
+                    <div className="flex justify-between px-4 py-3">
+                      <span className="text-muted-foreground">Promo discount</span>
+                      <span className="text-emerald-700">− ₹ {order.discount}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between px-4 py-3"><span className="text-muted-foreground">Paid</span><span className="text-foreground">₹ {order.total}</span></div>
                 </div>
+                {pointsEarned > 0 && (
+                  <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-emerald-50 px-4 py-2.5 text-sm text-emerald-800">
+                    <Gift className="w-4 h-4" />You earned {pointsEarned} reward points on this booking.
+                  </p>
+                )}
                 <div className="flex flex-wrap gap-3 justify-center mt-6">
                   <button type="button" onClick={() => navigate("/my-tests")} className="rounded-lg bg-secondary text-white font-semibold px-6 py-3">
                     View my tests
