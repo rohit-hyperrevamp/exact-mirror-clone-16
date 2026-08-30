@@ -24,7 +24,7 @@ function tone(status: string) {
 function OrderStatusCell({ order, onSaved }: { order: TestOrder; onSaved: () => void }) {
   const [busy, setBusy] = useState(false);
   return (
-    <div className="flex flex-col gap-1">
+    <div>
       <select
         aria-label={`Update status for ${order.order_no}`}
         value={order.status}
@@ -47,7 +47,6 @@ function OrderStatusCell({ order, onSaved }: { order: TestOrder; onSaved: () => 
           </option>
         ))}
       </select>
-      <Badge tone={tone(order.status)}>{orderStatusLabel(order.status)}</Badge>
     </div>
   );
 }
