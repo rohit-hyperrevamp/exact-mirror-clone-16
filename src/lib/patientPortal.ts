@@ -76,6 +76,9 @@ export type PortalOrder = {
   status: string;
   payment_status: string;
   total: number;
+  subtotal?: number;
+  discount?: number;
+  promo_code?: string | null;
   collection_type: string;
   address: string | null;
   pincode: string | null;
@@ -108,11 +111,27 @@ export const ERROR_MESSAGES: Record<string, string> = {
   unauthorized: "Your session expired. Please verify your mobile number again.",
   center_required: "Please choose a collection centre for your visit.",
   center_not_found: "That collection centre is no longer available. Please pick another one.",
+  promo_invalid: "That promo code is not valid or has expired.",
+  promo_min_order: "This promo code needs a higher order value.",
 };
 
 export const friendlyError = (e: unknown) => {
   const key = e instanceof Error ? e.message : String(e);
   return ERROR_MESSAGES[key] ?? "Something went wrong. Please try again.";
+};
+
+export type PortalPromo = {
+  code: string;
+  description: string | null;
+  discount_type: string;
+  discount_value: number;
+  min_order: number;
+  discount: number | null;
+};
+
+export type PortalRewards = {
+  member: { points_balance: number; lifetime_points: number; tier: string } | null;
+  config: { earn_percent: number; point_to_rupee: number; max_redeem_percent: number; min_order_amount: number } | null;
 };
 
 export type PortalCenter = {

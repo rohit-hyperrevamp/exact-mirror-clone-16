@@ -25,7 +25,101 @@ function normalisePhone(raw: unknown): string | null {
   return local;
 }
 
-const PUBLIC_ACTIONS = new Set(["catalog", "test", "policy", "centers", "send_otp", "verify_otp"]);
+const PUBLIC_ACTIONS = new Set(["catalog", "test", "policy", "centers", "send_otp", "verify_otp", "promos", "quote_promo"]);
+
+type Promo = {
+  id: string;
+  code: string;
+  description: string | null;
+  discount_type: string;
+  discount_value: number;
+  min_order: number;
+  max_redemptions: number | null;
+  times_used: number;
+  starts_at: string | null;
+  ends_at: string | null;
+  status: string;
+};
+
+/** Promo codes a patient can currently use. */
+// deno-lint-ignore no-explicit-any
+async function activePromos(db: any): Promise<Promo[]> {
+  const nowIso = new Date().toISOString();
+  const { data = [] } = await db.from("promo_codes").select("*").eq("status", "active");
+  return (data ?? []).filter((p: Promo) => {
+    if (p.starts_at && p.starts_at > nowIso) return false;
+    if (p.ends_at && p.ends_at < nowIso) return false;
+    if (p.max_redemptions != null && Number(p.times_used ?? 0) >= Number(p.max_redemptions)) return false;
+    return true;
+  });
+}
+
+/** Rupee discount a promo gives on `subtotal`, capped at the subtotal. */
+export function promoDiscount(promo: { discount_type: string; discount_value: number }, subtotal: number): number {
+  const raw =
+    promo.discount_type === "percent" ? (subtotal * Number(promo.discount_value ?? 0)) / 100 : Number(promo.discount_value ?? 0);
+  return Math.min(subtotal, Math.max(0, Math.round(raw * 100) / 100));
+}
+
+type LoyaltyConfig = {
+  earn_percent: number;
+  point_to_rupee: number;
+  min_order_amount: number;
+  max_earn_per_order: number;
+};
+
+function tierFor(lifetime: number): string {
+  if (lifetime >= 5000) return "platinum";
+  if (lifetime >= 2000) return "gold";
+  if (lifetime >= 500) return "silver";
+  return "bronze";
+}
+
+/** Credit loyalty points for a paid booking. Never throws — rewards must not break a booking. */
+// deno-lint-ignore no-explicit-any
+async function awardLoyaltyPoints(db: any, opts: { customerId: string; phone: string | null; name: string | null; amount: number }) {
+  try {
+    const { data: cfg } = await db.from("loyalty_settings").select("*").limit(1).maybeSingle();
+    const c = (cfg ?? { earn_percent: 5, point_to_rupee: 1, min_order_amount: 0, max_earn_per_order: 0 }) as LoyaltyConfig;
+    if (opts.amount < Number(c.min_order_amount ?? 0)) return 0;
+    let points = Math.floor((opts.amount * Number(c.earn_percent ?? 0)) / 100);
+    const cap = Number(c.max_earn_per_order ?? 0);
+    if (cap > 0) points = Math.min(points, cap);
+    if (points <= 0) return 0;
+
+    const { data: existing } = await db
+      .from("loyalty_members")
+      .select("*")
+      .eq("customer_id", opts.customerId)
+      .maybeSingle();
+
+    if (existing) {
+      const lifetime = Number(existing.lifetime_points ?? 0) + points;
+      await db
+        .from("loyalty_members")
+        .update({
+          points_balance: Number(existing.points_balance ?? 0) + points,
+          lifetime_points: lifetime,
+          tier: tierFor(lifetime),
+          name: existing.name ?? opts.name,
+        })
+        .eq("id", existing.id);
+    } else {
+      await db.from("loyalty_members").insert({
+        customer_id: opts.customerId,
+        phone: opts.phone ?? "",
+        name: opts.name,
+        points_balance: points,
+        lifetime_points: points,
+        tier: tierFor(points),
+      });
+    }
+    return points;
+  } catch (e) {
+    console.error("loyalty award failed", e);
+    return 0;
+  }
+}
 
 type Settings = {
   no_refund_hours: number;
@@ -109,6 +203,41 @@ Deno.serve(async (req) => {
           .eq("enabled", true)
           .order("sort_order", { ascending: true });
         return jsonResponse({ centers: data ?? [] });
+      }
+
+      case "promos": {
+        const promos = await activePromos(db);
+        const subtotal = num(body.subtotal);
+        return jsonResponse({
+          promos: promos
+            .filter((p) => !subtotal || subtotal >= Number(p.min_order ?? 0))
+            .map((p) => ({
+              code: p.code,
+              description: p.description,
+              discount_type: p.discount_type,
+              discount_value: Number(p.discount_value ?? 0),
+              min_order: Number(p.min_order ?? 0),
+              discount: subtotal ? promoDiscount(p, subtotal) : null,
+            })),
+          unavailable: promos
+            .filter((p) => subtotal && subtotal < Number(p.min_order ?? 0))
+            .map((p) => ({ code: p.code, min_order: Number(p.min_order ?? 0), description: p.description })),
+        });
+      }
+
+      case "quote_promo": {
+        const code = str(body.code, 40).toUpperCase();
+        const subtotal = num(body.subtotal);
+        if (!code || subtotal <= 0) return jsonResponse({ error: "invalid_input" }, 400);
+        const promo = (await activePromos(db)).find((p) => p.code.toUpperCase() === code);
+        if (!promo) return jsonResponse({ error: "promo_invalid" }, 400);
+        if (subtotal < Number(promo.min_order ?? 0)) return jsonResponse({ error: "promo_min_order" }, 400);
+        const discount = promoDiscount(promo, subtotal);
+        return jsonResponse({
+          promo: { code: promo.code, description: promo.description, discount_type: promo.discount_type, discount_value: Number(promo.discount_value ?? 0) },
+          discount,
+          total: Math.max(0, Math.round((subtotal - discount) * 100) / 100),
+        });
       }
 
       case "policy": {
@@ -212,7 +341,18 @@ Deno.serve(async (req) => {
         if (email && email !== customer?.email) patch.email = email;
         if (Object.keys(patch).length) await db.from("customers").update(patch).eq("id", customerId);
 
-        const total = num(test.price);
+        const subtotal = num(test.price);
+        const promoCodeIn = str(body.promo_code, 40).toUpperCase();
+        let promo: Promo | null = null;
+        let discount = 0;
+        if (promoCodeIn) {
+          promo = (await activePromos(db)).find((p) => p.code.toUpperCase() === promoCodeIn) ?? null;
+          if (!promo) return jsonResponse({ error: "promo_invalid" }, 400);
+          if (subtotal < Number(promo.min_order ?? 0)) return jsonResponse({ error: "promo_min_order" }, 400);
+          discount = promoDiscount(promo, subtotal);
+        }
+        const total = Math.max(0, Math.round((subtotal - discount) * 100) / 100);
+
         const { data: order, error: orderErr } = await db
           .from("test_orders")
           .insert({
@@ -226,9 +366,10 @@ Deno.serve(async (req) => {
             center_name: center ? center.name : null,
             pincode: pincode || null,
             scheduled_at: new Date(scheduledAt).toISOString(),
-            subtotal: total,
-            discount: 0,
+            subtotal,
+            discount,
             total,
+            promo_code: promo?.code ?? null,
             payment_method: "online",
             payment_status: "paid",
             status: "confirmed",
@@ -263,7 +404,42 @@ Deno.serve(async (req) => {
           raw: { mock: true, source: "patient_portal" },
         });
 
-        return jsonResponse({ order: { ...order, items: [{ test_name: test.name, test_slug: test.slug, qty: 1, price: total }] } });
+        if (promo) {
+          await db
+            .from("promo_codes")
+            .update({ times_used: Number(promo.times_used ?? 0) + 1 })
+            .eq("id", promo.id);
+        }
+
+        const pointsEarned = await awardLoyaltyPoints(db, {
+          customerId: customerId!,
+          phone: (order.customer_phone as string) ?? sessionPhone,
+          name: (order.customer_name as string) ?? null,
+          amount: total,
+        });
+
+        return jsonResponse({
+          order: { ...order, items: [{ test_name: test.name, test_slug: test.slug, qty: 1, price: subtotal }] },
+          points_earned: pointsEarned,
+        });
+      }
+
+      case "my_rewards": {
+        const { data: member } = await db.from("loyalty_members").select("*").eq("customer_id", customerId).maybeSingle();
+        const { data: cfg } = await db.from("loyalty_settings").select("*").limit(1).maybeSingle();
+        return jsonResponse({
+          member: member
+            ? { points_balance: Number(member.points_balance ?? 0), lifetime_points: Number(member.lifetime_points ?? 0), tier: member.tier }
+            : null,
+          config: cfg
+            ? {
+                earn_percent: Number(cfg.earn_percent ?? 0),
+                point_to_rupee: Number(cfg.point_to_rupee ?? 1),
+                max_redeem_percent: Number(cfg.max_redeem_percent ?? 0),
+                min_order_amount: Number(cfg.min_order_amount ?? 0),
+              }
+            : null,
+        });
       }
 
       case "my_bookings": {
