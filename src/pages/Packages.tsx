@@ -33,9 +33,9 @@ const concernsOf = (t: PortalTest) => {
 
 const Packages = () => {
   useSEO({
-    title: "Health Checkup Packages in Gurgaon | Aarvak Diagnostics",
+    title: "Health Checkup Packages | Book by Health Concern | Aarvak Diagnostics",
     description:
-      "Compare and book full body health checkup packages in Gurgaon. Transparent pricing, home sample collection and reports in 6–8 hours from Aarvak Diagnostics.",
+      "Book health checkup packages by health concern — diabetes, heart, thyroid, liver, kidney, vitamins and full body. Transparent pricing and reports in 6–8 hours.",
     canonical: "/packages",
   });
 
@@ -44,10 +44,7 @@ const Packages = () => {
   const [failed, setFailed] = useState(false);
 
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("all");
-  const [band, setBand] = useState("all");
-  const [homeOnly, setHomeOnly] = useState(false);
-  const [offersOnly, setOffersOnly] = useState(false);
+  const [concern, setConcern] = useState("all");
   const [sort, setSort] = useState<SortKey>("recommended");
 
   useEffect(() => {
@@ -61,34 +58,31 @@ const Packages = () => {
     };
   }, []);
 
-  const categories = useMemo(
-    () => Array.from(new Set(tests.map((t) => t.category).filter(Boolean))),
-    [tests],
-  );
+  /** Only show concern chips that actually match at least one live package. */
+  const concernOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    tests.forEach((t) => concernsOf(t).forEach((id) => counts.set(id, (counts.get(id) ?? 0) + 1)));
+    return CONCERNS.filter((c) => (counts.get(c.id) ?? 0) > 0).map((c) => ({
+      ...c,
+      count: counts.get(c.id) ?? 0,
+    }));
+  }, [tests]);
 
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const bandTest = PRICE_BANDS.find((b) => b.id === band)?.test ?? (() => true);
     const list = tests.filter((t) => {
-      if (category !== "all" && t.category !== category) return false;
-      if (!bandTest(Number(t.price))) return false;
-      if (homeOnly && !t.home_collection) return false;
-      if (offersOnly && !(Number(t.mrp ?? 0) > Number(t.price))) return false;
+      if (concern !== "all" && !concernsOf(t).includes(concern)) return false;
       if (!q) return true;
-      const haystack = [t.name, t.description ?? "", ...(t.parameters ?? [])].join(" ").toLowerCase();
-      return haystack.includes(q);
+      return haystackOf(t).includes(q);
     });
     if (sort === "price-asc") return [...list].sort((a, b) => Number(a.price) - Number(b.price));
     if (sort === "price-desc") return [...list].sort((a, b) => Number(b.price) - Number(a.price));
     return list;
-  }, [tests, query, category, band, homeOnly, offersOnly, sort]);
+  }, [tests, query, concern, sort]);
 
   const resetFilters = () => {
     setQuery("");
-    setCategory("all");
-    setBand("all");
-    setHomeOnly(false);
-    setOffersOnly(false);
+    setConcern("all");
     setSort("recommended");
   };
 
@@ -106,22 +100,23 @@ const Packages = () => {
         <div className="relative w-full overflow-hidden rounded-2xl">
           <img
             src="/images/package.png"
-            alt="Health checkup packages at Aarvak Diagnostics Gurugram"
+            alt="Health checkup packages at Aarvak Diagnostics"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-primary/80" />
           <div className="relative z-10 mx-auto max-w-5xl px-4 py-14 text-center text-primary-foreground md:py-20">
             <p className="text-xs font-medium uppercase tracking-[0.25em] opacity-80">Packages</p>
             <h1 className="mt-3 text-2xl font-bold leading-tight md:text-4xl lg:text-[44px]">
-              Health Checkup Packages in Gurgaon
+              Health Checkup Packages
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-sm opacity-90 md:text-base">
-              Pick a package, choose home collection or a nearby collection centre, and complete your
-              booking online in a few steps.
+              Choose by what you want checked — sugar, heart, thyroid, liver, kidney, vitamins or a
+              full body checkup — and complete your booking online in a few steps.
             </p>
           </div>
         </div>
       </section>
+
 
       {/* Filters */}
       <section className="px-4 pt-10 md:px-8">
