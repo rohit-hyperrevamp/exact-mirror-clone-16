@@ -53,6 +53,8 @@ const BookTest = () => {
     description: test
       ? `Book ${test.name} at Aarvak Diagnostics Gurugram for ₹${test.price}. Home sample collection, quick reports and secure online booking.`
       : "Book diagnostic tests and full body health checkup packages online at Aarvak Diagnostics, Sector 67 Gurugram.",
+    canonical: `/book/${slug}`,
+    noindex: true,
   });
 
   useEffect(() => {
