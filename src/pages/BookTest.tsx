@@ -535,11 +535,71 @@ const BookTest = () => {
                       <dd className="text-emerald-700 font-medium">− ₹ {applied.discount}</dd>
                     </div>
                   )}
+                  {pointsToUse > 0 && (
+                    <div className="flex justify-between px-4 py-3">
+                      <dt className="text-muted-foreground">Reward points ({pointsToUse})</dt>
+                      <dd className="text-emerald-700 font-medium">− ₹ {pointsRupees}</dd>
+                    </div>
+                  )}
                   <div className="flex justify-between px-4 py-3 bg-muted/50">
                     <dt className="font-semibold text-foreground">Amount payable</dt>
                     <dd className="font-bold text-foreground">₹ {payable}</dd>
                   </div>
                 </dl>
+
+                {/* Loyalty points */}
+                {(rewards?.member?.points_balance ?? 0) > 0 && (
+                  <div className="mt-5 rounded-xl border border-border p-4">
+                    <p className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                      <Gift className="w-4 h-4 text-secondary" />Use your reward points
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      You have {rewards?.member?.points_balance} points (1 point = ₹{pointRate}).{" "}
+                      {maxRedeemable > 0
+                        ? `You can use up to ${maxRedeemable} points on this booking.`
+                        : "Points cannot be used on this booking."}
+                    </p>
+                    {maxRedeemable > 0 && (
+                      <>
+                        <label className="mt-3 flex items-center gap-2 text-sm text-foreground">
+                          <input
+                            type="checkbox"
+                            checked={usePoints}
+                            onChange={(e) => {
+                              setUsePoints(e.target.checked);
+                              if (e.target.checked && !pointsInput) setPointsInput(maxRedeemable);
+                            }}
+                          />
+                          Redeem points on this order
+                        </label>
+                        {usePoints && (
+                          <div className="mt-3 flex flex-wrap items-center gap-2">
+                            <input
+                              type="number"
+                              min={0}
+                              max={maxRedeemable}
+                              aria-label="Points to redeem"
+                              className={`${inputClass} w-32`}
+                              value={pointsInput}
+                              onChange={(e) =>
+                                setPointsInput(Math.max(0, Math.min(maxRedeemable, Math.floor(Number(e.target.value) || 0))))
+                              }
+                            />
+                            <button
+                              type="button"
+                              onClick={() => setPointsInput(maxRedeemable)}
+                              className="rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground"
+                            >
+                              Use max ({maxRedeemable})
+                            </button>
+                            <span className="text-sm text-muted-foreground">Saves ₹{pointsRupees}</span>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                )}
+
 
                 {/* Promo code */}
                 <div className="mt-5 rounded-xl border border-border p-4">
