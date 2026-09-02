@@ -30,7 +30,7 @@ async function publishedBlogRoutes() {
     // The anon role can only read published posts (RLS), so this can never
     // leak a scheduled post into the sitemap.
     const res = await fetch(
-      `${url}/rest/v1/blog_posts?select=slug,published_at&status=eq.published&order=published_at.desc`,
+      `${url}/rest/v1/blog_posts?select=slug,published_at,scheduled_date&status=eq.published&published_at=not.is.null&published_at=lte.${encodeURIComponent(new Date().toISOString())}&order=published_at.desc`,
       { headers: { apikey: key, Authorization: `Bearer ${key}` } }
     );
     if (!res.ok) return [];
@@ -39,7 +39,7 @@ async function publishedBlogRoutes() {
       path: `/insights/${r.slug}`,
       priority: "0.7",
       changefreq: "monthly",
-      lastmod: (r.published_at || TODAY).slice(0, 10),
+      lastmod: (r.scheduled_date || r.published_at || TODAY).slice(0, 10),
     }));
   } catch {
     return [];
