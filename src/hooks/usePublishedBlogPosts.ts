@@ -20,6 +20,8 @@ export function usePublishedBlogPosts() {
           "slug,title,h1,meta_title,meta_description,excerpt,category,content,featured_image,tags,author,read_minutes,published_at,scheduled_date"
         )
         .eq("status", "published")
+        .not("published_at", "is", null)
+        .lte("published_at", new Date().toISOString())
         .order("published_at", { ascending: false });
 
       if (!active) return;
