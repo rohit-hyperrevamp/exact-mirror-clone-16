@@ -26,7 +26,10 @@ export function usePublishedBlogPosts() {
       const rows = (data ?? []) as Record<string, any>[];
       setPosts(
         rows.map((r) => {
-          const dateSort = String(r.published_at ?? r.scheduled_date).slice(0, 10);
+          // The editorial calendar is defined in IST. A midnight IST publish is
+          // stored as the previous UTC date, so prefer the scheduled calendar
+          // date for the public label while published_at remains the access gate.
+          const dateSort = String(r.scheduled_date ?? r.published_at).slice(0, 10);
           return {
             slug: r.slug,
             img: r.featured_image || "/images/blog-1.jpg",
